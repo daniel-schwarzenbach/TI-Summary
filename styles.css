@@ -11,22 +11,22 @@
     border-left: 2px solid;
     border-color: rgb(0, 0, 200);
     border-radius: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     padding: 10px;
     padding-top: 10px;
     padding-bottom: 0.1px;
-    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .prop {
     border-left: 2px solid;
     border-color: rgb(200, 0, 0);
     border-radius: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     padding: 10px;
     padding-top: 10px;
     padding-bottom: 0.1px;
-    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .sek {
@@ -60,4 +60,8 @@
 .col {
     flex: 1;
     min-width: 300px;
+}
+
+.padding {
+    padding: 30px;
 }

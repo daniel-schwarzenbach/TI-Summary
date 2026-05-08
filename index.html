@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Daniel Schwarzenbach">
+<meta name="dcterms.date" content="2026-06-08">
 
 <title>TI-Summary</title>
 <style>
@@ -58,16 +59,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="TI-Summary_files/libs/clipboard/clipboard.min.js"></script>
-<script src="TI-Summary_files/libs/quarto-html/quarto.js"></script>
-<script src="TI-Summary_files/libs/quarto-html/popper.min.js"></script>
-<script src="TI-Summary_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="TI-Summary_files/libs/quarto-html/anchor.min.js"></script>
-<link href="TI-Summary_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="TI-Summary_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="TI-Summary_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="TI-Summary_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="TI-Summary_files/libs/bootstrap/bootstrap-0e0eed2b981427e77b41404776144d44.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap-171a28824539072ca8646231280a40a4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -112,6 +113,7 @@ window.Quarto = {
   <ul>
   <li><a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a>
   <ul class="collapse">
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   <li><a href="#kahoot" id="toc-kahoot" class="nav-link" data-scroll-target="#kahoot">Kahoot!</a>
   <ul class="collapse">
   <li><a href="#kahoot-nr.1" id="toc-kahoot-nr.1" class="nav-link" data-scroll-target="#kahoot-nr.1">Kahoot Nr.1</a></li>
@@ -164,12 +166,8 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#entscheidbare-mengen" id="toc-entscheidbare-mengen" class="nav-link" data-scroll-target="#entscheidbare-mengen">Entscheidbare Mengen</a>
   <ul class="collapse">
-  <li><a href="#theorem-3.1.2" id="toc-theorem-3.1.2" class="nav-link" data-scroll-target="#theorem-3.1.2">Theorem 3.1.2</a></li>
+  <li><a href="#definition-entscheidbare-menge" id="toc-definition-entscheidbare-menge" class="nav-link" data-scroll-target="#definition-entscheidbare-menge">Definition: <strong>Entscheidbare Menge</strong></a></li>
   <li><a href="#definition-aufzählbarkeit" id="toc-definition-aufzählbarkeit" class="nav-link" data-scroll-target="#definition-aufzählbarkeit">Definition: <strong>Aufzählbarkeit</strong></a></li>
-  <li><a href="#theorem-3.2.2" id="toc-theorem-3.2.2" class="nav-link" data-scroll-target="#theorem-3.2.2">Theorem 3.2.2</a></li>
-  <li><a href="#theorem-3.2.3" id="toc-theorem-3.2.3" class="nav-link" data-scroll-target="#theorem-3.2.3">Theorem 3.2.3</a></li>
-  <li><a href="#korollar-3.2.4" id="toc-korollar-3.2.4" class="nav-link" data-scroll-target="#korollar-3.2.4">Korollar 3.2.4</a></li>
-  <li><a href="#theorem-3.2.5" id="toc-theorem-3.2.5" class="nav-link" data-scroll-target="#theorem-3.2.5">Theorem 3.2.5</a></li>
   <li><a href="#definition-projektion" id="toc-definition-projektion" class="nav-link" data-scroll-target="#definition-projektion">Definition: <strong>Projektion</strong></a></li>
   <li><a href="#projektionssatz" id="toc-projektionssatz" class="nav-link" data-scroll-target="#projektionssatz"><strong>Projektionssatz</strong></a></li>
   </ul></li>
@@ -178,7 +176,11 @@ window.Quarto = {
   <li><a href="#das-halteproblem" id="toc-das-halteproblem" class="nav-link" data-scroll-target="#das-halteproblem"><strong>Das Halteproblem</strong></a></li>
   <li><a href="#definition-spezielles-halteproblem" id="toc-definition-spezielles-halteproblem" class="nav-link" data-scroll-target="#definition-spezielles-halteproblem">Definition: <strong>spezielles Halteproblem</strong></a></li>
   <li><a href="#definition-allgemeines-halteproblem" id="toc-definition-allgemeines-halteproblem" class="nav-link" data-scroll-target="#definition-allgemeines-halteproblem">Definition: <strong>allgemeines Halteproblem</strong></a></li>
-  <li><a href="#korollar-3.3.3" id="toc-korollar-3.3.3" class="nav-link" data-scroll-target="#korollar-3.3.3">Korollar 3.3.3</a></li>
+  </ul></li>
+  <li><a href="#m-reduktion" id="toc-m-reduktion" class="nav-link" data-scroll-target="#m-reduktion"><span class="math inline">\(m\)</span>-Reduktion</a>
+  <ul class="collapse">
+  <li><a href="#definition-m-reduzierbarkeit" id="toc-definition-m-reduzierbarkeit" class="nav-link" data-scroll-target="#definition-m-reduzierbarkeit">Definition: <strong>m-Reduzierbarkeit</strong></a></li>
+  <li><a href="#satz-von-rice-1953" id="toc-satz-von-rice-1953" class="nav-link" data-scroll-target="#satz-von-rice-1953">Satz von Rice (1953)</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#komplexitätstheorie" id="toc-komplexitätstheorie" class="nav-link" data-scroll-target="#komplexitätstheorie">Komplexitätstheorie</a>
@@ -214,6 +216,12 @@ window.Quarto = {
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 8, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -235,6 +243,7 @@ window.Quarto = {
 \newcommand{\psum}{\mathrm{sum}}
 \newcommand{\pprod}{\mathrm{prod}}
 \newcommand{\pdiv}{\mathrm{div}}
+\newcommand{\pexp}{\mathrm{exp}}
 \]</span></p>
 <section id="about" class="level1">
 <h1>About</h1>
@@ -249,6 +258,10 @@ window.Quarto = {
 <div id="6a4dc809" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">TheoreticalComputerScience</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Aufbauend auf der Vorlesung von Prof.&nbsp;Dr.&nbsp;Sven Kosub, Konstanz, Sommersemester 2026.</p>
+</section>
 <section id="kahoot" class="level2">
 <h2 class="anchored" data-anchor-id="kahoot">Kahoot!</h2>
 <p>Für die Übungen erstelle ich Kahoot!-Quizzes, um die wichtigsten Konzepte zu überprüfen.</p>
@@ -1386,6 +1399,10 @@ Lösung:
 ψ(x_1,...,x_m) = φ(ρ_1(x_1,...,x_m), ..., ρ_n(x_1,...,x_m))
 \]</span></p></li>
 </ol>
+<p>Daraus definieren wir den Operator <span class="math inline">\(\SIM\)</span>:</p>
+<p><span class="math display">\[
+\SIM_n: (ℕ^n → ℕ) × (ℕ^m → ℕ)^n → (ℕ^m → ℕ)
+\]</span></p>
 <p><span class="math display">\[
 \text{SIM}_n(φ, ψ_1,...,ψ_n)(x_1, ..., x_m) = φ(ψ_1(x_1,...,x_m), ..., ψ_n(x_1,...,x_m))
 \]</span></p>
@@ -2433,7 +2450,7 @@ Lösung:
 </div>
 </div>
 <ol start="2" type="a">
-<li>Schreiben Sie eine Turingmaschine, die die Funktion <span class="math display">\[
+<li>Zeichnen Sie eine Turingmaschine, die die Funktion <span class="math display">\[
 \text{sum}(x,y) = x + y
 \]</span> berechnet.</li>
 </ol>
@@ -2465,6 +2482,37 @@ Lösung:
 </section>
 <section id="partiell-rekursive-funktionen" class="level2">
 <h2 class="anchored" data-anchor-id="partiell-rekursive-funktionen">Partiell-rekursive Funktionen</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-66-contents" aria-controls="callout-66" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-66" class="callout-66-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Das TheoreticalComputerScience Paket enthält auch eine Implementierung von partiell-rekursiven Funktionen:</p>
+<p><a href="https://github.com/daniel-schwarzenbach/TheoreticalComputerScience.jl#partially-recursive-functions" class="uri">https://github.com/daniel-schwarzenbach/TheoreticalComputerScience.jl#partially-recursive-functions</a></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># max(x, y)</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ID</span>(<span class="fu">ZV</span>(<span class="fu">ZV</span>(<span class="fu">SUB</span>(psum, md))))(<span class="fl">10</span>,<span class="fl">9</span>) <span class="op">==</span> <span class="fl">10</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ID</span>(<span class="fu">ZV</span>(<span class="fu">ZV</span>(<span class="fu">SUB</span>(psum, md))))(<span class="fl">9</span>,<span class="fl">10</span>) <span class="op">==</span> <span class="fl">10</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co"># P(x) = 1 ∸ x</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="fu">PR</span>(<span class="fu">C</span>(<span class="fl">0</span>,<span class="fl">0</span>), <span class="fu">I</span>(<span class="fl">2</span>,<span class="fl">1</span>))(<span class="fl">5</span>) <span class="op">==</span> <span class="fl">4</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="co"># x ↦ ⌈√x⌉</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="fu">MIN</span>(<span class="fu">SIM2</span>(md, <span class="fu">I</span>(<span class="fl">2</span>,<span class="fl">1</span>), <span class="fu">SIM2</span>(pprod, <span class="fu">I</span>(<span class="fl">2</span>,<span class="fl">2</span>), <span class="fu">I</span>(<span class="fl">2</span>,<span class="fl">2</span>))))(<span class="fl">10</span>) <span class="op">==</span> <span class="fl">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>output:</p>
+<pre><code>(ID(ZV(ZV(SUB(psum, md)))))(10, 9) = 10
+(ID(ZV(ZV(SUB(psum, md)))))(9, 10) = 10
+(PR(C(0, 0), I(2, 1)))(5) = 4
+(MIN(SIM2(md, I(2, 1), SIM2(pprod, I(2, 2), I(2, 2)))))(10) = 4</code></pre>
+</div>
+</div>
+</div>
 <section id="definition-primitive-rekursion" class="level3 def">
 <h3 class="anchored" data-anchor-id="definition-primitive-rekursion">Definition: <strong>Primitive Rekursion</strong></h3>
 <ol type="1">
@@ -2505,22 +2553,22 @@ f(x_1,...,x_n,y) &amp; = ψ(x_1,...,x_n,y-1,f(x_1,...,x_n,y-1)) \\
 \]</span> wobei die Induktionsvoraussetzung <span class="math inline">\(f(x_1,...,x_n,y-1) = \text{PR}(φ, ψ)(x_1,...,x_n,y-1)\)</span> ist.</p>
 </section>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-71-contents" aria-controls="callout-71" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-72-contents" aria-controls="callout-72" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Aufgabe: Primitive Rekursion
+Aufgabe: Widerholung
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-71" class="callout-71-contents callout-collapse collapse">
+<div id="callout-72" class="callout-72-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>Zeigen Sie, dass <span class="math inline">\(≤: ℕ^2 \to \{0,1\}\)</span> in <span class="math inline">\(\textbf{PRIM}\)</span> liegt, indem sie <span class="math inline">\(\text{md} \in \textbf{PRIM}\)</span> verwenden.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-66-contents" aria-controls="callout-66" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-67-contents" aria-controls="callout-67" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2529,7 +2577,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-66" class="callout-66-contents callout-collapse collapse">
+<div id="callout-67" class="callout-67-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math display">\[
 \begin{aligned}
@@ -2550,7 +2598,7 @@ x ≤ y &amp;= 1 \;∸ \;(x \;∸\; y) \\
 <li>Hinweis: Machen Sie eine vollständige Induktion über <span class="math inline">\(x\)</span>.</li>
 </ul>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-67-contents" aria-controls="callout-67" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-68-contents" aria-controls="callout-68" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2559,7 +2607,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-67" class="callout-67-contents callout-collapse collapse">
+<div id="callout-68" class="callout-68-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math display">\[
 \begin{aligned}
@@ -2579,7 +2627,7 @@ Lösung:
 <li>Hinweis: Machen Sie eine vollständige Induktion über <span class="math inline">\(y\)</span>.</li>
 </ul>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-68-contents" aria-controls="callout-68" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-69-contents" aria-controls="callout-69" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2588,7 +2636,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-68" class="callout-68-contents callout-collapse collapse">
+<div id="callout-69" class="callout-69-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math display">\[
 \begin{aligned}
@@ -2608,7 +2656,7 @@ Lösung:
 <li>Hinweis: Machen Sie eine vollständige Induktion über <span class="math inline">\(y\)</span>.</li>
 </ul>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-69-contents" aria-controls="callout-69" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-70-contents" aria-controls="callout-70" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2617,7 +2665,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-69" class="callout-69-contents callout-collapse collapse">
+<div id="callout-70" class="callout-70-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math display">\[
 \begin{aligned}
@@ -2644,7 +2692,7 @@ Lösung:
 <li><label><input type="checkbox">allgemeines Halteproblem <span class="math inline">\(K: ℕ → \{0,1\}\)</span>, das angibt, ob ein Programm auf jeder Eingabe hält oder nicht <span class="math display">\[K(x) = \begin{cases} 1 &amp; \text{falls RAM}_x \text{ auf allen Eingaben hält} \\ 0 &amp; \text{sonst} \end{cases}\]</span></label></li>
 </ul>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-70-contents" aria-controls="callout-70" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-71-contents" aria-controls="callout-71" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2653,7 +2701,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-70" class="callout-70-contents callout-collapse collapse">
+<div id="callout-71" class="callout-71-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><img src="./img/ComputableMap.jpg" class="img-fluid"></p>
 </div>
@@ -2663,7 +2711,7 @@ Lösung:
 </div>
 </div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-76-contents" aria-controls="callout-76" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-77-contents" aria-controls="callout-77" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2672,7 +2720,7 @@ Aufgabe: Aussagenlogische Funktionen
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-76" class="callout-76-contents callout-collapse collapse">
+<div id="callout-77" class="callout-77-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <center>
 <p><img src="./img/Aussagenlogik.png" class="img-fluid" style="width:80.0%"></p>
@@ -2684,7 +2732,7 @@ Aufgabe: Aussagenlogische Funktionen
 <li>Zeigen Sie, dass <span class="math inline">\(f,w\)</span> und alle <span class="math inline">\(X_1,X_2,...,X_n\)</span> in <span class="math inline">\(\textbf{PRIM}\)</span> liegen.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-72-contents" aria-controls="callout-72" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-73-contents" aria-controls="callout-73" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2693,7 +2741,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-72" class="callout-72-contents callout-collapse collapse">
+<div id="callout-73" class="callout-73-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><span class="math inline">\(f = C^0_0\)</span></li>
@@ -2707,7 +2755,7 @@ Lösung:
 <li>Zeigen Sie, dass die Funktion <span class="math inline">\(¬: \{0,1\} → \{0,1\}\)</span> in <span class="math inline">\(\textbf{PRIM}\)</span> liegt.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-73-contents" aria-controls="callout-73" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-74-contents" aria-controls="callout-74" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2716,7 +2764,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-73" class="callout-73-contents callout-collapse collapse">
+<div id="callout-74" class="callout-74-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math display">\[
 \begin{aligned}
@@ -2733,7 +2781,7 @@ Lösung:
 <li>Zeigen Sie, dass die Funktion <span class="math inline">\(∧: \{0,1\}^2 → \{0,1\}\)</span> in <span class="math inline">\(\textbf{PRIM}\)</span> liegt.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-74-contents" aria-controls="callout-74" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-75-contents" aria-controls="callout-75" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2742,7 +2790,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-74" class="callout-74-contents callout-collapse collapse">
+<div id="callout-75" class="callout-75-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math display">\[
 \begin{aligned}
@@ -2757,7 +2805,7 @@ Lösung:
 <li>Argumentieren Sie, warum alle aussagenlogischen Funktionen in <span class="math inline">\(\textbf{PRIM}\)</span> liegen.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-75-contents" aria-controls="callout-75" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-76-contents" aria-controls="callout-76" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2766,7 +2814,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-75" class="callout-75-contents callout-collapse collapse">
+<div id="callout-76" class="callout-76-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Alle aussagenlogischen Funktionen können mit <span class="math inline">\(f,w,X_i,¬,∧\)</span> konstruiert werden, welche alle in <span class="math inline">\(\textbf{PRIM}\)</span> liegen. Unter anderem ist:</p>
 <ul>
@@ -2775,6 +2823,53 @@ Lösung:
 <li><span class="math inline">\(↔(x,y) = (x → y) ∧ (y → x)\)</span></li>
 <li><span class="math inline">\(⊕(x,y) = ¬(x ↔ y)\)</span></li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-79-contents" aria-controls="callout-79" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aufgabe: PR-Operator
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-79" class="callout-79-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In dieser Aufgabe dürfen Sie nur die Operatoren <span class="math inline">\(\ZV, \LV, \ID, \SUB, \SIM_n ∀n≥2\)</span> und <span class="math inline">\(\PR\)</span> verwenden.</p>
+<ol type="a">
+<li>Erzeugen Sie die Funktion <span class="math inline">\(x \mapsto x^x\)</span> mit den Grundfunktionen: <span class="math inline">\(\psum, \pmd, \pprod, C^n_m\)</span> und <span class="math inline">\(I^n_m\)</span>.</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-78-contents" aria-controls="callout-78" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-78" class="callout-78-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Wir finden zuerst <span class="math inline">\(\pexp(x,y) = x^y\)</span> und dann gilt <span class="math inline">\(\ID(\pexp)(x) = x^x\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{IA, y = 0: } \pexp(x,0) &amp;= 1 = C^1_1(x) \\
+\text{IS, y &gt; 0: } \pexp(x,y) &amp;= x ⋅ \pexp(x,y-1) \\
+                            &amp;= \pprod(x, \pexp(x,y-1)) \\
+                            &amp;= \SUB(\pprod, I^2_2)(x,y-1, \pexp(x,y-1)) \\
+                            &amp;= \PR(C^1_1, \SUB(\pprod, I^2_2))(x,y)
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+x \mapsto x^x = \ID(\PR(C^1_1, \SUB(\pprod, I^2_2)))
+\]</span></p>
 </div>
 </div>
 </div>
@@ -2819,7 +2914,7 @@ f(y_1,...,y_n) &lt; A(x,y_1 + ... + y_n)
 \]</span></p>
 </div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-78-contents" aria-controls="callout-78" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-81-contents" aria-controls="callout-81" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2828,13 +2923,11 @@ Aufgabe: Akermann-Funktion
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-78" class="callout-78-contents callout-collapse collapse">
+<div id="callout-81" class="callout-81-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ol type="a">
-<li>Können Sie <span class="math inline">\(A(10, 9)\)</span> rekursiv mit ihrem <strong>eigenem</strong> Computer berechnen? Warum?</li>
-</ol>
+<p>Können Sie <span class="math inline">\(A(10, 9)\)</span> rekursiv mit ihrem <strong>eigenem</strong> Computer berechnen?</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-77-contents" aria-controls="callout-77" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-80-contents" aria-controls="callout-80" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2843,9 +2936,12 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-77" class="callout-77-contents callout-collapse collapse">
+<div id="callout-80" class="callout-80-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Im Leben nicht, da <span class="math inline">\(A(10, 9)\)</span> eine extrem große Zahl ist. Die Anzahl der Rechenschritte würde weit-weit-weit über der Anzahl der Atome im Universum liegen. Selbst wenn wir die schnellste Supercomputer verwenden würden, würde es Milliarden von Jahren dauern, um <span class="math inline">\(A(10, 9)\)</span> rekursiv zu berechnen.</p>
+<center>
+<p><img src="./img/Akermann_plot.png" class="img-fluid" style="width:50.0%"></p>
+</center>
 </div>
 </div>
 </div>
@@ -2854,26 +2950,41 @@ Lösung:
 </div>
 <section id="definition-μ-rekursion" class="level3 def">
 <h3 class="anchored" data-anchor-id="definition-μ-rekursion">Definition: <strong>μ-Rekursion</strong></h3>
-<ol start="0" type="1">
-<li><p><span class="math inline">\(μx(E(x)) = \arg \min_{x ∈ ℕ} E(x)\)</span>, wobei <span class="math inline">\(E(x)\)</span> eine Aussage über <span class="math inline">\(x\)</span> ist. Also <span class="math inline">\(μx(E(x))\)</span> ist die kleinste natürliche Zahl <span class="math inline">\(x\)</span>, für die <span class="math inline">\(E(x)\)</span> wahr ist. Wenn es kein <span class="math inline">\(x\)</span> gibt, für das <span class="math inline">\(E(x)\)</span> wahr ist, dann ist <span class="math inline">\(μx(E(x))\)</span> undefiniert.</p></li>
-<li><p>Es seien <span class="math inline">\(φ : ℕ^{n+1} → ℕ\)</span> eine Funktion. Dann ist die Funktion <span class="math inline">\(\text{MIN}(φ): ℕ^{n-1} → ℕ\)</span> definiert durch: <span class="math display">\[
+<p><span class="math inline">\(μx(E(x)) = \arg \min_{x ∈ ℕ} E(x)\)</span>, wobei <span class="math inline">\(E(x)\)</span> eine Aussage über <span class="math inline">\(x\)</span> ist. Also <span class="math inline">\(μx(E(x))\)</span> ist die kleinste natürliche Zahl <span class="math inline">\(x\)</span>, für die <span class="math inline">\(E(x)\)</span> wahr ist. Wenn es kein <span class="math inline">\(x\)</span> gibt, für das <span class="math inline">\(E(x)\)</span> wahr ist, dann ist <span class="math inline">\(μx(E(x))\)</span> undefiniert.</p>
+<ol type="1">
+<li><p>Es seien <span class="math inline">\(φ : ℕ^{n} → ℕ\)</span> eine Funktion. Dann ist die Funktion <span class="math inline">\(\text{MIN}(φ): ℕ^{n-1} → ℕ\)</span> definiert durch: <span class="math display">\[
 \text{MIN}(φ)(x_1,...,x_{n-1}) = μy(φ(x_1,...,x_{n-1},y) = 0)
 \]</span> falls es ein <span class="math inline">\(y ∈ ℕ\)</span> gibt, für das <span class="math inline">\(φ(x_1,...,x_{n-1},y) = 0\)</span> gilt, und undefiniert sonst.</p></li>
 <li><p><span class="math inline">\(\textbf{PART} = Γ_{\text{ZV},\text{ID},\text{SUB}, \text{LV}, \text{PR}, \text{MIN}}(\{\text{S}, \text{C}^0_0, \text{I}^2_1\})\)</span>.</p></li>
 <li><p>Eine Funktion <span class="math inline">\(f : ℕ^n → ℕ\)</span> heißt <strong>partiell-rekursiv</strong>, falls <span class="math inline">\(f ∈ \textbf{PART}\)</span>.</p></li>
 </ol>
 </section>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-84-contents" aria-controls="callout-84" aria-expanded="false" aria-label="Toggle callout">
+<div class="prop">
+<p><span class="math display">\[
+\MIN(φ) \\
+⇔
+\]</span></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">MIN</span>(<span class="cn">φ</span><span class="op">::</span><span class="dt">Function</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">function</span> (args<span class="op">...</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> <span class="fl">0</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="fu">φ</span>(args<span class="op">...</span>, y) <span class="op">!=</span> <span class="fl">0</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>      y <span class="op">=</span> y <span class="op">+</span> <span class="fl">1</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> y</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">end</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-87-contents" aria-controls="callout-87" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Aufgabe: Partiell-rekursive Funktionen, SS13-A4
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-84" class="callout-84-contents callout-collapse collapse">
+<div id="callout-87" class="callout-87-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>Welche Stelligkeit hat die Funktion</li>
@@ -2882,7 +2993,7 @@ Aufgabe: Partiell-rekursive Funktionen, SS13-A4
 \SUB(\ZV(\SUB(I^3_2, S)), \PR(\PR(C^1_1, \MIN(\PR(I^3_1, I^5_5))),\SUB(C^4_4, S)))
 \]</span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-79-contents" aria-controls="callout-79" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-82-contents" aria-controls="callout-82" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2891,7 +3002,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-79" class="callout-79-contents callout-collapse collapse">
+<div id="callout-82" class="callout-82-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math display">\[
 \SUB(\underbrace{\ZV(\SUB(I^3_2, S))}_{\text{3-stellig}}, \PR(\PR(C^1_1, \MIN(\PR(I^3_1, I^5_5))),\underbrace{\SUB(C^4_4, S)}_{\text{4-stellig}}))
@@ -2907,7 +3018,7 @@ Lösung:
 \SUB(\PR(C^0_0, \SIM_2(\mathrm{md}, I^2_1, I^2_2)), \SIM_2(\mathrm{prod}, I^1_1, \SUB(S, I^1_1)))
 \]</span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-80-contents" aria-controls="callout-80" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-83-contents" aria-controls="callout-83" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2916,7 +3027,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-80" class="callout-80-contents callout-collapse collapse">
+<div id="callout-83" class="callout-83-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><span class="math inline">\(\PR(C^0_0, \SIM_2(\mathrm{md}, I^2_1, I^2_2))\)</span></li>
@@ -2960,7 +3071,7 @@ f(y) &amp;= \left\lfloor \frac{y}{2} \right\rfloor
 \MIN(\SIM_2(\mathrm{md}, I^2_1, \SIM_2(\mathrm{prod}, I^2_2, I^2_2)))
 \]</span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-81-contents" aria-controls="callout-81" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-84-contents" aria-controls="callout-84" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2969,7 +3080,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-81" class="callout-81-contents callout-collapse collapse">
+<div id="callout-84" class="callout-84-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><span class="math inline">\(\SIM_2(\mathrm{prod}, I^2_2, I^2_2) = (x,y) \mapsto y^2\)</span></li>
@@ -2986,7 +3097,7 @@ Lösung:
 Als Operatoren dürfen Sie <span class="math inline">\(\text{ZV}, \text{LV}, \text{ID}, \text{SUB}\)</span> und <span class="math inline">\(\text{PR}\)</span> verwenden. Als Grundfunktionen dürfen Sie <span class="math inline">\(I^m_n\)</span> (mit <span class="math inline">\(1 \leq n \leq m\)</span>), <span class="math inline">\(C^m_n\)</span> (mit <span class="math inline">\(n, m \in \mathbb{N}\)</span>), <span class="math inline">\(S\)</span> und <span class="math inline">\(\text{prod}\)</span> verwenden.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-82-contents" aria-controls="callout-82" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-85-contents" aria-controls="callout-85" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2995,7 +3106,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-82" class="callout-82-contents callout-collapse collapse">
+<div id="callout-85" class="callout-85-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math display">\[
 \begin{aligned}
@@ -3013,7 +3124,7 @@ Lösung:
 Als Operatoren dürfen Sie <span class="math inline">\(\text{ZV}, \text{LV}, \text{ID}, \text{SIM}^2\)</span> und <span class="math inline">\(\text{MIN}\)</span> verwenden. Als Grundfunktionen dürfen Sie <span class="math inline">\(I^m_n\)</span> (mit <span class="math inline">\(1 \leq n \leq m\)</span>), <span class="math inline">\(C^m_n\)</span> (mit <span class="math inline">\(n, m \in \mathbb{N}\)</span>), <span class="math inline">\(\text{sum}\)</span> und <span class="math inline">\(\text{mod}\)</span> verwenden.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-83-contents" aria-controls="callout-83" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-86-contents" aria-controls="callout-86" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -3022,7 +3133,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-83" class="callout-83-contents callout-collapse collapse">
+<div id="callout-86" class="callout-86-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>für ein kgV <span class="math inline">\(v\)</span> von <span class="math inline">\(n\)</span> und <span class="math inline">\(m\)</span> gilt: <span class="math inline">\(\mod(v,n) + \mod(v,m) = 0\)</span>. Somit könnte eine Lösung aussehen wie:</p>
 <p><span class="math display">\[
@@ -3032,6 +3143,70 @@ Lösung:
 <p><span class="math display">\[
 \SIM_2(\psum, C^2_1,\MIN( \\
 \SIM_2(\text{sum}, \SIM_2(\text{mod}, \SIM_2(\psum, C^3_1, I^3_3), I^3_1), \SIM_2(\text{mod}, \SIM_2(\psum, C^3_1, I^3_3), I^3_2))))
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-90-contents" aria-controls="callout-90" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aufgabe: Partiell-rekursive Funktionen, SS13-2-A4
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-90" class="callout-90-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>(a)</strong> Drücken Sie die Funktion <span class="math display">\[\text{turm} : \mathbb{N} \to \mathbb{N} : n \mapsto \underbrace{2^{2^{\cdot^{\cdot^{\cdot^{2}}}}}}_{n\text{-mal}}\]</span> durch eine geeignete Operatorenfolge aus. Als Operatoren dürfen Sie <span class="math inline">\(ZV\)</span>, <span class="math inline">\(LV\)</span>, <span class="math inline">\(ID\)</span>, <span class="math inline">\(SIM2\)</span> und <span class="math inline">\(PR\)</span> verwenden. Als Grundfunktionen dürfen Sie <span class="math inline">\(I^m_n\)</span> (mit <span class="math inline">\(1 \leq n \leq m\)</span>), <span class="math inline">\(C^m_n\)</span> (mit <span class="math inline">\(n, m \in \mathbb{N}\)</span>) und <span class="math inline">\(\text{exp}\)</span> verwenden.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-88-contents" aria-controls="callout-88" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-88" class="callout-88-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\begin{aligned}
+\text{IA, x = 0: }f(0) &amp;= 2 = C^0_2 \\
+\text{IS, x &gt; 0: }f(x) &amp;= f(x-1) \cdot f(x-1) \\
+&amp;= \SIM_2(\pprod, I^2_2, I^2_2)(x-1, f(x-1)) \\
+&amp;= \text{PR}(C^0_2, \SIM_2(\pprod, I^2_2, I^2_2))(x)
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+<p><strong>(b)</strong> Drücken Sie die Funktion <span class="math display">\[\text{invfak} : \mathbb{N} \to \mathbb{N} : n \mapsto \max\{k \mid k! \leq n\}\]</span> durch eine geeignete Operatorenfolge aus. Als Operatoren dürfen Sie <span class="math inline">\(ZV\)</span>, <span class="math inline">\(LV\)</span>, <span class="math inline">\(ID\)</span>, <span class="math inline">\(SUB\)</span>, <span class="math inline">\(SIM2\)</span> und <span class="math inline">\(MIN\)</span> verwenden. Als Grundfunktionen dürfen Sie <span class="math inline">\(I^m_n\)</span> (mit <span class="math inline">\(1 \leq n \leq m\)</span>), <span class="math inline">\(C^m_n\)</span> (mit <span class="math inline">\(n, m \in \mathbb{N}\)</span>), <span class="math inline">\(\text{sum}\)</span>, <span class="math inline">\(\text{md}\)</span> und die Fakultätsfunktion <span class="math inline">\(\text{fak} : \mathbb{N} \to \mathbb{N} : n \mapsto n!\)</span> verwenden.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-89-contents" aria-controls="callout-89" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-89" class="callout-89-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>wir suchen das erste <span class="math inline">\(k\)</span>, so dass gilt <span class="math inline">\(¬((k+1)! ≤ n)\)</span> bzw. <span class="math inline">\(≤((k+1)!,n)=0\)</span>. Dazu definieren wir die Hilfsfunktionen:</p>
+<ul>
+<li><span class="math inline">\(≤(x,y) = 1 - (x-y) = \SIM_2(\pmd, C^2_1, \SIM_2(\pmd, I^2_1, I^2_2))\)</span></li>
+<li><span class="math inline">\(P(x) = x-1 = \SIM_2(\pmd, I^1_1, C^1_1)\)</span></li>
+</ul>
+<p>Damit ist</p>
+<p><span class="math display">\[
+\text{invfak} = \SUB(P, \MIN(\SIM_2(≤, \SUB(\text{fak}, I^2_2), I^2_1)))
 \]</span></p>
 </div>
 </div>
@@ -3053,39 +3228,38 @@ Lösung:
 </section>
 <section id="berechenbarkeitstheorie" class="level1">
 <h1>Berechenbarkeitstheorie</h1>
+<section id="entscheidbare-mengen" class="level2">
+<h2 class="anchored" data-anchor-id="entscheidbare-mengen">Entscheidbare Mengen</h2>
+<section id="definition-entscheidbare-menge" class="level3 def">
+<h3 class="anchored" data-anchor-id="definition-entscheidbare-menge">Definition: <strong>Entscheidbare Menge</strong></h3>
+<p>Eine Menge <span class="math inline">\(A ⊆ ℕ^m\)</span> heißt <strong>entscheidbar</strong>, falls die Charakteristische Funktion <span class="math inline">\(c_A\)</span> berechenbar ist.</p>
 <p><span class="math display">\[
 c_A(x_1, ..., x_m) = \begin{cases}
 1 &amp; \text{falls } (x_1, ..., x_m) ∈ A \\
 0 &amp; \text{falls } (x_1, ..., x_m) ∉ A
 \end{cases}
 \]</span></p>
-<section id="entscheidbare-mengen" class="level2">
-<h2 class="anchored" data-anchor-id="entscheidbare-mengen">Entscheidbare Mengen</h2>
-<p>Eine Menge <span class="math inline">\(A ⊆ ℕ^m\)</span> heißt <strong>entscheidbar</strong>, falls <span class="math inline">\(c_A\)</span> berechenbar ist.</p>
-<section id="theorem-3.1.2" class="level3 sektion">
-<h3 class="anchored" data-anchor-id="theorem-3.1.2">Theorem 3.1.2</h3>
+</section>
+<div class="prop">
 <p>Seien <span class="math inline">\(A, B ⊆ ℕ^m\)</span> mit <span class="math inline">\(m ∈ ℕ_+\)</span>.</p>
 <p><span class="math inline">\(A\)</span> ist endlich <span class="math inline">\(\quad ⟹ \quad\)</span> <span class="math inline">\(A\)</span> ist entscheidbar.</p>
 <p><span class="math inline">\(A\)</span> ist entscheidbar <span class="math inline">\(\quad ⟹ \quad\)</span> <span class="math inline">\(\bar{A}\)</span> ist entscheidbar.</p>
 <p><span class="math inline">\(A\)</span> und <span class="math inline">\(B\)</span> sind entscheidbar <span class="math inline">\(\quad ⟹ \quad\)</span> <span class="math inline">\(A ∪ B\)</span> und <span class="math inline">\(A ∩ B\)</span> sind entscheidbar.</p>
 <p><span class="math inline">\(A\)</span> ist entscheidbar und <span class="math inline">\(f:ℕ^n → ℕ^m\)</span> berechenbar <span class="math inline">\(\quad ⟹ \quad\)</span> <span class="math inline">\(f^{-1}(A)\)</span> ist entscheidbar.</p>
-</section>
-<section id="definition-aufzählbarkeit" class="level3 sektion">
+</div>
+<section id="definition-aufzählbarkeit" class="level3 def">
 <h3 class="anchored" data-anchor-id="definition-aufzählbarkeit">Definition: <strong>Aufzählbarkeit</strong></h3>
-<p><span class="math inline">\(A ⊆ ℕ\)</span> heißt <strong>aufzählbar</strong>, falls es eine berechenbare Funktion <span class="math inline">\(f:ℕ → ℕ\)</span> gibt, mit <span class="math inline">\(\text{Range}(f) = R_f = A\)</span>.</p>
+<p><span class="math inline">\(A ⊆ ℕ\)</span> heißt <strong>aufzählbar</strong>, falls es eine berechenbare Funktion <span class="math inline">\(f:ℕ → ℕ\)</span> gibt, mit <span class="math inline">\(\text{Bild}(f) = \text{Range}(f) = R_f = A\)</span>.</p>
+<p><img src="./img/Range.jpg" class="img-fluid"></p>
 <p><span class="math inline">\(B ⊆ ℕ^n\)</span> heißt <strong>aufzählbar</strong>, falls es eine bijektive, berechenbare Funktion <span class="math display">\[c^n : ℕ^n → ℕ\]</span> gibt, sodass die Menge <span class="math inline">\(\{ c^n(x_1, ..., x_n) | (x_1, ..., x_n) ∈ B \} ⊆ ℕ\)</span> aufzählbar ist.</p>
 </section>
-<section id="theorem-3.2.2" class="level3 sektion">
-<h3 class="anchored" data-anchor-id="theorem-3.2.2">Theorem 3.2.2</h3>
+<div class="prop">
 <p>Eine Menge <span class="math inline">\(A ⊆ ℕ\)</span> ist genau dann entscheidbar, wenn <span class="math inline">\(A\)</span> und <span class="math inline">\(\overline{A}\)</span> aufzählbar sind.</p>
-</section>
-<section id="theorem-3.2.3" class="level3 sektion">
-<h3 class="anchored" data-anchor-id="theorem-3.2.3">Theorem 3.2.3</h3>
-<p>Sei <span class="math inline">\(φ : ℕ → ℕ\)</span> berechenbar. Dann sind <span class="math inline">\(\text{Domain}(φ)=D_φ\)</span> und <span class="math inline">\(\text{Range}(φ) =R_φ\)</span> aufzählbar.</p>
-</section>
-<section id="korollar-3.2.4" class="level3 sektion">
-<h3 class="anchored" data-anchor-id="korollar-3.2.4">Korollar 3.2.4</h3>
-<p>Für eine beliebige Menge <span class="math inline">\(A ⊆ ℕ\)</span> gilt:</p>
+</div>
+<div class="prop">
+<p>Sei <span class="math inline">\(f : ℕ → ℕ\)</span> berechenbar. Dann sind <span class="math inline">\(\text{Domain}(f)=D_f\)</span> und <span class="math inline">\(\text{Range}(f) =R_f\)</span> aufzählbar.</p>
+<p><img src="./img/RfandDf.jpg" class="img-fluid"></p>
+<p>somit folgt, dass für eine beliebige Menge <span class="math inline">\(A ⊆ ℕ\)</span> gilt:</p>
 <div class="padding">
 <p><span class="math inline">\(A\)</span> ist aufzählbar.</p>
 <p><span class="math inline">\(⇔\)</span></p>
@@ -3093,22 +3267,56 @@ c_A(x_1, ..., x_m) = \begin{cases}
 <p><span class="math inline">\(⇔\)</span></p>
 <p><span class="math inline">\(A\)</span> ist Definitionsbereich einer einstelligen, berechenbaren Funktion.</p>
 </div>
-</section>
-<section id="theorem-3.2.5" class="level3 sektion">
-<h3 class="anchored" data-anchor-id="theorem-3.2.5">Theorem 3.2.5</h3>
+</div>
+<div class="prop">
 <p>Sind <span class="math inline">\(A\)</span> und <span class="math inline">\(B\)</span> aufzählbar, so sind <span class="math inline">\(A ∪ B\)</span> und <span class="math inline">\(A ∩ B\)</span> aufzählbar.</p>
-</section>
-<section id="definition-projektion" class="level3 sektion">
+</div>
+<section id="definition-projektion" class="level3 def">
 <h3 class="anchored" data-anchor-id="definition-projektion">Definition: <strong>Projektion</strong></h3>
-<p>Für eine Menge <span class="math inline">\(B ⊆ ℕ × ℕ\)</span> definieren wir die Projektion von B als die Menge</p>
+<p>Für eine Relation <span class="math inline">\(R ⊆ ℕ × ℕ\)</span> definieren wir die Projektion von <span class="math inline">\(R\)</span> als die Menge</p>
 <p><span class="math display">\[
-\text{Proj}(B) := \{ x ∈ ℕ \mid ∃y ∈ ℕ : (x, y) ∈ B \}
+\text{Proj}(R) := \{ x ∈ ℕ \mid ∃y ∈ ℕ : (x, y) ∈ R \}
 \]</span></p>
 </section>
-<section id="projektionssatz" class="level3 sektion">
+<section id="projektionssatz" class="level3 prop">
 <h3 class="anchored" data-anchor-id="projektionssatz"><strong>Projektionssatz</strong></h3>
-<p>Es sei <span class="math inline">\(A ⊆ ℕ\)</span>. Dann ist A genau dann aufzählbar, wenn <span class="math inline">\(A\)</span> Projektion einer entscheidbaren Menge ist.</p>
+<p>Es sei <span class="math inline">\(X ⊆ ℕ\)</span>. Dann ist <span class="math inline">\(X\)</span> genau dann aufzählbar, wenn <span class="math inline">\(X\)</span> Projektion einer entscheidbaren Relation <span class="math inline">\(R\)</span> ist.</p>
+<p><img src="./img/Projektion.jpg" class="img-fluid"></p>
+<p><span class="math inline">\(Y\)</span> ist mithin auch aufzählbar.</p>
 </section>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-92-contents" aria-controls="callout-92" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aufgabe: Projektionssatz
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-92" class="callout-92-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Das spezielle Halteproblem <span class="math inline">\(K_0\)</span> ist aufzählbar, aber nicht entscheidbar. Finden Sie eine entscheidbare Relation <span class="math inline">\(R\)</span> mit <span class="math inline">\(\text{Proj}(R) = K_0\)</span>.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-91-contents" aria-controls="callout-91" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-91" class="callout-91-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Wir definieren <span class="math inline">\(R\)</span> als die Relation die das Programm <span class="math inline">\(\text{RAM}_x\)</span> auf der eingabe <span class="math inline">\(x\)</span> für <span class="math inline">\(y\)</span> Schritte laufen lässt und prüft, ob es hält.</p>
+<p>Damit ist <span class="math inline">\(R\)</span> entscheidbar, da wir nur endlich viele Schritte laufen lassen und <span class="math inline">\(K_0\)</span> ist die Projektion von <span class="math inline">\(R\)</span>, da <span class="math inline">\(\text{RAM}_x\)</span> genau dann hält, wenn es für irgendein <span class="math inline">\(y\)</span> hält.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="unentscheidbare-mengen" class="level2">
 <h2 class="anchored" data-anchor-id="unentscheidbare-mengen">Unentscheidbare Mengen</h2>
@@ -3153,21 +3361,72 @@ c_A(x_1, ..., x_m) = \begin{cases}
 <li>Wichtige Stellen: <strong>13:34 - 20:52</strong> und <strong>21:19 - 27:17</strong></li>
 </ul>
 </section>
-<section id="definition-spezielles-halteproblem" class="level3 sektion">
+<section id="definition-spezielles-halteproblem" class="level3 def">
 <h3 class="anchored" data-anchor-id="definition-spezielles-halteproblem">Definition: <strong>spezielles Halteproblem</strong></h3>
-<p>Die Menge <span class="math inline">\(K_0 = \{x \mid \text{ die RAM } M_x \text{ hält auf die Eingabe } x \}\)</span> heißt spezielles Halteproblem.</p>
+<p>Die Menge</p>
+<p><span class="math display">\[
+K_0 = \{x \mid \text{ die RAM } M_x \text{ hält auf die Eingabe } x \}
+\]</span></p>
+<p>heißt spezielles Halteproblem.</p>
 </section>
-<section id="theorem-3.3.2" class="level4 sektion">
-<h4 class="anchored" data-anchor-id="theorem-3.3.2">Theorem 3.3.2</h4>
+<div class="prop">
 <p><span class="math inline">\(K_0\)</span> ist aufzählbar, aber nicht entscheidbar.</p>
-</section>
-<section id="definition-allgemeines-halteproblem" class="level3 sektion">
-<h3 class="anchored" data-anchor-id="definition-allgemeines-halteproblem">Definition: <strong>allgemeines Halteproblem</strong></h3>
-<p>Die Menge <span class="math inline">\(K = \{(x,y) \mid \text{ die RAM } M_x \text{ hält auf die Eingabe } y \}\)</span> heißt allgemeines Halteproblem.</p>
-</section>
-<section id="korollar-3.3.3" class="level3">
-<h3 class="anchored" data-anchor-id="korollar-3.3.3">Korollar 3.3.3</h3>
+</div>
+<div class="prop">
 <p>Die aufzählbare Mengen sind nicht abgeschlossen unter Komplementbildung. Insbesondere ist <span class="math inline">\(\bar{K_0}\)</span> nicht aufzählbar.</p>
+</div>
+<section id="definition-allgemeines-halteproblem" class="level3 def">
+<h3 class="anchored" data-anchor-id="definition-allgemeines-halteproblem">Definition: <strong>allgemeines Halteproblem</strong></h3>
+<p>Die Menge</p>
+<p><span class="math display">\[
+K = \{(x,y) \mid \text{ die RAM } M_x \text{ hält auf die Eingabe } y \}
+\]</span></p>
+<p>heißt allgemeines Halteproblem.</p>
+</section>
+</section>
+<section id="m-reduktion" class="level2">
+<h2 class="anchored" data-anchor-id="m-reduktion"><span class="math inline">\(m\)</span>-Reduktion</h2>
+<section id="definition-m-reduzierbarkeit" class="level3 def">
+<h3 class="anchored" data-anchor-id="definition-m-reduzierbarkeit">Definition: <strong>m-Reduzierbarkeit</strong></h3>
+<p>Seien <span class="math inline">\(A, B ⊆ ℕ\)</span> und <span class="math inline">\(f:ℕ→ℕ\)</span> eine beliebige berechenbare funktion.</p>
+<p><span class="math display">\[A ≤_m B \quad ⇔ \quad ∃f : \; x ∈ A ⟷ f(x) ∈ B \]</span></p>
+<p>A <strong>m-reduzierbar</strong> auf B</p>
+<p><span class="math inline">\(f\)</span> heißt <strong>Reduktionsfunktion</strong>.</p>
+<p>Bemerkung: <span class="math inline">\(f\)</span> muss nicht injektiv oder surjektiv sein.</p>
+</section>
+<div class="prop">
+<p>Für Mengen <span class="math inline">\(A, B, C ⊆ ℕ\)</span> gilt:</p>
+<ol type="1">
+<li><span class="math inline">\(A ≤_m A\)</span></li>
+<li><span class="math inline">\(A ≤_m B \; ∧ \; B ≤_m C \quad ⟹ \quad A ≤_m C\)</span></li>
+<li><span class="math inline">\(A ≤_m B \quad ⇔ \quad \overline{A} ≤_m \overline{B}\)</span></li>
+<li><span class="math inline">\(A ≤_m ∅ \quad ⇔ \quad A = ∅\)</span></li>
+<li><span class="math inline">\(A ≤_m ℕ \quad ⇔ \quad A = ℕ\)</span></li>
+</ol>
+</div>
+<div class="prop">
+<p>Für Mengen <span class="math inline">\(A, B ⊆ ℕ\)</span> gilt:</p>
+<ol type="1">
+<li>Ist <span class="math inline">\(A\)</span> entscheidbar und ist <span class="math inline">\(B ∉ \{∅, ℕ\}\)</span>, so gilt <span class="math inline">\(A ≤_m B\)</span></li>
+<li>Gilt <span class="math inline">\(A ≤_m B\)</span> und ist <span class="math inline">\(B\)</span> entscheidbar, so ist <span class="math inline">\(A\)</span> entscheidbar.</li>
+<li>Gilt <span class="math inline">\(A ≤_m B\)</span> und ist <span class="math inline">\(B\)</span> aufzählbar, so ist <span class="math inline">\(A\)</span> aufzählbar.</li>
+</ol>
+</div>
+<section id="theorem-von-myhill-1955" class="level4 prop">
+<h4 class="anchored" data-anchor-id="theorem-von-myhill-1955">Theorem von Myhill (1955)</h4>
+<p>Fur jede aufzählbare Menge A gilt <span class="math inline">\(A ≤_m K_0\)</span>.</p>
+</section>
+<div class="prop">
+<p>Sei <span class="math inline">\(\mathcal{F} ⊂ \textbf{RAM}\)</span> mit <span class="math inline">\(\mathcal{F} ≠ ∅\)</span>. Dann gilt:</p>
+<ol type="1">
+<li><p>Ist <span class="math inline">\(ν¹ ∈ \mathcal{F}\)</span>, so gilt <span class="math inline">\(\overline{K_0} ≤_m P(\mathcal{F})\)</span></p></li>
+<li><p>Ist <span class="math inline">\(ν¹ ∉ \mathcal{F}\)</span>, so gilt <span class="math inline">\(K_0 ≤_m P(\mathcal{F})\)</span></p></li>
+</ol>
+</div>
+<section id="satz-von-rice-1953" class="level3 prop">
+<h3 class="anchored" data-anchor-id="satz-von-rice-1953">Satz von Rice (1953)</h3>
+<p>Jede nichttriviale Eigenschaft von Funktionen ist unentscheidbar.</p>
+<p>Es sei <span class="math inline">\(\mathcal{F} ⊆ \textbf{RAM}\)</span> mit <span class="math inline">\(\mathcal{F} ≠ ∅\)</span> und <span class="math inline">\(\mathcal{F} ≠  \textbf{RAM}\)</span>. Dann gilt: 1. Ist <span class="math inline">\(ν^1 ∈ \mathcal{F}\)</span>, so ist <span class="math inline">\(P(\mathcal{F})\)</span> nicht aufzählbar. 2. Ist <span class="math inline">\(ν^1 ∉ \mathcal{F}\)</span>, so ist <span class="math inline">\(\overline{P(\mathcal{F})}\)</span> nicht aufzählbar. 3. <span class="math inline">\(P(\mathcal{F})\)</span> ist unentscheidbar.</p>
 </section>
 </section>
 </section>
@@ -3178,7 +3437,7 @@ c_A(x_1, ..., x_m) = \begin{cases}
 <p>Sei <span class="math inline">\(M\)</span> ein Algorithmus der die totale Funktion <span class="math inline">\(f: (Σ^*)^m → Σ^*\)</span> berechnet.</p>
 <p><strong>Laufzeitfunktion:</strong></p>
 <p><span class="math display">\[t_M: (Σ^*)^m → ℕ\]</span></p>
-<section id="definition-laufzeit" class="level3 sektion">
+<section id="definition-laufzeit" class="level3 def">
 <h3 class="anchored" data-anchor-id="definition-laufzeit">Definition: <strong>Laufzeit</strong></h3>
 <p>Sei <span class="math inline">\(t: ℕ → ℕ\)</span> eine totale Funktion.</p>
 <ol type="1">
@@ -3194,16 +3453,16 @@ c_A(x_1, ..., x_m) = \begin{cases}
 <section id="laufzeit-von-ram-programmen" class="level3">
 <h3 class="anchored" data-anchor-id="laufzeit-von-ram-programmen">Laufzeit von RAM Programmen</h3>
 <p>Betrachte das RAM Programm <span class="math inline">\(M\)</span>:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode ram code-with-copy"><code class="sourceCode ram"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># f(x, y, z) = z + x ⋅ y</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>0   <span class="dt">R3</span> <span class="fu">←</span> <span class="bn">1</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Begin der Schleife</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>1   <span class="kw">IF</span> <span class="dt">R1</span> <span class="fu">=</span> <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">3</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>2   <span class="dt">R2</span> <span class="fu">←</span> <span class="dt">R2</span> <span class="fu">+</span> <span class="dt">R0</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>3   <span class="dt">R1</span> <span class="fu">←</span> <span class="dt">R1</span> <span class="fu">-</span> <span class="dt">R3</span></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>4   <span class="kw">GOTO</span> <span class="bn">1</span></span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Ende der Schleife</span></span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>5   <span class="dt">R0</span> <span class="fu">←</span> <span class="dt">R2</span></span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>6   <span class="kw">STOP</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode ram code-with-copy"><code class="sourceCode ram"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># f(x, y, z) = z + x ⋅ y</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>0   <span class="dt">R3</span> <span class="fu">←</span> <span class="bn">1</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Begin der Schleife</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>1   <span class="kw">IF</span> <span class="dt">R1</span> <span class="fu">=</span> <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">3</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>2   <span class="dt">R2</span> <span class="fu">←</span> <span class="dt">R2</span> <span class="fu">+</span> <span class="dt">R0</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>3   <span class="dt">R1</span> <span class="fu">←</span> <span class="dt">R1</span> <span class="fu">-</span> <span class="dt">R3</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>4   <span class="kw">GOTO</span> <span class="bn">1</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Ende der Schleife</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>5   <span class="dt">R0</span> <span class="fu">←</span> <span class="dt">R2</span></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>6   <span class="kw">STOP</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>wir sagen, dass die Schleife <span class="math inline">\(y\)</span>-mal durchlaufen.</p>
 <p><span class="math display">\[t_M(x,y,z) = 4y + 3\]</span> <span class="math display">\[≤ 4 ⋅ 2^{|y|+1} - 8 + 3\]</span> <span class="math display">\[≤ 8 ⋅ 2^{|x|+|y|+|z|} - 5 \]</span> <span class="math display">\[≤ 8 ⋅ 2^n\]</span></p>
 </section>
@@ -3221,7 +3480,7 @@ c_A(x_1, ..., x_m) = \begin{cases}
 <h2 class="anchored" data-anchor-id="mathcalnp-vollständige-mengen"><span class="math inline">\(\mathcal{NP}\)</span>-vollständige Mengen</h2>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/W9G_1xG77LE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
-<section id="definition-np-vollständig" class="level2 sektion">
+<section id="definition-np-vollständig" class="level2 def">
 <h2 class="anchored" data-anchor-id="definition-np-vollständig">Definition: <strong>NP-vollständig</strong></h2>
 <p>Eine Menge <span class="math inline">\(B\)</span> heißt NP-vollständig, falls <span class="math inline">\(B ∈ NP\)</span> und <span class="math inline">\(A ≤^p_m B\)</span> für alle <span class="math inline">\(A ∈ NP\)</span></p>
 </section>
