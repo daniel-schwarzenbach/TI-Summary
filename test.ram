@@ -1,0 +1,4 @@
+# f(x,y,z) = x + y - z
+0   R0 ← R0 + R1
+1   R0 ← R0 - R2
+2   STOP

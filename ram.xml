@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language>
+
+<language name="RAM" version="1" kateversion="5.62" section="RAM" extensions="*.ram;*.ram" mimetype="text/ram;" author="Daniel Schwarzenbach" license="MIT">
+  <highlighting>
+
+    <list name="Operators">
+      <item>←</item>
+      <item>=</item>
+      <item>&lt;</item>
+      <item>&gt;</item>
+      <item>≥</item>
+      <item>≤</item>
+    </list>
+
+    <list name="Keywords">
+      <item>IF</item>
+      <item>GOTO</item>
+      <item>STOP</item>
+    </list>
+    
+    <contexts>
+      <context attribute="Normal Text" lineEndContext="#stay" name="Normal">
+        <DetectSpaces attribute="Normal Text" />
+        
+        <keyword attribute="Keyword" context="#stay" String="Keywords" />
+        
+        <RegExpr attribute="Register" context="#stay" String="R+[0-9]+" />
+        <RegExpr attribute="LineNumber" context="#stay" String="[0-9]+  " />
+        <RegExpr attribute="Number" context="#stay" String="[0-9]+" />
+        <!-- comments from # to end-of-line -->
+        <RegExpr attribute="Comment" String="#.*$"/>
+        <RegExpr attribute="Operator" String="\+|-|="/>
+        <keyword attribute="Operator" context="#stay" String="Operators" />
+      </context>
+    </contexts>
+
+    <itemDatas>
+      <itemData name="Normal Text"            defStyleNum="dsNormal" />
+      <itemData name="Keyword"                defStyleNum="dsKeyword" />
+      <itemData name="Operator"               defStyleNum="dsFunction" />
+      <itemData name="Register"               defStyleNum="dsDataType" />
+      <itemData name="LineNumber"             defStyleNum="dsNormal" />
+      <itemData name="Number"                 defStyleNum="dsBaseN" />
+      <itemData name="Comment"                defStyleNum="dsComment" />
+    </itemDatas>
+  </highlighting>
+</language>
