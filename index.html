@@ -1433,7 +1433,7 @@ Aufgabe: <span class="math inline">\(\textbf{POLY}_1(ℕ)\)</span>
 \textbf{POLY}_1(ℕ) = \{f:ℕ^1 → ℕ ∣ (∃n ∈ ℕ, ∀i ∈ [n], a_i ∈ ℕ)\left[f(x) = a_0 x^0 + a_1 x^1 + ... + a_n x^n \right]\}
 \]</span></p>
 <ol type="a">
-<li>Begründen Sie, dass <span class="math inline">\(\textbf{POLY}_1(ℕ) ⊆ Γ_{\text{ZV},\text{ID},\text{SUB}}(\{\text{S}, \text{C}^0_0, \text{I}^2_1, \text{sum}, \text{prod}\}) = Γ\)</span>.</li>
+<li>Begründen Sie, dass <span class="math inline">\(\textbf{POLY}_1(ℕ) ⊆ Γ_{\LV,\text{ZV},\text{ID},\text{SUB}}(\{\text{S}, \text{C}^0_0, \text{I}^2_1, \text{sum}, \text{prod}\}) = Γ\)</span>.</li>
 </ol>
 <p>Hinweis: Gehen sie Schrittweise vor:</p>
 <ol type="1">
@@ -1561,7 +1561,7 @@ Lösung:
 </div>
 <div id="callout-31" class="callout-31-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Wir können zwar addieren und multiplizieren aber nicht iterieren und damit ist <span class="math inline">\(f(x) = 2^x\)</span> ist nicht in der Menge <span class="math inline">\(Γ_{\text{ZV},\text{ID},\text{SUB}}(\{\text{S}, \text{C}^0_0, \text{I}^2_1, \text{sum}, \text{prod}\})\)</span>.</p>
+<p>Wir können zwar addieren und multiplizieren aber nicht iterieren und damit ist <span class="math inline">\(f(x) = 2^x\)</span> ist nicht in der Menge <span class="math inline">\(Γ_{\LV,\text{ZV},\text{ID},\text{SUB}}(\{\text{S}, \text{C}^0_0, \text{I}^2_1, \text{sum}, \text{prod}\})\)</span>.</p>
 </div>
 </div>
 </div>
@@ -2914,7 +2914,7 @@ f(y_1,...,y_n) &lt; A(x,y_1 + ... + y_n)
 \]</span></p>
 </div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-81-contents" aria-controls="callout-81" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-82-contents" aria-controls="callout-82" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2923,9 +2923,11 @@ Aufgabe: Akermann-Funktion
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-81" class="callout-81-contents callout-collapse collapse">
+<div id="callout-82" class="callout-82-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Können Sie <span class="math inline">\(A(10, 9)\)</span> rekursiv mit ihrem <strong>eigenem</strong> Computer berechnen?</p>
+<ol type="a">
+<li>Können Sie <span class="math inline">\(A(10, 9)\)</span> rekursiv mit ihrem <strong>eigenem</strong> Computer berechnen?</li>
+</ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-80-contents" aria-controls="callout-80" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -2938,10 +2940,87 @@ Lösung:
 </div>
 <div id="callout-80" class="callout-80-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Im Leben nicht, da <span class="math inline">\(A(10, 9)\)</span> eine extrem große Zahl ist. Die Anzahl der Rechenschritte würde weit-weit-weit über der Anzahl der Atome im Universum liegen. Selbst wenn wir die schnellste Supercomputer verwenden würden, würde es Milliarden von Jahren dauern, um <span class="math inline">\(A(10, 9)\)</span> rekursiv zu berechnen.</p>
+<p>Im Leben nicht, da <span class="math inline">\(A(10, 9)\)</span> eine extrem große Zahl ist. Die Anzahl der Rechenschritte würde weit über der Anzahl der Atome im Universum liegen.</p>
 <center>
 <p><img src="./img/Akermann_plot.png" class="img-fluid" style="width:50.0%"></p>
 </center>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Kann man die Akermann-Funktion ohne Rekursion berechnen?</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-81-contents" aria-controls="callout-81" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-81" class="callout-81-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Ja, mit einer While Schleife!</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Akermann matrix</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>N, M <span class="op">=</span> <span class="fl">20_000</span>, <span class="fl">20_000</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>Ak<span class="op">::</span><span class="dt">Matrix{Int} </span><span class="op">=</span> <span class="fu">fill</span>(<span class="fl">0</span>, N, M) <span class="co"># 0 indicates uncomputed </span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co"># wrapper function of the Ak Matrix to handle base cases</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Akw</span>(m<span class="op">::</span><span class="dt">Int</span>, n<span class="op">::</span><span class="dt">Int</span>)<span class="op">::</span><span class="dt">Int</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># base cases</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> m <span class="op">==</span> <span class="fl">0</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> n <span class="op">+</span> <span class="fl">1</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elseif</span> n <span class="op">==</span> <span class="fl">0</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> m</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> Ak[m, n]</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a><span class="co"># tries to fill the Ak matrix at position (m, n) if the dependent values are already computed</span></span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">try_compute_Ak</span>(m<span class="op">::</span><span class="dt">Int</span>, n<span class="op">::</span><span class="dt">Int</span>)<span class="op">::</span><span class="dt">Nothing</span></span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># if the value is already computed, do nothing</span></span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> Ak[m, n] <span class="op">!=</span> <span class="fl">0</span></span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span></span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># if the dependent value is not computed, do nothing</span></span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elseif</span> <span class="fu">Akw</span>(m,n<span class="op">-</span><span class="fl">1</span>) <span class="op">!=</span> <span class="fl">0</span> <span class="op">&amp;&amp;</span> <span class="fu">Akw</span>(m<span class="op">-</span><span class="fl">1</span>, <span class="fu">Akw</span>(m, n<span class="op">-</span><span class="fl">1</span>)) <span class="op">!=</span> <span class="fl">0</span></span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>        Ak[m, n] <span class="op">=</span> <span class="fu">Akw</span>(m<span class="op">-</span><span class="fl">1</span>, <span class="fu">Akw</span>(m, n<span class="op">-</span><span class="fl">1</span>))</span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>        <span class="fu">println</span>(<span class="st">"Computed A(</span><span class="sc">$</span>m<span class="st">, </span><span class="sc">$</span>n<span class="st">) = "</span>, Ak[m, n])</span>
+<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span></span>
+<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a><span class="co"># ℕ → ℕ × ℕ</span></span>
+<span id="cb29-31"><a href="#cb29-31" aria-hidden="true" tabindex="-1"></a><span class="co"># bijection between ℕ and ℕ × ℕ</span></span>
+<span id="cb29-32"><a href="#cb29-32" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">nxn</span>(n)</span>
+<span id="cb29-33"><a href="#cb29-33" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="fl">0</span></span>
+<span id="cb29-34"><a href="#cb29-34" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="fl">0</span></span>
+<span id="cb29-35"><a href="#cb29-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> x <span class="op">&lt;=</span> n</span>
+<span id="cb29-36"><a href="#cb29-36" aria-hidden="true" tabindex="-1"></a>        i <span class="op">=</span> i <span class="op">+</span> <span class="fl">1</span></span>
+<span id="cb29-37"><a href="#cb29-37" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> x <span class="op">+</span> i</span>
+<span id="cb29-38"><a href="#cb29-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb29-39"><a href="#cb29-39" aria-hidden="true" tabindex="-1"></a>    x <span class="op">-=</span> i</span>
+<span id="cb29-40"><a href="#cb29-40" aria-hidden="true" tabindex="-1"></a>    i <span class="op">-=</span> <span class="fl">1</span></span>
+<span id="cb29-41"><a href="#cb29-41" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> n <span class="op">-</span> x</span>
+<span id="cb29-42"><a href="#cb29-42" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (i<span class="op">-</span>y, y)</span>
+<span id="cb29-43"><a href="#cb29-43" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb29-44"><a href="#cb29-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-45"><a href="#cb29-45" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">A</span>(m<span class="op">::</span><span class="dt">Int</span>, n<span class="op">::</span><span class="dt">Int</span>)<span class="op">::</span><span class="dt">Int</span></span>
+<span id="cb29-46"><a href="#cb29-46" aria-hidden="true" tabindex="-1"></a>    base <span class="op">=</span> <span class="fl">3</span></span>
+<span id="cb29-47"><a href="#cb29-47" aria-hidden="true" tabindex="-1"></a>    <span class="cn">e</span> <span class="op">=</span> <span class="fl">2</span></span>
+<span id="cb29-48"><a href="#cb29-48" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> (<span class="fu">Akw</span>(m, n) <span class="op">==</span> <span class="fl">0</span>)</span>
+<span id="cb29-49"><a href="#cb29-49" aria-hidden="true" tabindex="-1"></a>        <span class="co"># fill out the matrix with computed values</span></span>
+<span id="cb29-50"><a href="#cb29-50" aria-hidden="true" tabindex="-1"></a>        k <span class="op">=</span> base<span class="op">^</span><span class="cn">e</span></span>
+<span id="cb29-51"><a href="#cb29-51" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">0</span><span class="op">:</span>k</span>
+<span id="cb29-52"><a href="#cb29-52" aria-hidden="true" tabindex="-1"></a>            x, y <span class="op">=</span> <span class="fu">nxn</span>(i)</span>
+<span id="cb29-53"><a href="#cb29-53" aria-hidden="true" tabindex="-1"></a>            <span class="fu">try_compute_Ak</span>(x<span class="op">+</span><span class="fl">1</span>, y<span class="op">+</span><span class="fl">1</span>)</span>
+<span id="cb29-54"><a href="#cb29-54" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb29-55"><a href="#cb29-55" aria-hidden="true" tabindex="-1"></a>        <span class="cn">e</span> <span class="op">+=</span> <span class="fl">1</span></span>
+<span id="cb29-56"><a href="#cb29-56" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb29-57"><a href="#cb29-57" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">Akw</span>(m, n)</span>
+<span id="cb29-58"><a href="#cb29-58" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -2964,18 +3043,18 @@ Lösung:
 \MIN(φ) \\
 ⇔
 \]</span></p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">MIN</span>(<span class="cn">φ</span><span class="op">::</span><span class="dt">Function</span>)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">function</span> (args<span class="op">...</span>)</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> <span class="fl">0</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="fu">φ</span>(args<span class="op">...</span>, y) <span class="op">!=</span> <span class="fl">0</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>      y <span class="op">=</span> y <span class="op">+</span> <span class="fl">1</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> y</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">end</span></span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">MIN</span>(<span class="cn">φ</span><span class="op">::</span><span class="dt">Function</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">function</span> (args<span class="op">...</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> <span class="fl">0</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="fu">φ</span>(args<span class="op">...</span>, y) <span class="op">!=</span> <span class="fl">0</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>      y <span class="op">=</span> y <span class="op">+</span> <span class="fl">1</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> y</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">end</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-87-contents" aria-controls="callout-87" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-88-contents" aria-controls="callout-88" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2984,7 +3063,7 @@ Aufgabe: Partiell-rekursive Funktionen, SS13-A4
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-87" class="callout-87-contents callout-collapse collapse">
+<div id="callout-88" class="callout-88-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>Welche Stelligkeit hat die Funktion</li>
@@ -2993,7 +3072,7 @@ Aufgabe: Partiell-rekursive Funktionen, SS13-A4
 \SUB(\ZV(\SUB(I^3_2, S)), \PR(\PR(C^1_1, \MIN(\PR(I^3_1, I^5_5))),\SUB(C^4_4, S)))
 \]</span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-82-contents" aria-controls="callout-82" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-83-contents" aria-controls="callout-83" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -3002,7 +3081,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-82" class="callout-82-contents callout-collapse collapse">
+<div id="callout-83" class="callout-83-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math display">\[
 \SUB(\underbrace{\ZV(\SUB(I^3_2, S))}_{\text{3-stellig}}, \PR(\PR(C^1_1, \MIN(\PR(I^3_1, I^5_5))),\underbrace{\SUB(C^4_4, S)}_{\text{4-stellig}}))
@@ -3018,7 +3097,7 @@ Lösung:
 \SUB(\PR(C^0_0, \SIM_2(\mathrm{md}, I^2_1, I^2_2)), \SIM_2(\mathrm{prod}, I^1_1, \SUB(S, I^1_1)))
 \]</span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-83-contents" aria-controls="callout-83" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-84-contents" aria-controls="callout-84" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -3027,7 +3106,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-83" class="callout-83-contents callout-collapse collapse">
+<div id="callout-84" class="callout-84-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><span class="math inline">\(\PR(C^0_0, \SIM_2(\mathrm{md}, I^2_1, I^2_2))\)</span></li>
@@ -3071,7 +3150,7 @@ f(y) &amp;= \left\lfloor \frac{y}{2} \right\rfloor
 \MIN(\SIM_2(\mathrm{md}, I^2_1, \SIM_2(\mathrm{prod}, I^2_2, I^2_2)))
 \]</span></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-84-contents" aria-controls="callout-84" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-85-contents" aria-controls="callout-85" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -3080,7 +3159,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-84" class="callout-84-contents callout-collapse collapse">
+<div id="callout-85" class="callout-85-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><span class="math inline">\(\SIM_2(\mathrm{prod}, I^2_2, I^2_2) = (x,y) \mapsto y^2\)</span></li>
@@ -3097,7 +3176,7 @@ Lösung:
 Als Operatoren dürfen Sie <span class="math inline">\(\text{ZV}, \text{LV}, \text{ID}, \text{SUB}\)</span> und <span class="math inline">\(\text{PR}\)</span> verwenden. Als Grundfunktionen dürfen Sie <span class="math inline">\(I^m_n\)</span> (mit <span class="math inline">\(1 \leq n \leq m\)</span>), <span class="math inline">\(C^m_n\)</span> (mit <span class="math inline">\(n, m \in \mathbb{N}\)</span>), <span class="math inline">\(S\)</span> und <span class="math inline">\(\text{prod}\)</span> verwenden.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-85-contents" aria-controls="callout-85" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-86-contents" aria-controls="callout-86" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -3106,7 +3185,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-85" class="callout-85-contents callout-collapse collapse">
+<div id="callout-86" class="callout-86-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math display">\[
 \begin{aligned}
@@ -3124,7 +3203,7 @@ Lösung:
 Als Operatoren dürfen Sie <span class="math inline">\(\text{ZV}, \text{LV}, \text{ID}, \text{SIM}^2\)</span> und <span class="math inline">\(\text{MIN}\)</span> verwenden. Als Grundfunktionen dürfen Sie <span class="math inline">\(I^m_n\)</span> (mit <span class="math inline">\(1 \leq n \leq m\)</span>), <span class="math inline">\(C^m_n\)</span> (mit <span class="math inline">\(n, m \in \mathbb{N}\)</span>), <span class="math inline">\(\text{sum}\)</span> und <span class="math inline">\(\text{mod}\)</span> verwenden.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-86-contents" aria-controls="callout-86" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-87-contents" aria-controls="callout-87" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -3133,7 +3212,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-86" class="callout-86-contents callout-collapse collapse">
+<div id="callout-87" class="callout-87-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>für ein kgV <span class="math inline">\(v\)</span> von <span class="math inline">\(n\)</span> und <span class="math inline">\(m\)</span> gilt: <span class="math inline">\(\mod(v,n) + \mod(v,m) = 0\)</span>. Somit könnte eine Lösung aussehen wie:</p>
 <p><span class="math display">\[
@@ -3151,7 +3230,7 @@ Lösung:
 </div>
 </div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-90-contents" aria-controls="callout-90" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-91-contents" aria-controls="callout-91" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -3160,33 +3239,9 @@ Aufgabe: Partiell-rekursive Funktionen, SS13-2-A4
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-90" class="callout-90-contents callout-collapse collapse">
+<div id="callout-91" class="callout-91-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>(a)</strong> Drücken Sie die Funktion <span class="math display">\[\text{turm} : \mathbb{N} \to \mathbb{N} : n \mapsto \underbrace{2^{2^{\cdot^{\cdot^{\cdot^{2}}}}}}_{n\text{-mal}}\]</span> durch eine geeignete Operatorenfolge aus. Als Operatoren dürfen Sie <span class="math inline">\(ZV\)</span>, <span class="math inline">\(LV\)</span>, <span class="math inline">\(ID\)</span>, <span class="math inline">\(SIM2\)</span> und <span class="math inline">\(PR\)</span> verwenden. Als Grundfunktionen dürfen Sie <span class="math inline">\(I^m_n\)</span> (mit <span class="math inline">\(1 \leq n \leq m\)</span>), <span class="math inline">\(C^m_n\)</span> (mit <span class="math inline">\(n, m \in \mathbb{N}\)</span>) und <span class="math inline">\(\text{exp}\)</span> verwenden.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-88-contents" aria-controls="callout-88" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lösung:
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-88" class="callout-88-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><span class="math display">\[
-\begin{aligned}
-\text{IA, x = 0: }f(0) &amp;= 2 = C^0_2 \\
-\text{IS, x &gt; 0: }f(x) &amp;= f(x-1) \cdot f(x-1) \\
-&amp;= \SIM_2(\pprod, I^2_2, I^2_2)(x-1, f(x-1)) \\
-&amp;= \text{PR}(C^0_2, \SIM_2(\pprod, I^2_2, I^2_2))(x)
-\end{aligned}
-\]</span></p>
-</div>
-</div>
-</div>
-<p><strong>(b)</strong> Drücken Sie die Funktion <span class="math display">\[\text{invfak} : \mathbb{N} \to \mathbb{N} : n \mapsto \max\{k \mid k! \leq n\}\]</span> durch eine geeignete Operatorenfolge aus. Als Operatoren dürfen Sie <span class="math inline">\(ZV\)</span>, <span class="math inline">\(LV\)</span>, <span class="math inline">\(ID\)</span>, <span class="math inline">\(SUB\)</span>, <span class="math inline">\(SIM2\)</span> und <span class="math inline">\(MIN\)</span> verwenden. Als Grundfunktionen dürfen Sie <span class="math inline">\(I^m_n\)</span> (mit <span class="math inline">\(1 \leq n \leq m\)</span>), <span class="math inline">\(C^m_n\)</span> (mit <span class="math inline">\(n, m \in \mathbb{N}\)</span>), <span class="math inline">\(\text{sum}\)</span>, <span class="math inline">\(\text{md}\)</span> und die Fakultätsfunktion <span class="math inline">\(\text{fak} : \mathbb{N} \to \mathbb{N} : n \mapsto n!\)</span> verwenden.</p>
+<p><strong>(a)</strong> Drücken Sie die Funktion <span class="math display">\[\text{turm} : \mathbb{N} \to \mathbb{N} : n \mapsto \underbrace{2^{2^{\cdot^{\cdot^{\cdot^{2}}}}}}_{n+1\text{-mal}}\]</span> durch eine geeignete Operatorenfolge aus. Als Operatoren dürfen Sie <span class="math inline">\(\ZV\)</span>, <span class="math inline">\(\LV\)</span>, <span class="math inline">\(\ID\)</span>, <span class="math inline">\(\SIM_2\)</span> und <span class="math inline">\(\PR\)</span> verwenden. Als Grundfunktionen dürfen Sie <span class="math inline">\(I^m_n\)</span> (mit <span class="math inline">\(1 \leq n \leq m\)</span>), <span class="math inline">\(C^m_n\)</span> (mit <span class="math inline">\(n, m \in \mathbb{N}\)</span>) und <span class="math inline">\(\text{exp}\)</span> verwenden.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-89-contents" aria-controls="callout-89" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -3198,6 +3253,30 @@ Lösung:
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-89" class="callout-89-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\begin{aligned}
+\text{IA, x = 0: }f(0) &amp;= 2 = C^0_2 \\
+\text{IS, x &gt; 0: }f(x) &amp;= \pexp(f(x-1),2) \\
+&amp;= \SIM_2(\pexp, C^2_2, I^2_2)(x-1, f(x-1)) \\
+&amp;= \text{PR}(C^0_2, \SIM_2(\pexp, C^2_2, I^2_2))(x)
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+<p><strong>(b)</strong> Drücken Sie die Funktion <span class="math display">\[\text{invfak} : \mathbb{N} \to \mathbb{N} : n \mapsto \max\{k \mid k! \leq n\}\]</span> durch eine geeignete Operatorenfolge aus. Als Operatoren dürfen Sie <span class="math inline">\(\ZV\)</span>, <span class="math inline">\(\LV\)</span>, <span class="math inline">\(\ID\)</span>, <span class="math inline">\(\SUB\)</span>, <span class="math inline">\(\SIM_2\)</span> und <span class="math inline">\(\MIN\)</span> verwenden. Als Grundfunktionen dürfen Sie <span class="math inline">\(I^m_n\)</span> (mit <span class="math inline">\(1 \leq n \leq m\)</span>), <span class="math inline">\(C^m_n\)</span> (mit <span class="math inline">\(n, m \in \mathbb{N}\)</span>), <span class="math inline">\(\text{sum}\)</span>, <span class="math inline">\(\text{md}\)</span> und die Fakultätsfunktion <span class="math inline">\(\text{fak} : \mathbb{N} \to \mathbb{N} : n \mapsto n!\)</span> verwenden.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-90-contents" aria-controls="callout-90" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-90" class="callout-90-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>wir suchen das erste <span class="math inline">\(k\)</span>, so dass gilt <span class="math inline">\(¬((k+1)! ≤ n)\)</span> bzw. <span class="math inline">\(≤((k+1)!,n)=0\)</span>. Dazu definieren wir die Hilfsfunktionen:</p>
 <ul>
@@ -3285,7 +3364,7 @@ c_A(x_1, ..., x_m) = \begin{cases}
 <p><span class="math inline">\(Y\)</span> ist mithin auch aufzählbar.</p>
 </section>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-92-contents" aria-controls="callout-92" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-93-contents" aria-controls="callout-93" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -3294,11 +3373,11 @@ Aufgabe: Projektionssatz
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-92" class="callout-92-contents callout-collapse collapse">
+<div id="callout-93" class="callout-93-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Das spezielle Halteproblem <span class="math inline">\(K_0\)</span> ist aufzählbar, aber nicht entscheidbar. Finden Sie eine entscheidbare Relation <span class="math inline">\(R\)</span> mit <span class="math inline">\(\text{Proj}(R) = K_0\)</span>.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-91-contents" aria-controls="callout-91" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-92-contents" aria-controls="callout-92" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -3307,7 +3386,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-91" class="callout-91-contents callout-collapse collapse">
+<div id="callout-92" class="callout-92-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Wir definieren <span class="math inline">\(R\)</span> als die Relation die das Programm <span class="math inline">\(\text{RAM}_x\)</span> auf der eingabe <span class="math inline">\(x\)</span> für <span class="math inline">\(y\)</span> Schritte laufen lässt und prüft, ob es hält.</p>
 <p>Damit ist <span class="math inline">\(R\)</span> entscheidbar, da wir nur endlich viele Schritte laufen lassen und <span class="math inline">\(K_0\)</span> ist die Projektion von <span class="math inline">\(R\)</span>, da <span class="math inline">\(\text{RAM}_x\)</span> genau dann hält, wenn es für irgendein <span class="math inline">\(y\)</span> hält.</p>
@@ -3453,16 +3532,16 @@ K = \{(x,y) \mid \text{ die RAM } M_x \text{ hält auf die Eingabe } y \}
 <section id="laufzeit-von-ram-programmen" class="level3">
 <h3 class="anchored" data-anchor-id="laufzeit-von-ram-programmen">Laufzeit von RAM Programmen</h3>
 <p>Betrachte das RAM Programm <span class="math inline">\(M\)</span>:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode ram code-with-copy"><code class="sourceCode ram"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># f(x, y, z) = z + x ⋅ y</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>0   <span class="dt">R3</span> <span class="fu">←</span> <span class="bn">1</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Begin der Schleife</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>1   <span class="kw">IF</span> <span class="dt">R1</span> <span class="fu">=</span> <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">3</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>2   <span class="dt">R2</span> <span class="fu">←</span> <span class="dt">R2</span> <span class="fu">+</span> <span class="dt">R0</span></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>3   <span class="dt">R1</span> <span class="fu">←</span> <span class="dt">R1</span> <span class="fu">-</span> <span class="dt">R3</span></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>4   <span class="kw">GOTO</span> <span class="bn">1</span></span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Ende der Schleife</span></span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>5   <span class="dt">R0</span> <span class="fu">←</span> <span class="dt">R2</span></span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>6   <span class="kw">STOP</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode ram code-with-copy"><code class="sourceCode ram"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># f(x, y, z) = z + x ⋅ y</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>0   <span class="dt">R3</span> <span class="fu">←</span> <span class="bn">1</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Begin der Schleife</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>1   <span class="kw">IF</span> <span class="dt">R1</span> <span class="fu">=</span> <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">3</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>2   <span class="dt">R2</span> <span class="fu">←</span> <span class="dt">R2</span> <span class="fu">+</span> <span class="dt">R0</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>3   <span class="dt">R1</span> <span class="fu">←</span> <span class="dt">R1</span> <span class="fu">-</span> <span class="dt">R3</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>4   <span class="kw">GOTO</span> <span class="bn">1</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Ende der Schleife</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>5   <span class="dt">R0</span> <span class="fu">←</span> <span class="dt">R2</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>6   <span class="kw">STOP</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>wir sagen, dass die Schleife <span class="math inline">\(y\)</span>-mal durchlaufen.</p>
 <p><span class="math display">\[t_M(x,y,z) = 4y + 3\]</span> <span class="math display">\[≤ 4 ⋅ 2^{|y|+1} - 8 + 3\]</span> <span class="math display">\[≤ 8 ⋅ 2^{|x|+|y|+|z|} - 5 \]</span> <span class="math display">\[≤ 8 ⋅ 2^n\]</span></p>
 </section>
