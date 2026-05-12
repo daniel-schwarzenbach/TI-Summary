@@ -2051,7 +2051,7 @@ f : Z × Σ^k \quad → \quad Z × Σ^k × \{L, 0, R\}^k
 </ol>
 <ol type="a">
 <li><p>Ist <span class="math inline">\(ψ(x_1, ... , x_n)\)</span> definiert, so gilt: Startet <span class="math inline">\(M\)</span> in <span class="math inline">\(S(z_0, x_1 ∗ x_2 ∗ ··· ∗ x_n)\)</span>, so stoppt <span class="math inline">\(M\)</span> in <span class="math inline">\(S(z_1, ψ(x_1, ..., x_n))\)</span>.</p></li>
-<li><p>Ist <span class="math inline">\(ψ(x_1, ... , x_n)\)</span> nicht definiert, so gilt: Startet <span class="math inline">\(M\)</span> in <span class="math inline">\(S(z_0, x_1∗x_2∗···∗x_n)\)</span>, so stoppt <span class="math inline">\(M\)</span> nicht oder <span class="math inline">\(M\)</span> stoppt nicht in einer Situation der Form <span class="math inline">\(S(z_1, y)\)</span> mit <span class="math inline">\(y ∈ (Σ ∖ \{□\})^*\)</span>.</p></li>
+<li><p>Ist <span class="math inline">\(ψ(x_1, ... , x_n)\)</span> nicht definiert, so gilt: Startet <span class="math inline">\(M\)</span> in <span class="math inline">\(S(z_0, x_1∗x_2∗···∗x_n)\)</span>, so stoppt <span class="math inline">\(M\)</span> nicht oder <span class="math inline">\(M\)</span> stoppt aber nicht in einer Situation der Form <span class="math inline">\(S(z_1, y)\)</span> mit <span class="math inline">\(y ∈ (Σ ∖ \{□\})^*\)</span>.</p></li>
 </ol>
 <center>
 <p><img src="./img/Endzustand.jpg" class="img-fluid" style="width:50.0%"></p>
@@ -3030,6 +3030,7 @@ Lösung:
 <section id="definition-μ-rekursion" class="level3 def">
 <h3 class="anchored" data-anchor-id="definition-μ-rekursion">Definition: <strong>μ-Rekursion</strong></h3>
 <p><span class="math inline">\(μx(E(x)) = \arg \min_{x ∈ ℕ} E(x)\)</span>, wobei <span class="math inline">\(E(x)\)</span> eine Aussage über <span class="math inline">\(x\)</span> ist. Also <span class="math inline">\(μx(E(x))\)</span> ist die kleinste natürliche Zahl <span class="math inline">\(x\)</span>, für die <span class="math inline">\(E(x)\)</span> wahr ist. Wenn es kein <span class="math inline">\(x\)</span> gibt, für das <span class="math inline">\(E(x)\)</span> wahr ist, dann ist <span class="math inline">\(μx(E(x))\)</span> undefiniert.</p>
+<p>Daher reden wir in der Theoretischen Informatik streng genommen von partiellen Funktionen von <span class="math inline">\(ℕ → ℕ\)</span>, also nur rechtseindeutige Relationen, die nicht links-total sein müssen.</p>
 <ol type="1">
 <li><p>Es seien <span class="math inline">\(φ : ℕ^{n} → ℕ\)</span> eine Funktion. Dann ist die Funktion <span class="math inline">\(\text{MIN}(φ): ℕ^{n-1} → ℕ\)</span> definiert durch: <span class="math display">\[
 \text{MIN}(φ)(x_1,...,x_{n-1}) = μy(φ(x_1,...,x_{n-1},y) = 0)
@@ -3258,8 +3259,8 @@ Lösung:
 \begin{aligned}
 \text{IA, x = 0: }f(0) &amp;= 2 = C^0_2 \\
 \text{IS, x &gt; 0: }f(x) &amp;= \pexp(f(x-1),2) \\
-&amp;= \SIM_2(\pexp, C^2_2, I^2_2)(x-1, f(x-1)) \\
-&amp;= \text{PR}(C^0_2, \SIM_2(\pexp, C^2_2, I^2_2))(x)
+&amp;= \SIM_2(\pexp, I^2_2, C^2_2)(x-1, f(x-1)) \\
+&amp;= \text{PR}(C^0_2, \SIM_2(\pexp, I^2_2, C^2_2))(x)
 \end{aligned}
 \]</span></p>
 </div>
