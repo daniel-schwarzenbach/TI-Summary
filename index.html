@@ -713,7 +713,7 @@ Lösung:
 \]</span></p>
 <p>Die Umkehrfunktion <span class="math inline">\(\text{dya}^{-1} : \{\textit{1,2}\}^* → ℕ\)</span> ist wie folgt definiert:</p>
 <p><span class="math display">\[
-\text{dya}^{-1}(a_{n-1}, ..., a_{0}) = \sum_{i = 0}^{n} \text{dec}(a_i) 2^i
+\text{dya}^{-1}(a_{n-1}, ..., a_{0}) = \sum_{i = 0}^{n} a_i ⋅ 2^i
 \]</span></p>
 </div>
 <div class="prop">
@@ -3259,6 +3259,19 @@ Lösung:
 <section id="church-these" class="level3">
 <h3 class="anchored" data-anchor-id="church-these">Church These</h3>
 <p>Jede algorithmisch berechenbare Funktion ist Turing-berechenbar.</p>
+<div class="prop">
+<ul>
+<li>HTML(mit CSS) ist Turing-vollständig.</li>
+<li>Powerpoint ist Turing-vollständig.</li>
+<li>Minecraft ist Turing-vollständig.</li>
+<li>The Game of Life ist Turing-vollständig.</li>
+<li>Modernes SQL mit der Möglichkeit von rekursiven Abfragen ist Turing-vollständig.</li>
+<li>C++ templates sind Turing-vollständig.</li>
+</ul>
+</div>
+<center>
+<p><img src="./img/HTMLMeme.jpg" class="img-fluid" style="width:80.0%"></p>
+</center>
 </section>
 </section>
 </section>
@@ -3401,9 +3414,9 @@ Lösung:
 <center>
 <p><img src="./img/Range.jpg" class="img-fluid" style="width:50.0%"></p>
 </center>
-<p><span class="math inline">\(X ⊆ ℕ^n\)</span> heißt <strong>aufzählbar</strong>, falls es eine bijektive, berechenbare Funktion <span class="math display">\[c^n : ℕ^n → ℕ\]</span> gibt, sodass die Menge <span class="math inline">\(Y = \{ c^n(x_1, ..., x_n) | (x_1, ..., x_n) ∈ X \} ⊆ ℕ\)</span> aufzählbar ist.</p>
+<p><span class="math inline">\(X ⊆ ℕ^n\)</span> heißt <strong>aufzählbar</strong>, falls es eine bijektive, berechenbare Funktion <span class="math display">\[c : ℕ^n → ℕ\]</span> gibt, sodass die Menge <span class="math inline">\(Y = \{ c(x_1, ..., x_n) | (x_1, ..., x_n) ∈ X \} ⊆ ℕ\)</span> aufzählbar ist.</p>
 <center>
-<p><img src="./img/NDimAufzählbarkeit.jpg" class="img-fluid" style="width:50.0%"></p>
+<p><img src="./img/NDimAufzählbarkeit.jpg" class="img-fluid" style="width:80.0%"></p>
 </center>
 </section>
 <div class="prop">
@@ -3576,6 +3589,7 @@ Lösung:
 </section>
 <section id="unentscheidbare-mengen" class="level2">
 <h2 class="anchored" data-anchor-id="unentscheidbare-mengen">Unentscheidbare Mengen</h2>
+<p><img src="./img/EntscheidbarkeitMeme.jpg" class="img-fluid"></p>
 <section id="das-halteproblem" class="level3">
 <h3 class="anchored" data-anchor-id="das-halteproblem"><strong>Das Halteproblem</strong></h3>
 <p>Wir können jedes RAM programm <span class="math inline">\(M_x\)</span> als eine natürliche Zahl <span class="math inline">\(x\)</span> kodieren.</p>
@@ -3693,14 +3707,15 @@ K = \{(x,y) \mid \text{ die RAM } M_x \text{ hält auf die Eingabe } y \}
 <h2 class="anchored" data-anchor-id="m-reduktion"><span class="math inline">\(m\)</span>-Reduktion</h2>
 <section id="definition-m-reduzierbarkeit" class="level3 def">
 <h3 class="anchored" data-anchor-id="definition-m-reduzierbarkeit">Definition: <strong>m-Reduzierbarkeit</strong></h3>
-<p>Seien <span class="math inline">\(A, B ⊆ ℕ\)</span>. Falls eine <span class="math inline">\(f:ℕ→ℕ\)</span> eine beliebige berechenbare funktion gibt mit</p>
+<p>Seien <span class="math inline">\(A, B ⊆ ℕ\)</span>. Falls eine <span class="math inline">\(f:ℕ→ℕ\)</span> eine totale berechenbare funktion gibt mit</p>
+<p><span class="math display">\[x ∈ A \quad ⟷ \quad f(x) ∈ B\]</span></p>
+<p>bzw.</p>
 <p><span class="math display">\[C_A(x) = C_B(f(x))\]</span></p>
 <p>sagen wir: <span class="math inline">\(A\)</span> ist <strong>m-reduzierbar</strong> auf <span class="math inline">\(B\)</span> bzw.</p>
 <p><span class="math display">\[
 A ≤_m B
 \]</span></p>
 <p><span class="math inline">\(f\)</span> heißt dann <strong>Reduktionsfunktion</strong>.</p>
-<p>Anmerkung: <span class="math inline">\(f\)</span> muss nicht injektiv oder surjektiv sein.</p>
 </section>
 <div class="prop">
 <p>Für Mengen <span class="math inline">\(A, B, C ⊆ ℕ\)</span> gilt:</p>
@@ -3710,6 +3725,7 @@ A ≤_m B
 <li><span class="math inline">\(A ≤_m B \quad ⇔ \quad \overline{A} ≤_m \overline{B}\)</span></li>
 <li><span class="math inline">\(A ≤_m ∅ \quad ⇔ \quad A = ∅\)</span></li>
 <li><span class="math inline">\(A ≤_m ℕ \quad ⇔ \quad A = ℕ\)</span></li>
+<li><span class="math inline">\(K_0 \not ≤_m \overline{K_0}\)</span></li>
 </ol>
 </div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
@@ -3742,13 +3758,14 @@ Lösung:
 <p>Eine solche Relation nennen wir eine Präordnung.</p>
 <p>Ähnlich wie bei Äquivalenzrelationen erzeugt sie Klassen von Mengen, aber ordnet diese partiell!</p>
 <ul>
-<li><span class="math inline">\(E\)</span>: entscheidbare Mengen</li>
+<li><span class="math inline">\(ℕ\)</span></li>
+<li><span class="math inline">\(∅\)</span></li>
 <li><span class="math inline">\(E_-\)</span>: entscheidbare Mengen ohne <span class="math inline">\(∅\)</span> und <span class="math inline">\(ℕ\)</span></li>
 <li><span class="math inline">\(A\)</span>: aufzählbare, aber nicht entscheidbare Mengen</li>
-<li><span class="math inline">\(U\)</span>: nicht aufzählbare Mengen und somit unentscheidbare Mengen</li>
+<li><span class="math inline">\(U_i \quad ∀i ∈ (0,1)\)</span>: Klassen von unentscheidbare Mengen, die nicht aufzählbar sind. Wir wissen über diese Klassen fast nichts, außer den Satz von Rice.</li>
 </ul>
 <center>
-<p><img src="./img/HasseDiagramM.jpg" class="img-fluid" style="width:30.0%"></p>
+<p><img src="./img/HasseDiagramM.jpg" class="img-fluid" style="width:50.0%"></p>
 </center>
 </div>
 </div>
@@ -3768,16 +3785,6 @@ Lösung:
 <h4 class="anchored" data-anchor-id="theorem-von-myhill-1955">Theorem von Myhill (1955)</h4>
 <p>Fur jede aufzählbare Menge <span class="math inline">\(A\)</span> gilt <span class="math inline">\(A ≤_m K_0\)</span>.</p>
 </section>
-<p>Hasse Diagramm zu den <span class="math inline">\(m\)</span>-Reduktionsklassen:</p>
-<ul>
-<li><span class="math inline">\(E\)</span>: entscheidbare Mengen</li>
-<li><span class="math inline">\(E_-\)</span>: entscheidbare Mengen ohne <span class="math inline">\(∅\)</span> und <span class="math inline">\(ℕ\)</span></li>
-<li><span class="math inline">\(A\)</span>: aufzählbare, aber nicht entscheidbare Mengen</li>
-<li><span class="math inline">\(U\)</span>: nicht aufzählbare Mengen und somit unentscheidbare Mengen</li>
-</ul>
-<center>
-<p><img src="./img/HasseDiagramM.jpg" class="img-fluid" style="width:30.0%"></p>
-</center>
 <div class="def">
 <p><span class="math display">\[
 P(\mathcal{F}) := \{i ∈ ℕ \mid \text{ RAM } M_i \text{ berechnet eine Funktion in } \mathcal{F}\}
@@ -3801,6 +3808,15 @@ P(\mathcal{F}) := \{i ∈ ℕ \mid \text{ RAM } M_i \text{ berechnet eine Funkti
 </ol>
 <p>⚠️ Die Aussage ist <strong>nicht</strong>: <span class="math inline">\(ν^1 ∉ \mathcal{F} \; ⇒ \; P(\mathcal{F})\)</span> ist aufzählbar</p>
 </section>
+<p><img src="./img/RiceMeme.jpg" class="img-fluid"></p>
+<p>Hasse Diagramm zu den <span class="math inline">\(m\)</span>-Reduktionsklassen, ⚠️unvollständig:</p>
+<ul>
+<li><span class="math inline">\(E_-\)</span>: entscheidbare Mengen ohne <span class="math inline">\(∅\)</span> und <span class="math inline">\(ℕ\)</span></li>
+<li><span class="math inline">\(A\)</span>: aufzählbare, aber nicht entscheidbare Mengen</li>
+</ul>
+<center>
+<p><img src="./img/HasseDiagramM.jpg" class="img-fluid" style="width:50.0%"></p>
+</center>
 </section>
 </section>
 <section id="komplexitätstheorie" class="level1">
@@ -3823,8 +3839,15 @@ P(\mathcal{F}) := \{i ∈ ℕ \mid \text{ RAM } M_i \text{ berechnet eine Funkti
 <li><p>Ein Algorithmus <span class="math inline">\(M\)</span> entscheidet <span class="math inline">\(A ⊆ (Σ^∗)^m\)</span> in der Zeit <span class="math inline">\(t\)</span> (bzw. <span class="math inline">\(\mathcal{O}(t)\)</span>), falls <span class="math inline">\(M\)</span> die charakteristische Funktion <span class="math inline">\(c_A\)</span> in der Zeit <span class="math inline">\(t\)</span> (bzw. <span class="math inline">\(\mathcal{O}(t)\)</span>) berechnet.</p></li>
 </ol>
 </section>
+<div class="prop">
+<p>Für jede dyadisch kodierte Zahl <span class="math inline">\(x\)</span> gilt:</p>
+<p><span class="math display">\[
+2^{|x|} - 1 ≤ x ≤ 2^{|x|+1} - 2
+\]</span></p>
+</div>
 <section id="laufzeit-von-ram-programmen" class="level3">
 <h3 class="anchored" data-anchor-id="laufzeit-von-ram-programmen">Laufzeit von RAM Programmen</h3>
+<p>Jeder Befehl einer RAM ist genau ein Zeitschritt.</p>
 <p>Betrachte das RAM Programm <span class="math inline">\(M\)</span>:</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode ram code-with-copy"><code class="sourceCode ram"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># f(x, y, z) = z + x ⋅ y</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>0   <span class="dt">R3</span> <span class="fu">←</span> <span class="bn">1</span></span>
@@ -3837,17 +3860,87 @@ P(\mathcal{F}) := \{i ∈ ℕ \mid \text{ RAM } M_i \text{ berechnet eine Funkti
 <span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>5   <span class="dt">R0</span> <span class="fu">←</span> <span class="dt">R2</span></span>
 <span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>6   <span class="kw">STOP</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>wir sagen, dass die Schleife <span class="math inline">\(y\)</span>-mal durchlaufen.</p>
-<p><span class="math display">\[t_M(x,y,z) = 4y + 3\]</span> <span class="math display">\[≤ 4 ⋅ 2^{|y|+1} - 8 + 3\]</span> <span class="math display">\[≤ 8 ⋅ 2^{|x|+|y|+|z|} - 5 \]</span> <span class="math display">\[≤ 8 ⋅ 2^n\]</span></p>
+<p><span class="math display">\[t_M(x,y,z) = 4y + 3\]</span></p>
+<p>y ist muss noch codiert werden, damit wir die Laufzeit in Abhängigkeit von der Eingabelänge angeben können. Dafür brauchen wir <span class="math inline">\(|y|\)</span> Stellen, also ist <span class="math inline">\(y ≤ 2^{|y|+1} - 2\)</span>.</p>
+<p><span class="math display">\[≤ 4 ⋅ 2^{|y|+1} - 8 + 3\]</span> <span class="math display">\[≤ 8 ⋅ 2^{|x|+|y|+|z|} - 5 \]</span> <span class="math display">\[≤ 8 ⋅ 2^n\]</span></p>
+</section>
+<section id="laufzeit-von-turingmaschinen" class="level3">
+<h3 class="anchored" data-anchor-id="laufzeit-von-turingmaschinen">Laufzeit von Turingmaschinen</h3>
+<p>Jede Anwendung einer Übergangsfunktion einer Turingmaschine ist genau ein Zeitschritt.</p>
+<p>Betrachte die Turingmaschine <span class="math inline">\(M\)</span> mit einer eingabe <span class="math inline">\(x\)</span> die die funktion <span class="math inline">\(S\)</span> berechnet:</p>
+<p><img src="./img/TM_S.jpg" class="img-fluid"></p>
+<ul>
+<li><span class="math inline">\(z_0\)</span> hat genau <span class="math inline">\(|x|\)</span> Schritte die auf <span class="math inline">\(→ z_0\)</span> zeigen.</li>
+<li><span class="math inline">\(z_a\)</span> hat <span class="math inline">\(1 + k\)</span> Schritte, wobei <span class="math inline">\(k ≤ |x|\)</span> die Anzahl der hinteren 2en im Wort <span class="math inline">\(x\)</span> ist.</li>
+<li><span class="math inline">\(z_b\)</span> hat <span class="math inline">\(|x| - k\)</span> viele Schritte.</li>
+<li>Auf <span class="math inline">\(z_1\)</span> zeigt genau ein Schritt, entweder von <span class="math inline">\(z_a\)</span> oder von <span class="math inline">\(z_b\)</span>.</li>
+</ul>
+<p><span class="math display">\[t_M(x) = 1 + |x| + (1+k) + (|x| - k) = 2|x| + 2 ≤ 2n + 2\]</span></p>
+</section>
+<section id="laufzeit-von-höheren-programmiersprachen" class="level3">
+<h3 class="anchored" data-anchor-id="laufzeit-von-höheren-programmiersprachen">Laufzeit von Höheren Programmiersprachen</h3>
+<p>als 0 Schritte zählen 0 intialisierungen. zb <code>z = 0, A = fill(0, 10, 10)</code> als ein schritt zählen: <code>+,-,&lt;,&gt;,≤,≥,==,!=,!,&amp;&amp;,||</code>, Zuweisungen und <code>return</code>. als <span class="math inline">\(n\)</span> schritte zählen: <code>*,/,÷</code></p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">prod</span>(x,y)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> <span class="fl">0</span> <span class="co"># initialisierung zählt als 0 Schritte</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> (y <span class="op">&gt;</span> <span class="fl">0</span>) <span class="co"># y-mal durchlaufen +1 mal aufgerufen</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>        z <span class="op">+=</span> x <span class="co"># zählt als 2 Schritte</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>        y <span class="op">-=</span> <span class="fl">1</span> <span class="co"># zählt als 2 Schritte</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> z <span class="co"># zählt als 1 Schritt</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[
+\begin{aligned}
+t_{\text{M}}(x,y) &amp;= 5y + 1 + 1 \\
+&amp;≤ 5 ⋅ (2^{|y| + 1} - 2) + 2 \quad (\text{Länge der Codierung})\\
+&amp;≤ 5 ⋅ 2^{|y| + 1} \\
+&amp;≤ 10 ⋅ 2^{|x| + |y|} \\
+&amp;≤ 10 ⋅ 2^n
+\end{aligned}
+\]</span></p>
 </section>
 </section>
 <section id="die-klasse-mathcalp" class="level2">
 <h2 class="anchored" data-anchor-id="die-klasse-mathcalp">Die Klasse <span class="math inline">\(\mathcal{P}\)</span></h2>
-<p><img src="./img/Rechenmodelle.png" class="img-fluid"></p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Of_cpDNoZtE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="def">
+<p>Ein Algorithmus <span class="math inline">\(M\)</span> berechnet <span class="math inline">\(f:(Σ^*)^m → Σ\)</span> in Polynomialzeit, falls ein Polynom <span class="math display">\[
+p(n) = a_0 + a_1n + ... + a_rn^r
+\]</span> mit <span class="math inline">\(r, a_0, ..., a_r ∈ ℕ\)</span> gibt, sodass <span class="math inline">\(M\)</span> die Funktion <span class="math inline">\(f\)</span> in der Zeit <span class="math inline">\(p\)</span> berechnet.</p>
+</div>
+<div class="prop">
+<p><img src="./img/Rechenmodelle.png" class="img-fluid"></p>
+<p><span class="math inline">\(f\)</span> ist durch eine RAM in Polynomialzeit berechenbar.</p>
+<p><span class="math inline">\(⇔\)</span></p>
+<p><span class="math inline">\(f\)</span> ist in Julia in Polynomialzeit berechenbar.</p>
+<p><span class="math inline">\(⇔\)</span></p>
+<p><span class="math inline">\(f\)</span> ist durch eine Turingmaschine in Polynomialzeit berechenbar.</p>
+<p><span class="math inline">\(⇔\)</span></p>
+<p><span class="math inline">\(f\)</span> ist durch eine 1-Turingmaschine in Polynomialzeit berechenbar</p>
+<p>⚠️ Es gibt Funktionen, zb. prod, die in einer 1-Turingmaschine nur in Polynomialzeit berechenbar sind, aber in einer RAM oder in Julia auch in linearer Zeit berechenbar sind.</p>
+</div>
+<div class="def">
+<p><span class="math display">\[
+\textbf{FP} := \{f ∣ f \text{ ist eine in Polynomialzeit berechenbare Funktion}\}
+\]</span></p>
+<p><span class="math display">\[
+\textbf{P} := \{A ∣ A \text{ ist eine in Polynomialzeit entscheidbare Menge}\}
+\]</span></p>
+</div>
+<div class="prop">
+<ol type="1">
+<li>Für alle Mengen <span class="math inline">\(A\)</span> gilt <span class="math inline">\(A ∈ \textbf{P} \quad ⇔ \quad c_A ∈ \textbf{FP}\)</span></li>
+<li>sum, prod, md, div, exp <span class="math inline">\(∈ \textbf{FP}\)</span></li>
+<li><span class="math inline">\(\textbf{FP}\)</span> ist abgeschlossen unter Hintereinanderausführung und jedem Operator in <span class="math inline">\(\textbf{FP}\)</span>.</li>
+<li><span class="math inline">\(\textbf{P}\)</span> ist abgeschlossen unter Komplementbildung, Vereinigung, Durchschnitt.</li>
+</ol>
+</div>
 </section>
 <section id="die-klasse-mathcalnp" class="level2">
 <h2 class="anchored" data-anchor-id="die-klasse-mathcalnp">Die Klasse <span class="math inline">\(\mathcal{NP}\)</span></h2>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/FpeP_gr0Eu4" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="def">
+<p>Eine Menge <span class="math inline">\(A ⊆ Σ^*_1\)</span> liegt genau dann in der Klasse <span class="math inline">\(\textbf{NP}\)</span>, wenn ein Polynom <span class="math inline">\(p\)</span> und eine Menge <span class="math inline">\(B ∈ \textbf{P}\)</span> existieren, sodass für alle <span class="math inline">\(x ∈ Σ^*_1\)</span> gilt: <span class="math inline">\(x ∈ A ⟺ (∃y ∈ Σ^*_2)[|y| ≤ p(|x|) ∧ (x, y) ∈ B]\)</span></p>
+</div>
 </section>
 <section id="mathcalnp-vollständige-mengen" class="level2">
 <h2 class="anchored" data-anchor-id="mathcalnp-vollständige-mengen"><span class="math inline">\(\mathcal{NP}\)</span>-vollständige Mengen</h2>
