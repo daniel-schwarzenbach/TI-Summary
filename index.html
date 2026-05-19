@@ -3259,6 +3259,13 @@ Lösung:
 <section id="church-these" class="level3">
 <h3 class="anchored" data-anchor-id="church-these">Church These</h3>
 <p>Jede algorithmisch berechenbare Funktion ist Turing-berechenbar.</p>
+</section>
+<section id="definition-turing-vollständig" class="level3 def">
+<h3 class="anchored" data-anchor-id="definition-turing-vollständig">Definition: <strong>Turing-vollständig</strong></h3>
+<p>Ein System ist <strong>Turing-vollständig</strong>, wenn es jede berechenbare Funktion berechnen kann – also alles, was eine universelle Turingmaschine berechnen kann.</p>
+<p>Formal: Ein Berechnungsmodell <span class="math inline">\(M\)</span> ist Turing-vollständig, wenn gilt:</p>
+<p><span class="math display">\[\forall f \text{ (Turing-berechenbar)} \Rightarrow f \text{ ist in } M \text{ berechenbar}\]</span></p>
+</section>
 <div class="prop">
 <ul>
 <li>HTML(mit CSS) ist Turing-vollständig.</li>
@@ -3272,7 +3279,6 @@ Lösung:
 <center>
 <p><img src="./img/HTMLMeme.jpg" class="img-fluid" style="width:80.0%"></p>
 </center>
-</section>
 </section>
 </section>
 <section id="berechenbarkeitstheorie" class="level1">
@@ -3302,9 +3308,7 @@ Aufgabe: die Charakteristische Funktion
 </div>
 <div id="callout-93" class="callout-93-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ol type="a">
-<li>Zeigen Sie, dass für jede entscheidbare Menge <span class="math inline">\(A ⊆ ℕ^m\)</span> die Charakteristische Funktion selbst <span class="math inline">\(c_A ⊆ ℕ^{m+1}\)</span> wieder eine entscheidbare Menge ist.</li>
-</ol>
+<p>Zeigen Sie, dass für jede entscheidbare Menge <span class="math inline">\(A ⊆ ℕ^m\)</span> die Charakteristische Funktion selbst <span class="math inline">\(c_A ⊆ ℕ^{m+1}\)</span> wieder eine entscheidbare Menge ist.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-92-contents" aria-controls="callout-92" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -3366,15 +3370,30 @@ Lösung:
 </div>
 <div id="callout-94" class="callout-94-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Wir bauen uns einen Algorithmus, der <span class="math inline">\(c_A\)</span> berechnet. Dafür suchen wir uns eine obere Schranke für unser <span class="math inline">\(x\)</span> und testen dann alle <span class="math inline">\(y\)</span> bis zu dieser Schranke. Wir stellen fest das <span class="math inline">\(⌈\sqrt[3]{x}⌉ + x\)</span> eine obere Schranke für <span class="math inline">\(y\)</span> ist, da <span class="math inline">\(p(y) ≤ y^3 + y\)</span> gilt. Somit können wir den folgenden Algorithmus verwenden:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">c_A</span>(x)</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> y <span class="kw">in</span> <span class="fl">0</span><span class="op">:</span>(<span class="fu">ceil</span>(<span class="dt">Integer</span>, x<span class="op">^</span>(<span class="fl">1</span><span class="op">/</span><span class="fl">3</span>)) <span class="op">+</span> x)</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="fu">p</span>(y) <span class="op">==</span> x</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="fl">1</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">0</span></span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Wir bauen uns einen Algorithmus, der <span class="math inline">\(c_A\)</span> berechnet. Dafür suchen wir uns eine obere Schranke <span class="math inline">\(x_0\)</span> für unser <span class="math inline">\(y ≤ p(x_0)\)</span> und testen dann alle <span class="math inline">\(x\)</span> bis zu dieser Schranke. <span class="math display">\[
+\begin{aligned}
+y = p(x) = x - 2x^2 + x^3 &amp;≥ - 2x^2 + x^3 \\
+&amp;= x^2(x-2) \\
+&amp;≥ (x-2)^3
+\end{aligned}
+\]</span></p>
+<p>Somit erhalten wir die obere Schranke <span class="math inline">\(x_0\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\; y &amp;= (x_0-2)^3 \\
+⇔ \\
+&amp;\; x_0 &amp;= \sqrt[3]{y} + 2
+\end{aligned}
+\]</span></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">c_A</span>(y)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    x₀ <span class="op">=</span> <span class="fu">ceil</span>(<span class="dt">Int</span>, y<span class="op">^</span>(<span class="fl">1</span><span class="op">/</span><span class="fl">3</span>) <span class="op">+</span> <span class="fl">2</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> x <span class="kw">in</span> <span class="fl">0</span><span class="op">:</span>x₀</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="fu">p</span>(x) <span class="op">==</span> y</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="fl">1</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">0</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -3395,10 +3414,10 @@ Lösung:
 <div class="callout-body-container callout-body">
 <p>Idee: Wir zeigen dass <span class="math inline">\(A = ℕ_+\)</span> ist.</p>
 <ul>
-<li><span class="math inline">\(n=0\)</span>, <span class="math inline">\(x^0 - y^0 = (x-y)^0\)</span> hat keine Lösung.</li>
-<li><span class="math inline">\(n&gt;0\)</span>, <span class="math inline">\(1^n - 0^n = (1-0)^n\)</span> ist eine Lösung für alle <span class="math inline">\(n&gt;0\)</span>.</li>
+<li><span class="math inline">\(n=0\)</span>, <span class="math inline">\(\quad x^0 - y^0 = (x-y)^0\)</span> hat keine Lösung.</li>
+<li><span class="math inline">\(n&gt;0\)</span>, <span class="math inline">\(\quad 1^n - 0^n = (1-0)^n\)</span> ist eine Lösung für alle <span class="math inline">\(n&gt;0\)</span>.</li>
 </ul>
-<p>Daher ist können wir <span class="math inline">\(c_A\)</span> wie folgt berechnen:</p>
+<p>Daher können wir <span class="math inline">\(c_A\)</span> wie folgt berechnen:</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">c_A</span>(n)</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n <span class="op">&gt;</span> <span class="fl">0</span> ? <span class="fl">1</span> <span class="op">:</span> <span class="fl">0</span></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3412,7 +3431,7 @@ Lösung:
 <h3 class="anchored" data-anchor-id="definition-aufzählbarkeit">Definition: <strong>Aufzählbarkeit</strong></h3>
 <p><span class="math inline">\(Y ⊆ ℕ\)</span> heißt <strong>aufzählbar</strong>, falls <span class="math inline">\(Y = ∅\)</span> oder es eine berechenbare Funktion <span class="math inline">\(f:ℕ → ℕ\)</span> gibt, mit <span class="math inline">\(\text{Bild}(f) = \text{Range}(f) = R_f = Y\)</span>.</p>
 <center>
-<p><img src="./img/Range.jpg" class="img-fluid" style="width:50.0%"></p>
+<p><img src="./img/Range.jpg" class="img-fluid" style="width:80.0%"></p>
 </center>
 <p><span class="math inline">\(X ⊆ ℕ^n\)</span> heißt <strong>aufzählbar</strong>, falls es eine bijektive, berechenbare Funktion <span class="math display">\[c : ℕ^n → ℕ\]</span> gibt, sodass die Menge <span class="math inline">\(Y = \{ c(x_1, ..., x_n) | (x_1, ..., x_n) ∈ X \} ⊆ ℕ\)</span> aufzählbar ist.</p>
 <center>
@@ -3765,7 +3784,7 @@ Lösung:
 <li><span class="math inline">\(U_i \quad ∀i ∈ (0,1)\)</span>: Klassen von unentscheidbare Mengen, die nicht aufzählbar sind. Wir wissen über diese Klassen fast nichts, außer den Satz von Rice.</li>
 </ul>
 <center>
-<p><img src="./img/HasseDiagramM.jpg" class="img-fluid" style="width:50.0%"></p>
+<p><img src="./img/HasseDiagramM.jpg" class="img-fluid" style="width:100.0%"></p>
 </center>
 </div>
 </div>
@@ -3815,7 +3834,7 @@ P(\mathcal{F}) := \{i ∈ ℕ \mid \text{ RAM } M_i \text{ berechnet eine Funkti
 <li><span class="math inline">\(A\)</span>: aufzählbare, aber nicht entscheidbare Mengen</li>
 </ul>
 <center>
-<p><img src="./img/HasseDiagramM.jpg" class="img-fluid" style="width:50.0%"></p>
+<p><img src="./img/HasseDiagramM.jpg" class="img-fluid"></p>
 </center>
 </section>
 </section>
