@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Daniel Schwarzenbach">
-<meta name="dcterms.date" content="2026-06-08">
+<meta name="dcterms.date" content="2026-05-22">
 
 <title>TI-Summary</title>
 <style>
@@ -68,7 +68,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-171a28824539072ca8646231280a40a4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="index_files/libs/bootstrap/bootstrap-63a9ea708969f201bde8d9ebd96e9707.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -139,10 +139,9 @@ window.Quarto = {
   <li><a href="#komplexitätstheorie" id="toc-komplexitätstheorie" class="nav-link" data-scroll-target="#komplexitätstheorie">Komplexitätstheorie</a>
   <ul class="collapse">
   <li><a href="#laufzeit-von-algorithmen" id="toc-laufzeit-von-algorithmen" class="nav-link" data-scroll-target="#laufzeit-von-algorithmen">Laufzeit von Algorithmen</a></li>
-  <li><a href="#die-klasse-mathcalp" id="toc-die-klasse-mathcalp" class="nav-link" data-scroll-target="#die-klasse-mathcalp">Die Klasse <span class="math inline">\(\mathcal{P}\)</span></a></li>
-  <li><a href="#die-klasse-mathcalnp" id="toc-die-klasse-mathcalnp" class="nav-link" data-scroll-target="#die-klasse-mathcalnp">Die Klasse <span class="math inline">\(\mathcal{NP}\)</span></a></li>
-  <li><a href="#mathcalnp-vollständige-mengen" id="toc-mathcalnp-vollständige-mengen" class="nav-link" data-scroll-target="#mathcalnp-vollständige-mengen"><span class="math inline">\(\mathcal{NP}\)</span>-vollständige Mengen</a></li>
-  <li><a href="#definition-np-vollständig" id="toc-definition-np-vollständig" class="nav-link" data-scroll-target="#definition-np-vollständig">Definition: <strong>NP-vollständig</strong></a></li>
+  <li><a href="#die-klasse-textbfp" id="toc-die-klasse-textbfp" class="nav-link" data-scroll-target="#die-klasse-textbfp">Die Klasse <span class="math inline">\(\textbf{P}\)</span></a></li>
+  <li><a href="#die-klasse-textbfnp" id="toc-die-klasse-textbfnp" class="nav-link" data-scroll-target="#die-klasse-textbfnp">Die Klasse <span class="math inline">\(\textbf{NP}\)</span></a></li>
+  <li><a href="#textbfnp-vollständige-mengen" id="toc-textbfnp-vollständige-mengen" class="nav-link" data-scroll-target="#textbfnp-vollständige-mengen"><span class="math inline">\(\textbf{NP}\)</span>-vollständige Mengen</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -168,7 +167,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 8, 2026</p>
+      <p class="date">May 22, 2026</p>
     </div>
   </div>
   
@@ -210,6 +209,9 @@ window.Quarto = {
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <p>Aufbauend auf der Vorlesung von Prof.&nbsp;Dr.&nbsp;Sven Kosub, Konstanz, Sommersemester 2026.</p>
+<center>
+<p><img src="./img/TIMeme.jpg" class="img-fluid" style="width:70.0%"></p>
+</center>
 </section>
 <section id="kahoot" class="level2">
 <h2 class="anchored" data-anchor-id="kahoot">Kahoot!</h2>
@@ -2983,6 +2985,9 @@ Lösung:
 </div>
 </div>
 </div>
+<center>
+<p><img src="./img/AkermannMeme.jpg" class="img-fluid" style="width:70.0%"></p>
+</center>
 <section id="definition-μ-rekursion" class="level3 def">
 <h3 class="anchored" data-anchor-id="definition-μ-rekursion">Definition: <strong>μ-Rekursion</strong></h3>
 <p><span class="math inline">\(μx(E(x)) = \arg \min_{x ∈ ℕ} E(x)\)</span>, wobei <span class="math inline">\(E(x)\)</span> eine Aussage über <span class="math inline">\(x\)</span> ist. Also <span class="math inline">\(μx(E(x))\)</span> ist die kleinste natürliche Zahl <span class="math inline">\(x\)</span>, für die <span class="math inline">\(E(x)\)</span> wahr ist. Wenn es kein <span class="math inline">\(x\)</span> gibt, für das <span class="math inline">\(E(x)\)</span> wahr ist, dann ist <span class="math inline">\(μx(E(x))\)</span> undefiniert.</p>
@@ -3343,7 +3348,7 @@ Lösung:
 <p><span class="math inline">\(A\)</span> ist entscheidbar und <span class="math inline">\(f:ℕ^n → ℕ^m\)</span> berechenbar <span class="math inline">\(\quad ⟹ \quad\)</span> <span class="math inline">\(f^{-1}(A)\)</span> ist entscheidbar.</p>
 </div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-96-contents" aria-controls="callout-96" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-97-contents" aria-controls="callout-97" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -3352,7 +3357,7 @@ Aufgabe: Entscheidbarkeit
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-96" class="callout-96-contents callout-collapse collapse">
+<div id="callout-97" class="callout-97-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Betrachten Sie das Polynom <span class="math inline">\(p:ℕ → ℕ\)</span> gegeben durch <span class="math display">\[
 x ↦ x - 2x^2 + x^3
@@ -3424,6 +3429,55 @@ Lösung:
 </div>
 </div>
 </div>
+<p>Zeigen Sie, dass der Wertebereich <span class="math inline">\(R_{f_p}\)</span> der Funktion <span class="math inline">\(f_p: ℕ → ℕ\)</span> mit <span class="math display">\[
+f_p(x) = \max\{p(x), 0\}
+\]</span> entscheidbar ist, wobei <span class="math inline">\(p\)</span> ein beliebiges Polynom mit ganzzahligen Koeffizienten ist.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-96-contents" aria-controls="callout-96" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-96" class="callout-96-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Mit folgendem Programm können wir <span class="math inline">\(R_{f_p}\)</span> entscheiden:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">C_fp</span>(y)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    x0 <span class="op">=</span> <span class="fu">gp</span>(y)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="op">∈</span> <span class="fl">1</span><span class="op">:</span>x0</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="fu">p</span>(i) <span class="op">==</span> y</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="fl">1</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">0</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dafür brachen wir aber eine berechenbare obere Grenze <span class="math inline">\(g_p(y)\)</span>, die folgende Eigenschaften hat:</p>
+<p><span class="math display">\[|p(y)| ≤ | p(g_p(y) + n )| \quad ∀n ∈ ℕ\]</span></p>
+<p>Wir bemerken, dass das genau dann der Fall ist, wenn <span class="math inline">\(g_p^{-1}(x) ≤ |p(x)|\)</span> ist für alle <span class="math inline">\(x ∈ ℕ\)</span>.</p>
+<center>
+<p><img src="./img/PolynomExample.jpg" class="img-fluid"> {.width=50%}</p>
+</center>
+<p>Das ganze wäre sehr einfach, wenn <span class="math inline">\(p\)</span> monoton wächst oder fällt, da wir dann einfach <span class="math inline">\(g_p(y) = y\)</span> setzen könnten. Der Trick ist es einen Wert <span class="math inline">\(x_p\)</span> zu finden, nachdem es keine Nullstellen mehr geben kann und nachdem das Polynom sicher monoton wächst oder fällt. Dann hätten wir <span class="math inline">\(g_p(y) := x_p + y\)</span>.</p>
+<p>Wir möchten also ein <span class="math inline">\(x_p\)</span> finden, so dass gilt:</p>
+<p><span class="math inline">\(|p(x)| = |a_n x^n + ... + a_0 x^0| &gt; 0\)</span> für alle <span class="math inline">\(x &gt; x_p\)</span>, es gibt keine Nullstellen mehr,</p>
+<p>und</p>
+<p><span class="math inline">\(|δ_x\{p(x)\}| = |n a_n x^{n-1} + ... + 1 a_1 x^0| &gt; 0\)</span> für alle <span class="math inline">\(x &gt; x_p\)</span>, das Polynom wächst oder fällt monoton.</p>
+<p><span class="math display">\[⇐\]</span></p>
+<p><span class="math inline">\(|a_n x_p^n| ≥ |a_{n-1} x_p^{n-1} + ... + a_1 x_p^1| + |a_0 x_p^0|\)</span></p>
+<p><span class="math display">\[⇐\]</span></p>
+<p><span class="math inline">\(|a_n x_p| ≥ |a_{n-1}| + ... + |a_0|\)</span></p>
+<p><span class="math display">\[⇐\]</span></p>
+<p><span class="math inline">\(x_p = |a_{n-1}| + ... + |a_0|\)</span></p>
+<p>Damit ist</p>
+<p><span class="math display">\[g_p(y) = x_p + y\]</span></p>
+<p>eine genügende hohe obere Schranke für <span class="math inline">\(y\)</span>.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gp</span>(y) <span class="op">=</span> <span class="fu">sum</span>(<span class="fu">abs</span>(a) <span class="cf">for</span> a <span class="op">∈</span> coefficients[<span class="fl">1</span><span class="op">:</span><span class="kw">end</span><span class="op">-</span><span class="fl">1</span>]) <span class="op">+</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -3438,8 +3492,18 @@ Lösung:
 <p><img src="./img/NDimAufzählbarkeit.jpg" class="img-fluid" style="width:80.0%"></p>
 </center>
 </section>
+<div class="def">
+<p>Die Menge der aufzählbaren Mengen nennen wir <span class="math inline">\(\textbf{RE}\)</span> (recursively enumerable).</p>
+<p>Die Menge der entscheidbaren Mengen nennen wir <span class="math inline">\(\textbf{R}\)</span> (recursive).</p>
+<p>Die Menge der deren Komplement aufzählbar ist, nennen wir <span class="math inline">\(\textbf{co-RE}\)</span>.</p>
+</div>
 <div class="prop">
 <p>Eine Menge <span class="math inline">\(A ⊆ ℕ\)</span> ist genau dann entscheidbar, wenn <span class="math inline">\(A\)</span> und <span class="math inline">\(\overline{A}\)</span> aufzählbar sind.</p>
+<p>bzw.</p>
+<p><span class="math display">\[
+A \text{ ist entscheidbar} \quad ⇔ \quad A \in \textbf{RE} \; ∧ \; A \in \textbf{co-RE}
+\]</span></p>
+<p>Damit ist die Menge der entscheidbaren Mengen genau <span class="math inline">\(\textbf{R} = \textbf{RE} \cap \textbf{co-RE}\)</span>.</p>
 </div>
 <div class="prop">
 <p>Sei <span class="math inline">\(f : ℕ → ℕ\)</span> berechenbar. Dann sind <span class="math inline">\(\text{Domain}(f)=D_f\)</span> und <span class="math inline">\(\text{Range}(f) =R_f\)</span> aufzählbar.</p>
@@ -3484,7 +3548,7 @@ Lösung:
 </section>
 </section>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-101-contents" aria-controls="callout-101" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-102-contents" aria-controls="callout-102" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -3493,32 +3557,10 @@ Aufgabe: Propositionen zum Projektionssatz
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-101" class="callout-101-contents callout-collapse collapse">
+<div id="callout-102" class="callout-102-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>Zeigen Sie, dass jede umkehr Relation einer entscheidbaren Relation entscheidbar ist.</li>
-</ol>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-97-contents" aria-controls="callout-97" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lösung:
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-97" class="callout-97-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Sei <span class="math inline">\(R ⊆ ℕ^2\)</span> eine entscheidbare Relation. Dann ist die umkehr Relation <span class="math inline">\(R^{-1} = \{ (y, x) | (x, y) ∈ R \}\)</span> entscheidbar, da die charakteristische Funktion von <span class="math inline">\(R^{-1}\)</span> durch die charakteristische Funktion von <span class="math inline">\(R\)</span> berechnet werden kann:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">CRinv</span>(y, x)</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">CR</span>(x, y)</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-<ol start="2" type="a">
-<li>Zeigen sie dass für jede entscheidbare Relation <span class="math inline">\(R ⊆ ℕ^2\)</span> auch <span class="math inline">\(Y = \text{Proj}_2(R)\)</span> aufzählbar ist.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-98-contents" aria-controls="callout-98" aria-expanded="false" aria-label="Toggle callout">
@@ -3532,12 +3574,15 @@ Lösung:
 </div>
 <div id="callout-98" class="callout-98-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sei <span class="math inline">\(R ⊆ ℕ^2\)</span> eine entscheidbare Relation. Dann ist auch die Umkehr Relation <span class="math inline">\(R^{-1} = \{ (y, x) | (x, y) ∈ R \}\)</span> entscheidbar. Somit ist die Projektion von <span class="math inline">\(R^{-1}\)</span> auf das erste Argument, also die Menge <span class="math inline">\(\{ y ∈ ℕ | ∃x ∈ ℕ : (y, x) ∈ R^{-1} \} = Y\)</span> aufzählbar.</p>
+<p>Sei <span class="math inline">\(R ⊆ ℕ^2\)</span> eine entscheidbare Relation. Dann ist die umkehr Relation <span class="math inline">\(R^{-1} = \{ (y, x) | (x, y) ∈ R \}\)</span> entscheidbar, da die charakteristische Funktion von <span class="math inline">\(R^{-1}\)</span> durch die charakteristische Funktion von <span class="math inline">\(R\)</span> berechnet werden kann:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">CRinv</span>(y, x)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">CR</span>(x, y)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-<ol start="3" type="a">
-<li>Zeigen sie folgendes: Sei <span class="math inline">\(R ⊆ ℕ^n\)</span> eine entscheidbare Relation. Dann sind <span class="math inline">\(X_1 = \text{Proj}_1(R), ..., X_n = \text{Proj}_n(R)\)</span> aufzählbar.</li>
+<ol start="2" type="a">
+<li>Zeigen sie dass für jede entscheidbare Relation <span class="math inline">\(R ⊆ ℕ^2\)</span> auch <span class="math inline">\(Y = \text{Proj}_2(R)\)</span> aufzählbar ist.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-99-contents" aria-controls="callout-99" aria-expanded="false" aria-label="Toggle callout">
@@ -3550,6 +3595,25 @@ Lösung:
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-99" class="callout-99-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sei <span class="math inline">\(R ⊆ ℕ^2\)</span> eine entscheidbare Relation. Dann ist auch die Umkehr Relation <span class="math inline">\(R^{-1} = \{ (y, x) | (x, y) ∈ R \}\)</span> entscheidbar. Somit ist die Projektion von <span class="math inline">\(R^{-1}\)</span> auf das erste Argument, also die Menge <span class="math inline">\(\{ y ∈ ℕ | ∃x ∈ ℕ : (y, x) ∈ R^{-1} \} = Y\)</span> aufzählbar.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Zeigen sie folgendes: Sei <span class="math inline">\(R ⊆ ℕ^n\)</span> eine entscheidbare Relation. Dann sind <span class="math inline">\(X_1 = \text{Proj}_1(R), ..., X_n = \text{Proj}_n(R)\)</span> aufzählbar.</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-100-contents" aria-controls="callout-100" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-100" class="callout-100-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Wir machen eine Vollständige Induktion über <span class="math inline">\(n\)</span>.</p>
 <p>IA:</p>
@@ -3575,7 +3639,7 @@ CR_2(x_1,...,x_{n-1}) = CR(x_1,..., x_{n-2}, c^{-1}_1(x_{n-1}), c^{-1}_2(x_{n-1}
 <li>Zeigen Sie oder widerlegen Sie folgende Aussage: Jede berechenbare (partielle) Funktion <span class="math inline">\(f: ℕ^n → ℕ\)</span> ist eine entscheidbare Relation <span class="math inline">\(f ⊆ ℕ^{n+1}\)</span>.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-100-contents" aria-controls="callout-100" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-101-contents" aria-controls="callout-101" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -3584,21 +3648,21 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-100" class="callout-100-contents callout-collapse collapse">
+<div id="callout-101" class="callout-101-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Nein, wenn wir versuchen würden <span class="math inline">\(C_f\)</span> zu berechnen könnten wir auf eine Problem stoßen, nähmlich dass <span class="math inline">\(f\)</span> möglicherweise für einige Eingaben nicht definiert ist, also nicht hält und wir das nicht Voraussehen können. Somit ist <span class="math inline">\(f\)</span> nur dann eine entscheidbare Relation, wenn <span class="math inline">\(D_f\)</span> entscheidbar ist, bzw. wir wissen, für welche Eingaben <span class="math inline">\(f\)</span> definiert ist.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Cf</span>(xs<span class="op">...</span>,y)</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># first check if f(xs...) is defined, then check if it equals y</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="fu">CDF</span>(xs<span class="op">...</span>)</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="fu">f</span>(xs<span class="op">...</span>) <span class="op">==</span> y</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="fl">1</span></span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span></span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="fl">0</span></span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="fl">0</span></span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Cf</span>(xs<span class="op">...</span>,y)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># first check if f(xs...) is defined, then check if it equals y</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="fu">CDF</span>(xs<span class="op">...</span>)</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="fu">f</span>(xs<span class="op">...</span>) <span class="op">==</span> y</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="fl">1</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="fl">0</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="fl">0</span></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -3608,7 +3672,6 @@ Lösung:
 </section>
 <section id="unentscheidbare-mengen" class="level2">
 <h2 class="anchored" data-anchor-id="unentscheidbare-mengen">Unentscheidbare Mengen</h2>
-<p><img src="./img/EntscheidbarkeitMeme.jpg" class="img-fluid"></p>
 <section id="das-halteproblem" class="level3">
 <h3 class="anchored" data-anchor-id="das-halteproblem"><strong>Das Halteproblem</strong></h3>
 <p>Wir können jedes RAM programm <span class="math inline">\(M_x\)</span> als eine natürliche Zahl <span class="math inline">\(x\)</span> kodieren.</p>
@@ -3665,8 +3728,27 @@ Lösung:
 <li><p>Es gibt kein Verfahren, um zu entscheiden, ob eine Aussage <span class="math inline">\(A\)</span> aus den Axiomen eines formalen Systems beweisbar ist.</p></li>
 </ol>
 </div>
+</section>
+<section id="der-zusammenhang-zwischen-entscheidbarkeit-und-beweisbarkeit" class="level3 prop">
+<h3 class="anchored" data-anchor-id="der-zusammenhang-zwischen-entscheidbarkeit-und-beweisbarkeit">Der Zusammenhang zwischen Entscheidbarkeit und Beweisbarkeit</h3>
+<section id="gödelisierung-als-brücke" class="level4">
+<h4 class="anchored" data-anchor-id="gödelisierung-als-brücke">1. Gödelisierung als Brücke</h4>
+<p>Durch <strong>Gödelisierung</strong> kann jede mathematische Aussage als natürliche Zahl kodiert werden. Damit entspricht:</p>
+<p><span class="math display">\[A \subseteq \mathbb{N} \quad \longleftrightarrow \quad \text{eine Menge von mathematischen Aussagen}\]</span></p>
+<p>Die Frage „ist <span class="math inline">\(x \in A\)</span>?” ist äquivalent zur mathematischen Frage „gilt Eigenschaft <span class="math inline">\(A\)</span> für <span class="math inline">\(x\)</span>?“.</p>
+</section>
+<section id="was-bedeutet-entscheidbarkeit-für-beweisbarkeit" class="level4">
+<h4 class="anchored" data-anchor-id="was-bedeutet-entscheidbarkeit-für-beweisbarkeit">2. Was bedeutet Entscheidbarkeit für Beweisbarkeit?</h4>
+<p><span class="math display">\[A \text{ ist entscheidbar} \quad \Longleftrightarrow \quad \forall x \in \mathbb{N}: \text{ entweder „}x \in A\text{" oder „}x \notin A\text{" ist beweisbar}\]</span></p>
+<ul>
+<li>Ein Algorithmus, der <span class="math inline">\(A\)</span> entscheidet, liefert implizit für <strong>jede</strong> Instanz einen Beweis - entweder einen positiven oder einen negativen.</li>
+<li>Unentscheidbarkeit heißt: es gibt Aussagen, die <strong>weder beweisbar noch widerlegbar</strong> sind.</li>
+</ul>
+</section>
+</section>
+<p><img src="./img/EntscheidbarkeitMeme.jpg" class="img-fluid"></p>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-103-contents" aria-controls="callout-103" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-104-contents" aria-controls="callout-104" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -3675,11 +3757,11 @@ Aufgabe: Projektionssatz für <span class="math inline">\(K_0\)</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-103" class="callout-103-contents callout-collapse collapse">
+<div id="callout-104" class="callout-104-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Das spezielle Halteproblem <span class="math inline">\(K_0\)</span> ist aufzählbar, aber nicht entscheidbar. Finden Sie eine entscheidbare Relation <span class="math inline">\(R\)</span> mit <span class="math inline">\(\text{Proj}(R) = K_0\)</span>.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-102-contents" aria-controls="callout-102" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-103-contents" aria-controls="callout-103" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -3688,7 +3770,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-102" class="callout-102-contents callout-collapse collapse">
+<div id="callout-103" class="callout-103-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Wir definieren <span class="math inline">\(R\)</span> als die Relation die das Programm <span class="math inline">\(\text{RAM}_x\)</span> auf der eingabe <span class="math inline">\(x\)</span> für <span class="math inline">\(y\)</span> Schritte laufen lässt und prüft, ob es hält.</p>
 <p>Damit ist <span class="math inline">\(R\)</span> entscheidbar, da wir nur endlich viele Schritte laufen lassen und <span class="math inline">\(K_0\)</span> ist die Projektion von <span class="math inline">\(R\)</span>, da <span class="math inline">\(\text{RAM}_x\)</span> genau dann hält, wenn es für irgendein <span class="math inline">\(y\)</span> hält.</p>
@@ -3698,7 +3780,6 @@ Lösung:
 </div>
 </div>
 </div>
-</section>
 <section id="definition-spezielles-halteproblem" class="level3 def">
 <h3 class="anchored" data-anchor-id="definition-spezielles-halteproblem">Definition: <strong>spezielles Halteproblem</strong></h3>
 <p>Die Menge</p>
@@ -3711,7 +3792,8 @@ K_0 = \{x \mid \text{ die RAM } M_x \text{ hält auf die Eingabe } x \}
 <p><span class="math inline">\(K_0\)</span> ist aufzählbar, aber nicht entscheidbar.</p>
 </div>
 <div class="prop">
-<p>Die aufzählbare Mengen sind nicht abgeschlossen unter Komplementbildung. Insbesondere ist <span class="math inline">\(\bar{K_0}\)</span> nicht aufzählbar.</p>
+<p>Die aufzählbare Mengen sind nicht abgeschlossen unter Komplementbildung. Insbesondere ist <span class="math inline">\(\overline{K_0}\)</span> nicht aufzählbar.</p>
+<p><span class="math display">\[ K_0 ∈ \textbf{RE} \quad ∧ \quad K_0 ∉ \textbf{co-RE} \]</span></p>
 </div>
 <section id="definition-allgemeines-halteproblem" class="level3 def">
 <h3 class="anchored" data-anchor-id="definition-allgemeines-halteproblem">Definition: <strong>allgemeines Halteproblem</strong></h3>
@@ -3720,6 +3802,18 @@ K_0 = \{x \mid \text{ die RAM } M_x \text{ hält auf die Eingabe } x \}
 K = \{(x,y) \mid \text{ die RAM } M_x \text{ hält auf die Eingabe } y \}
 \]</span></p>
 <p>heißt allgemeines Halteproblem.</p>
+<p><strong>Anmerkung:</strong> <span class="math inline">\(K\)</span> ist ebenfalls nicht entscheidbar, aber aufzählbar.</p>
+<p><span class="math display">\[ K ∈ \textbf{RE} \quad ∧ \quad K ∉ \textbf{co-RE} \]</span></p>
+</section>
+<section id="definition-totalitätsproblem" class="level3 prop">
+<h3 class="anchored" data-anchor-id="definition-totalitätsproblem">Definition: <strong>Totalitätsproblem</strong></h3>
+<p>Die Menge</p>
+<p><span class="math display">\[
+\text{TOT} = \{x \mid \text{ die RAM } M_x \text{ hält auf die Eingabe } y, \quad ∀ y \in ℕ \}
+\]</span></p>
+<p>heißt Totalitätsproblem.</p>
+<p><strong>Anmerkung:</strong> <span class="math inline">\(\text{TOT}\)</span> ist nicht aufzählbar und <span class="math inline">\(\overline{\text{TOT}}\)</span> ist ebenfalls nicht aufzählbar.</p>
+<p><span class="math display">\[ \text{TOT} ∉ \textbf{RE} \quad ∧ \quad \text{TOT} ∉ \textbf{co-RE} \]</span></p>
 </section>
 </section>
 <section id="m-reduktion" class="level2">
@@ -3748,7 +3842,7 @@ A ≤_m B
 </ol>
 </div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-105-contents" aria-controls="callout-105" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-106-contents" aria-controls="callout-106" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -3757,12 +3851,12 @@ Aufgabe: m-Reduktion
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-105" class="callout-105-contents callout-collapse collapse">
+<div id="callout-106" class="callout-106-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Welche Eigenschaft fehlt, damit <span class="math inline">\(≤_m\)</span> eine Äquivalenzrelation ist? Und welche Eigenschaft fehlt, damit <span class="math inline">\(≤_m\)</span> eine Ordnungsrelation ist?</p>
 <p>Inwiefern erzeugt <span class="math inline">\(≤_m\)</span> Klassen von Mengen und ordnet diese?</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-104-contents" aria-controls="callout-104" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-105-contents" aria-controls="callout-105" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -3771,7 +3865,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-104" class="callout-104-contents callout-collapse collapse">
+<div id="callout-105" class="callout-105-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Die Symmetrie fehlt, damit <span class="math inline">\(≤_m\)</span> eine Äquivalenzrelation ist. Die Antisymmetrie fehlt, damit <span class="math inline">\(≤_m\)</span> eine Ordnungsrelation ist.</p>
 <p>Eine solche Relation nennen wir eine Präordnung.</p>
@@ -3780,8 +3874,7 @@ Lösung:
 <li><span class="math inline">\(ℕ\)</span></li>
 <li><span class="math inline">\(∅\)</span></li>
 <li><span class="math inline">\(E_-\)</span>: entscheidbare Mengen ohne <span class="math inline">\(∅\)</span> und <span class="math inline">\(ℕ\)</span></li>
-<li><span class="math inline">\(A\)</span>: aufzählbare, aber nicht entscheidbare Mengen</li>
-<li><span class="math inline">\(U_i \quad ∀i ∈ (0,1)\)</span>: Klassen von unentscheidbare Mengen, die nicht aufzählbar sind. Wir wissen über diese Klassen fast nichts, außer den Satz von Rice.</li>
+<li>Wir haben undendlich viele Klassen von unentscheidbaren Mengen.</li>
 </ul>
 <center>
 <p><img src="./img/HasseDiagramM.jpg" class="img-fluid" style="width:100.0%"></p>
@@ -3793,6 +3886,9 @@ Lösung:
 </div>
 </div>
 <div class="prop">
+<p><span class="math inline">\(≡_m := \{(A, B) \mid A, B ⊆ ℕ \text{ und } A ≤^p_m B \text{ und } B ≤^p_m A\}\)</span> ist eine Äquivalenzrelation auf <span class="math inline">\(P(ℕ)\)</span>.</p>
+</div>
+<div class="prop">
 <p>Für Mengen <span class="math inline">\(A, B ⊆ ℕ\)</span> gilt:</p>
 <ol type="1">
 <li>Ist <span class="math inline">\(A\)</span> entscheidbar und ist <span class="math inline">\(B ∉ \{∅, ℕ\}\)</span>, so gilt <span class="math inline">\(A ≤_m B\)</span></li>
@@ -3800,9 +3896,144 @@ Lösung:
 <li>Gilt <span class="math inline">\(A ≤_m B\)</span> und ist <span class="math inline">\(B\)</span> aufzählbar, so ist <span class="math inline">\(A\)</span> aufzählbar.</li>
 </ol>
 </div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-110-contents" aria-controls="callout-110" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aufgabe: Beweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-110" class="callout-110-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Beweisen Sie die vorherige Proposition:</p>
+<ol type="a">
+<li>Ist <span class="math inline">\(A\)</span> entscheidbar und ist <span class="math inline">\(B ∉ \{∅, ℕ\}\)</span>, so gilt <span class="math inline">\(A ≤_m B\)</span>.</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-107-contents" aria-controls="callout-107" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-107" class="callout-107-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Da <span class="math inline">\(A\)</span> entscheidbar ist, ist die charakteristische Funktion <span class="math inline">\(C_A\)</span> berechenbar. Da <span class="math inline">\(B\)</span> nicht leer und nicht alles ist (<span class="math inline">\(B ∉ \{∅, ℕ\}\)</span>), gibt es Elemente <span class="math inline">\(b_0 ∈ B\)</span> und <span class="math inline">\(b_1 ∉ B\)</span>. Wir definieren die Reduktionsfunktion <span class="math inline">\(f: ℕ → ℕ\)</span> durch:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">f</span>(x)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="fu">C_A</span>(x) <span class="op">==</span> <span class="fl">1</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> b_0</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> b_1</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Damit ist <span class="math inline">\(f\)</span> berechenbar und erfüllt die Bedingung <span class="math inline">\(x ∈ A \leftrightarrow f(x) ∈ B\)</span>, also <span class="math inline">\(A ≤_m B\)</span>.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Gilt <span class="math inline">\(A ≤_m B\)</span> und ist <span class="math inline">\(B\)</span> entscheidbar, so ist <span class="math inline">\(A\)</span> entscheidbar.</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-108-contents" aria-controls="callout-108" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-108" class="callout-108-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Da <span class="math inline">\(A ≤_m B\)</span> gilt, existiert eine berechenbare Funktion <span class="math inline">\(f: ℕ → ℕ\)</span>, sodass <span class="math inline">\(x ∈ A \leftrightarrow f(x) ∈ B\)</span>. Da <span class="math inline">\(B\)</span> entscheidbar ist, existiert eine berechenbare charakteristische Funktion <span class="math inline">\(C_B\)</span>. Wir definieren die charakteristische Funktion für <span class="math inline">\(A\)</span> durch:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">C_A</span>(x)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">C_B</span>(<span class="fu">f</span>(x))</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Da <span class="math inline">\(C_A\)</span> berechenbar ist, ist <span class="math inline">\(A\)</span> entscheidbar.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Gilt <span class="math inline">\(A ≤_m B\)</span> und ist <span class="math inline">\(B\)</span> aufzählbar, so ist <span class="math inline">\(A\)</span> aufzählbar.</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-109-contents" aria-controls="callout-109" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-109" class="callout-109-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Da <span class="math inline">\(A ≤_m B\)</span> gilt, existiert eine berechenbare Funktion <span class="math inline">\(f: ℕ → ℕ\)</span>, sodass <span class="math inline">\(x ∈ A \leftrightarrow f(x) ∈ B\)</span>. Da <span class="math inline">\(B\)</span> aufzählbar ist, existiert eine berechenbare Funktion <span class="math inline">\(g: ℕ → ℕ\)</span>, sodass <span class="math inline">\(R_g = B\)</span>. Wir definieren die Funktion für <span class="math inline">\(A\)</span> durch:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">h</span>(n)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">f</span>(<span class="fu">g</span>(n))</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Da <span class="math inline">\(h\)</span> berechenbar ist und <span class="math inline">\(R_h = A\)</span>, ist <span class="math inline">\(A\)</span> aufzählbar.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="prop">
+<p>Die m-Reduktion ist Komplementstabil, d.h. für Mengen <span class="math inline">\(A, B ⊆ ℕ\)</span> gilt: <span class="math display">\[
+A ≤_m B \quad ⇔ \quad \overline{A} ≤_m \overline{B}
+\]</span></p>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-112-contents" aria-controls="callout-112" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aufgabe: Beweis der Komplementstabilität der m-Reduktion
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-112" class="callout-112-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Beweisen Sie die Komplementstabilität der m-Reduktion, d.h. zeigen Sie, dass für Mengen <span class="math inline">\(A, B ⊆ ℕ\)</span> gilt: <span class="math display">\[
+A ≤_m B \quad ⇔ \quad \overline{A} ≤_m \overline{B}
+\]</span></p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-111-contents" aria-controls="callout-111" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-111" class="callout-111-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\begin{aligned}
+A ≤_m B &amp;\quad ⇔ \quad ∃f: ℕ → ℕ \text{ berechenbar}, ∀x ∈ ℕ: x ∈ A \leftrightarrow f(x) ∈ B \\
+&amp;\quad ⇔ \quad ∃f: ℕ → ℕ \text{ berechenbar}, ∀x ∈ ℕ: x ∉ A \leftrightarrow f(x) ∉ B \\
+&amp;\quad ⇔ \quad ∃f: ℕ → ℕ \text{ berechenbar}, ∀x ∈ ℕ: x ∈ \overline{A} \leftrightarrow f(x) ∈ \overline{B} \\
+&amp;\quad ⇔ \quad \overline{A} ≤_m \overline{B}
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <section id="theorem-von-myhill-1955" class="level4 prop">
 <h4 class="anchored" data-anchor-id="theorem-von-myhill-1955">Theorem von Myhill (1955)</h4>
-<p>Fur jede aufzählbare Menge <span class="math inline">\(A\)</span> gilt <span class="math inline">\(A ≤_m K_0\)</span>.</p>
+<p>Fur jede aufzählbare Menge <span class="math inline">\(A\)</span> gilt <span class="math inline">\(A ≤_m K_0 ≡_m K\)</span>.</p>
 </section>
 <div class="def">
 <p><span class="math display">\[
@@ -3816,6 +4047,16 @@ P(\mathcal{F}) := \{i ∈ ℕ \mid \text{ RAM } M_i \text{ berechnet eine Funkti
 <li><p>Ist <span class="math inline">\(ν¹ ∉ \mathcal{F}\)</span>, so gilt <span class="math inline">\(K_0 ≤_m P(\mathcal{F})\)</span></p></li>
 </ol>
 </div>
+<p>Hasse Diagramm zu den <span class="math inline">\(m\)</span>-Reduktionsklassen:</p>
+<ul>
+<li><span class="math inline">\(∅\)</span> und <span class="math inline">\(ℕ\)</span> bilden jeweils eine eigene Äquivalenzklasse von <span class="math inline">\(≡_m\)</span>.</li>
+<li><span class="math inline">\(E_-\)</span>: entscheidbare Mengen ohne <span class="math inline">\(∅\)</span> und <span class="math inline">\(ℕ\)</span> ist eine Äquivalenzklasse von <span class="math inline">\(≡_m\)</span>.</li>
+<li>Es gibt unendlich viele Klassen von aufzählbaren, aber nicht entscheidbaren Mengen.</li>
+<li>Es gibt unendlich viele Klassen von nicht aufzählbaren Mengen.</li>
+</ul>
+<center>
+<p><img src="./img/HasseDiagramM.jpg" class="img-fluid"></p>
+</center>
 <section id="satz-von-rice-1953" class="level3 prop">
 <h3 class="anchored" data-anchor-id="satz-von-rice-1953">Satz von Rice (1953)</h3>
 <p>Jede nichttriviale Eigenschaft von Funktionen ist unentscheidbar.</p>
@@ -3827,15 +4068,73 @@ P(\mathcal{F}) := \{i ∈ ℕ \mid \text{ RAM } M_i \text{ berechnet eine Funkti
 </ol>
 <p>⚠️ Die Aussage ist <strong>nicht</strong>: <span class="math inline">\(ν^1 ∉ \mathcal{F} \; ⇒ \; P(\mathcal{F})\)</span> ist aufzählbar</p>
 </section>
+<div class="prop">
+<p>Die Menge <span class="math display">\[
+\overline{P(\{ν^1\})} = \{(x) \mid \text{ die RAM } M_x \text{ hält auf irgendeiner Eingabe } y ∈ ℕ \}
+\]</span> ist aufzählbar.</p>
+<p>⚠️ Diese Aussage folgt nicht aus dem Satz von Rice</p>
+</div>
+<div class="prop">
+<p>Die Menge <span class="math display">\[
+P(\{x ↦ x^2\}) = \{(x) \mid \text{ die RAM } M_x \text{ berechnet } y ↦ y^2 \text{ für jede Eingabe } y ∈ ℕ \}
+\]</span> ist nicht aufzählbar.</p>
+<p>⚠️ Diese Aussage folgt nicht aus dem Satz von Rice</p>
+</div>
 <p><img src="./img/RiceMeme.jpg" class="img-fluid"></p>
-<p>Hasse Diagramm zu den <span class="math inline">\(m\)</span>-Reduktionsklassen, ⚠️unvollständig:</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-114-contents" aria-controls="callout-114" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aufgaben: Berechenbarkeitstheorie
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-114" class="callout-114-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Teilen sie die folgenden Mengen in die Klassen</p>
 <ul>
-<li><span class="math inline">\(E_-\)</span>: entscheidbare Mengen ohne <span class="math inline">\(∅\)</span> und <span class="math inline">\(ℕ\)</span></li>
+<li><span class="math inline">\(E\)</span>: entscheidbare Mengen</li>
 <li><span class="math inline">\(A\)</span>: aufzählbare, aber nicht entscheidbare Mengen</li>
+<li><span class="math inline">\(U\)</span>: nicht aufzählbare Mengen</li>
 </ul>
-<center>
-<p><img src="./img/HasseDiagramM.jpg" class="img-fluid"></p>
-</center>
+<ol type="a">
+<li><p><span class="math inline">\(\{n ∣ n ∈ ℕ \text{ und das Polynom } x^n - n \text{ hat eine Nullstelle in den reellen Zahlen }\}\)</span></p></li>
+<li><p><span class="math inline">\(\{n ∣ n ∈ ℕ \text{ und das Polynom } x^n - n \text{ hat eine Nullstelle in den ganzen Zahlen }\}\)</span></p></li>
+<li><p><span class="math inline">\(\{ i ∣ \text{die von der RAM } M_i \text{ berechnete einstellige Funktion besitzt eine Nullstelle} \}\)</span></p></li>
+<li><p><span class="math inline">\(\{ i ∣ \text{ die von der RAM } M_i \text{ berechnete einstellige Funktion besitzt keine Nullstelle }\}\)</span></p></li>
+<li><p><span class="math inline">\(\{ i \mid \text{RAM } M_i \text{ hält auf mindestens } 2^i \text{ Eingaben aus } \mathbb{N} \}\)</span></p></li>
+<li><p><span class="math inline">\(\{n ∣ n ∈ ℕ \text{ und das Polynom } x^n + n \text{ hat eine Nullstelle in den reellen Zahlen }\}\)</span></p></li>
+<li><p><span class="math inline">\(\{i \mid \text{RAM } M_i \text{ berechnet } ν^1 \}\)</span></p></li>
+<li><p><span class="math inline">\(\{i \mid \text{RAM } M_i \text{ berechnet nicht } ν^1 \}\)</span></p></li>
+<li><p><span class="math inline">\(\{ i \mid \text{RAM } M_i \text{ hat mindestens } i \text{ Befehle} \}\)</span></p></li>
+<li><p><span class="math inline">\(\{ i \mid \text{RAM } M_i \text{ hält für eine ungerade Anzahl von Eingaben } i \text{ Befehle} \}\)</span></p></li>
+<li><p><span class="math inline">\(\{n \mid n \in ℕ \text{ und } x^n + y^n = (x+y)^n \text{ hat eine Lösung } (x,y)∈ ℕ^2 \text{ mit } x ≠ y\}\)</span></p></li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-113-contents" aria-controls="callout-113" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-113" class="callout-113-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><span class="math inline">\(E\)</span>: (a), (b), (f), (i), (j), (k)</li>
+<li><span class="math inline">\(A\)</span>: (c), (e), (h)</li>
+<li><span class="math inline">\(U\)</span>: (d), (g), (j)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="komplexitätstheorie" class="level1">
@@ -3868,16 +4167,16 @@ P(\mathcal{F}) := \{i ∈ ℕ \mid \text{ RAM } M_i \text{ berechnet eine Funkti
 <h3 class="anchored" data-anchor-id="laufzeit-von-ram-programmen">Laufzeit von RAM Programmen</h3>
 <p>Jeder Befehl einer RAM ist genau ein Zeitschritt.</p>
 <p>Betrachte das RAM Programm <span class="math inline">\(M\)</span>:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode ram code-with-copy"><code class="sourceCode ram"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># f(x, y, z) = z + x ⋅ y</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>0   <span class="dt">R3</span> <span class="fu">←</span> <span class="bn">1</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Begin der Schleife</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>1   <span class="kw">IF</span> <span class="dt">R1</span> <span class="fu">=</span> <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">3</span></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>2   <span class="dt">R2</span> <span class="fu">←</span> <span class="dt">R2</span> <span class="fu">+</span> <span class="dt">R0</span></span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>3   <span class="dt">R1</span> <span class="fu">←</span> <span class="dt">R1</span> <span class="fu">-</span> <span class="dt">R3</span></span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>4   <span class="kw">GOTO</span> <span class="bn">1</span></span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Ende der Schleife</span></span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>5   <span class="dt">R0</span> <span class="fu">←</span> <span class="dt">R2</span></span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>6   <span class="kw">STOP</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode ram code-with-copy"><code class="sourceCode ram"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># f(x, y, z) = z + x ⋅ y</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>0   <span class="dt">R3</span> <span class="fu">←</span> <span class="bn">1</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Begin der Schleife</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>1   <span class="kw">IF</span> <span class="dt">R1</span> <span class="fu">=</span> <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">3</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>2   <span class="dt">R2</span> <span class="fu">←</span> <span class="dt">R2</span> <span class="fu">+</span> <span class="dt">R0</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>3   <span class="dt">R1</span> <span class="fu">←</span> <span class="dt">R1</span> <span class="fu">-</span> <span class="dt">R3</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>4   <span class="kw">GOTO</span> <span class="bn">1</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Ende der Schleife</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>5   <span class="dt">R0</span> <span class="fu">←</span> <span class="dt">R2</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>6   <span class="kw">STOP</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>wir sagen, dass die Schleife <span class="math inline">\(y\)</span>-mal durchlaufen.</p>
 <p><span class="math display">\[t_M(x,y,z) = 4y + 3\]</span></p>
 <p>y ist muss noch codiert werden, damit wir die Laufzeit in Abhängigkeit von der Eingabelänge angeben können. Dafür brauchen wir <span class="math inline">\(|y|\)</span> Stellen, also ist <span class="math inline">\(y ≤ 2^{|y|+1} - 2\)</span>.</p>
@@ -3899,14 +4198,14 @@ P(\mathcal{F}) := \{i ∈ ℕ \mid \text{ RAM } M_i \text{ berechnet eine Funkti
 <section id="laufzeit-von-höheren-programmiersprachen" class="level3">
 <h3 class="anchored" data-anchor-id="laufzeit-von-höheren-programmiersprachen">Laufzeit von Höheren Programmiersprachen</h3>
 <p>als 0 Schritte zählen 0 intialisierungen. zb <code>z = 0, A = fill(0, 10, 10)</code> als ein schritt zählen: <code>+,-,&lt;,&gt;,≤,≥,==,!=,!,&amp;&amp;,||</code>, Zuweisungen und <code>return</code>. als <span class="math inline">\(n\)</span> schritte zählen: <code>*,/,÷</code></p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">prod</span>(x,y)</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> <span class="fl">0</span> <span class="co"># initialisierung zählt als 0 Schritte</span></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> (y <span class="op">&gt;</span> <span class="fl">0</span>) <span class="co"># y-mal durchlaufen +1 mal aufgerufen</span></span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>        z <span class="op">+=</span> x <span class="co"># zählt als 2 Schritte</span></span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>        y <span class="op">-=</span> <span class="fl">1</span> <span class="co"># zählt als 2 Schritte</span></span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> z <span class="co"># zählt als 1 Schritt</span></span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">prod</span>(x,y)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> <span class="fl">0</span> <span class="co"># initialisierung zählt als 0 Schritte</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> (y <span class="op">&gt;</span> <span class="fl">0</span>) <span class="co"># y-mal durchlaufen +1 mal aufgerufen</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>        z <span class="op">+=</span> x <span class="co"># zählt als 2 Schritte</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>        y <span class="op">-=</span> <span class="fl">1</span> <span class="co"># zählt als 2 Schritte</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> z <span class="co"># zählt als 1 Schritt</span></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math display">\[
 \begin{aligned}
 t_{\text{M}}(x,y) &amp;= 5y + 1 + 1 \\
@@ -3918,8 +4217,8 @@ t_{\text{M}}(x,y) &amp;= 5y + 1 + 1 \\
 \]</span></p>
 </section>
 </section>
-<section id="die-klasse-mathcalp" class="level2">
-<h2 class="anchored" data-anchor-id="die-klasse-mathcalp">Die Klasse <span class="math inline">\(\mathcal{P}\)</span></h2>
+<section id="die-klasse-textbfp" class="level2">
+<h2 class="anchored" data-anchor-id="die-klasse-textbfp">Die Klasse <span class="math inline">\(\textbf{P}\)</span></h2>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Of_cpDNoZtE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <div class="def">
 <p>Ein Algorithmus <span class="math inline">\(M\)</span> berechnet <span class="math inline">\(f:(Σ^*)^m → Σ\)</span> in Polynomialzeit, falls ein Polynom <span class="math display">\[
@@ -3953,21 +4252,92 @@ p(n) = a_0 + a_1n + ... + a_rn^r
 <li><span class="math inline">\(\textbf{P}\)</span> ist abgeschlossen unter Komplementbildung, Vereinigung, Durchschnitt.</li>
 </ol>
 </div>
+<p>Jeder Algorithmus der nur linear große for-schleifen benutzt, ist in Polynomialzeit berechenbar, da die Anzahl der Schritte durch ein Polynom beschränkt ist.</p>
 </section>
-<section id="die-klasse-mathcalnp" class="level2">
-<h2 class="anchored" data-anchor-id="die-klasse-mathcalnp">Die Klasse <span class="math inline">\(\mathcal{NP}\)</span></h2>
+<section id="die-klasse-textbfnp" class="level2">
+<h2 class="anchored" data-anchor-id="die-klasse-textbfnp">Die Klasse <span class="math inline">\(\textbf{NP}\)</span></h2>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/FpeP_gr0Eu4" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <div class="def">
 <p>Eine Menge <span class="math inline">\(A ⊆ Σ^*_1\)</span> liegt genau dann in der Klasse <span class="math inline">\(\textbf{NP}\)</span>, wenn ein Polynom <span class="math inline">\(p\)</span> und eine Menge <span class="math inline">\(B ∈ \textbf{P}\)</span> existieren, sodass für alle <span class="math inline">\(x ∈ Σ^*_1\)</span> gilt: <span class="math inline">\(x ∈ A ⟺ (∃y ∈ Σ^*_2)[|y| ≤ p(|x|) ∧ (x, y) ∈ B]\)</span></p>
 </div>
+<div class="prop">
+<p><span class="math display">\[
+\textbf{P} ⊆ \textbf{NP} ⊆ \textbf{EXP} ⊆ \textbf{NEXP}
+\]</span></p>
+</div>
+<section id="offene-fragen-der-komplexitätstheorie" class="level3 prop">
+<h3 class="anchored" data-anchor-id="offene-fragen-der-komplexitätstheorie">Offene Fragen der Komplexitätstheorie</h3>
+<div class="row">
+<div class="col">
+<ol type="1">
+<li><span class="math inline">\(\textbf{P} \stackrel{?}{⊊} \textbf{NP}\)</span></li>
+<li><span class="math inline">\(\textbf{NP} \stackrel{?}{⊊} \textbf{EXP}\)</span></li>
+<li><span class="math inline">\(\textbf{E} \stackrel{?}{⊊} \textbf{NE}\)</span></li>
+<li><span class="math inline">\(\textbf{EXP} \stackrel{?}{⊊} \textbf{NEXP}\)</span></li>
+<li><span class="math inline">\(\textbf{L} \stackrel{?}{⊊} \textbf{NL}\)</span></li>
+<li><span class="math inline">\(\textbf{NL} \stackrel{?}{⊊} \textbf{LIN}\)</span></li>
+</ol>
+<p>Wir wissen aber das <span class="math inline">\(\textbf{LIN} ≠ \textbf{NLIN}\)</span>.</p>
+<p>Die Komplexitätsklassen werden durch die Laufzeit einer Turingmaschine definiert, die die Menge entscheidet.</p>
+<ul>
+<li><span class="math inline">\(\textbf{L} = \mathcal{O}(log(n))\)</span></li>
+<li><span class="math inline">\(\textbf{LIN} = \mathcal{O}(n)\)</span></li>
+<li><span class="math inline">\(\textbf{P} = \mathcal{O}(n^c)\)</span></li>
+<li><span class="math inline">\(\textbf{E} = \mathcal{O}(2^{cn})\)</span></li>
+<li><span class="math inline">\(\textbf{EXP} = \mathcal{O}(2^{n^c})\)</span></li>
+</ul>
+</div>
+<div class="col">
+<center>
+<p><img src="./img/HasseDiagramComplexity.jpg" class="img-fluid" style="width:60.0%"></p>
+</center>
+</div>
+</div>
 </section>
-<section id="mathcalnp-vollständige-mengen" class="level2">
-<h2 class="anchored" data-anchor-id="mathcalnp-vollständige-mengen"><span class="math inline">\(\mathcal{NP}\)</span>-vollständige Mengen</h2>
+<p>Mögliche Ergebnisse des <span class="math inline">\(\mathcal{P}\)</span> vs <span class="math inline">\(\mathcal{NP}\)</span> Problems:</p>
+<ol type="1">
+<li><span class="math inline">\(\textbf{P}=\textbf{NP}\)</span></li>
+<li><span class="math inline">\(\textbf{P} \subsetneq \textbf{NP}\)</span></li>
+<li><span class="math inline">\(\textbf{P} \stackrel{?}{=} \textbf{NP}\)</span> ist ein gödelsches Problem, d.h. es kann weder bewiesen noch widerlegt werden.</li>
+<li><span class="math inline">\(\textbf{P} \subsetneq \textbf{NP}\)</span> ist unabhängig von den Axiomen der Mengenlehre, d.h. es ist selbst ein Axiom.</li>
+</ol>
+<center>
+<p><img src="./img/ComplexityTheorieMemem.gif" class="img-fluid" style="width:50.0%"></p>
+</center>
+</section>
+<section id="textbfnp-vollständige-mengen" class="level2">
+<h2 class="anchored" data-anchor-id="textbfnp-vollständige-mengen"><span class="math inline">\(\textbf{NP}\)</span>-vollständige Mengen</h2>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/W9G_1xG77LE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="def">
+<p>Sein <span class="math inline">\(A⊆Σ^*_1\)</span> und <span class="math inline">\(B⊆Σ^*_2\)</span> Mengen. Falls es eine totale Funktion <span class="math inline">\(f:Σ^*_1 → Σ^*_2\)</span> mit <span class="math inline">\(f ∈ \textbf{FP}\)</span> gibt <span class="math display">\[
+x ∈ A \quad ⟷ \quad f(x) ∈ B
+\]</span> bzw. <span class="math display">\[
+C_A(x) = C_B(f(x))
+\]</span> gibt, so sagen wir: <span class="math inline">\(A\)</span> ist <strong>in Polynomialzeit reduzierbar</strong> auf <span class="math inline">\(B\)</span> bzw. <span class="math display">\[
+A ≤^p_m B
+\]</span></p>
+</div>
+<div class="prop">
+<ol type="1">
+<li>Die Relation <span class="math inline">\(≤_m^p\)</span> ist reflexiv und transitiv.</li>
+<li>Für alle Mengen <span class="math inline">\(A\)</span> und <span class="math inline">\(B\)</span> gilt: <span class="math inline">\(A ≤_m^p B \quad \Leftrightarrow \quad \overline{A} ≤_m^p \overline{B}\)</span></li>
+</ol>
+</div>
+<section id="definition-np-vollständig" class="level3 def">
+<h3 class="anchored" data-anchor-id="definition-np-vollständig">Definition: <strong>NP-vollständig</strong></h3>
+<p>Eine Menge <span class="math inline">\(B\)</span> heißt NP-vollständig, falls <span class="math inline">\(B ∈ NP\)</span> und <span class="math inline">\(A ≤^p_m B\)</span> für alle <span class="math inline">\(A ∈ \textbf{NP}\)</span>.</p>
 </section>
-<section id="definition-np-vollständig" class="level2 def">
-<h2 class="anchored" data-anchor-id="definition-np-vollständig">Definition: <strong>NP-vollständig</strong></h2>
-<p>Eine Menge <span class="math inline">\(B\)</span> heißt NP-vollständig, falls <span class="math inline">\(B ∈ NP\)</span> und <span class="math inline">\(A ≤^p_m B\)</span> für alle <span class="math inline">\(A ∈ NP\)</span></p>
+<div class="prop">
+<p><strong>Anmerkung</strong>: Ein Algorithmus, der eine NP-vollständige Menge entscheidet, kann von einer Maschine mit der sich Programme beliebig parallelisieren lassen, in polynomieller Zeit entschieden werden.</p>
+<p>Probleme in EXP-vollständig können hingegen nicht parallelisiert werden, und benötigen auch auf einer Maschine mit unendlich vielen Prozessoren exponentielle Zeit.</p>
+</div>
+<section id="definition-p-vollständig" class="level3 def">
+<h3 class="anchored" data-anchor-id="definition-p-vollständig">Definition: <strong>P-vollständig</strong></h3>
+<p>Eine Menge <span class="math inline">\(B\)</span> heißt P-vollständig, falls <span class="math inline">\(B ∈ P\)</span> und <span class="math inline">\(A ≤^p_m B\)</span> für alle <span class="math inline">\(A ∈ \textbf{P}\)</span>.</p>
+</section>
+<div class="prop">
+<p><strong>Anmerkung</strong>: Ein Algorithmus, der eine P-vollständige Menge entscheidet, ist nicht parallelisierbar, d.h. es gibt keinen Algorithmus, der die Menge in logarithmischer Zeit auf einer polynomiellen Anzahl von Prozessoren entscheidet.</p>
+</div>
 </section>
 </section>
 
