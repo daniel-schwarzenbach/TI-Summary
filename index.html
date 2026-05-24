@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Daniel Schwarzenbach">
-<meta name="dcterms.date" content="2026-05-22">
+<meta name="dcterms.date" content="2026-05-24">
 
 <title>TI-Summary</title>
 <style>
@@ -134,7 +134,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#entscheidbare-mengen" id="toc-entscheidbare-mengen" class="nav-link" data-scroll-target="#entscheidbare-mengen">Entscheidbare Mengen</a></li>
   <li><a href="#unentscheidbare-mengen" id="toc-unentscheidbare-mengen" class="nav-link" data-scroll-target="#unentscheidbare-mengen">Unentscheidbare Mengen</a></li>
-  <li><a href="#m-reduktion" id="toc-m-reduktion" class="nav-link" data-scroll-target="#m-reduktion"><span class="math inline">\(m\)</span>-Reduktion</a></li>
+  <li><a href="#many-to-one-reduzierbarkeit" id="toc-many-to-one-reduzierbarkeit" class="nav-link" data-scroll-target="#many-to-one-reduzierbarkeit">Many to One Reduzierbarkeit</a></li>
   </ul></li>
   <li><a href="#komplexitätstheorie" id="toc-komplexitätstheorie" class="nav-link" data-scroll-target="#komplexitätstheorie">Komplexitätstheorie</a>
   <ul class="collapse">
@@ -167,7 +167,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 22, 2026</p>
+      <p class="date">May 24, 2026</p>
     </div>
   </div>
   
@@ -3458,7 +3458,7 @@ Lösung:
 <p><span class="math display">\[|p(y)| ≤ | p(g_p(y) + n )| \quad ∀n ∈ ℕ\]</span></p>
 <p>Wir bemerken, dass das genau dann der Fall ist, wenn <span class="math inline">\(g_p^{-1}(x) ≤ |p(x)|\)</span> ist für alle <span class="math inline">\(x ∈ ℕ\)</span>.</p>
 <center>
-<p><img src="./img/PolynomExample.jpg" class="img-fluid"> {.width=50%}</p>
+<p><img src="./img/PolynomExample.jpg" class="img-fluid"> {width=50%}</p>
 </center>
 <p>Das ganze wäre sehr einfach, wenn <span class="math inline">\(p\)</span> monoton wächst oder fällt, da wir dann einfach <span class="math inline">\(g_p(y) = y\)</span> setzen könnten. Der Trick ist es einen Wert <span class="math inline">\(x_p\)</span> zu finden, nachdem es keine Nullstellen mehr geben kann und nachdem das Polynom sicher monoton wächst oder fällt. Dann hätten wir <span class="math inline">\(g_p(y) := x_p + y\)</span>.</p>
 <p>Wir möchten also ein <span class="math inline">\(x_p\)</span> finden, so dass gilt:</p>
@@ -3816,10 +3816,10 @@ K = \{(x,y) \mid \text{ die RAM } M_x \text{ hält auf die Eingabe } y \}
 <p><span class="math display">\[ \text{TOT} ∉ \textbf{RE} \quad ∧ \quad \text{TOT} ∉ \textbf{co-RE} \]</span></p>
 </section>
 </section>
-<section id="m-reduktion" class="level2">
-<h2 class="anchored" data-anchor-id="m-reduktion"><span class="math inline">\(m\)</span>-Reduktion</h2>
-<section id="definition-m-reduzierbarkeit" class="level3 def">
-<h3 class="anchored" data-anchor-id="definition-m-reduzierbarkeit">Definition: <strong>m-Reduzierbarkeit</strong></h3>
+<section id="many-to-one-reduzierbarkeit" class="level2">
+<h2 class="anchored" data-anchor-id="many-to-one-reduzierbarkeit">Many to One Reduzierbarkeit</h2>
+<section id="definition-m-reduzierbarkeit-oder-auch-many-to-one-reduzierbarkeit" class="level3 def">
+<h3 class="anchored" data-anchor-id="definition-m-reduzierbarkeit-oder-auch-many-to-one-reduzierbarkeit">Definition: <strong>m-Reduzierbarkeit</strong> oder auch <strong>Many-to-One-Reduzierbarkeit</strong></h3>
 <p>Seien <span class="math inline">\(A, B ⊆ ℕ\)</span>. Falls eine <span class="math inline">\(f:ℕ→ℕ\)</span> eine totale berechenbare funktion gibt mit</p>
 <p><span class="math display">\[x ∈ A \quad ⟷ \quad f(x) ∈ B\]</span></p>
 <p>bzw.</p>
@@ -3838,23 +3838,23 @@ A ≤_m B
 <li><span class="math inline">\(A ≤_m B \quad ⇔ \quad \overline{A} ≤_m \overline{B}\)</span></li>
 <li><span class="math inline">\(A ≤_m ∅ \quad ⇔ \quad A = ∅\)</span></li>
 <li><span class="math inline">\(A ≤_m ℕ \quad ⇔ \quad A = ℕ\)</span></li>
-<li><span class="math inline">\(K_0 \not ≤_m \overline{K_0}\)</span></li>
 </ol>
 </div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-106-contents" aria-controls="callout-106" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-110-contents" aria-controls="callout-110" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Aufgabe: m-Reduktion
+Aufgabe: many-to-one reduction
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-106" class="callout-106-contents callout-collapse collapse">
+<div id="callout-110" class="callout-110-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Welche Eigenschaft fehlt, damit <span class="math inline">\(≤_m\)</span> eine Äquivalenzrelation ist? Und welche Eigenschaft fehlt, damit <span class="math inline">\(≤_m\)</span> eine Ordnungsrelation ist?</p>
-<p>Inwiefern erzeugt <span class="math inline">\(≤_m\)</span> Klassen von Mengen und ordnet diese?</p>
+<ol type="a">
+<li>Zeigen Sie, das <span class="math inline">\(≤_m\)</span> reflexiv ist.</li>
+</ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-105-contents" aria-controls="callout-105" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -3867,7 +3867,111 @@ Lösung:
 </div>
 <div id="callout-105" class="callout-105-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Die Symmetrie fehlt, damit <span class="math inline">\(≤_m\)</span> eine Äquivalenzrelation ist. Die Antisymmetrie fehlt, damit <span class="math inline">\(≤_m\)</span> eine Ordnungsrelation ist.</p>
+<p>Wir nutzen als Reduktionsfunktion die Identität <span class="math inline">\(f(x) = x\)</span>. Dann gilt: <span class="math display">\[
+x ∈ A \quad ⟷ \quad f(x) = x ∈ A
+\]</span></p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Zeigen Sie, das <span class="math inline">\(≤_m\)</span> transitiv ist.</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-106-contents" aria-controls="callout-106" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-106" class="callout-106-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Angenommen <span class="math inline">\(A ≤_m B\)</span> mit Reduktionsfunktion <span class="math inline">\(f\)</span> und <span class="math inline">\(B ≤_m C\)</span> mit Reduktionsfunktion <span class="math inline">\(g\)</span>. Dann ist die Funktion <span class="math inline">\(h(x) = g(f(x))\)</span> eine Reduktionsfunktion von <span class="math inline">\(A\)</span> auf <span class="math inline">\(C\)</span>, da gilt: <span class="math display">\[
+x ∈ A \quad ⟷ \quad f(x) ∈ B \quad ⟷ \quad g(f(x)) = h(x) ∈ C
+\]</span></p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Beweisen Sie die Komplementstabilität der m-Reduktion, d.h. zeigen Sie, dass für Mengen <span class="math inline">\(A, B ⊆ ℕ\)</span> gilt:</li>
+</ol>
+<p><span class="math display">\[
+A ≤_m B \quad ⇔ \quad \overline{A} ≤_m \overline{B}
+\]</span></p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-107-contents" aria-controls="callout-107" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-107" class="callout-107-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\begin{aligned}
+A ≤_m B &amp;\quad ⇔ \quad ∃f: ℕ → ℕ \text{ berechenbar}, ∀x ∈ ℕ: x ∈ A \leftrightarrow f(x) ∈ B \\
+&amp;\quad ⇔ \quad ∃f: ℕ → ℕ \text{ berechenbar}, ∀x ∈ ℕ: x ∉ A \leftrightarrow f(x) ∉ B \\
+&amp;\quad ⇔ \quad ∃f: ℕ → ℕ \text{ berechenbar}, ∀x ∈ ℕ: x ∈ \overline{A} \leftrightarrow f(x) ∈ \overline{B} \\
+&amp;\quad ⇔ \quad \overline{A} ≤_m \overline{B}
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Zeigen sie dass</li>
+</ol>
+<p><span class="math display">\[
+∅ ≤_m A, \quad ∀ A ⊊ ℕ
+\]</span></p>
+<p>und</p>
+<p><span class="math display">\[
+ℕ ≤_m A, \quad ∀ A ⊆ ℕ \;∧\; A ≠ ∅
+\]</span></p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-108-contents" aria-controls="callout-108" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-108" class="callout-108-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><p><span class="math inline">\(∅ ≤_m A, \quad ∀ A ⊊ ℕ\)</span>: Da A eine echte Teilmenge von ℕ ist, gibt es ein Element <span class="math inline">\(x_0 ∈ ℕ\)</span> mit <span class="math inline">\(x_0 ∉ A\)</span>. Wir nutzen als Reduktionsfunktion die konstante Funktion <span class="math inline">\(f(x) = x_0\)</span>. Dann gilt: <span class="math display">\[
+x ∈ ∅ \quad ⟷ \quad f(x) = x_0 ∈ A
+\]</span></p></li>
+<li><p><span class="math inline">\(ℕ ≤_m A, \quad ∀ A ⊆ ℕ \;∧\; A ≠ ∅\)</span>: Da A nicht leer ist, gibt es ein Element <span class="math inline">\(x_0 ∈ A\)</span>. Wir nutzen als Reduktionsfunktion die konstante Funktion <span class="math inline">\(f(x) = x_0\)</span>. Dann gilt: <span class="math display">\[
+x ∈ ℕ \quad ⟷ \quad f(x) = x_0 ∈ A
+\]</span></p></li>
+</ul>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Welche Eigenschaft fehlt, damit <span class="math inline">\(≤_m\)</span> eine Äquivalenzrelation ist? Und welche Eigenschaft fehlt, damit <span class="math inline">\(≤_m\)</span> eine Halbordnung, oder Ordnung ist? Inwiefern erzeugt <span class="math inline">\(≤_m\)</span> Klassen von Mengen und ordnet diese?</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-109-contents" aria-controls="callout-109" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-109" class="callout-109-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Symmetrie fehlt, damit <span class="math inline">\(≤_m\)</span> eine Äquivalenzrelation ist. Die Antisymmetrie und die Linearität fehlen, damit <span class="math inline">\(≤_m\)</span> eine Ordnungsrelation ist.</p>
 <p>Eine solche Relation nennen wir eine Präordnung.</p>
 <p>Ähnlich wie bei Äquivalenzrelationen erzeugt sie Klassen von Mengen, aber ordnet diese partiell!</p>
 <ul>
@@ -3897,7 +4001,7 @@ Lösung:
 </ol>
 </div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-110-contents" aria-controls="callout-110" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-114-contents" aria-controls="callout-114" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -3906,14 +4010,14 @@ Aufgabe: Beweis
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-110" class="callout-110-contents callout-collapse collapse">
+<div id="callout-114" class="callout-114-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Beweisen Sie die vorherige Proposition:</p>
 <ol type="a">
 <li>Ist <span class="math inline">\(A\)</span> entscheidbar und ist <span class="math inline">\(B ∉ \{∅, ℕ\}\)</span>, so gilt <span class="math inline">\(A ≤_m B\)</span>.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-107-contents" aria-controls="callout-107" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-111-contents" aria-controls="callout-111" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -3922,7 +4026,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-107" class="callout-107-contents callout-collapse collapse">
+<div id="callout-111" class="callout-111-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Da <span class="math inline">\(A\)</span> entscheidbar ist, ist die charakteristische Funktion <span class="math inline">\(C_A\)</span> berechenbar. Da <span class="math inline">\(B\)</span> nicht leer und nicht alles ist (<span class="math inline">\(B ∉ \{∅, ℕ\}\)</span>), gibt es Elemente <span class="math inline">\(b_0 ∈ B\)</span> und <span class="math inline">\(b_1 ∉ B\)</span>. Wir definieren die Reduktionsfunktion <span class="math inline">\(f: ℕ → ℕ\)</span> durch:</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">f</span>(x)</span>
@@ -3940,7 +4044,7 @@ Lösung:
 <li>Gilt <span class="math inline">\(A ≤_m B\)</span> und ist <span class="math inline">\(B\)</span> entscheidbar, so ist <span class="math inline">\(A\)</span> entscheidbar.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-108-contents" aria-controls="callout-108" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-112-contents" aria-controls="callout-112" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -3949,7 +4053,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-108" class="callout-108-contents callout-collapse collapse">
+<div id="callout-112" class="callout-112-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Da <span class="math inline">\(A ≤_m B\)</span> gilt, existiert eine berechenbare Funktion <span class="math inline">\(f: ℕ → ℕ\)</span>, sodass <span class="math inline">\(x ∈ A \leftrightarrow f(x) ∈ B\)</span>. Da <span class="math inline">\(B\)</span> entscheidbar ist, existiert eine berechenbare charakteristische Funktion <span class="math inline">\(C_B\)</span>. Wir definieren die charakteristische Funktion für <span class="math inline">\(A\)</span> durch:</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">C_A</span>(x)</span>
@@ -3963,7 +4067,7 @@ Lösung:
 <li>Gilt <span class="math inline">\(A ≤_m B\)</span> und ist <span class="math inline">\(B\)</span> aufzählbar, so ist <span class="math inline">\(A\)</span> aufzählbar.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-109-contents" aria-controls="callout-109" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-113-contents" aria-controls="callout-113" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -3972,7 +4076,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-109" class="callout-109-contents callout-collapse collapse">
+<div id="callout-113" class="callout-113-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Da <span class="math inline">\(A ≤_m B\)</span> gilt, existiert eine berechenbare Funktion <span class="math inline">\(f: ℕ → ℕ\)</span>, sodass <span class="math inline">\(x ∈ A \leftrightarrow f(x) ∈ B\)</span>. Da <span class="math inline">\(B\)</span> aufzählbar ist, existiert eine berechenbare Funktion <span class="math inline">\(g: ℕ → ℕ\)</span>, sodass <span class="math inline">\(R_g = B\)</span>. Wir definieren die Funktion für <span class="math inline">\(A\)</span> durch:</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">h</span>(n)</span>
@@ -3985,59 +4089,13 @@ Lösung:
 </div>
 </div>
 </div>
-<div class="prop">
-<p>Die m-Reduktion ist Komplementstabil, d.h. für Mengen <span class="math inline">\(A, B ⊆ ℕ\)</span> gilt: <span class="math display">\[
-A ≤_m B \quad ⇔ \quad \overline{A} ≤_m \overline{B}
-\]</span></p>
-</div>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-112-contents" aria-controls="callout-112" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Aufgabe: Beweis der Komplementstabilität der m-Reduktion
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-112" class="callout-112-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Beweisen Sie die Komplementstabilität der m-Reduktion, d.h. zeigen Sie, dass für Mengen <span class="math inline">\(A, B ⊆ ℕ\)</span> gilt: <span class="math display">\[
-A ≤_m B \quad ⇔ \quad \overline{A} ≤_m \overline{B}
-\]</span></p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-111-contents" aria-controls="callout-111" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lösung:
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-111" class="callout-111-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><span class="math display">\[
-\begin{aligned}
-A ≤_m B &amp;\quad ⇔ \quad ∃f: ℕ → ℕ \text{ berechenbar}, ∀x ∈ ℕ: x ∈ A \leftrightarrow f(x) ∈ B \\
-&amp;\quad ⇔ \quad ∃f: ℕ → ℕ \text{ berechenbar}, ∀x ∈ ℕ: x ∉ A \leftrightarrow f(x) ∉ B \\
-&amp;\quad ⇔ \quad ∃f: ℕ → ℕ \text{ berechenbar}, ∀x ∈ ℕ: x ∈ \overline{A} \leftrightarrow f(x) ∈ \overline{B} \\
-&amp;\quad ⇔ \quad \overline{A} ≤_m \overline{B}
-\end{aligned}
-\]</span></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 <section id="theorem-von-myhill-1955" class="level4 prop">
 <h4 class="anchored" data-anchor-id="theorem-von-myhill-1955">Theorem von Myhill (1955)</h4>
 <p>Fur jede aufzählbare Menge <span class="math inline">\(A\)</span> gilt <span class="math inline">\(A ≤_m K_0 ≡_m K\)</span>.</p>
 </section>
 <div class="def">
 <p><span class="math display">\[
-P(\mathcal{F}) := \{i ∈ ℕ \mid \text{ RAM } M_i \text{ berechnet eine Funktion in } \mathcal{F}\}
+P(\mathcal{F}) := \{i \mid \text{ RAM } M_i \text{ berechnet eine Funktion in } \mathcal{F}\}
 \]</span></p>
 </div>
 <div class="prop">
@@ -4060,7 +4118,7 @@ P(\mathcal{F}) := \{i ∈ ℕ \mid \text{ RAM } M_i \text{ berechnet eine Funkti
 <section id="satz-von-rice-1953" class="level3 prop">
 <h3 class="anchored" data-anchor-id="satz-von-rice-1953">Satz von Rice (1953)</h3>
 <p>Jede nichttriviale Eigenschaft von Funktionen ist unentscheidbar.</p>
-<p>Es sei <span class="math inline">\(\mathcal{F} ⊆ \textbf{TM}\)</span> mit <span class="math inline">\(\mathcal{F} ≠ ∅\)</span> und <span class="math inline">\(\mathcal{F} ≠  \textbf{TM}\)</span>. Dann gilt:</p>
+<p>Es sei <span class="math inline">\(\mathcal{F} ⊊ \textbf{TM}\)</span> mit <span class="math inline">\(\mathcal{F} ≠ ∅\)</span> und <span class="math inline">\(\mathcal{F} ≠  \textbf{TM}\)</span>. Dann gilt:</p>
 <ol type="1">
 <li>Ist <span class="math inline">\(ν^1 ∈ \mathcal{F}\)</span>, so ist <span class="math inline">\(P(\mathcal{F})\)</span> nicht aufzählbar.</li>
 <li>Ist <span class="math inline">\(ν^1 ∉ \mathcal{F}\)</span>, so ist <span class="math inline">\(\overline{P(\mathcal{F})}\)</span> nicht aufzählbar.</li>
@@ -4070,19 +4128,19 @@ P(\mathcal{F}) := \{i ∈ ℕ \mid \text{ RAM } M_i \text{ berechnet eine Funkti
 </section>
 <div class="prop">
 <p>Die Menge <span class="math display">\[
-\overline{P(\{ν^1\})} = \{(x) \mid \text{ die RAM } M_x \text{ hält auf irgendeiner Eingabe } y ∈ ℕ \}
+\overline{P(\{ν^1\})} = \{x \mid \text{ die RAM } M_x \text{ hält auf irgendeiner Eingabe } y ∈ ℕ \}
 \]</span> ist aufzählbar.</p>
 <p>⚠️ Diese Aussage folgt nicht aus dem Satz von Rice</p>
 </div>
 <div class="prop">
 <p>Die Menge <span class="math display">\[
-P(\{x ↦ x^2\}) = \{(x) \mid \text{ die RAM } M_x \text{ berechnet } y ↦ y^2 \text{ für jede Eingabe } y ∈ ℕ \}
+P(\{x ↦ x^2\}) = \{x \mid \text{ die RAM } M_x \text{ berechnet } y ↦ y^2 \text{ für jede Eingabe } y ∈ ℕ \}
 \]</span> ist nicht aufzählbar.</p>
 <p>⚠️ Diese Aussage folgt nicht aus dem Satz von Rice</p>
 </div>
 <p><img src="./img/RiceMeme.jpg" class="img-fluid"></p>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-114-contents" aria-controls="callout-114" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-116-contents" aria-controls="callout-116" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4091,7 +4149,7 @@ Aufgaben: Berechenbarkeitstheorie
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-114" class="callout-114-contents callout-collapse collapse">
+<div id="callout-116" class="callout-116-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Teilen sie die folgenden Mengen in die Klassen</p>
 <ul>
@@ -4111,9 +4169,13 @@ Aufgaben: Berechenbarkeitstheorie
 <li><p><span class="math inline">\(\{ i \mid \text{RAM } M_i \text{ hat mindestens } i \text{ Befehle} \}\)</span></p></li>
 <li><p><span class="math inline">\(\{ i \mid \text{RAM } M_i \text{ hält für eine ungerade Anzahl von Eingaben } i \text{ Befehle} \}\)</span></p></li>
 <li><p><span class="math inline">\(\{n \mid n \in ℕ \text{ und } x^n + y^n = (x+y)^n \text{ hat eine Lösung } (x,y)∈ ℕ^2 \text{ mit } x ≠ y\}\)</span></p></li>
+<li><p><span class="math inline">\(P(\{f:ℕ → ℕ \mid f \text{ ist berechenbar}\})\)</span></p></li>
+<li><p><span class="math inline">\(P(\{f:ℕ → ℕ \mid f \text{ ist nicht berechenbar}\})\)</span></p></li>
+<li><p><span class="math inline">\(P(\{x ↦ x^2\})\)</span></p></li>
+<li><p><span class="math inline">\(\overline{P(\{ν^1\})}\)</span></p></li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-113-contents" aria-controls="callout-113" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-115-contents" aria-controls="callout-115" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4122,12 +4184,12 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-113" class="callout-113-contents callout-collapse collapse">
+<div id="callout-115" class="callout-115-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li><span class="math inline">\(E\)</span>: (a), (b), (f), (i), (j), (k)</li>
-<li><span class="math inline">\(A\)</span>: (c), (e), (h)</li>
-<li><span class="math inline">\(U\)</span>: (d), (g), (j)</li>
+<li><span class="math inline">\(E\)</span>: (a), (b), (f), (i), (j), (k), (l), (m)</li>
+<li><span class="math inline">\(A\)</span>: (c), (e), (h), (o)</li>
+<li><span class="math inline">\(U\)</span>: (d), (g), (j), (n)</li>
 </ul>
 </div>
 </div>
