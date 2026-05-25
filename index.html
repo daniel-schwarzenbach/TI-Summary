@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Daniel Schwarzenbach">
-<meta name="dcterms.date" content="2026-05-24">
+<meta name="dcterms.date" content="2026-05-25">
 
 <title>TI-Summary</title>
 <style>
@@ -167,7 +167,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 24, 2026</p>
+      <p class="date">May 25, 2026</p>
     </div>
   </div>
   
@@ -257,6 +257,22 @@ window.Quarto = {
 <li>PRIM</li>
 </ul>
 <p><a href="https://create.kahoot.it/share/ti5-part/5b801a03-7b3e-41c9-89bf-3616bd8624d6" class="uri">https://create.kahoot.it/share/ti5-part/5b801a03-7b3e-41c9-89bf-3616bd8624d6</a></p>
+</section>
+<section id="kahoot-nr.6" class="level3">
+<h3 class="anchored" data-anchor-id="kahoot-nr.6">Kahoot Nr.6</h3>
+<ul>
+<li>Entscheidbarkeit</li>
+<li>Aufzählbarkeit</li>
+</ul>
+<p><a href="https://create.kahoot.it/share/ti6/e0764dd0-19e0-4698-b97c-04ebcf5dfe1c" class="uri">https://create.kahoot.it/share/ti6/e0764dd0-19e0-4698-b97c-04ebcf5dfe1c</a></p>
+</section>
+<section id="kahoot-nr.7" class="level3">
+<h3 class="anchored" data-anchor-id="kahoot-nr.7">Kahoot Nr.7</h3>
+<ul>
+<li>Unentscheidbare Mengen</li>
+<li>many-to-one Reduktion</li>
+<li>Satz von Rice</li>
+</ul>
 </section>
 </section>
 </section>
@@ -3734,7 +3750,7 @@ Lösung:
 <section id="gödelisierung-als-brücke" class="level4">
 <h4 class="anchored" data-anchor-id="gödelisierung-als-brücke">1. Gödelisierung als Brücke</h4>
 <p>Durch <strong>Gödelisierung</strong> kann jede mathematische Aussage als natürliche Zahl kodiert werden. Damit entspricht:</p>
-<p><span class="math display">\[A \subseteq \mathbb{N} \quad \longleftrightarrow \quad \text{eine Menge von mathematischen Aussagen}\]</span></p>
+<p><span class="math display">\[A \subseteq \mathbb{N} \quad \Longleftrightarrow \quad \text{eine Menge von mathematischen Aussagen}\]</span></p>
 <p>Die Frage „ist <span class="math inline">\(x \in A\)</span>?” ist äquivalent zur mathematischen Frage „gilt Eigenschaft <span class="math inline">\(A\)</span> für <span class="math inline">\(x\)</span>?“.</p>
 </section>
 <section id="was-bedeutet-entscheidbarkeit-für-beweisbarkeit" class="level4">
@@ -3747,6 +3763,17 @@ Lösung:
 </section>
 </section>
 <p><img src="./img/EntscheidbarkeitMeme.jpg" class="img-fluid"></p>
+<section id="definition-spezielles-halteproblem" class="level3 def">
+<h3 class="anchored" data-anchor-id="definition-spezielles-halteproblem">Definition: <strong>spezielles Halteproblem</strong></h3>
+<p>Die Menge</p>
+<p><span class="math display">\[
+K_0 = \{x \mid \text{ die RAM } M_x \text{ hält auf die Eingabe } x \}
+\]</span></p>
+<p>heißt spezielles Halteproblem.</p>
+</section>
+<div class="prop">
+<p><span class="math inline">\(K_0\)</span> ist aufzählbar, aber nicht entscheidbar.</p>
+</div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-104-contents" aria-controls="callout-104" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -3779,17 +3806,6 @@ Lösung:
 </div>
 </div>
 </div>
-</div>
-<section id="definition-spezielles-halteproblem" class="level3 def">
-<h3 class="anchored" data-anchor-id="definition-spezielles-halteproblem">Definition: <strong>spezielles Halteproblem</strong></h3>
-<p>Die Menge</p>
-<p><span class="math display">\[
-K_0 = \{x \mid \text{ die RAM } M_x \text{ hält auf die Eingabe } x \}
-\]</span></p>
-<p>heißt spezielles Halteproblem.</p>
-</section>
-<div class="prop">
-<p><span class="math inline">\(K_0\)</span> ist aufzählbar, aber nicht entscheidbar.</p>
 </div>
 <div class="prop">
 <p>Die aufzählbare Mengen sind nicht abgeschlossen unter Komplementbildung. Insbesondere ist <span class="math inline">\(\overline{K_0}\)</span> nicht aufzählbar.</p>
@@ -3830,6 +3846,19 @@ A ≤_m B
 \]</span></p>
 <p><span class="math inline">\(f\)</span> heißt dann <strong>Reduktionsfunktion</strong>.</p>
 </section>
+<div class="prop">
+<p>Hinter</p>
+<p><span class="math display">\[
+x ∈ A \quad ⟷ \quad f(x) ∈ B
+\]</span></p>
+<p>verstecken sich vier Implikationen:</p>
+<ul>
+<li><span class="math inline">\(x ∈ A \quad → \quad f(x) ∈ B\)</span></li>
+<li><span class="math inline">\(x ∉ A \quad → \quad f(x) ∉ B\)</span></li>
+<li><span class="math inline">\(f(x) ∈ B \quad → \quad x ∈ A\)</span></li>
+<li><span class="math inline">\(f(x) ∉ B \quad → \quad x ∉ A\)</span></li>
+</ul>
+</div>
 <div class="prop">
 <p>Für Mengen <span class="math inline">\(A, B, C ⊆ ℕ\)</span> gilt:</p>
 <ol type="1">
@@ -4164,15 +4193,17 @@ Aufgaben: Berechenbarkeitstheorie
 <li><p><span class="math inline">\(\{ i ∣ \text{ die von der RAM } M_i \text{ berechnete einstellige Funktion besitzt keine Nullstelle }\}\)</span></p></li>
 <li><p><span class="math inline">\(\{ i \mid \text{RAM } M_i \text{ hält auf mindestens } 2^i \text{ Eingaben aus } \mathbb{N} \}\)</span></p></li>
 <li><p><span class="math inline">\(\{n ∣ n ∈ ℕ \text{ und das Polynom } x^n + n \text{ hat eine Nullstelle in den reellen Zahlen }\}\)</span></p></li>
-<li><p><span class="math inline">\(\{i \mid \text{RAM } M_i \text{ berechnet } ν^1 \}\)</span></p></li>
-<li><p><span class="math inline">\(\{i \mid \text{RAM } M_i \text{ berechnet nicht } ν^1 \}\)</span></p></li>
+<li><p><span class="math inline">\(P(\{f:ℕ → ℕ \mid f ∈ \textbf{PRIM} \; ∧ \; 0 ∉ D_f \})\)</span></p></li>
+<li><p><span class="math inline">\(P(\{f:ℕ → ℕ \mid f ∈ \textbf{PRIM} \; ∧ \; 0 ∈ D_f \})\)</span></p></li>
 <li><p><span class="math inline">\(\{ i \mid \text{RAM } M_i \text{ hat mindestens } i \text{ Befehle} \}\)</span></p></li>
-<li><p><span class="math inline">\(\{ i \mid \text{RAM } M_i \text{ hält für eine ungerade Anzahl von Eingaben } i \text{ Befehle} \}\)</span></p></li>
+<li><p><span class="math inline">\(\{ i \mid \text{RAM } M_i \text{ hält für eine ungerade Anzahl von Eingaben } \}\)</span></p></li>
 <li><p><span class="math inline">\(\{n \mid n \in ℕ \text{ und } x^n + y^n = (x+y)^n \text{ hat eine Lösung } (x,y)∈ ℕ^2 \text{ mit } x ≠ y\}\)</span></p></li>
 <li><p><span class="math inline">\(P(\{f:ℕ → ℕ \mid f \text{ ist berechenbar}\})\)</span></p></li>
 <li><p><span class="math inline">\(P(\{f:ℕ → ℕ \mid f \text{ ist nicht berechenbar}\})\)</span></p></li>
 <li><p><span class="math inline">\(P(\{x ↦ x^2\})\)</span></p></li>
 <li><p><span class="math inline">\(\overline{P(\{ν^1\})}\)</span></p></li>
+<li><p><span class="math inline">\(\overline{P(\{x ↦ x^2\})}\)</span></p></li>
+<li><p><span class="math inline">\(\overline{P(\{x ↦ x,  x ↦ x^3\;∸\;x^2, \nu^1\})}\)</span></p></li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-115-contents" aria-controls="callout-115" aria-expanded="false" aria-label="Toggle callout">
@@ -4187,9 +4218,9 @@ Lösung:
 <div id="callout-115" class="callout-115-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li><span class="math inline">\(E\)</span>: (a), (b), (f), (i), (j), (k), (l), (m)</li>
-<li><span class="math inline">\(A\)</span>: (c), (e), (h), (o)</li>
-<li><span class="math inline">\(U\)</span>: (d), (g), (j), (n)</li>
+<li><span class="math inline">\(E\)</span>: (a), (b), (f), (g), (i), (j), (k), (l), (m)</li>
+<li><span class="math inline">\(A\)</span>: (c), (e), (o), (q)</li>
+<li><span class="math inline">\(U\)</span>: (d), (h), (j), (n), (p)</li>
 </ul>
 </div>
 </div>
