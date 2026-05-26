@@ -277,6 +277,7 @@ window.Quarto = {
 <li>many-to-one Reduktion</li>
 <li>Satz von Rice</li>
 </ul>
+<p><a href="https://create.kahoot.it/share/ti7/07363b0e-148b-4ec9-b2bc-e2b82a30c3a2" class="uri">https://create.kahoot.it/share/ti7/07363b0e-148b-4ec9-b2bc-e2b82a30c3a2</a></p>
 </section>
 </section>
 </section>
@@ -3467,7 +3468,7 @@ Lösung:
 <p>Mit folgendem Programm können wir <span class="math inline">\(R_{f_p}\)</span> entscheiden:</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">C_fp</span>(y)</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    x0 <span class="op">=</span> <span class="fu">gp</span>(y)</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="op">∈</span> <span class="fl">1</span><span class="op">:</span>x0</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="op">∈</span> <span class="fl">0</span><span class="op">:</span>x0</span>
 <span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="fu">p</span>(i) <span class="op">==</span> y</span>
 <span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="fl">1</span></span>
 <span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
@@ -3478,7 +3479,7 @@ Lösung:
 <p><span class="math display">\[|p(y)| ≤ | p(g_p(y) + n )| \quad ∀n ∈ ℕ\]</span></p>
 <p>Wir bemerken, dass das genau dann der Fall ist, wenn <span class="math inline">\(g_p^{-1}(x) ≤ |p(x)|\)</span> ist für alle <span class="math inline">\(x ∈ ℕ\)</span>.</p>
 <center>
-<p><img src="./img/PolynomExample.jpg" class="img-fluid"> {width=50%}</p>
+<p><img src="./img/PolynomExample.jpg" class="img-fluid"></p>
 </center>
 <p>Das ganze wäre sehr einfach, wenn <span class="math inline">\(p\)</span> monoton wächst oder fällt, da wir dann einfach <span class="math inline">\(g_p(y) = y\)</span> setzen könnten. Der Trick ist es einen Wert <span class="math inline">\(x_p\)</span> zu finden, nachdem es keine Nullstellen mehr geben kann und nachdem das Polynom sicher monoton wächst oder fällt. Dann hätten wir <span class="math inline">\(g_p(y) := x_p + y\)</span>.</p>
 <p>Wir möchten also ein <span class="math inline">\(x_p\)</span> finden, so dass gilt:</p>
@@ -3994,11 +3995,16 @@ Lösung:
 <p>Die Symmetrie fehlt, damit <span class="math inline">\(≤_m\)</span> eine Äquivalenzrelation ist. Die Antisymmetrie und die Linearität fehlen, damit <span class="math inline">\(≤_m\)</span> eine Ordnungsrelation ist.</p>
 <p>Eine solche Relation nennen wir eine Präordnung.</p>
 <p>Ähnlich wie bei Äquivalenzrelationen erzeugt sie Klassen von Mengen, aber ordnet diese partiell!</p>
+<p>Mithin gibt es die Äquivalenzklassen:</p>
 <ul>
-<li><span class="math inline">\(ℕ\)</span></li>
-<li><span class="math inline">\(∅\)</span></li>
-<li><span class="math inline">\(E_-\)</span>: entscheidbare Mengen ohne <span class="math inline">\(∅\)</span> und <span class="math inline">\(ℕ\)</span></li>
-<li>Wir haben undendlich viele Klassen von unentscheidbaren Mengen.</li>
+<li><span class="math inline">\(\{ℕ\}\)</span></li>
+<li><span class="math inline">\(\{∅\}\)</span></li>
+<li><span class="math inline">\((\textbf{RE}\cap \textbf{co-RE}) \setminus \{ℕ, ∅\}\)</span></li>
+<li><span class="math inline">\([K]_{≡_m}\)</span></li>
+<li><span class="math inline">\([\overline{K}]_{≡_m}\)</span></li>
+<li><span class="math inline">\([TOT]_{≡_m}\)</span></li>
+<li><span class="math inline">\([\overline{TOT}]_{≡_m}\)</span></li>
+<li>und unendlich viele weitere Äquivalenzklassen von unentscheidbaren Mengen.</li>
 </ul>
 <center>
 <p><img src="./img/HasseDiagramM.jpg" class="img-fluid" style="width:100.0%"></p>
@@ -4009,8 +4015,19 @@ Lösung:
 </div>
 </div>
 </div>
-<div class="prop">
-<p><span class="math inline">\(≡_m := \{(A, B) \mid A, B ⊆ ℕ \text{ und } A ≤^p_m B \text{ und } B ≤^p_m A\}\)</span> ist eine Äquivalenzrelation auf <span class="math inline">\(P(ℕ)\)</span>.</p>
+<div class="def">
+<p><span class="math inline">\(≡_m := \{(A, B) \mid A, B ⊆ ℕ \text{ und } A ≤_m B \text{ und } B ≤_m A\}\)</span> ist eine Äquivalenzrelation auf <span class="math inline">\(P(ℕ)\)</span>.</p>
+<p>Mithin gibt es die Äquivalenzklassen:</p>
+<ul>
+<li><span class="math inline">\(\{ℕ\}\)</span></li>
+<li><span class="math inline">\(\{∅\}\)</span></li>
+<li><span class="math inline">\((\textbf{RE}\cap \textbf{co-RE}) \setminus \{ℕ, ∅\}\)</span></li>
+<li><span class="math inline">\([K]_{≡_m}\)</span></li>
+<li><span class="math inline">\([\overline{K}]_{≡_m}\)</span></li>
+<li><span class="math inline">\([TOT]_{≡_m}\)</span></li>
+<li><span class="math inline">\([\overline{TOT}]_{≡_m}\)</span></li>
+<li>und unendlich viele weitere Äquivalenzklassen von unentscheidbaren Mengen.</li>
+</ul>
 </div>
 <div class="prop">
 <p>Für Mengen <span class="math inline">\(A, B ⊆ ℕ\)</span> gilt:</p>
@@ -4026,7 +4043,7 @@ Lösung:
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Aufgabe: Beweis
+Aufgabe: Beweis der vorherigen Proposition
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -4111,9 +4128,54 @@ Lösung:
 </div>
 <section id="theorem-von-myhill-1955" class="level4 prop">
 <h4 class="anchored" data-anchor-id="theorem-von-myhill-1955">Theorem von Myhill (1955)</h4>
-<p>Fur jede aufzählbare Menge <span class="math inline">\(A\)</span> gilt <span class="math inline">\(A ≤_m K_0 ≡_m K\)</span>.</p>
+<p>Für jede aufzählbare Menge <span class="math inline">\(A\)</span> gilt <span class="math inline">\(A ≤_m K_0 ≡_m K\)</span>.</p>
 </section>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-115-contents" aria-controls="callout-115" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Beweis:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-115" class="callout-115-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Wir benötigen dafür die Gödelisierung. Die Gödelisierung ist eine surjektive Funktion, die eine partielle injektive umkehr Funktion hat. Diese können wie folgt in Julia deklariert werden:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># surjektiv, deckt alle Funktionen ab</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gödelisierung</span>(x<span class="op">::</span><span class="dt">Integer</span>)<span class="op">::</span><span class="dt"> Function</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># injektive umkehr Funktion, deckt nicht alle n ∈ ℕ ab</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gödelisierung⁻¹</span>(f<span class="op">::</span><span class="dt">Function</span>)<span class="op">::</span><span class="dt"> Integer</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Wir zeigen zuerst, dass wenn <span class="math inline">\(A\)</span> aufzählbar ist, <span class="math inline">\(A ≤_m K\)</span> gilt:</p>
+<div class="sek">
+<p>Sei <span class="math inline">\(A\)</span> eine aufzählbare Menge. Dann gibt es eine berechenbare Funktion <span class="math inline">\(f: ℕ → ℕ\)</span>, sodass <span class="math inline">\(R_f = A\)</span>. Die Funktion <code>gödelisierung⁻¹</code> nimmt ein Programm (julia Typ Function) und wandelt es in eine natürliche Zahl um.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">g</span>(x)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="fu">gödelisierung⁻¹</span>(f), x)</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math inline">\(g\)</span> ist damit berechenbar und erfüllt die Bedingung:</p>
+<p><span class="math display">\[x ∈ A \; \longleftrightarrow \; g(x) ∈ K\]</span> . Es erfüllt die Bedingung:</p>
+</div>
+<p>Nun zeigen wir, dass <span class="math inline">\(K ≤_m K_0\)</span> gilt:</p>
+<div class="sek">
+<p>Betrachte die berechenbare Funktion <span class="math inline">\(q:ℕ^2 → ℕ\)</span> das für jedes Paar <span class="math inline">\((i, y) ∈ ℕ^2\)</span> ein Programm <span class="math inline">\(M_{q(i,x)}\)</span> konstruieren das <span class="math inline">\(M_i\)</span> auf der Eingabe <span class="math inline">\(y\)</span> simuliert und die eigene Eingabe ignoriert. Da für jedes Paar <span class="math inline">\((i, y) ∈ ℕ^2\)</span> ein solches Programm <span class="math inline">\(M_{q(i,y)}\)</span> konstuierbar ist, ist <span class="math inline">\(q\)</span> berechenbar und total:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">q</span>(i, y)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">function</span> <span class="fu">f</span>(x)</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>        M_i<span class="op">::</span><span class="dt">Function </span><span class="op">=</span> <span class="fu">gödelisierung</span>(i)</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="fu">M_i</span>(y)</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">end</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">gödelisierung⁻¹</span>(f)</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math inline">\(q\)</span> erfüllt damit die Bedingung:</p>
+<p><span class="math display">\[
+(i, y) ∈ K \quad ⟷ \quad q(i, y) ∈ K_0
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
 <div class="def">
+<p>Die Programme, die eine Funktion in einer Klasse <span class="math inline">\(\mathcal{F}\)</span> berechnen, bilden die Menge</p>
 <p><span class="math display">\[
 P(\mathcal{F}) := \{i \mid \text{ RAM } M_i \text{ berechnet eine Funktion in } \mathcal{F}\}
 \]</span></p>
@@ -4126,12 +4188,6 @@ P(\mathcal{F}) := \{i \mid \text{ RAM } M_i \text{ berechnet eine Funktion in } 
 </ol>
 </div>
 <p>Hasse Diagramm zu den <span class="math inline">\(m\)</span>-Reduktionsklassen:</p>
-<ul>
-<li><span class="math inline">\(∅\)</span> und <span class="math inline">\(ℕ\)</span> bilden jeweils eine eigene Äquivalenzklasse von <span class="math inline">\(≡_m\)</span>.</li>
-<li><span class="math inline">\(E_-\)</span>: entscheidbare Mengen ohne <span class="math inline">\(∅\)</span> und <span class="math inline">\(ℕ\)</span> ist eine Äquivalenzklasse von <span class="math inline">\(≡_m\)</span>.</li>
-<li>Es gibt unendlich viele Klassen von aufzählbaren, aber nicht entscheidbaren Mengen.</li>
-<li>Es gibt unendlich viele Klassen von nicht aufzählbaren Mengen.</li>
-</ul>
 <center>
 <p><img src="./img/HasseDiagramM.jpg" class="img-fluid"></p>
 </center>
@@ -4160,7 +4216,7 @@ P(\{x ↦ x^2\}) = \{x \mid \text{ die RAM } M_x \text{ berechnet } y ↦ y^2 \t
 </div>
 <p><img src="./img/RiceMeme.jpg" class="img-fluid"></p>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-116-contents" aria-controls="callout-116" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-117-contents" aria-controls="callout-117" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4169,7 +4225,7 @@ Aufgaben: Berechenbarkeitstheorie
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-116" class="callout-116-contents callout-collapse collapse">
+<div id="callout-117" class="callout-117-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Teilen sie die folgenden Mengen in die Klassen</p>
 <ul>
@@ -4197,7 +4253,7 @@ Aufgaben: Berechenbarkeitstheorie
 <li><p><span class="math inline">\(\overline{P(\{x ↦ x,  x ↦ x^3\;∸\;x^2, \nu^1\})}\)</span></p></li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-115-contents" aria-controls="callout-115" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-116-contents" aria-controls="callout-116" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4206,7 +4262,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-115" class="callout-115-contents callout-collapse collapse">
+<div id="callout-116" class="callout-116-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><span class="math inline">\(E\)</span>: (a), (b), (f), (g), (i), (j), (k), (l), (m)</li>
@@ -4251,16 +4307,16 @@ Lösung:
 <h3 class="anchored" data-anchor-id="laufzeit-von-ram-programmen">Laufzeit von RAM Programmen</h3>
 <p>Jeder Befehl einer RAM ist genau ein Zeitschritt.</p>
 <p>Betrachte das RAM Programm <span class="math inline">\(M\)</span>:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode ram code-with-copy"><code class="sourceCode ram"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># f(x, y, z) = z + x ⋅ y</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>0   <span class="dt">R3</span> <span class="fu">←</span> <span class="bn">1</span></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Begin der Schleife</span></span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>1   <span class="kw">IF</span> <span class="dt">R1</span> <span class="fu">=</span> <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">3</span></span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>2   <span class="dt">R2</span> <span class="fu">←</span> <span class="dt">R2</span> <span class="fu">+</span> <span class="dt">R0</span></span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>3   <span class="dt">R1</span> <span class="fu">←</span> <span class="dt">R1</span> <span class="fu">-</span> <span class="dt">R3</span></span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>4   <span class="kw">GOTO</span> <span class="bn">1</span></span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Ende der Schleife</span></span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>5   <span class="dt">R0</span> <span class="fu">←</span> <span class="dt">R2</span></span>
-<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>6   <span class="kw">STOP</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode ram code-with-copy"><code class="sourceCode ram"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># f(x, y, z) = z + x ⋅ y</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>0   <span class="dt">R3</span> <span class="fu">←</span> <span class="bn">1</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Begin der Schleife</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>1   <span class="kw">IF</span> <span class="dt">R1</span> <span class="fu">=</span> <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">3</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>2   <span class="dt">R2</span> <span class="fu">←</span> <span class="dt">R2</span> <span class="fu">+</span> <span class="dt">R0</span></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>3   <span class="dt">R1</span> <span class="fu">←</span> <span class="dt">R1</span> <span class="fu">-</span> <span class="dt">R3</span></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>4   <span class="kw">GOTO</span> <span class="bn">1</span></span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Ende der Schleife</span></span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>5   <span class="dt">R0</span> <span class="fu">←</span> <span class="dt">R2</span></span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>6   <span class="kw">STOP</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>wir sagen, dass die Schleife <span class="math inline">\(y\)</span>-mal durchlaufen.</p>
 <p><span class="math display">\[t_M(x,y,z) = 4y + 3\]</span></p>
 <p>y ist muss noch codiert werden, damit wir die Laufzeit in Abhängigkeit von der Eingabelänge angeben können. Dafür brauchen wir <span class="math inline">\(|y|\)</span> Stellen, also ist <span class="math inline">\(y ≤ 2^{|y|+1} - 2\)</span>.</p>
@@ -4270,7 +4326,9 @@ Lösung:
 <h3 class="anchored" data-anchor-id="laufzeit-von-turingmaschinen">Laufzeit von Turingmaschinen</h3>
 <p>Jede Anwendung einer Übergangsfunktion einer Turingmaschine ist genau ein Zeitschritt.</p>
 <p>Betrachte die Turingmaschine <span class="math inline">\(M\)</span> mit einer eingabe <span class="math inline">\(x\)</span> die die funktion <span class="math inline">\(S\)</span> berechnet:</p>
-<p><img src="./img/TM_S.jpg" class="img-fluid"></p>
+<center>
+<p><img src="./img/TM_S.jpg" class="img-fluid" style="width:50.0%"></p>
+</center>
 <ul>
 <li><span class="math inline">\(z_0\)</span> hat genau <span class="math inline">\(|x|\)</span> Schritte die auf <span class="math inline">\(→ z_0\)</span> zeigen.</li>
 <li><span class="math inline">\(z_a\)</span> hat <span class="math inline">\(1 + k\)</span> Schritte, wobei <span class="math inline">\(k ≤ |x|\)</span> die Anzahl der hinteren 2en im Wort <span class="math inline">\(x\)</span> ist.</li>
@@ -4281,22 +4339,26 @@ Lösung:
 </section>
 <section id="laufzeit-von-höheren-programmiersprachen" class="level3">
 <h3 class="anchored" data-anchor-id="laufzeit-von-höheren-programmiersprachen">Laufzeit von Höheren Programmiersprachen</h3>
-<p>als 0 Schritte zählen 0 intialisierungen. zb <code>z = 0, A = fill(0, 10, 10)</code> als ein schritt zählen: <code>+,-,&lt;,&gt;,≤,≥,==,!=,!,&amp;&amp;,||</code>, Zuweisungen und <code>return</code>. als <span class="math inline">\(n\)</span> schritte zählen: <code>*,/,÷</code></p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">prod</span>(x,y)</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> <span class="fl">0</span> <span class="co"># initialisierung zählt als 0 Schritte</span></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> (y <span class="op">&gt;</span> <span class="fl">0</span>) <span class="co"># y-mal durchlaufen +1 mal aufgerufen</span></span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>        z <span class="op">+=</span> x <span class="co"># zählt als 2 Schritte</span></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>        y <span class="op">-=</span> <span class="fl">1</span> <span class="co"># zählt als 2 Schritte</span></span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> z <span class="co"># zählt als 1 Schritt</span></span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>als 0 Schritte zählen 0 intialisierungen. zb <code>z = 0, A = fill(0, 10, 10)</code></li>
+<li>als ein schritt zählen: <code>+,-,&lt;,&gt;,≤,≥,==,!=,!,&amp;&amp;,||</code>, Zuweisungen und <code>return</code>.</li>
+<li>als <span class="math inline">\(n\)</span> schritte zählen: <code>*,/,÷</code></li>
+</ul>
+<div class="sourceCode" id="cb45"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">prod</span>(x,y)</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> <span class="fl">0</span> <span class="co"># initialisierung zählt als 0 Schritte</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> (y <span class="op">&gt;</span> <span class="fl">0</span>) <span class="co"># y-mal durchlaufen +1 mal aufgerufen</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>        z <span class="op">+=</span> x <span class="co"># zählt als 2 Schritte</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>        y <span class="op">-=</span> <span class="fl">1</span> <span class="co"># zählt als 2 Schritte</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> z <span class="co"># zählt als 1 Schritt</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math display">\[
 \begin{aligned}
 t_{\text{M}}(x,y) &amp;= 5y + 1 + 1 \\
 &amp;≤ 5 ⋅ (2^{|y| + 1} - 2) + 2 \quad (\text{Länge der Codierung})\\
-&amp;≤ 5 ⋅ 2^{|y| + 1} \\
-&amp;≤ 10 ⋅ 2^{|x| + |y|} \\
-&amp;≤ 10 ⋅ 2^n
+&amp;≤ 5 ⋅ 2^{|y| + 1} - 8 \\
+&amp;≤ 10 ⋅ 2^{|x| + |y|} - 8 \\
+&amp;≤ 10 ⋅ 2^n - 8
 \end{aligned}
 \]</span></p>
 </section>
@@ -4425,7 +4487,7 @@ A ≤^p_m B
 <ol type="1">
 <li>Sind <span class="math inline">\(A\)</span> und <span class="math inline">\(B\)</span> <span class="math inline">\(\textbf{NP}\)</span>-vollständig, so gilt <span class="math inline">\(A ≡^p_m B\)</span>.</li>
 <li>Ist <span class="math inline">\(A\)</span> <span class="math inline">\(\textbf{NP}\)</span>-vollständig und <span class="math inline">\(A ∈ \textbf{P}\)</span>, so gilt <span class="math inline">\(\textbf{P} = \textbf{NP}\)</span>.</li>
-<li>Ist $B ∈ , ist <span class="math inline">\(A\)</span> <span class="math inline">\(\textbf{NP}\)</span>-vollständig und <span class="math inline">\(A ≤^p_m B\)</span>, so ist <span class="math inline">\(B\)</span> <span class="math inline">\(\textbf{NP}\)</span>-vollständig.</li>
+<li>Ist <span class="math inline">\(B ∈ \textbf{NP}\)</span>, ist <span class="math inline">\(A\)</span> <span class="math inline">\(\textbf{NP}\)</span>-vollständig und <span class="math inline">\(A ≤^p_m B\)</span>, so ist <span class="math inline">\(B\)</span> <span class="math inline">\(\textbf{NP}\)</span>-vollständig.</li>
 </ol>
 </div>
 <div class="prop">
