@@ -143,6 +143,10 @@ window.Quarto = {
   <li><a href="#die-klasse-textbfnp" id="toc-die-klasse-textbfnp" class="nav-link" data-scroll-target="#die-klasse-textbfnp">Die Klasse <span class="math inline">\(\textbf{NP}\)</span></a></li>
   <li><a href="#textbfnp-vollständige-mengen" id="toc-textbfnp-vollständige-mengen" class="nav-link" data-scroll-target="#textbfnp-vollständige-mengen"><span class="math inline">\(\textbf{NP}\)</span>-vollständige Mengen</a></li>
   </ul></li>
+  <li><a href="#automatentheorie" id="toc-automatentheorie" class="nav-link" data-scroll-target="#automatentheorie">Automatentheorie</a>
+  <ul class="collapse">
+  <li><a href="#endliche-automaten" id="toc-endliche-automaten" class="nav-link" data-scroll-target="#endliche-automaten">Endliche Automaten</a></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -4299,7 +4303,6 @@ t_{\text{M}}(x,y) &amp;= 5y + 1 + 1 \\
 </section>
 <section id="die-klasse-textbfp" class="level2">
 <h2 class="anchored" data-anchor-id="die-klasse-textbfp">Die Klasse <span class="math inline">\(\textbf{P}\)</span></h2>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Of_cpDNoZtE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <div class="def">
 <p>Ein Algorithmus <span class="math inline">\(M\)</span> berechnet <span class="math inline">\(f:(Σ^*)^m → Σ\)</span> in Polynomialzeit, falls ein Polynom <span class="math display">\[
 p(n) = a_0 + a_1n + ... + a_rn^r
@@ -4374,7 +4377,7 @@ p(n) = a_0 + a_1n + ... + a_rn^r
 </div>
 </div>
 </section>
-<p>Mögliche Ergebnisse des <span class="math inline">\(\mathcal{P}\)</span> vs <span class="math inline">\(\mathcal{NP}\)</span> Problems:</p>
+<p>Mögliche Ergebnisse des <span class="math inline">\(\textbf{P}\)</span> vs <span class="math inline">\(\textbf{NP}\)</span> Problems:</p>
 <ol type="1">
 <li><span class="math inline">\(\textbf{P}=\textbf{NP}\)</span></li>
 <li><span class="math inline">\(\textbf{P} \subsetneq \textbf{NP}\)</span></li>
@@ -4403,21 +4406,94 @@ A ≤^p_m B
 <li>Für alle Mengen <span class="math inline">\(A\)</span> und <span class="math inline">\(B\)</span> gilt: <span class="math inline">\(A ≤_m^p B \quad \Leftrightarrow \quad \overline{A} ≤_m^p \overline{B}\)</span></li>
 </ol>
 </div>
+<div class="prop">
+<p><span class="math inline">\(\textbf{P}\)</span> und <span class="math inline">\(\textbf{NP}\)</span> sind abgeschlossen unter <span class="math inline">\(≤_m^p\)</span>. Daher</p>
+<ol type="1">
+<li>Ist <span class="math inline">\(A ≤_m^p B\)</span> und <span class="math inline">\(B ∈ \textbf{P}\)</span>, so ist <span class="math inline">\(A ∈ \textbf{P}\)</span>.</li>
+<li>Ist <span class="math inline">\(A ≤_m^p B\)</span> und <span class="math inline">\(B ∈ \textbf{NP}\)</span>, so ist <span class="math inline">\(A ∈ \textbf{NP}\)</span>.</li>
+</ol>
+</div>
+<div class="prop">
+<p>Sei <span class="math inline">\(B ⊊ ℕ\)</span> und <span class="math inline">\(B ≠ ∅\)</span> (nicht-trivial). Dann gilt: <span class="math inline">\(A ≤_m^p B\)</span> für alle <span class="math inline">\(A ∈ \textbf{P}\)</span>.</p>
+</div>
 <section id="definition-np-vollständig" class="level3 def">
 <h3 class="anchored" data-anchor-id="definition-np-vollständig">Definition: <strong>NP-vollständig</strong></h3>
 <p>Eine Menge <span class="math inline">\(B\)</span> heißt NP-vollständig, falls <span class="math inline">\(B ∈ NP\)</span> und <span class="math inline">\(A ≤^p_m B\)</span> für alle <span class="math inline">\(A ∈ \textbf{NP}\)</span>.</p>
 </section>
 <div class="prop">
+<p>Seien <span class="math inline">\(A, B ⊆ ℕ\)</span>.</p>
+<ol type="1">
+<li>Sind <span class="math inline">\(A\)</span> und <span class="math inline">\(B\)</span> <span class="math inline">\(\textbf{NP}\)</span>-vollständig, so gilt <span class="math inline">\(A ≡^p_m B\)</span>.</li>
+<li>Ist <span class="math inline">\(A\)</span> <span class="math inline">\(\textbf{NP}\)</span>-vollständig und <span class="math inline">\(A ∈ \textbf{P}\)</span>, so gilt <span class="math inline">\(\textbf{P} = \textbf{NP}\)</span>.</li>
+<li>Ist $B ∈ , ist <span class="math inline">\(A\)</span> <span class="math inline">\(\textbf{NP}\)</span>-vollständig und <span class="math inline">\(A ≤^p_m B\)</span>, so ist <span class="math inline">\(B\)</span> <span class="math inline">\(\textbf{NP}\)</span>-vollständig.</li>
+</ol>
+</div>
+<div class="prop">
 <p><strong>Anmerkung</strong>: Ein Algorithmus, der eine NP-vollständige Menge entscheidet, kann von einer Maschine mit der sich Programme beliebig parallelisieren lassen, in polynomieller Zeit entschieden werden.</p>
 <p>Probleme in EXP-vollständig können hingegen nicht parallelisiert werden, und benötigen auch auf einer Maschine mit unendlich vielen Prozessoren exponentielle Zeit.</p>
+</div>
+<div class="prop">
+<p>Folgende Mengen sind <strong>NP</strong>-vollständig:</p>
+<ul>
+<li><span class="math inline">\(\text{HK} = \{G \mid G \text{ ist ein hamiltonischer Graph }\}\)</span></li>
+</ul>
+<p>Ein Graph <span class="math inline">\(G\)</span> heißt hamiltonisch, wenn es einen Pfad gibt, der durch alle Knoten genau einmal geht und am Ende wieder zum Startknoten zurückkehrt.</p>
+<ul>
+<li><span class="math inline">\(\text{SOS} = \{ (a_1, ..., a_m, b) \mid \text{es gibt eine Teilmenge } I \subseteq \{1, ..., m\} \text{ mit } \sum_{i \in I} a_i = b \}\)</span></li>
+</ul>
+<p>Die SOS-Menge besteht aus Tupeln von Zahlen, für die es eine Teilmenge gibt, deren Summe genau <span class="math inline">\(b\)</span> ergibt.</p>
+<ul>
+<li><span class="math inline">\(3\text{-FARB} = \{G \mid G \text{ ist ein Graph, der mit } 3 \text{ Farben färbbar ist }\}\)</span></li>
+</ul>
+<p>Eine Knotenfärbung eines Graphen <span class="math inline">\(G\)</span> mit 3 Farben ist eine Zuordnung von Farben zu den Knoten von <span class="math inline">\(G\)</span>, sodass benachbarte Knoten unterschiedliche Farben haben. Ein Graph ist 3-färbbar, wenn es eine solche Färbung mit höchstens 3 Farben gibt.</p>
+<ul>
+<li><span class="math inline">\(3\text{-SAT} = \{\phi \mid \phi(x_1, ..., x_n) \text{ ist eine erfüllbare Formel in konjunktiver Normalform mit höchstens 3 Literalen pro Klausel }\}\)</span></li>
+</ul>
+<p>Eine Formel in konjunktiver Normalform (CNF) ist eine Konjunktion von Klauseln, wobei jede Klausel eine Disjunktion von Literalen ist. Ein Literal ist entweder eine Variable oder die Negation einer Variable. Eine Formel ist erfüllbar, wenn es eine Belegung der Variablen gibt, die die Formel wahr macht.</p>
+<p>z.B die Formel <span class="math inline">\((x_1 ∨ ¬x_2 ∨ x_3) ∧ (¬x_1 ∨ x_2 ∨ ¬x_3)\)</span> ist in 3-CNF und hat 2 Klauseln mit jeweils 3 Literalen.</p>
+<ul>
+<li><span class="math inline">\(\text{PUZZLE} = \{ (m, k, t, R, T_1, \ldots, T_k) \mid m, k, t \ge 1,\ R \in (\Sigma^m)^{4t},\ T_1, \ldots, T_k \in (\Sigma^m)^4 \text{ und } R \text{ kann mit Puzzleteilen der Typen } T_1, \ldots, T_k \text{ gefüllt werden} \}\)</span></li>
+</ul>
 </div>
 <section id="definition-p-vollständig" class="level3 def">
 <h3 class="anchored" data-anchor-id="definition-p-vollständig">Definition: <strong>P-vollständig</strong></h3>
 <p>Eine Menge <span class="math inline">\(B\)</span> heißt P-vollständig, falls <span class="math inline">\(B ∈ P\)</span> und <span class="math inline">\(A ≤^p_m B\)</span> für alle <span class="math inline">\(A ∈ \textbf{P}\)</span>.</p>
 </section>
 <div class="prop">
-<p><strong>Anmerkung</strong>: Ein Algorithmus, der eine P-vollständige Menge entscheidet, ist nicht parallelisierbar, d.h. es gibt keinen Algorithmus, der die Menge in logarithmischer Zeit auf einer polynomiellen Anzahl von Prozessoren entscheidet.</p>
+<p><strong>Anmerkung</strong>: Ein Algorithmus, der eine P-vollständige Menge entscheidet, ist nicht parallelisierbar.</p>
 </div>
+<div class="prop">
+<p>Folgende Mengen sind <strong>P</strong>-vollständig:</p>
+<ul>
+<li><span class="math inline">\(\text{PATH} = \{(G, s, t) \mid G \text{ ist ein gerichteter Graph mit einem Pfad von } s \text{ nach } t\}\)</span></li>
+</ul>
+<p>Ein gerichteter Graph <span class="math inline">\(G\)</span> besteht aus einer Menge von Knoten und gerichteten Kanten zwischen diesen Knoten. Ein Pfad von <span class="math inline">\(s\)</span> nach <span class="math inline">\(t\)</span> ist eine Sequenz von Knoten, beginnend mit <span class="math inline">\(s\)</span> und endend mit <span class="math inline">\(t\)</span>, wobei jede aufeinanderfolgende Paar von Knoten durch eine gerichtete Kante verbunden ist.</p>
+<ul>
+<li><span class="math inline">\(\text{KAP} = \{(K, x) \mid K \text{ ist ein boolescher Schaltkreis und } K(x) = 1\}\)</span></li>
+</ul>
+<p>Das <strong>Kreisauswertungsproblem (KAP)</strong> (engl. <em>Circuit Value Problem</em>, CVP) fragt, ob ein gegebener boolescher Schaltkreis <span class="math inline">\(K\)</span> bei einer gegebenen Eingabe <span class="math inline">\(x\)</span> den Wert <span class="math inline">\(1\)</span> ausgibt. Ein boolescher Schaltkreis besteht aus AND-, OR- und NOT-Gattern sowie Eingabe- und Ausgabeknoten. KAP gilt als das kanonische P-vollständige Problem.</p>
+<ul>
+<li><span class="math inline">\(\text{HORNSAT} = \{\phi \mid \phi \text{ ist eine erfüllbare Horn-Formel}\}\)</span></li>
+</ul>
+<p>Eine <strong>Horn-Formel</strong> ist eine Konjunktion von Horn-Klauseln, wobei jede Horn-Klausel eine Disjunktion von Literalen mit <strong>höchstens einem positiven Literal</strong> ist. HORNSAT fragt, ob eine gegebene Horn-Formel erfüllbar ist. z.B. die Formel <span class="math inline">\((¬x_1 ∨ ¬x_2 ∨ x_3) ∧ (¬x_1 ∨ x_4) ∧ (¬x_2 ∨ x_5) ∧ (¬x_3 ∨ ¬x_4 ∨ ¬x_5)\)</span> ist eine Horn-Formel, da jede Klausel höchstens ein positives Literal enthält.</p>
+</div>
+</section>
+</section>
+<section id="automatentheorie" class="level1">
+<h1>Automatentheorie</h1>
+<section id="endliche-automaten" class="level2">
+<h2 class="anchored" data-anchor-id="endliche-automaten">Endliche Automaten</h2>
+<section id="definition-dea" class="level3 def">
+<h3 class="anchored" data-anchor-id="definition-dea">Definition: <strong>DEA</strong></h3>
+<p>Ein <strong>deterministischer endlicher Automat (DEA)</strong> ist ein 5-Tupel <span class="math inline">\(A = (Σ, Z, f, z_0, Z')\)</span>, bestehend aus:</p>
+<ul>
+<li><span class="math inline">\(Σ\)</span>: einem endlichen, nichtleeren, <strong>Eingabealphabet</strong></li>
+<li><span class="math inline">\(Z\)</span>: einer endlichen, nichtleeren, <strong>Zustandsmenge</strong></li>
+<li><span class="math inline">\(f: Z × Σ → Z\)</span>: einer totalen <strong>Übergangsfunktion</strong></li>
+<li><span class="math inline">\(z_0 ∈ Z\)</span>: einem <strong>Startzustand</strong></li>
+<li><span class="math inline">\(Z' ⊆ Z\)</span>: einer Menge von <strong>Endzuständen</strong></li>
+</ul>
+</section>
 </section>
 </section>
 
