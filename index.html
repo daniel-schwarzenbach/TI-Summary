@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Daniel Schwarzenbach">
-<meta name="dcterms.date" content="2026-05-26">
+<meta name="dcterms.date" content="2026-05-27">
 
 <title>TI-Summary</title>
 <style>
@@ -146,6 +146,11 @@ window.Quarto = {
   <li><a href="#automatentheorie" id="toc-automatentheorie" class="nav-link" data-scroll-target="#automatentheorie">Automatentheorie</a>
   <ul class="collapse">
   <li><a href="#endliche-automaten" id="toc-endliche-automaten" class="nav-link" data-scroll-target="#endliche-automaten">Endliche Automaten</a></li>
+  <li><a href="#reguläre-mengen" id="toc-reguläre-mengen" class="nav-link" data-scroll-target="#reguläre-mengen">Reguläre Mengen</a></li>
+  </ul></li>
+  <li><a href="#theorie-der-formalen-sprachen" id="toc-theorie-der-formalen-sprachen" class="nav-link" data-scroll-target="#theorie-der-formalen-sprachen">Theorie der formalen Sprachen</a>
+  <ul class="collapse">
+  <li><a href="#die-chomsky-hierarchie" id="toc-die-chomsky-hierarchie" class="nav-link" data-scroll-target="#die-chomsky-hierarchie">Die Chomsky-Hierarchie</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -171,7 +176,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 26, 2026</p>
+      <p class="date">May 27, 2026</p>
     </div>
   </div>
   
@@ -3826,7 +3831,7 @@ K = \{(x,y) \mid \text{ die RAM } M_x \text{ hält auf die Eingabe } y \}
 <p><strong>Anmerkung:</strong> <span class="math inline">\(K\)</span> ist ebenfalls nicht entscheidbar, aber aufzählbar.</p>
 <p><span class="math display">\[ K ∈ \textbf{RE} \quad ∧ \quad K ∉ \textbf{co-RE} \]</span></p>
 </section>
-<section id="definition-totalitätsproblem" class="level3 prop">
+<section id="definition-totalitätsproblem" class="level3 def">
 <h3 class="anchored" data-anchor-id="definition-totalitätsproblem">Definition: <strong>Totalitätsproblem</strong></h3>
 <p>Die Menge</p>
 <p><span class="math display">\[
@@ -4461,6 +4466,7 @@ C_A(x) = C_B(f(x))
 \]</span> gibt, so sagen wir: <span class="math inline">\(A\)</span> ist <strong>in Polynomialzeit reduzierbar</strong> auf <span class="math inline">\(B\)</span> bzw. <span class="math display">\[
 A ≤^p_m B
 \]</span></p>
+<p>Anmerkung: <span class="math inline">\(Σ^*\)</span> kann durch die Induzierung einer totalen Ordnung auf den Symbolen <span class="math inline">\(Σ\)</span> zu einer <span class="math inline">\(|Σ|\)</span>-adischen kodierung der Natürlichen Zahlen genutzt werden, daher können wir auch <span class="math inline">\(A, B ⊆ ℕ\)</span> anstatt <span class="math inline">\(A⊆Σ^*_1\)</span> und <span class="math inline">\(B⊆Σ^*_2\)</span> schreiben.</p>
 </div>
 <div class="prop">
 <ol type="1">
@@ -4496,25 +4502,47 @@ A ≤^p_m B
 </div>
 <div class="prop">
 <p>Folgende Mengen sind <strong>NP</strong>-vollständig:</p>
-<ul>
-<li><span class="math inline">\(\text{HK} = \{G \mid G \text{ ist ein hamiltonischer Graph }\}\)</span></li>
-</ul>
+<p><span class="math display">\[\text{HK} = \{G \mid G \text{ ist ein hamiltonischer Graph }\}\]</span></p>
 <p>Ein Graph <span class="math inline">\(G\)</span> heißt hamiltonisch, wenn es einen Pfad gibt, der durch alle Knoten genau einmal geht und am Ende wieder zum Startknoten zurückkehrt.</p>
-<ul>
-<li><span class="math inline">\(\text{SOS} = \{ (a_1, ..., a_m, b) \mid \text{es gibt eine Teilmenge } I \subseteq \{1, ..., m\} \text{ mit } \sum_{i \in I} a_i = b \}\)</span></li>
-</ul>
+<p><span class="math display">\[
+\begin{gathered}
+\text{SOS} = \\
+\{ (a_1, ..., a_m, b) \mid \text{es gibt eine Teilmenge } \\
+I \subseteq \{1, ..., m\} \text{ mit } \sum_{i \in I} a_i = b \}
+\end{gathered}
+\]</span></p>
 <p>Die SOS-Menge besteht aus Tupeln von Zahlen, für die es eine Teilmenge gibt, deren Summe genau <span class="math inline">\(b\)</span> ergibt.</p>
-<ul>
-<li><span class="math inline">\(3\text{-FARB} = \{G \mid G \text{ ist ein Graph, der mit } 3 \text{ Farben färbbar ist }\}\)</span></li>
-</ul>
+<p><span class="math display">\[
+\begin{gathered}
+3\text{-FARB} = \\
+\{G \mid G \text{ ist ein Graph, der mit } 3 \text{ Farben färbbar ist }\}
+\end{gathered}
+\]</span></p>
 <p>Eine Knotenfärbung eines Graphen <span class="math inline">\(G\)</span> mit 3 Farben ist eine Zuordnung von Farben zu den Knoten von <span class="math inline">\(G\)</span>, sodass benachbarte Knoten unterschiedliche Farben haben. Ein Graph ist 3-färbbar, wenn es eine solche Färbung mit höchstens 3 Farben gibt.</p>
-<ul>
-<li><span class="math inline">\(3\text{-SAT} = \{\phi \mid \phi(x_1, ..., x_n) \text{ ist eine erfüllbare Formel in konjunktiver Normalform mit höchstens 3 Literalen pro Klausel }\}\)</span></li>
-</ul>
+<p><span class="math display">\[
+\begin{gathered}
+3\text{-SAT} = \\
+\{\phi \mid \phi(x_1, ..., x_n) \\
+\text{ ist eine erfüllbare Formel in konjunktiver Normalform mit höchstens} \\
+3 \text{ Literalen pro Klausel }\}
+\end{gathered}
+\]</span></p>
 <p>Eine Formel in konjunktiver Normalform (CNF) ist eine Konjunktion von Klauseln, wobei jede Klausel eine Disjunktion von Literalen ist. Ein Literal ist entweder eine Variable oder die Negation einer Variable. Eine Formel ist erfüllbar, wenn es eine Belegung der Variablen gibt, die die Formel wahr macht.</p>
 <p>z.B die Formel <span class="math inline">\((x_1 ∨ ¬x_2 ∨ x_3) ∧ (¬x_1 ∨ x_2 ∨ ¬x_3)\)</span> ist in 3-CNF und hat 2 Klauseln mit jeweils 3 Literalen.</p>
+<p><span class="math display">\[
+\begin{gathered}
+\text{PUZZLE} = \\
+\{ (k, t, R, T_1, \ldots, T_k) \mid k, t \ge 1, R \in (\Sigma)^{4t},\\
+T_1, \ldots, T_k \in (\Sigma)^4 \\
+\text{ und } R \text{ kann mit Puzzleteilen der Typen } T_1, \ldots, T_k \text{ gefüllt werden} \}
+\end{gathered}
+\]</span></p>
 <ul>
-<li><span class="math inline">\(\text{PUZZLE} = \{ (m, k, t, R, T_1, \ldots, T_k) \mid m, k, t \ge 1,\ R \in (\Sigma^m)^{4t},\ T_1, \ldots, T_k \in (\Sigma^m)^4 \text{ und } R \text{ kann mit Puzzleteilen der Typen } T_1, \ldots, T_k \text{ gefüllt werden} \}\)</span></li>
+<li><span class="math inline">\(Σ\)</span>: Symbolmenge</li>
+<li><span class="math inline">\(T_k\)</span>: Puzzleteiltyp, definiert durch die 4 Symbole an den Seiten</li>
+<li><span class="math inline">\(R\)</span>: Puzzle-Region</li>
+<li><span class="math inline">\(k\)</span>: Anzahl der Puzzleteiltypen</li>
+<li><span class="math inline">\(t\)</span>: Anzahl der Reihen und Spalten in der Puzzle-Region</li>
 </ul>
 </div>
 <section id="definition-p-vollständig" class="level3 def">
@@ -4526,17 +4554,14 @@ A ≤^p_m B
 </div>
 <div class="prop">
 <p>Folgende Mengen sind <strong>P</strong>-vollständig:</p>
-<ul>
-<li><span class="math inline">\(\text{PATH} = \{(G, s, t) \mid G \text{ ist ein gerichteter Graph mit einem Pfad von } s \text{ nach } t\}\)</span></li>
-</ul>
+<p><span class="math display">\[\text{PATH} = \\
+\{(G, s, t) \mid G \text{ ist ein gerichteter Graph mit einem Pfad von } \\
+s \text{ nach } t\}\]</span></p>
 <p>Ein gerichteter Graph <span class="math inline">\(G\)</span> besteht aus einer Menge von Knoten und gerichteten Kanten zwischen diesen Knoten. Ein Pfad von <span class="math inline">\(s\)</span> nach <span class="math inline">\(t\)</span> ist eine Sequenz von Knoten, beginnend mit <span class="math inline">\(s\)</span> und endend mit <span class="math inline">\(t\)</span>, wobei jede aufeinanderfolgende Paar von Knoten durch eine gerichtete Kante verbunden ist.</p>
-<ul>
-<li><span class="math inline">\(\text{KAP} = \{(K, x) \mid K \text{ ist ein boolescher Schaltkreis und } K(x) = 1\}\)</span></li>
-</ul>
+<p><span class="math display">\[\text{KAP} = \\
+\{(K, x) \mid K \text{ ist ein boolescher Schaltkreis und } K(x) = 1\}\]</span></p>
 <p>Das <strong>Kreisauswertungsproblem (KAP)</strong> (engl. <em>Circuit Value Problem</em>, CVP) fragt, ob ein gegebener boolescher Schaltkreis <span class="math inline">\(K\)</span> bei einer gegebenen Eingabe <span class="math inline">\(x\)</span> den Wert <span class="math inline">\(1\)</span> ausgibt. Ein boolescher Schaltkreis besteht aus AND-, OR- und NOT-Gattern sowie Eingabe- und Ausgabeknoten. KAP gilt als das kanonische P-vollständige Problem.</p>
-<ul>
-<li><span class="math inline">\(\text{HORNSAT} = \{\phi \mid \phi \text{ ist eine erfüllbare Horn-Formel}\}\)</span></li>
-</ul>
+<p><span class="math display">\[\text{HORNSAT} = \{\phi \mid \phi \text{ ist eine erfüllbare Horn-Formel}\}\]</span></p>
 <p>Eine <strong>Horn-Formel</strong> ist eine Konjunktion von Horn-Klauseln, wobei jede Horn-Klausel eine Disjunktion von Literalen mit <strong>höchstens einem positiven Literal</strong> ist. HORNSAT fragt, ob eine gegebene Horn-Formel erfüllbar ist. z.B. die Formel <span class="math inline">\((¬x_1 ∨ ¬x_2 ∨ x_3) ∧ (¬x_1 ∨ x_4) ∧ (¬x_2 ∨ x_5) ∧ (¬x_3 ∨ ¬x_4 ∨ ¬x_5)\)</span> ist eine Horn-Formel, da jede Klausel höchstens ein positives Literal enthält.</p>
 </div>
 </section>
@@ -4551,11 +4576,233 @@ A ≤^p_m B
 <ul>
 <li><span class="math inline">\(Σ\)</span>: einem endlichen, nichtleeren, <strong>Eingabealphabet</strong></li>
 <li><span class="math inline">\(Z\)</span>: einer endlichen, nichtleeren, <strong>Zustandsmenge</strong></li>
-<li><span class="math inline">\(f: Z × Σ → Z\)</span>: einer totalen <strong>Übergangsfunktion</strong></li>
+<li><span class="math inline">\(f: Z × Σ → Z\)</span>: einer totalen <strong>Überführungsfunktion</strong></li>
 <li><span class="math inline">\(z_0 ∈ Z\)</span>: einem <strong>Startzustand</strong></li>
 <li><span class="math inline">\(Z' ⊆ Z\)</span>: einer Menge von <strong>Endzuständen</strong></li>
 </ul>
+<p>Die erweiterte Übergangsfunktion <span class="math inline">\(\overline{f}: Z' × Σ^* → Z\)</span> ist induktiv definiert durch: <span class="math display">\[
+\begin{aligned}
+\overline{f}(z, ε) &amp;:= z  &amp; \forall z ∈ Z \\
+\overline{f}(z, xa) &amp;:= f(\overline{f}(z, x), a) &amp; ∀ z ∈ Z, x ∈ Σ^*, a ∈ Σ \\
+\end{aligned}
+\]</span></p>
+<ol type="1">
+<li>Ein Wort <span class="math inline">\(x ∈ Σ^*\)</span> heißt von <span class="math inline">\(A\)</span> akzeptiert, falls <span class="math inline">\(\overline{f}(z_0, x) ∈ Z'\)</span>.</li>
+<li><span class="math inline">\(L(A) = \{x ∈ Σ^* ∣ \overline{f}(z_0, x) ∈ Z'\}\)</span> heißt die von <span class="math inline">\(A\)</span> <strong>akzeptierte Wortmenge</strong>.</li>
+</ol>
+<p><span class="math display">\[
+\textbf{DEA} = \{ L(A) \mid A \text{ ist ein deterministischer endlicher Automat}\}
+\]</span></p>
 </section>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-118-contents" aria-controls="callout-118" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-118" class="callout-118-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>DEA und NEA können im TheoreticalComputerSience.jl Paket emuliert werden. Siehe <a href="https://github.com/daniel-schwarzenbach/TheoreticalComputerScience.jl#finite-automata-ea" class="uri">https://github.com/daniel-schwarzenbach/TheoreticalComputerScience.jl#finite-automata-ea</a></p>
+</div>
+</div>
+</div>
+<section id="definition-nea" class="level3 def">
+<h3 class="anchored" data-anchor-id="definition-nea">Definition: <strong>NEA</strong></h3>
+<p>Ein <strong>nichtdeterministischer endlicher Automat (NEA)</strong> ist ein 5-Tupel <span class="math inline">\(A = (Σ, Z, f, z_0, Z')\)</span>, bestehend aus:</p>
+<ul>
+<li><span class="math inline">\(Σ\)</span>: einem endlichen, nichtleeren, <strong>Eingabealphabet</strong></li>
+<li><span class="math inline">\(Z\)</span>: einer endlichen, nichtleeren, <strong>Zustandsmenge</strong></li>
+<li><span class="math inline">\(f: Z × Σ → \mathcal{P}(Z)\)</span>: einer totalen <strong>Überführungsfunktion</strong></li>
+<li><span class="math inline">\(z_0 ∈ Z\)</span>: einem <strong>Startzustand</strong>, (manchmal auch mehrere Startzustände erlaubt)</li>
+<li><span class="math inline">\(Z' ⊆ Z\)</span>: einer Menge von <strong>Endzuständen</strong></li>
+</ul>
+<p>Die erweiterte Übergangsfunktion <span class="math inline">\(\overline{f}: Z' × Σ^* → Z\)</span> ist induktiv definiert durch: <span class="math display">\[
+\begin{aligned}
+\overline{f}(z, ε) &amp;:= \{z\}  &amp; \forall z ∈ Z \\
+\overline{f}(z, xa) &amp;:= \bigcup_{z' ∈ \overline{f}(z, x)} f(z', a) &amp; ∀ z ∈ Z, x ∈ Σ^*, a ∈ Σ \\
+\end{aligned}
+\]</span></p>
+<ol type="1">
+<li>Ein Wort <span class="math inline">\(x ∈ Σ^*\)</span> heißt von <span class="math inline">\(A\)</span> akzeptiert, falls <span class="math inline">\(\overline{f}(z_0, x) ∩ Z' ≠ ∅\)</span>.</li>
+<li><span class="math inline">\(L(A) = \{x ∈ Σ^* ∣ \overline{f}(z_0, x) ∩ Z' ≠ ∅\}\)</span> heißt die von <span class="math inline">\(A\)</span> <strong>akzeptierte Wortmenge</strong>.</li>
+</ol>
+<p><span class="math display">\[
+\textbf{NEA} = \{L(A) \mid A \text{ ist ein nichtdeterministischer endlicher Automat}\}
+\]</span></p>
+</section>
+<div class="prop">
+<p><strong>Theorem 5.2.3</strong> <span class="math display">\[
+\textbf{DEA} = \textbf{NEA}
+\]</span></p>
+</div>
+<p>Fogender algorithmus konvertiert jeden NEA in einen DEA, der die gleiche Sprache akzeptiert:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">construct_DEA_from_NEA</span>(nea<span class="op">::</span><span class="dt">NEA</span>, Σ<span class="op">::</span><span class="dt">Set{Char}</span>) <span class="op">::</span><span class="dt">DEA</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># data</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    Q <span class="op">=</span> <span class="fu">Queue</span><span class="dt">{Set{State}}</span>()</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    D <span class="op">=</span> <span class="fu">Set</span><span class="dt">{Set{State}}</span>()</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># initialize the starting DEA</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    starting_states<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> nea.inital_states</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>    dea_z0 <span class="op">=</span> <span class="fu">join</span>(starting_states)</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>    dea_Zend <span class="op">=</span> nea.accepting_states</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>    dea_f<span class="op">::</span><span class="dt">Dict{Tuple{State, Char}, State} </span><span class="op">=</span> <span class="fu">Dict</span>()</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># check if the starting state is an accepting state</span></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> !<span class="fu">isempty</span>(starting_states <span class="op">∩</span> nea.accepting_states)</span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">push!</span>(dea_Zend, dea_z0)</span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># add the starting states to Q and D</span></span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">enqueue!</span>(Q, starting_states); <span class="fu">push!</span>(D, starting_states)</span>
+<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> !<span class="fu">isempty</span>(Q)</span>
+<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># z_x are the current states</span></span>
+<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a>        z_x<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> <span class="fu">dequeue!</span>(Q)</span>
+<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> a <span class="op">∈</span> Σ</span>
+<span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a>            <span class="co"># z_ys are the next states</span></span>
+<span id="cb46-21"><a href="#cb46-21" aria-hidden="true" tabindex="-1"></a>            z_ys<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> <span class="fu">Set</span>()</span>
+<span id="cb46-22"><a href="#cb46-22" aria-hidden="true" tabindex="-1"></a>            <span class="co"># accumalate all z_ys so that f(z_x, a) = z_ys</span></span>
+<span id="cb46-23"><a href="#cb46-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> current_state <span class="op">∈</span> z_x</span>
+<span id="cb46-24"><a href="#cb46-24" aria-hidden="true" tabindex="-1"></a>                next_states<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> nea.<span class="fu">f</span>((current_state, a))</span>
+<span id="cb46-25"><a href="#cb46-25" aria-hidden="true" tabindex="-1"></a>                z_ys <span class="op">=</span> z_ys <span class="op">∪</span> next_states</span>
+<span id="cb46-26"><a href="#cb46-26" aria-hidden="true" tabindex="-1"></a>            <span class="cf">end</span></span>
+<span id="cb46-27"><a href="#cb46-27" aria-hidden="true" tabindex="-1"></a>            <span class="co"># add the new explicit sub function to the DEA</span></span>
+<span id="cb46-28"><a href="#cb46-28" aria-hidden="true" tabindex="-1"></a>            dea_f[(<span class="fu">join</span>(z_x),a)] <span class="op">=</span> <span class="fu">join</span>(z_ys)</span>
+<span id="cb46-29"><a href="#cb46-29" aria-hidden="true" tabindex="-1"></a>            <span class="co"># check if z_ys is a new Set of States</span></span>
+<span id="cb46-30"><a href="#cb46-30" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> z_ys <span class="op">∈</span≯ D</span>
+<span id="cb46-31"><a href="#cb46-31" aria-hidden="true" tabindex="-1"></a>                <span class="fu">enqueue!</span>(Q, z_ys)</span>
+<span id="cb46-32"><a href="#cb46-32" aria-hidden="true" tabindex="-1"></a>                <span class="fu">push!</span>(D, z_ys)</span>
+<span id="cb46-33"><a href="#cb46-33" aria-hidden="true" tabindex="-1"></a>                <span class="co"># check if any element in z_ys is in E</span></span>
+<span id="cb46-34"><a href="#cb46-34" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> !<span class="fu">isempty</span>(z_ys <span class="op">∩</span> nea.accepting_states)</span>
+<span id="cb46-35"><a href="#cb46-35" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># add z_ys to the ending States dfa.E</span></span>
+<span id="cb46-36"><a href="#cb46-36" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">push!</span>(dea_Zend, <span class="fu">join</span>(z_ys))</span>
+<span id="cb46-37"><a href="#cb46-37" aria-hidden="true" tabindex="-1"></a>                <span class="cf">end</span></span>
+<span id="cb46-38"><a href="#cb46-38" aria-hidden="true" tabindex="-1"></a>            <span class="cf">end</span></span>
+<span id="cb46-39"><a href="#cb46-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb46-40"><a href="#cb46-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb46-41"><a href="#cb46-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">DEA</span>(initial_state<span class="op">=</span>dea_z0, accepted_states<span class="op">=</span>dea_Zend, f<span class="op">=</span>dea_f)</span>
+<span id="cb46-42"><a href="#cb46-42" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="prop">
+<p><strong>Theorem 5.2.4</strong></p>
+<p>Seien <span class="math inline">\(L_1, L_2 ∈ \textbf{DEA}\)</span>, so gilt:</p>
+<ol type="1">
+<li><span class="math inline">\(L_1 ∪ L_2 ∈ \textbf{DEA}\)</span></li>
+<li><span class="math inline">\(L_1 ∩ L_2 ∈ \textbf{DEA}\)</span></li>
+<li><span class="math inline">\(\overline{L_1} ∈ \textbf{DEA}\)</span></li>
+<li><span class="math inline">\(L_1 ⋅ L_2 ∈ \textbf{DEA}\)</span></li>
+<li><span class="math inline">\(L_1^* ∈ \textbf{DEA}\)</span></li>
+</ol>
+</div>
+</section>
+<section id="reguläre-mengen" class="level2">
+<h2 class="anchored" data-anchor-id="reguläre-mengen">Reguläre Mengen</h2>
+<section id="definition-reguläre-menge" class="level3 def">
+<h3 class="anchored" data-anchor-id="definition-reguläre-menge">Definition: <strong>Reguläre Menge</strong></h3>
+<p>Die regulären Mengen über einem Alphabet <span class="math inline">\(Σ\)</span> sind wie folgt induktiv definiert:</p>
+<ul>
+<li><strong>IA:</strong> <span class="math inline">\(\emptyset,\{a\} \; ∀ a ∈ Σ\)</span> sind regulär</li>
+<li><strong>IS:</strong> Sind <span class="math inline">\(L_1\)</span> und <span class="math inline">\(L_2\)</span> regulär, so sind auch <span class="math inline">\(L_1 ∪ L_2\)</span>, <span class="math inline">\(L_1 ⋅ L_2\)</span> und <span class="math inline">\(L_1^*\)</span> regulär.</li>
+</ul>
+<p>Eine Wortmenge heißt regulär, falls sie eine reguläre Menge über einem geeigneten Alphabet <span class="math inline">\(Σ\)</span> ist.</p>
+<p><span class="math display">\[
+\textbf{REG} = \{L \mid L \text{ ist eine reguläre Menge}\}
+\]</span></p>
+</section>
+<div class="prop">
+<p><strong>Lemma 5.3.2</strong></p>
+<p>Seien <span class="math inline">\(B, C ⊆ Σ^*\)</span>.</p>
+<p>Falls <span class="math inline">\(ε ∉ B\)</span>, so ist <span class="math inline">\(L = B^* ⋅ C\)</span> die einzige Lösung der Gleichung <span class="math inline">\(L = B ⋅ L ∪ C\)</span>.</p>
+</div>
+<div class="prop">
+<p><strong>Theorem 5.3.3</strong></p>
+<p><span class="math display">\[
+\textbf{REG} = \textbf{DEA} = \mathcal{L}_3
+\]</span></p>
+</div>
+<section id="pumpinglemma-für-reguläre-sprachen" class="level3 prop">
+<h3 class="anchored" data-anchor-id="pumpinglemma-für-reguläre-sprachen">Pumpinglemma für reguläre Sprachen:</h3>
+<p>Für alle <span class="math inline">\(L ∈ \mathcal{L}_3\)</span> gilt:</p>
+<p><span class="math display">\[
+\exists n_0 \in \mathbb{N} : \forall x \in L, |x| ≥ n_0, \; x = uvw
+\]</span></p>
+<p>mit</p>
+<ul>
+<li><span class="math inline">\(|uv| ≤ n_0\)</span></li>
+<li><span class="math inline">\(|v| ≥ 1\)</span></li>
+<li><span class="math inline">\(uv^iw ∈ L\)</span> für alle <span class="math inline">\(i ≥ 0\)</span></li>
+</ul>
+</section>
+<div class="prop">
+<p><strong>Korollar 5.4.2</strong></p>
+<p><span class="math display">\[
+\textbf{DEA} ⊂ \textbf{P}
+\]</span></p>
+</div>
+</section>
+</section>
+<section id="theorie-der-formalen-sprachen" class="level1">
+<h1>Theorie der formalen Sprachen</h1>
+<section id="die-chomsky-hierarchie" class="level2">
+<h2 class="anchored" data-anchor-id="die-chomsky-hierarchie">Die Chomsky-Hierarchie</h2>
+<section id="definition-generative-gramatik" class="level3 def">
+<h3 class="anchored" data-anchor-id="definition-generative-gramatik">Definition: Generative Gramatik</h3>
+<p>Ein Tupel <span class="math inline">\(G = (\Sigma, N, S, R)\)</span> heißt <strong>(generative) Grammatik</strong>, falls gilt:</p>
+<ul>
+<li><span class="math inline">\(\Sigma\)</span>: ein endliches, nichtleeres <strong>Terminalalphabet</strong></li>
+<li><span class="math inline">\(N\)</span>: eine endliche, nichtleere <strong>Nichtterminalalphabet</strong></li>
+<li><span class="math inline">\(S ∈ N\)</span>: ein <strong>Startsymbol</strong></li>
+<li><span class="math inline">\(R ⊆ (Σ ∪ N)^+ × (Σ ∪ N)^*\)</span>: eine endliche binäre Relation von <strong>Erzeugungsregeln</strong>. Diese ist nicht rechtseindeutig, d.h. es kann mehrere Regeln mit demselben linken Teil geben, dh. ist keine Funktion!</li>
+</ul>
+</section>
+<div class="def">
+<p>Sei G = <span class="math inline">\((\Sigma, N, S, R)\)</span> eine Grammatik.</p>
+<ol type="1">
+<li><p>Ein Wort <span class="math inline">\(w ∈ (Σ ∪ N)^*\)</span> heißt von <span class="math inline">\(G\)</span> aus <span class="math inline">\(v ∈ (Σ ∪ N)^+\)</span> in einem Schritt erzeugt, falls <span class="math inline">\((v, w) ∈ R\)</span>. Wir schreiben das auch als <span class="math inline">\(v ⇒_G w\)</span>.</p></li>
+<li><p>Ein Wort <span class="math inline">\(w ∈ (Σ ∪ N)^*\)</span> heißt von <span class="math inline">\(G\)</span> aus <span class="math inline">\(v ∈ (Σ ∪ N)^+\)</span> in <span class="math inline">\(t\)</span> Schritten erzeut falls es Wörter <span class="math inline">\(v_0, v_1, ..., v_t\)</span> gibt mit <span class="math inline">\(v_0 = v\)</span>, <span class="math inline">\(v_t = w\)</span> und <span class="math inline">\(v_{i-1} ⇒_G v_i\)</span> für alle <span class="math inline">\(i ∈ \{1, ..., t\}\)</span>. Wir schreiben das auch als <span class="math inline">\(v ⇒^t_G w\)</span>.</p></li>
+<li><p>Ein Wort <span class="math inline">\(w ∈ (Σ ∪ N)^*\)</span> heißt von <span class="math inline">\(G\)</span> aus <span class="math inline">\(v ∈ (Σ ∪ N)^+\)</span> <strong>erzeugt</strong>, falls es ein <span class="math inline">\(t ∈ ℕ\)</span> gibt, sodass <span class="math inline">\(v ⇒^t_G w\)</span>. Wir schreiben das auch als <span class="math inline">\(v ⇒^*_G w\)</span>.</p></li>
+<li><p><span class="math inline">\(L(G) = \{w ∈ Σ^* ∣ S ⇒^*_G w\}\)</span> heißt die <strong>von <span class="math inline">\(G\)</span> erzeugte Sprache</strong>.</p></li>
+</ol>
+</div>
+<section id="definition-grammatikstypen" class="level3 def">
+<h3 class="anchored" data-anchor-id="definition-grammatikstypen">Definition: <strong>Grammatikstypen</strong></h3>
+<p>Sei <span class="math inline">\(G = (Σ, N, S, R)\)</span> eine Grammatik.</p>
+<p>Im folgenden seien <span class="math inline">\(w ∈ (Σ ∪ N)^+, u, u_1, u_2 ∈ (Σ ∪ N)^*\)</span> und <span class="math inline">\(A ∈ N\)</span> beliebig.</p>
+<ol start="0" type="1">
+<li><p><span class="math inline">\(G\)</span> ist vom <strong>Typ 0</strong> oder eine <strong>unbeschränkte Grammatik</strong>, falls keine Einschränkung an die Regeln in <span class="math inline">\(R\)</span> gestellt wird.</p></li>
+<li><p><span class="math inline">\(G\)</span> ist vom <strong>Typ 1</strong> oder eine <strong>kontextsensitive Grammatik</strong>, falls für alle <span class="math inline">\((v, w) ∈ R\)</span> gilt: <span class="math inline">\(|v| ≤ |w|\)</span>. Daher sind nur Regeln folgender Form erlaubt:</p>
+<ul>
+<li><span class="math inline">\(u_1Au_2 → u_1wu_2\)</span></li>
+<li><span class="math inline">\(S → ε\)</span></li>
+</ul></li>
+<li><p><span class="math inline">\(G\)</span> ist vom <strong>Typ 2</strong> oder eine <strong>kontextfreie Grammatik</strong>, falls für alle <span class="math inline">\((v, w) ∈ R\)</span> gilt: <span class="math inline">\(v ∈ N\)</span>. Daher sind nur Regeln folgender Form erlaubt:</p>
+<ul>
+<li><span class="math inline">\(A → u\)</span></li>
+</ul></li>
+<li><p><span class="math inline">\(G\)</span> ist vom <strong>Typ 3</strong> oder eine <strong>reguläre Grammatik</strong>, falls für alle <span class="math inline">\((v, w) ∈ R\)</span> gilt: <span class="math inline">\(v ∈ N\)</span> und <span class="math inline">\(w ∈ ΣN ∪ Σ ∪ \{ε\}\)</span>. Daher sind nur Regeln folgender Form erlaubt:</p>
+<ul>
+<li><span class="math inline">\(A → aB\)</span></li>
+<li><span class="math inline">\(A → ε\)</span></li>
+</ul></li>
+</ol>
+</section>
+<section id="definition-sprachklassen" class="level3 def">
+<h3 class="anchored" data-anchor-id="definition-sprachklassen">Definition: <strong>Sprachklassen</strong></h3>
+<p><span class="math display">\[
+\mathcal{L}_i = \{L(G) ∣ G \text{ ist eine Grammatik vom Typ } i\}
+\]</span></p>
+<p>unterander gilt:</p>
+<p><span class="math display">\[
+\mathcal{L}_3 ⊂ \mathcal{L}_2 ⊂ \mathcal{L}_1 ⊂ \mathcal{L}_0
+\]</span></p>
+</section>
+<div class="prop">
+<ul>
+<li><span class="math inline">\(\mathcal{L}_3 =\textbf{EA} = \textbf{NEA}\)</span></li>
+<li><span class="math inline">\(\mathcal{L}_2 =\textbf{NPDA}\)</span></li>
+<li><span class="math inline">\(\mathcal{L}_1 =\textbf{NLINSPACE} \subseteq \textbf{E}\)</span></li>
+<li><span class="math inline">\(\mathcal{L}_0 =\textbf{RE}\)</span></li>
+</ul>
+</div>
 </section>
 </section>
 
