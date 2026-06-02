@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Daniel Schwarzenbach">
-<meta name="dcterms.date" content="2026-05-27">
+<meta name="dcterms.date" content="2026-06-02">
 
 <title>TI-Summary</title>
 <style>
@@ -147,6 +147,8 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#endliche-automaten" id="toc-endliche-automaten" class="nav-link" data-scroll-target="#endliche-automaten">Endliche Automaten</a></li>
   <li><a href="#reguläre-mengen" id="toc-reguläre-mengen" class="nav-link" data-scroll-target="#reguläre-mengen">Reguläre Mengen</a></li>
+  <li><a href="#pushdown-automaten" id="toc-pushdown-automaten" class="nav-link" data-scroll-target="#pushdown-automaten">Pushdown-Automaten</a></li>
+  <li><a href="#kontextfreie-sprachen" id="toc-kontextfreie-sprachen" class="nav-link" data-scroll-target="#kontextfreie-sprachen">Kontextfreie Sprachen</a></li>
   </ul></li>
   <li><a href="#theorie-der-formalen-sprachen" id="toc-theorie-der-formalen-sprachen" class="nav-link" data-scroll-target="#theorie-der-formalen-sprachen">Theorie der formalen Sprachen</a>
   <ul class="collapse">
@@ -176,7 +178,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 27, 2026</p>
+      <p class="date">June 2, 2026</p>
     </div>
   </div>
   
@@ -3732,7 +3734,8 @@ Lösung:
 <p><img src="./img/Gödelisierung.png" class="img-fluid"></p>
 <p>ist eine natürliche Zahl keine gültige RAM, so wird sie als <code>STOP</code> kodiert.</p>
 <p>somit können wir jeder Natürlichen Zahl <span class="math inline">\(x\)</span> eine RAM <span class="math inline">\(M_x\)</span> zuordnen.</p>
-<p>Diesen Vorgang nennt man auch <strong>Gödelisierung</strong>.</p>
+<p>Diesen Vorgang nennt man auch <strong>Gödelisierung</strong>. Wir können auch funktionen von höheren Programmiersprachen wie Julia oder Python auf diese Weise kodieren. Der Vorgang ist aber auch reversibel, d.h. wir können aus einer natürlichen Zahl <span class="math inline">\(x\)</span> die RAM <span class="math inline">\(M_x\)</span> rekonstruieren und damit auch eine semantisch äquivalenten Julia Funktion, wie die, die wir ursprünglich kodiert haben.</p>
+<p><img src="./img/Goedelisierung.jpg" class="img-fluid"></p>
 <p>Das <strong>Halteproblem</strong> ist nicht nur für uns Informatiker ein fundamentales Problem, sondern auch für die Mathematik selbst, da es die Grenzen der Beweisbarkeit aufzeigt und zeigt das Mathematik kein abgeschlossenes System ist.</p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/HeQX2HjkcNo?si=H4FQupNvg2lf6zRh&amp;t=814" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <ul>
@@ -4147,29 +4150,32 @@ Beweis:
 </div>
 <div id="callout-115" class="callout-115-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Wir benötigen dafür die Gödelisierung. Die Gödelisierung ist eine surjektive Funktion, die eine partielle injektive umkehr Funktion hat. Diese können wie folgt in Julia deklariert werden:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># surjektiv, deckt alle Funktionen ab</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gödelisierung</span>(x<span class="op">::</span><span class="dt">Integer</span>)<span class="op">::</span><span class="dt"> Function</span></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># injektive umkehr Funktion, deckt nicht alle n ∈ ℕ ab</span></span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gödelisierung⁻¹</span>(f<span class="op">::</span><span class="dt">Function</span>)<span class="op">::</span><span class="dt"> Integer</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Wir benötigen dafür die Gödelisierung. Die Gödelisierung ist eine injektive Funktion, die eine surjektive Umkehrfunktion hat. Diese können wie folgt in Julia deklariert werden:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># injektiv</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gödelisierung</span>(f<span class="op">::</span><span class="dt">Function</span>)<span class="op">::</span><span class="dt"> Integer</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co"># surjektiv</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="fu">degödelisierung</span>(x<span class="op">::</span><span class="dt">Integer</span>)<span class="op">::</span><span class="dt"> Function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="./img/Goedelisierung.jpg" class="img-fluid"></p>
 <p>Wir zeigen zuerst, dass wenn <span class="math inline">\(A\)</span> aufzählbar ist, <span class="math inline">\(A ≤_m K\)</span> gilt:</p>
 <div class="sek">
-<p>Sei <span class="math inline">\(A\)</span> eine aufzählbare Menge. Dann gibt es eine berechenbare Funktion <span class="math inline">\(f: ℕ → ℕ\)</span>, sodass <span class="math inline">\(R_f = A\)</span>. Die Funktion <code>gödelisierung⁻¹</code> nimmt ein Programm (julia Typ Function) und wandelt es in eine natürliche Zahl um.</p>
+<p>Sei <span class="math inline">\(A\)</span> eine aufzählbare Menge.</p>
+<p><span class="math inline">\(⇒ ∃f: ℕ → ℕ\)</span> berechnbar, sodass <span class="math inline">\(R_f = A\)</span>.</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">g</span>(x)</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="fu">gödelisierung⁻¹</span>(f), x)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="fu">gödelisierung</span>(f), x)</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math inline">\(g\)</span> ist damit berechenbar und erfüllt die Bedingung:</p>
-<p><span class="math display">\[x ∈ A \; \longleftrightarrow \; g(x) ∈ K\]</span> . Es erfüllt die Bedingung:</p>
+<p><span class="math display">\[x ∈ A \; \longleftrightarrow \; g(x) ∈ K\]</span></p>
 </div>
 <p>Nun zeigen wir, dass <span class="math inline">\(K ≤_m K_0\)</span> gilt:</p>
 <div class="sek">
 <p>Betrachte die berechenbare Funktion <span class="math inline">\(q:ℕ^2 → ℕ\)</span> das für jedes Paar <span class="math inline">\((i, y) ∈ ℕ^2\)</span> ein Programm <span class="math inline">\(M_{q(i,x)}\)</span> konstruieren das <span class="math inline">\(M_i\)</span> auf der Eingabe <span class="math inline">\(y\)</span> simuliert und die eigene Eingabe ignoriert. Da für jedes Paar <span class="math inline">\((i, y) ∈ ℕ^2\)</span> ein solches Programm <span class="math inline">\(M_{q(i,y)}\)</span> konstuierbar ist, ist <span class="math inline">\(q\)</span> berechenbar und total:</p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">q</span>(i, y)</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">function</span> <span class="fu">f</span>(x)</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>        M_i<span class="op">::</span><span class="dt">Function </span><span class="op">=</span> <span class="fu">gödelisierung</span>(i)</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>        M_i<span class="op">::</span><span class="dt">Function </span><span class="op">=</span> <span class="fu">degödelisierung</span>(i)</span>
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="fu">M_i</span>(y)</span>
 <span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">end</span></span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">gödelisierung⁻¹</span>(f)</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">gödelisierung</span>(f)</span>
 <span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math inline">\(q\)</span> erfüllt damit die Bedingung:</p>
 <p><span class="math display">\[
@@ -4322,7 +4328,7 @@ Lösung:
 <span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Ende der Schleife</span></span>
 <span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>5   <span class="dt">R0</span> <span class="fu">←</span> <span class="dt">R2</span></span>
 <span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>6   <span class="kw">STOP</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>wir sagen, dass die Schleife <span class="math inline">\(y\)</span>-mal durchlaufen.</p>
+<p>wir sagen, dass die Schleife <span class="math inline">\(y\)</span>-mal durchlaufen wird.</p>
 <p><span class="math display">\[t_M(x,y,z) = 4y + 3\]</span></p>
 <p>y ist muss noch codiert werden, damit wir die Laufzeit in Abhängigkeit von der Eingabelänge angeben können. Dafür brauchen wir <span class="math inline">\(|y|\)</span> Stellen, also ist <span class="math inline">\(y ≤ 2^{|y|+1} - 2\)</span>.</p>
 <p><span class="math display">\[≤ 4 ⋅ 2^{|y|+1} - 8 + 3\]</span> <span class="math display">\[≤ 8 ⋅ 2^{|x|+|y|+|z|} - 5 \]</span> <span class="math display">\[≤ 8 ⋅ 2^n\]</span></p>
@@ -4424,17 +4430,14 @@ p(n) = a_0 + a_1n + ... + a_rn^r
 <li><span class="math inline">\(\textbf{NP} \stackrel{?}{⊊} \textbf{EXP}\)</span></li>
 <li><span class="math inline">\(\textbf{E} \stackrel{?}{⊊} \textbf{NE}\)</span></li>
 <li><span class="math inline">\(\textbf{EXP} \stackrel{?}{⊊} \textbf{NEXP}\)</span></li>
-<li><span class="math inline">\(\textbf{L} \stackrel{?}{⊊} \textbf{NL}\)</span></li>
-<li><span class="math inline">\(\textbf{NL} \stackrel{?}{⊊} \textbf{LIN}\)</span></li>
 </ol>
 <p>Wir wissen aber das <span class="math inline">\(\textbf{LIN} ≠ \textbf{NLIN}\)</span>.</p>
-<p>Die Komplexitätsklassen werden durch die Laufzeit einer Turingmaschine definiert, die die Menge entscheidet.</p>
+<p>Die Komplexitätsklassen werden durch die <strong>Laufzeit</strong> einer Turingmaschine definiert, die die Menge entscheidet.</p>
 <ul>
-<li><span class="math inline">\(\textbf{L} = \mathcal{O}(log(n))\)</span></li>
-<li><span class="math inline">\(\textbf{LIN} = \mathcal{O}(n)\)</span></li>
-<li><span class="math inline">\(\textbf{P} = \mathcal{O}(n^c)\)</span></li>
-<li><span class="math inline">\(\textbf{E} = \mathcal{O}(2^{cn})\)</span></li>
-<li><span class="math inline">\(\textbf{EXP} = \mathcal{O}(2^{n^c})\)</span></li>
+<li><span class="math inline">\(\textbf{LIN} ≃ \mathcal{O}(n)\)</span></li>
+<li><span class="math inline">\(\textbf{P} ≃ \mathcal{O}(n^c)\)</span></li>
+<li><span class="math inline">\(\textbf{E} ≃ \mathcal{O}(2^{cn})\)</span></li>
+<li><span class="math inline">\(\textbf{EXP} ≃ \mathcal{O}(2^{n^c})\)</span></li>
 </ul>
 </div>
 <div class="col">
@@ -4443,6 +4446,7 @@ p(n) = a_0 + a_1n + ... + a_rn^r
 </center>
 </div>
 </div>
+<p>⚠️ In der Literatur wird oft <span class="math inline">\(\textbf{LIN} := \textbf{LINSPACE}\)</span> definiert! Hier ist aber <span class="math inline">\(\textbf{LIN} := \textbf{LINTIME}\)</span> gemeint!</p>
 </section>
 <p>Mögliche Ergebnisse des <span class="math inline">\(\textbf{P}\)</span> vs <span class="math inline">\(\textbf{NP}\)</span> Problems:</p>
 <ol type="1">
@@ -4723,7 +4727,7 @@ Note:
 <h3 class="anchored" data-anchor-id="pumpinglemma-für-reguläre-sprachen">Pumpinglemma für reguläre Sprachen:</h3>
 <p>Für alle <span class="math inline">\(L ∈ \mathcal{L}_3\)</span> gilt:</p>
 <p><span class="math display">\[
-\exists n_0 \in \mathbb{N} : \forall x \in L, |x| ≥ n_0, \; x = uvw
+\exists n_0 \in \mathbb{N} : \forall x \in L, |x| ≥ n_0, \; \exists u,v,w : x = uvw
 \]</span></p>
 <p>mit</p>
 <ul>
@@ -4738,6 +4742,44 @@ Note:
 \textbf{DEA} ⊂ \textbf{P}
 \]</span></p>
 </div>
+</section>
+<section id="pushdown-automaten" class="level2">
+<h2 class="anchored" data-anchor-id="pushdown-automaten">Pushdown-Automaten</h2>
+<section id="definition-dpda-deterministischer-pushdown-automat" class="level3 def">
+<h3 class="anchored" data-anchor-id="definition-dpda-deterministischer-pushdown-automat"><em>Definition:</em> <strong>DPDA</strong> (deterministischer Pushdown-Automat)</h3>
+<p>Ein <strong>deterministischer Pushdown-Automat (DPDA)</strong> ist ein 6-Tupel <span class="math inline">\(A = (Σ, Γ, Z, f, z_0, Z')\)</span>, bestehend aus: - <span class="math inline">\(Σ\)</span>: einem endlichen, nichtleeren, <strong>Eingabealphabet</strong> - <span class="math inline">\(Γ\)</span>: einem endlichen, nichtleeren, <strong>Stackalphabet</strong> - <span class="math inline">\(Z\)</span>: einer endlichen, nichtleeren, <strong>Zustandsmenge</strong> - <span class="math inline">\(f: Z × (Σ ∪ \{ε\}) × (Γ ∪ \{ε\}) → Z × (Γ ∪ \{ε\})\)</span>: einer Übergangsfunktion - <span class="math inline">\(z_0 ∈ Z\)</span>: einem <strong>Startzustand</strong> - <span class="math inline">\(Z' ⊆ Z\)</span>: einer Menge von <strong>Endzuständen</strong></p>
+</section>
+<section id="definition-npda-nichtdeterministischer-pushdown-automat" class="level3 def">
+<h3 class="anchored" data-anchor-id="definition-npda-nichtdeterministischer-pushdown-automat"><em>Definition:</em> <strong>NPDA</strong> (nichtdeterministischer Pushdown-Automat)</h3>
+<p>Ein <strong>nichtdeterministischer Pushdown-Automat (NPDA)</strong> ist ein 7-Tupel <span class="math inline">\(A = (Σ, Γ, Z, f, z_0, z_s, Z')\)</span>, bestehend aus: - <span class="math inline">\(Σ\)</span>: einem endlichen, nichtleeren, <strong>Eingabealphabet</strong> - <span class="math inline">\(Γ\)</span>: einem endlichen, nichtleeren, <strong>Stackalphabet</strong> - <span class="math inline">\(Z\)</span>: einer endlichen, nichtleeren, <strong>Zustandsmenge</strong> - <span class="math inline">\(f: Z × (Σ ∪ \{ε\}) × (Γ ∪ \{ε\}) → \mathcal{P}(Z × (Γ ∪ \{ε\}))\)</span>: einer Übergangsfunktion - <span class="math inline">\(z_0 ∈ Z\)</span>: einem <strong>Startzustand</strong> - <span class="math inline">\(z_s ∈ Z\)</span>: einem <strong>Stackstartzustand</strong> - <span class="math inline">\(Z' ⊆ Z\)</span>: einer Menge von <strong>Endzuständen</strong></p>
+</section>
+<div class="prop">
+<p><span class="math display">\[
+\textbf{DPDA} ⊊ \textbf{NPDA} = \mathcal{L}_2
+\]</span></p>
+</div>
+<div class="prop">
+<p>Mann nennt die Sprachen die von einem <span class="math inline">\(\textbf{DPDA}\)</span> entschieden werden <strong>deterministisch kontextfreie Sprachen</strong> und es gilt:</p>
+<p><span class="math display">\[
+\textbf{DCFL} = \mathcal{L}_{2.5} = \textbf{DPDA}
+\]</span></p>
+</div>
+</section>
+<section id="kontextfreie-sprachen" class="level2">
+<h2 class="anchored" data-anchor-id="kontextfreie-sprachen">Kontextfreie Sprachen</h2>
+<section id="pumpinglemma-für-kontextfreie-sprachen" class="level3 prop">
+<h3 class="anchored" data-anchor-id="pumpinglemma-für-kontextfreie-sprachen">Pumpinglemma für kontextfreie Sprachen:</h3>
+<p>Für alle <span class="math inline">\(L ∈ \mathcal{L}_2\)</span> gilt:</p>
+<p><span class="math display">\[
+\exists n_0 \in \mathbb{N} : \forall z \in L, |z| ≥ n_0, \; ∃u,v,w,x,y: z = uvwxy
+\]</span></p>
+<p>mit</p>
+<ul>
+<li><span class="math inline">\(|uvx| ≤ n_0\)</span></li>
+<li><span class="math inline">\(|vx| ≥ 1\)</span></li>
+<li><span class="math inline">\(uv^iwx^iy ∈ L\)</span> für alle <span class="math inline">\(i ≥ 0\)</span></li>
+</ul>
+</section>
 </section>
 </section>
 <section id="theorie-der-formalen-sprachen" class="level1">
