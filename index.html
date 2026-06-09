@@ -4398,26 +4398,27 @@ Lösung:
 <div id="callout-118" class="callout-118-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="sourceCode" id="cb46"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">prod</span>(x,y)</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="fu">zeros</span>(y<span class="op">+</span><span class="fl">1</span>)</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> <span class="fu">zeros</span>(y<span class="op">+</span><span class="fl">1</span>)</span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="fl">0</span></span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    a[<span class="fl">0</span>] <span class="op">=</span> <span class="fl">1</span> <span class="co"># +1</span></span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    b[<span class="fl">0</span>] <span class="op">=</span> x <span class="co"># +1</span></span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> a[i] <span class="op">≤</span> y <span class="co"># lg(y) mal</span></span>
-<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>        a[i<span class="op">+</span><span class="fl">1</span>] <span class="op">=</span> a[i] <span class="op">+</span> a[i] <span class="co"># +3</span></span>
-<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>        b[i<span class="op">+</span><span class="fl">1</span>] <span class="op">=</span> b[i] <span class="op">+</span> b[i] <span class="co"># +3</span></span>
-<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>        i <span class="op">=</span> i <span class="op">+</span> <span class="fl">1</span> <span class="co"># +2</span></span>
-<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> <span class="fl">0</span> </span>
-<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> i <span class="op">&gt;</span> <span class="fl">0</span> <span class="co"># lg(y) mal</span></span>
-<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>        i <span class="op">=</span> i <span class="op">-</span> <span class="fl">1</span> <span class="co"># +2</span></span>
-<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> a[i] <span class="op">≤</span> y <span class="co"># +1</span></span>
-<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>            y <span class="op">=</span> y <span class="op">-</span> a[i] <span class="co"># +2</span></span>
-<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a>            z <span class="op">=</span> z <span class="op">+</span> b[i] <span class="co"># +2</span></span>
-<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
-<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> z <span class="co"># +1</span></span>
-<span id="cb46-21"><a href="#cb46-21" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># julias normale Vektoren sind 1-indexiert</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    a<span class="op">::</span><span class="dt">ZeroIdxVector </span><span class="op">=</span> <span class="fu">zeros</span>(y<span class="op">+</span><span class="fl">1</span>)</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    b<span class="op">::</span><span class="dt">ZeroIdxVector </span><span class="op">=</span> <span class="fu">zeros</span>(y<span class="op">+</span><span class="fl">1</span>)</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="fl">0</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    a[<span class="fl">0</span>] <span class="op">=</span> <span class="fl">1</span> <span class="co"># +1</span></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>    b[<span class="fl">0</span>] <span class="op">=</span> x <span class="co"># +1</span></span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> a[i] <span class="op">≤</span> y <span class="co"># lg(y) mal</span></span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>        a[i<span class="op">+</span><span class="fl">1</span>] <span class="op">=</span> a[i] <span class="op">+</span> a[i] <span class="co"># +3</span></span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>        b[i<span class="op">+</span><span class="fl">1</span>] <span class="op">=</span> b[i] <span class="op">+</span> b[i] <span class="co"># +3</span></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>        i <span class="op">=</span> i <span class="op">+</span> <span class="fl">1</span> <span class="co"># +2</span></span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> <span class="fl">0</span> </span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> i <span class="op">&gt;</span> <span class="fl">0</span> <span class="co"># lg(y) mal</span></span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>        i <span class="op">=</span> i <span class="op">-</span> <span class="fl">1</span> <span class="co"># +2</span></span>
+<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> a[i] <span class="op">≤</span> y <span class="co"># +1</span></span>
+<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a>            y <span class="op">=</span> y <span class="op">-</span> a[i] <span class="co"># +2</span></span>
+<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a>            z <span class="op">=</span> z <span class="op">+</span> b[i] <span class="co"># +2</span></span>
+<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb46-21"><a href="#cb46-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> z <span class="co"># +1</span></span>
+<span id="cb46-22"><a href="#cb46-22" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Die Laufzeit ist damit:</p>
 <p><span class="math display">\[
 \begin{aligned}
