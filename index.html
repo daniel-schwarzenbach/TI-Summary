@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Daniel Schwarzenbach">
-<meta name="dcterms.date" content="2026-06-02">
+<meta name="dcterms.date" content="2026-06-09">
 
 <title>TI-Summary</title>
 <style>
@@ -178,7 +178,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 2, 2026</p>
+      <p class="date">June 9, 2026</p>
     </div>
   </div>
   
@@ -738,7 +738,7 @@ Lösung:
 \begin{cases}
 ε &amp; \text{falls } n = 0 \\
 \text{dya}(\frac{n-2}{2}) \textit{2} &amp; \text{falls } n &gt; 0 \text{ und gerade} \\
-\text{dya}(\frac{n-2}{2}) \textit{1} &amp; \text{falls } n \text{ ungerade} \\
+\text{dya}(\frac{n-1}{2}) \textit{1} &amp; \text{falls } n \text{ ungerade} \\
 \end{cases}
 \]</span></p>
 <p>Die Umkehrfunktion <span class="math inline">\(\text{dya}^{-1} : \{\textit{1,2}\}^* → ℕ\)</span> ist wie folgt definiert:</p>
@@ -4160,7 +4160,7 @@ Beweis:
 <p>Wir zeigen zuerst, dass wenn <span class="math inline">\(A\)</span> aufzählbar ist, <span class="math inline">\(A ≤_m K\)</span> gilt:</p>
 <div class="sek">
 <p>Sei <span class="math inline">\(A\)</span> eine aufzählbare Menge.</p>
-<p><span class="math inline">\(⇒ ∃f: ℕ → ℕ\)</span> berechnbar, sodass <span class="math inline">\(R_f = A\)</span>.</p>
+<p><span class="math inline">\(⇒ ∃f: ℕ → ℕ\)</span> berechnbar, sodass <span class="math inline">\(D_f = A\)</span>.</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">g</span>(x)</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="fu">gödelisierung</span>(f), x)</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4372,6 +4372,67 @@ t_{\text{M}}(x,y) &amp;= 5y + 1 + 1 \\
 &amp;≤ 10 ⋅ 2^n - 8
 \end{aligned}
 \]</span></p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-119-contents" aria-controls="callout-119" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aufgabe: Laufzeit von Algorithmen
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-119" class="callout-119-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Finden Sie einen Algorithmus, der <code>prod(x,y)</code> in der Zeit <span class="math inline">\(\mathcal{O}(n)\)</span> berechnet, ohne die Verwendung von <code>*</code> oder <code>÷</code>.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-118-contents" aria-controls="callout-118" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-118" class="callout-118-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb46"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">prod</span>(x,y)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="fu">zeros</span>(y<span class="op">+</span><span class="fl">1</span>)</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> <span class="fu">zeros</span>(y<span class="op">+</span><span class="fl">1</span>)</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="fl">0</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    a[<span class="fl">0</span>] <span class="op">=</span> <span class="fl">1</span> <span class="co"># +1</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    b[<span class="fl">0</span>] <span class="op">=</span> x <span class="co"># +1</span></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> a[i] <span class="op">≤</span> y <span class="co"># lg(y) mal</span></span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>        a[i<span class="op">+</span><span class="fl">1</span>] <span class="op">=</span> a[i] <span class="op">+</span> a[i] <span class="co"># +3</span></span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>        b[i<span class="op">+</span><span class="fl">1</span>] <span class="op">=</span> b[i] <span class="op">+</span> b[i] <span class="co"># +3</span></span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>        i <span class="op">=</span> i <span class="op">+</span> <span class="fl">1</span> <span class="co"># +2</span></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> <span class="fl">0</span> </span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> i <span class="op">&gt;</span> <span class="fl">0</span> <span class="co"># lg(y) mal</span></span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>        i <span class="op">=</span> i <span class="op">-</span> <span class="fl">1</span> <span class="co"># +2</span></span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> a[i] <span class="op">≤</span> y <span class="co"># +1</span></span>
+<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>            y <span class="op">=</span> y <span class="op">-</span> a[i] <span class="co"># +2</span></span>
+<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a>            z <span class="op">=</span> z <span class="op">+</span> b[i] <span class="co"># +2</span></span>
+<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> z <span class="co"># +1</span></span>
+<span id="cb46-21"><a href="#cb46-21" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Die Laufzeit ist damit:</p>
+<p><span class="math display">\[
+\begin{aligned}
+t_{\text{P}}(x,y) &amp;= 5 + (9 + 8) \cdot |y| \\
+&amp;= 5 + 17 \cdot |y| \\
+&amp;≤ 5 + 17n \\
+\end{aligned}
+\]</span></p>
+<p>Somit ist die Laufzeit von <code>prod(x,y)</code> in <span class="math inline">\(\mathcal{O}(n)\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="die-klasse-textbfp" class="level2">
@@ -4390,7 +4451,6 @@ p(n) = a_0 + a_1n + ... + a_rn^r
 <p><span class="math inline">\(f\)</span> ist durch eine Turingmaschine in Polynomialzeit berechenbar.</p>
 <p><span class="math inline">\(⇔\)</span></p>
 <p><span class="math inline">\(f\)</span> ist durch eine 1-Turingmaschine in Polynomialzeit berechenbar</p>
-<p>⚠️ Es gibt Funktionen, zb. prod, die in einer 1-Turingmaschine nur in Polynomialzeit berechenbar sind, aber in einer RAM oder in Julia auch in linearer Zeit berechenbar sind.</p>
 </div>
 <div class="def">
 <p><span class="math display">\[
@@ -4408,7 +4468,6 @@ p(n) = a_0 + a_1n + ... + a_rn^r
 <li><span class="math inline">\(\textbf{P}\)</span> ist abgeschlossen unter Komplementbildung, Vereinigung, Durchschnitt.</li>
 </ol>
 </div>
-<p>Jeder Algorithmus der nur linear große for-schleifen benutzt, ist in Polynomialzeit berechenbar, da die Anzahl der Schritte durch ein Polynom beschränkt ist.</p>
 </section>
 <section id="die-klasse-textbfnp" class="level2">
 <h2 class="anchored" data-anchor-id="die-klasse-textbfnp">Die Klasse <span class="math inline">\(\textbf{NP}\)</span></h2>
@@ -4599,7 +4658,7 @@ s \text{ nach } t\}\]</span></p>
 \]</span></p>
 </section>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-118-contents" aria-controls="callout-118" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-120-contents" aria-controls="callout-120" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4608,7 +4667,7 @@ Note:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-118" class="callout-118-contents callout-collapse collapse">
+<div id="callout-120" class="callout-120-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>DEA und NEA können im TheoreticalComputerSience.jl Paket emuliert werden. Siehe <a href="https://github.com/daniel-schwarzenbach/TheoreticalComputerScience.jl#finite-automata-ea" class="uri">https://github.com/daniel-schwarzenbach/TheoreticalComputerScience.jl#finite-automata-ea</a></p>
 </div>
@@ -4644,48 +4703,48 @@ Note:
 \]</span></p>
 </div>
 <p>Fogender algorithmus konvertiert jeden NEA in einen DEA, der die gleiche Sprache akzeptiert:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">construct_DEA_from_NEA</span>(nea<span class="op">::</span><span class="dt">NEA</span>, Σ<span class="op">::</span><span class="dt">Set{Char}</span>) <span class="op">::</span><span class="dt">DEA</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># data</span></span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    Q <span class="op">=</span> <span class="fu">Queue</span><span class="dt">{Set{State}}</span>()</span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    D <span class="op">=</span> <span class="fu">Set</span><span class="dt">{Set{State}}</span>()</span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># initialize the starting DEA</span></span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    starting_states<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> nea.inital_states</span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>    dea_z0 <span class="op">=</span> <span class="fu">join</span>(starting_states)</span>
-<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>    dea_Zend <span class="op">=</span> nea.accepting_states</span>
-<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>    dea_f<span class="op">::</span><span class="dt">Dict{Tuple{State, Char}, State} </span><span class="op">=</span> <span class="fu">Dict</span>()</span>
-<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># check if the starting state is an accepting state</span></span>
-<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> !<span class="fu">isempty</span>(starting_states <span class="op">∩</span> nea.accepting_states)</span>
-<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">push!</span>(dea_Zend, dea_z0)</span>
-<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># add the starting states to Q and D</span></span>
-<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">enqueue!</span>(Q, starting_states); <span class="fu">push!</span>(D, starting_states)</span>
-<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> !<span class="fu">isempty</span>(Q)</span>
-<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># z_x are the current states</span></span>
-<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a>        z_x<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> <span class="fu">dequeue!</span>(Q)</span>
-<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> a <span class="op">∈</span> Σ</span>
-<span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a>            <span class="co"># z_ys are the next states</span></span>
-<span id="cb46-21"><a href="#cb46-21" aria-hidden="true" tabindex="-1"></a>            z_ys<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> <span class="fu">Set</span>()</span>
-<span id="cb46-22"><a href="#cb46-22" aria-hidden="true" tabindex="-1"></a>            <span class="co"># accumalate all z_ys so that f(z_x, a) = z_ys</span></span>
-<span id="cb46-23"><a href="#cb46-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> current_state <span class="op">∈</span> z_x</span>
-<span id="cb46-24"><a href="#cb46-24" aria-hidden="true" tabindex="-1"></a>                next_states<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> nea.<span class="fu">f</span>((current_state, a))</span>
-<span id="cb46-25"><a href="#cb46-25" aria-hidden="true" tabindex="-1"></a>                z_ys <span class="op">=</span> z_ys <span class="op">∪</span> next_states</span>
-<span id="cb46-26"><a href="#cb46-26" aria-hidden="true" tabindex="-1"></a>            <span class="cf">end</span></span>
-<span id="cb46-27"><a href="#cb46-27" aria-hidden="true" tabindex="-1"></a>            <span class="co"># add the new explicit sub function to the DEA</span></span>
-<span id="cb46-28"><a href="#cb46-28" aria-hidden="true" tabindex="-1"></a>            dea_f[(<span class="fu">join</span>(z_x),a)] <span class="op">=</span> <span class="fu">join</span>(z_ys)</span>
-<span id="cb46-29"><a href="#cb46-29" aria-hidden="true" tabindex="-1"></a>            <span class="co"># check if z_ys is a new Set of States</span></span>
-<span id="cb46-30"><a href="#cb46-30" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> z_ys <span class="op">∈</span≯ D</span>
-<span id="cb46-31"><a href="#cb46-31" aria-hidden="true" tabindex="-1"></a>                <span class="fu">enqueue!</span>(Q, z_ys)</span>
-<span id="cb46-32"><a href="#cb46-32" aria-hidden="true" tabindex="-1"></a>                <span class="fu">push!</span>(D, z_ys)</span>
-<span id="cb46-33"><a href="#cb46-33" aria-hidden="true" tabindex="-1"></a>                <span class="co"># check if any element in z_ys is in E</span></span>
-<span id="cb46-34"><a href="#cb46-34" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> !<span class="fu">isempty</span>(z_ys <span class="op">∩</span> nea.accepting_states)</span>
-<span id="cb46-35"><a href="#cb46-35" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># add z_ys to the ending States dfa.E</span></span>
-<span id="cb46-36"><a href="#cb46-36" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">push!</span>(dea_Zend, <span class="fu">join</span>(z_ys))</span>
-<span id="cb46-37"><a href="#cb46-37" aria-hidden="true" tabindex="-1"></a>                <span class="cf">end</span></span>
-<span id="cb46-38"><a href="#cb46-38" aria-hidden="true" tabindex="-1"></a>            <span class="cf">end</span></span>
-<span id="cb46-39"><a href="#cb46-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
-<span id="cb46-40"><a href="#cb46-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb46-41"><a href="#cb46-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">DEA</span>(initial_state<span class="op">=</span>dea_z0, accepted_states<span class="op">=</span>dea_Zend, f<span class="op">=</span>dea_f)</span>
-<span id="cb46-42"><a href="#cb46-42" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">construct_DEA_from_NEA</span>(nea<span class="op">::</span><span class="dt">NEA</span>, Σ<span class="op">::</span><span class="dt">Set{Char}</span>) <span class="op">::</span><span class="dt">DEA</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># data</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>    Q <span class="op">=</span> <span class="fu">Queue</span><span class="dt">{Set{State}}</span>()</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>    D <span class="op">=</span> <span class="fu">Set</span><span class="dt">{Set{State}}</span>()</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># initialize the starting DEA</span></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>    starting_states<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> nea.inital_states</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>    dea_z0 <span class="op">=</span> <span class="fu">join</span>(starting_states)</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>    dea_Zend <span class="op">=</span> nea.accepting_states</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>    dea_f<span class="op">::</span><span class="dt">Dict{Tuple{State, Char}, State} </span><span class="op">=</span> <span class="fu">Dict</span>()</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># check if the starting state is an accepting state</span></span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> !<span class="fu">isempty</span>(starting_states <span class="op">∩</span> nea.accepting_states)</span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">push!</span>(dea_Zend, dea_z0)</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># add the starting states to Q and D</span></span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">enqueue!</span>(Q, starting_states); <span class="fu">push!</span>(D, starting_states)</span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> !<span class="fu">isempty</span>(Q)</span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># z_x are the current states</span></span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a>        z_x<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> <span class="fu">dequeue!</span>(Q)</span>
+<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> a <span class="op">∈</span> Σ</span>
+<span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a>            <span class="co"># z_ys are the next states</span></span>
+<span id="cb47-21"><a href="#cb47-21" aria-hidden="true" tabindex="-1"></a>            z_ys<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> <span class="fu">Set</span>()</span>
+<span id="cb47-22"><a href="#cb47-22" aria-hidden="true" tabindex="-1"></a>            <span class="co"># accumalate all z_ys so that f(z_x, a) = z_ys</span></span>
+<span id="cb47-23"><a href="#cb47-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> current_state <span class="op">∈</span> z_x</span>
+<span id="cb47-24"><a href="#cb47-24" aria-hidden="true" tabindex="-1"></a>                next_states<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> nea.<span class="fu">f</span>((current_state, a))</span>
+<span id="cb47-25"><a href="#cb47-25" aria-hidden="true" tabindex="-1"></a>                z_ys <span class="op">=</span> z_ys <span class="op">∪</span> next_states</span>
+<span id="cb47-26"><a href="#cb47-26" aria-hidden="true" tabindex="-1"></a>            <span class="cf">end</span></span>
+<span id="cb47-27"><a href="#cb47-27" aria-hidden="true" tabindex="-1"></a>            <span class="co"># add the new explicit sub function to the DEA</span></span>
+<span id="cb47-28"><a href="#cb47-28" aria-hidden="true" tabindex="-1"></a>            dea_f[(<span class="fu">join</span>(z_x),a)] <span class="op">=</span> <span class="fu">join</span>(z_ys)</span>
+<span id="cb47-29"><a href="#cb47-29" aria-hidden="true" tabindex="-1"></a>            <span class="co"># check if z_ys is a new Set of States</span></span>
+<span id="cb47-30"><a href="#cb47-30" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> z_ys <span class="op">∈</span≯ D</span>
+<span id="cb47-31"><a href="#cb47-31" aria-hidden="true" tabindex="-1"></a>                <span class="fu">enqueue!</span>(Q, z_ys)</span>
+<span id="cb47-32"><a href="#cb47-32" aria-hidden="true" tabindex="-1"></a>                <span class="fu">push!</span>(D, z_ys)</span>
+<span id="cb47-33"><a href="#cb47-33" aria-hidden="true" tabindex="-1"></a>                <span class="co"># check if any element in z_ys is in E</span></span>
+<span id="cb47-34"><a href="#cb47-34" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> !<span class="fu">isempty</span>(z_ys <span class="op">∩</span> nea.accepting_states)</span>
+<span id="cb47-35"><a href="#cb47-35" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># add z_ys to the ending States dfa.E</span></span>
+<span id="cb47-36"><a href="#cb47-36" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">push!</span>(dea_Zend, <span class="fu">join</span>(z_ys))</span>
+<span id="cb47-37"><a href="#cb47-37" aria-hidden="true" tabindex="-1"></a>                <span class="cf">end</span></span>
+<span id="cb47-38"><a href="#cb47-38" aria-hidden="true" tabindex="-1"></a>            <span class="cf">end</span></span>
+<span id="cb47-39"><a href="#cb47-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb47-40"><a href="#cb47-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb47-41"><a href="#cb47-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">DEA</span>(initial_state<span class="op">=</span>dea_z0, accepted_states<span class="op">=</span>dea_Zend, f<span class="op">=</span>dea_f)</span>
+<span id="cb47-42"><a href="#cb47-42" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="prop">
 <p><strong>Theorem 5.2.4</strong></p>
 <p>Seien <span class="math inline">\(L_1, L_2 ∈ \textbf{DEA}\)</span>, so gilt:</p>
