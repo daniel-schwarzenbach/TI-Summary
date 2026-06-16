@@ -207,7 +207,7 @@ window.Quarto = {
 \]</span></p>
 <section id="about" class="level1">
 <h1>About</h1>
-<p>Disclaimer: Diese Zusammenfassung ist nicht als Ersatz für die Vorlesung oder die Übung gedacht, sondern soll lediglich als Ergänzung dienen. Es ist möglich, dass Fehler enthalten sind. Bitte überprüft die Zusammenfassung sorgfältig und meldet eventuelle Fehler oder Unklarheiten an daniel.2.schwarzenbach@uni-konstanz.de</p>
+<p>Disclaimer: Diese Zusammenfassung ist nicht als Ersatz für die Vorlesung oder die Übung gedacht, sondern soll lediglich als Ergänzung dienen. Es ist möglich, dass Fehler enthalten sind. Bitte überprüft die Zusammenfassung sorgfältig und meldet eventuelle Fehler oder Unklarheiten an <a href="mailto:daniel.2.schwarzenbach@uni-konstanz.de" class="email">daniel.2.schwarzenbach@uni-konstanz.de</a>.</p>
 <p>Für Theoretische Informatik gibt es ein Julia-Package, das die meisten der in der Vorlesung behandelten Konzepte implementiert.</p>
 <p>Install Julia: <a href="https://julialang.org/downloads/" class="uri">https://julialang.org/downloads/</a></p>
 <p>Github Repo: <a href="https://github.com/daniel-schwarzenbach/TheoreticalComputerScience.jl" class="uri">https://github.com/daniel-schwarzenbach/TheoreticalComputerScience.jl</a></p>
@@ -4542,11 +4542,17 @@ p(n) = a_0 + a_1n + ... + a_rn^r
 <h2 class="anchored" data-anchor-id="nichtdeterministische-maschienen">Nichtdeterministische Maschienen</h2>
 <p>Wir können an bestimmten Stellen unsere Berechnungsmodelle in mehrere separate Threads aufteilen.</p>
 <center>
-<p><img src="./img/NThreads.jpg" class="img-fluid"></p>
+<p><img src="./img/NThreads.jpg" class="img-fluid" style="width:50.0%"></p>
 </center>
 <section id="nichtdeterministische-turingmaschinen" class="level3">
 <h3 class="anchored" data-anchor-id="nichtdeterministische-turingmaschinen">Nichtdeterministische Turingmaschinen</h3>
 <p>Statt einer Übergangsfunktion <span class="math inline">\(f: Z × Σ^k → Z × Σ × \{L, 0, R\}\)</span> haben wir eine binäre Übergangsrelation die nicht rechtseindeutig sein muss: <span class="math inline">\(R ⊆ (Z × Σ^k) × (Z × Σ × \{L, 0, R\})\)</span>.</p>
+<p>Dadurch können wir für die selbe linke Seite mehrere verschiedene rechte Seiten haben, z.B.</p>
+<ul>
+<li><span class="math inline">\(z_1a → z_2b\)</span></li>
+<li><span class="math inline">\(z_1a → z_3c\)</span></li>
+<li><span class="math inline">\(z_1a → z_1a\)</span></li>
+</ul>
 </section>
 <section id="nichtdeterministische-rams" class="level3">
 <h3 class="anchored" data-anchor-id="nichtdeterministische-rams">Nichtdeterministische RAMs</h3>
@@ -4561,13 +4567,22 @@ p(n) = a_0 + a_1n + ... + a_rn^r
 <section id="nichtdeterministische-höhere-programmiersprachen" class="level3">
 <h3 class="anchored" data-anchor-id="nichtdeterministische-höhere-programmiersprachen">Nichtdeterministische Höhere Programmiersprachen</h3>
 <p>Wir können in julia ein macro <code>@ndet</code> definieren, das eine nichtdeterministische Verzweigung ermöglicht:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@ndet</span> <span class="cf">begin</span></span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    s1 <span class="op">|</span></span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    s2 <span class="op">|</span></span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    s3 <span class="op">|</span></span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">...|</span></span>
-<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>    sn</span>
-<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">f</span>(x<span class="op">::</span><span class="dt">Vector{Integer}</span>)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    l <span class="op">=</span> <span class="fu">length</span>(x)</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="fl">0</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="op">∈</span> <span class="fl">1</span><span class="op">:</span>l</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>        <span class="co"># nichtdeterministische Verzweigung mit 3 Threads</span></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>        <span class="pp">@ndet</span> <span class="cf">begin</span></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>            result <span class="op">+=</span> x[i] <span class="op">|</span></span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>            result <span class="op">-=</span> x[i] <span class="op">|</span></span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>            result <span class="op">=</span> result</span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> result <span class="op">=</span> <span class="fl">10</span></span>
+<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="cn">true</span></span>
+<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="cn">false</span></span>
+<span id="cb48-16"><a href="#cb48-16" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="def">
 <p><strong>Definition 11</strong></p>
 <p>Sei <span class="math inline">\(M\)</span> ein nichtdeterministischer Algorithmus.</p>
@@ -4646,10 +4661,10 @@ Lösung:
 </div>
 <div id="callout-121" class="callout-121-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb49"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">SOS</span>(b, a<span class="op">::</span><span class="dt">Vector{Int}</span>)</span>
+<div class="sourceCode" id="cb49"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">c_SOS</span>(b, a<span class="op">::</span><span class="dt">Vector{Int}</span>)</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    l <span class="op">=</span> <span class="fu">length</span>(a)</span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">=</span> <span class="fl">0</span></span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>l</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="op">∈</span> <span class="fl">1</span><span class="op">:</span>l</span>
 <span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>        <span class="pp">@ndet</span> <span class="cf">begin</span></span>
 <span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>            <span class="co"># wähle a[i] in die Teilmenge</span></span>
 <span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>            sum <span class="op">+=</span> a[i] <span class="op">|</span></span>
@@ -4665,7 +4680,7 @@ Lösung:
 <span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Da die Schleife <span class="math inline">\(l\)</span>-mal durchlaufen wird und <span class="math inline">\(l ≤ n\)</span>. Die Laufzeis ist damit:</p>
 <p><span class="math display">\[
-t(b, a) = 5l + 2 ≤ 5n + 2
+t(|b|, |a|) = 5l + 2 ≤ 5n + 2
 \]</span></p>
 <p>und damit sicher in <span class="math inline">\(\mathcal{O}(p(n))\)</span>. ⚠️ Das heißt <strong>nicht</strong> das <span class="math inline">\(\text{SOS} ∈ \textbf{NLIN}\)</span> ist, da wir die Zeitklassen mit Turingmaschinen definieren und nicht mit RAMs.</p>
 </div>
@@ -4689,20 +4704,25 @@ Lösung:
 <div class="sourceCode" id="cb50"><pre class="sourceCode ram code-with-copy"><code class="sourceCode ram"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>0   R(m<span class="fu">+</span><span class="bn">1</span>) <span class="fu">←</span> <span class="bn">0</span> <span class="co"># summe</span></span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>1   R(m<span class="fu">+</span><span class="bn">2</span>) <span class="fu">←</span> <span class="bn">1</span> <span class="co"># index i</span></span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>2   R(m<span class="fu">+</span><span class="bn">3</span>) <span class="fu">←</span> (m) <span class="co"># l</span></span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>3   <span class="kw">IF</span> R(m<span class="fu">+</span><span class="bn">2</span>) &gt; R(m<span class="fu">+</span><span class="bn">3</span>) <span class="kw">GOTO</span> <span class="bn">11</span> <span class="co"># i &gt; l Schlaufe</span></span>
-<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a><span class="co"># nichtdeterministische Auswahl von a[i] aus der Menge A</span></span>
-<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>4   R(m<span class="fu">+</span><span class="bn">1</span>) <span class="fu">←</span> R(m<span class="fu">+</span><span class="bn">1</span>) <span class="fu">+</span> RR(m<span class="fu">+</span><span class="bn">2</span>) <span class="co"># summe = summe + a[i]</span></span>
-<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>4   R(m<span class="fu">+</span><span class="bn">1</span>) <span class="fu">←</span> R(m<span class="fu">+</span><span class="bn">1</span>)</span>
-<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>5   R(m<span class="fu">+</span><span class="bn">4</span>) <span class="fu">←</span> <span class="dt">R0</span> <span class="fu">-</span> R(m<span class="fu">+</span><span class="bn">1</span>) <span class="co"># summe - b</span></span>
-<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>6   <span class="kw">IF</span> R(m<span class="fu">+</span><span class="bn">4</span>) &gt; <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">11</span> <span class="co"># summe &gt; b</span></span>
-<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>7   <span class="kw">IF</span> R(m<span class="fu">+</span><span class="bn">4</span>) <span class="fu">=</span> <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">9</span> <span class="co"># summe = b</span></span>
-<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>8   <span class="kw">GOTO</span> <span class="bn">3</span></span>
-<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>9   <span class="dt">R0</span> <span class="fu">←</span> <span class="bn">1</span> <span class="co"># summe = b</span></span>
-<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>10  <span class="kw">STOP</span></span>
-<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>11  <span class="dt">R0</span> <span class="fu">←</span> <span class="bn">0</span> <span class="co"># summe != b</span></span>
-<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a>12  <span class="kw">STOP</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>3   R(m<span class="fu">+</span><span class="bn">4</span>) <span class="fu">←</span> <span class="bn">1</span> <span class="co"># für i+1</span></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>4   R(m<span class="fu">+</span><span class="bn">5</span>) <span class="fu">←</span> R(m<span class="fu">+</span><span class="bn">2</span>) <span class="fu">-</span> R(m<span class="fu">+</span><span class="bn">3</span>) <span class="co"># i - l</span></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>5   <span class="kw">IF</span> R(m<span class="fu">+</span><span class="bn">5</span>) &gt; <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">15</span> <span class="co"># i ∈ 1:l Schlaufe</span></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a><span class="co"># nichtdeterministische Auswahl von a[i] aus der Menge A</span></span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>6   R(m<span class="fu">+</span><span class="bn">1</span>) <span class="fu">←</span> R(m<span class="fu">+</span><span class="bn">1</span>) <span class="fu">+</span> RR(m<span class="fu">+</span><span class="bn">2</span>) <span class="co"># summe = summe + a[i]</span></span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>6   R(m<span class="fu">+</span><span class="bn">1</span>) <span class="fu">←</span> R(m<span class="fu">+</span><span class="bn">1</span>)</span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>7   R(m<span class="fu">+</span><span class="bn">5</span>) <span class="fu">←</span> R(m<span class="fu">+</span><span class="bn">1</span>) <span class="fu">-</span> <span class="dt">R0</span> <span class="co"># summe - b</span></span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>8   R(m<span class="fu">+</span><span class="bn">6</span>) <span class="fu">←</span> <span class="dt">R0</span> <span class="fu">-</span> R(m<span class="fu">+</span><span class="bn">1</span>) <span class="co"># b - summe</span></span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>9   <span class="kw">IF</span> R(m<span class="fu">+</span><span class="bn">5</span>) &gt; <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">15</span> <span class="co"># summe &gt; b</span></span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>10   <span class="kw">IF</span> R(m<span class="fu">+</span><span class="bn">6</span>) <span class="fu">=</span> <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">13</span> <span class="co"># summe == b</span></span>
+<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>11  R(m<span class="fu">+</span><span class="bn">2</span>) <span class="fu">←</span> R(m<span class="fu">+</span><span class="bn">2</span>) <span class="fu">+</span> R(m<span class="fu">+</span><span class="bn">4</span>) <span class="co"># i = i + 1</span></span>
+<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a>12  <span class="kw">GOTO</span> <span class="bn">3</span></span>
+<span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Resultat ausgeben</span></span>
+<span id="cb50-19"><a href="#cb50-19" aria-hidden="true" tabindex="-1"></a>13  <span class="dt">R0</span> <span class="fu">←</span> <span class="bn">1</span> <span class="co"># summe = b</span></span>
+<span id="cb50-20"><a href="#cb50-20" aria-hidden="true" tabindex="-1"></a>14  <span class="kw">STOP</span></span>
+<span id="cb50-21"><a href="#cb50-21" aria-hidden="true" tabindex="-1"></a>15  <span class="dt">R0</span> <span class="fu">←</span> <span class="bn">0</span> <span class="co"># summe != b</span></span>
+<span id="cb50-22"><a href="#cb50-22" aria-hidden="true" tabindex="-1"></a>16  <span class="kw">STOP</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
