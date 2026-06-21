@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Daniel Schwarzenbach">
-<meta name="dcterms.date" content="2026-06-16">
+<meta name="dcterms.date" content="2026-06-21">
 
 <title>TI-Summary</title>
 <style>
@@ -179,7 +179,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 16, 2026</p>
+      <p class="date">June 21, 2026</p>
     </div>
   </div>
   
@@ -4596,7 +4596,7 @@ p(n) = a_0 + a_1n + ... + a_rn^r
 <li>Ein nichtdeterministischer Algorithmus <span class="math inline">\(M\)</span> <strong>akzeptiert</strong> eine Menge <span class="math inline">\(A ⊆ Σ^*\)</span> in der Zeit <span class="math inline">\(t\)</span>, falls gilt:
 <ul>
 <li><span class="math inline">\(L(M) = A\)</span></li>
-<li>Die Laufzeit jedes <strong>akzeptierenden</strong> Berechnungspfades von <span class="math inline">\(M\)</span> auf jeder Eingabe <span class="math inline">\(x\)</span> ist höchstens <span class="math inline">\(t(|x|)\)</span>.</li>
+<li>Die Laufzeit jedes Berechnungspfades von <span class="math inline">\(M\)</span> auf jeder Eingabe <span class="math inline">\(x\)</span> ist höchstens <span class="math inline">\(t(|x|)\)</span>.</li>
 </ul></li>
 <li>Ein nichtdeterministischer Algorithmus <span class="math inline">\(M\)</span> <strong>akzeptiert</strong> eine Menge <span class="math inline">\(A ⊆ Σ^*\)</span> in der Zeit <span class="math inline">\(\mathcal{O}(t)\)</span>, falls es ein <span class="math inline">\(c &gt; 0\)</span> gibt, sodass <span class="math inline">\(M\)</span> die Menge <span class="math inline">\(A\)</span> in der Zeit <span class="math inline">\(c · t(n) + c\)</span> akzeptiert.</li>
 </ol>
@@ -4641,6 +4641,10 @@ Lösung:
 <div id="callout-120" class="callout-120-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math display">\[
+(a_1, ..., a_m, b) ∈ \text{SOS} \quad ⇔ \quad ∃I ⊆ \{1, ..., m\}: \sum_{i ∈ I} a_i = b
+\]</span></p>
+<p>Daher gilt:</p>
+<p><span class="math display">\[
 \text{SOS} ∈ \textbf{NP}
 \]</span></p>
 </div>
@@ -4668,17 +4672,18 @@ Lösung:
 <span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>        <span class="pp">@ndet</span> <span class="cf">begin</span></span>
 <span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>            <span class="co"># wähle a[i] in die Teilmenge</span></span>
 <span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>            sum <span class="op">+=</span> a[i] <span class="op">|</span></span>
-<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>            sum <span class="op">=</span> sum</span>
-<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
-<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> sum <span class="op">==</span> b</span>
-<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="cn">true</span></span>
-<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elseif</span> sum <span class="op">&gt;</span> b</span>
-<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="cn">false</span></span>
-<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
-<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="cn">false</span></span>
-<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Da die Schleife <span class="math inline">\(l\)</span>-mal durchlaufen wird und <span class="math inline">\(l ≤ n\)</span>. Die Laufzeis ist damit:</p>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>            <span class="co"># oder ignoriere a[i]</span></span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>            sum <span class="op">=</span> sum</span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> sum <span class="op">==</span> b</span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="cn">true</span></span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elseif</span> sum <span class="op">&gt;</span> b</span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="cn">false</span></span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="cn">false</span></span>
+<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Da die Schleife <span class="math inline">\(l\)</span>-mal durchlaufen wird und <span class="math inline">\(l ≤ n\)</span>. Die Laufzeit ist damit:</p>
 <p><span class="math display">\[
 t(|b|, |a|) = 5l + 2 ≤ 5n + 2
 \]</span></p>
@@ -4715,7 +4720,7 @@ Lösung:
 <span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>7   R(m<span class="fu">+</span><span class="bn">5</span>) <span class="fu">←</span> R(m<span class="fu">+</span><span class="bn">1</span>) <span class="fu">-</span> <span class="dt">R0</span> <span class="co"># summe - b</span></span>
 <span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>8   R(m<span class="fu">+</span><span class="bn">6</span>) <span class="fu">←</span> <span class="dt">R0</span> <span class="fu">-</span> R(m<span class="fu">+</span><span class="bn">1</span>) <span class="co"># b - summe</span></span>
 <span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>9   <span class="kw">IF</span> R(m<span class="fu">+</span><span class="bn">5</span>) &gt; <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">15</span> <span class="co"># summe &gt; b</span></span>
-<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>10   <span class="kw">IF</span> R(m<span class="fu">+</span><span class="bn">6</span>) <span class="fu">=</span> <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">13</span> <span class="co"># summe == b</span></span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>10  <span class="kw">IF</span> R(m<span class="fu">+</span><span class="bn">6</span>) <span class="fu">=</span> <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">13</span> <span class="co"># summe == b</span></span>
 <span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>11  R(m<span class="fu">+</span><span class="bn">2</span>) <span class="fu">←</span> R(m<span class="fu">+</span><span class="bn">2</span>) <span class="fu">+</span> R(m<span class="fu">+</span><span class="bn">4</span>) <span class="co"># i = i + 1</span></span>
 <span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a>12  <span class="kw">GOTO</span> <span class="bn">3</span></span>
 <span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Resultat ausgeben</span></span>
@@ -4760,10 +4765,16 @@ A ≤^p_m B
 <div class="prop">
 <p>Sei <span class="math inline">\(B ⊊ ℕ\)</span> und <span class="math inline">\(B ≠ ∅\)</span> (nicht-trivial). Dann gilt: <span class="math inline">\(A ≤_m^p B\)</span> für alle <span class="math inline">\(A ∈ \textbf{P}\)</span>.</p>
 </div>
-<section id="definition-np-vollständig" class="level3 def">
-<h3 class="anchored" data-anchor-id="definition-np-vollständig">Definition: <strong>NP-vollständig</strong></h3>
+<div class="def">
+<section id="definition-np-vollständig" class="level3">
+<h3 class="anchored" data-anchor-id="definition-np-vollständig"><em>Definition:</em> <strong>NP-vollständig</strong></h3>
 <p>Eine Menge <span class="math inline">\(B\)</span> heißt NP-vollständig, falls <span class="math inline">\(B ∈ NP\)</span> und <span class="math inline">\(A ≤^p_m B\)</span> für alle <span class="math inline">\(A ∈ \textbf{NP}\)</span>.</p>
 </section>
+<section id="definition-np-schwer" class="level3">
+<h3 class="anchored" data-anchor-id="definition-np-schwer"><em>Definition:</em> <strong>NP-schwer</strong></h3>
+<p>Eine Menge <span class="math inline">\(B\)</span> heißt NP-schwer, falls <span class="math inline">\(A ≤^p_m B\)</span> für alle <span class="math inline">\(A ∈ \textbf{NP}\)</span>.</p>
+</section>
+</div>
 <div class="prop">
 <p>Seien <span class="math inline">\(A, B ⊆ ℕ\)</span>.</p>
 <ol type="1">
@@ -4773,21 +4784,25 @@ A ≤^p_m B
 </ol>
 </div>
 <div class="prop">
-<p><strong>Anmerkung</strong>: Ein Algorithmus, der eine NP-vollständige Menge entscheidet, kann von einer Maschine mit der sich Programme beliebig parallelisieren lassen, in polynomieller Zeit entschieden werden.</p>
-<p>Probleme in EXP-vollständig können hingegen nicht parallelisiert werden, und benötigen auch auf einer Maschine mit unendlich vielen Prozessoren exponentielle Zeit.</p>
-</div>
-<div class="prop">
 <p>Folgende Mengen sind <strong>NP</strong>-vollständig:</p>
 <p><span class="math display">\[\text{HK} = \{G \mid G \text{ ist ein hamiltonischer Graph }\}\]</span></p>
-<p>Ein Graph <span class="math inline">\(G\)</span> heißt hamiltonisch, wenn es einen Pfad gibt, der durch alle Knoten genau einmal geht und am Ende wieder zum Startknoten zurückkehrt.</p>
+<p>Ein Graph <span class="math inline">\(G\)</span> heißt hamiltonisch, wenn es einen Kreis gibt, der durch alle Knoten genau einmal geht und am Ende wieder zum Startknoten zurückkehrt.</p>
 <p><span class="math display">\[
 \begin{gathered}
 \text{SOS} = \\
-\{ (a_1, ..., a_m, b) \mid \text{es gibt eine Teilmenge } \\
-I \subseteq \{1, ..., m\} \text{ mit } \sum_{i \in I} a_i = b \}
+\{ (a_1, ..., a_n, b) \mid \text{es gibt } I \subseteq [n] \text{ mit } \\
+\sum_{i \in I} a_i = b \}
 \end{gathered}
 \]</span></p>
 <p>Die SOS-Menge besteht aus Tupeln von Zahlen, für die es eine Teilmenge gibt, deren Summe genau <span class="math inline">\(b\)</span> ergibt.</p>
+<p><span class="math display">\[
+\begin{gathered}
+\text{PARTITION} = \\
+\{ (a_1, ..., a_n) \mid \text{ es gibt } I ⊆ [n] \text{ mit } \\
+\sum_{i∈I} a_i = \sum_{j∉I} a_j\}
+\end{gathered}
+\]</span></p>
+<p>Die PARTITION-Menge besteht aus Tupeln von Zahlen, für die es eine Teilmenge gibt, deren Summe gleich der Summe der restlichen Zahlen ist.</p>
 <p><span class="math display">\[
 \begin{gathered}
 3\text{-FARB} = \\
@@ -4821,24 +4836,254 @@ T_1, \ldots, T_k \in (\Sigma)^4 \\
 <li><span class="math inline">\(t\)</span>: Anzahl der Reihen und Spalten in der Puzzle-Region</li>
 </ul>
 </div>
-<section id="definition-p-vollständig" class="level3 def">
-<h3 class="anchored" data-anchor-id="definition-p-vollständig">Definition: <strong>P-vollständig</strong></h3>
-<p>Eine Menge <span class="math inline">\(B\)</span> heißt P-vollständig, falls <span class="math inline">\(B ∈ P\)</span> und <span class="math inline">\(A ≤^p_m B\)</span> für alle <span class="math inline">\(A ∈ \textbf{P}\)</span>.</p>
-</section>
-<div class="prop">
-<p><strong>Anmerkung</strong>: Ein Algorithmus, der eine P-vollständige Menge entscheidet, ist nicht parallelisierbar.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-126-contents" aria-controls="callout-126" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
 </div>
-<div class="prop">
-<p>Folgende Mengen sind <strong>P</strong>-vollständig:</p>
-<p><span class="math display">\[\text{PATH} = \\
-\{(G, s, t) \mid G \text{ ist ein gerichteter Graph mit einem Pfad von } \\
-s \text{ nach } t\}\]</span></p>
-<p>Ein gerichteter Graph <span class="math inline">\(G\)</span> besteht aus einer Menge von Knoten und gerichteten Kanten zwischen diesen Knoten. Ein Pfad von <span class="math inline">\(s\)</span> nach <span class="math inline">\(t\)</span> ist eine Sequenz von Knoten, beginnend mit <span class="math inline">\(s\)</span> und endend mit <span class="math inline">\(t\)</span>, wobei jede aufeinanderfolgende Paar von Knoten durch eine gerichtete Kante verbunden ist.</p>
-<p><span class="math display">\[\text{KAP} = \\
-\{(K, x) \mid K \text{ ist ein boolescher Schaltkreis und } K(x) = 1\}\]</span></p>
-<p>Das <strong>Kreisauswertungsproblem (KAP)</strong> (engl. <em>Circuit Value Problem</em>, CVP) fragt, ob ein gegebener boolescher Schaltkreis <span class="math inline">\(K\)</span> bei einer gegebenen Eingabe <span class="math inline">\(x\)</span> den Wert <span class="math inline">\(1\)</span> ausgibt. Ein boolescher Schaltkreis besteht aus AND-, OR- und NOT-Gattern sowie Eingabe- und Ausgabeknoten. KAP gilt als das kanonische P-vollständige Problem.</p>
-<p><span class="math display">\[\text{HORNSAT} = \{\phi \mid \phi \text{ ist eine erfüllbare Horn-Formel}\}\]</span></p>
-<p>Eine <strong>Horn-Formel</strong> ist eine Konjunktion von Horn-Klauseln, wobei jede Horn-Klausel eine Disjunktion von Literalen mit <strong>höchstens einem positiven Literal</strong> ist. HORNSAT fragt, ob eine gegebene Horn-Formel erfüllbar ist. z.B. die Formel <span class="math inline">\((¬x_1 ∨ ¬x_2 ∨ x_3) ∧ (¬x_1 ∨ x_4) ∧ (¬x_2 ∨ x_5) ∧ (¬x_3 ∨ ¬x_4 ∨ ¬x_5)\)</span> ist eine Horn-Formel, da jede Klausel höchstens ein positives Literal enthält.</p>
+<div class="callout-title-container flex-fill">
+Aufgabe: <span class="math inline">\(\text{SOS} ≡_m^p \text{PARTITION}\)</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-126" class="callout-126-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\begin{gathered}
+\text{SOS} = \\
+\{ (a_1, ..., a_n, b) \mid \text{es gibt } I \subseteq [n] \text{ mit } \\
+\sum_{i \in I} a_i = b \}
+\end{gathered}
+\]</span></p>
+<p><span class="math display">\[
+\begin{gathered}
+\text{PARTITION} = \\
+\{ (a_1, ..., a_n) \mid \text{ es gibt } I ⊆ [n] \text{ mit } \\
+\sum_{i∈I} a_i = \sum_{j∉I} a_j\}
+\end{gathered}
+\]</span></p>
+<p>Wir möchten zeigen, dass <span class="math inline">\(\text{SOS} ≡_m^p \text{PARTITION}\)</span> gilt.</p>
+<ol type="a">
+<li>Zeigen Sie, dass <span class="math inline">\(\text{PARTITION} ≤_m^p \text{SOS}\)</span> gilt.</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-124-contents" aria-controls="callout-124" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-124" class="callout-124-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Angenomen wir haben einen Löser in NP für SOS. Wir müssen nun unser Problem PARTITION in eine Instanz von SOS umwandeln, sodass die Antwort des SOS-Lösers auch die Antwort für unsere PARTITION-Instanz ist.</p>
+<p>Wir definieren <span class="math inline">\(S := \sum_{k ∈ [n]} a_k\)</span>. Dann gilt:</p>
+<p><span class="math display">\[
+\sum_{i ∈ I} a_i = \sum_{j ∉ I} a_j = \frac{S}{2} \\
+\]</span></p>
+<p>somit können wir die Reduktionsfunktion wie folgt definieren:</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">partition_to_sos</span>(a<span class="op">::</span><span class="dt">Vector{Integer}</span>)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>    S <span class="op">=</span> <span class="fu">sum</span>(a) <span class="co"># S = a_1 + ... + a_n; # lengt(a)+1 Schritte ≤ n+1 Schritte</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> S <span class="op">%</span> <span class="fl">2</span> <span class="op">!=</span> <span class="fl">0</span> <span class="co"># S ist ungerade, also gibt es keine Partitionierung</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [<span class="fl">0</span>], <span class="fl">1</span> <span class="co"># triviale Instanz von SOS, die falsch ist</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> S <span class="op">÷</span> <span class="fl">2</span> <span class="co"># n + 1 Schritte</span></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a, b <span class="co"># 1 Schritt</span></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Diese hat eine Laufzeit von <span class="math inline">\(\mathcal{O}(n)\)</span> und ist damit in <span class="math inline">\(\textbf{FP}\)</span>.</p>
+<p>somit gilt: <span class="math inline">\(\text{PARTITION} ≤_m^p \text{SOS}\)</span>.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Zeigen Sie, dass <span class="math inline">\(\text{SOS} ≤_m^p \text{PARTITION}\)</span> gilt.</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-125-contents" aria-controls="callout-125" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-125" class="callout-125-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Angenomen wir haben einen Löser in NP für PARTITION. Wir müssen nun unser Problem SOS in eine Instanz von PARTITION umwandeln, sodass die Antwort des PARTITION-Lösers auch die Antwort für unsere SOS-Instanz ist.</p>
+<p>Dazu müssen wir sicher gehen, dass <span class="math inline">\(b\)</span> “erkennbar” bleibt, d.h. dass die Partitionierung genau dann möglich ist, wenn es eine Teilmenge von <span class="math inline">\(a_1, ..., a_n\)</span> gibt, die genau <span class="math inline">\(b\)</span> ergibt. Dazu definieren wir:</p>
+<ul>
+<li><span class="math inline">\(S := \sum_{k ∈ [n]} a_k\)</span></li>
+<li><span class="math inline">\(c := S - b\)</span></li>
+</ul>
+<p><span class="math display">\[
+\begin{gathered}
+\sum_{i ∈ I} a_i = b  \\
+⇒ \\
+\underbrace{S - b}_{c = \sum_{j ∉ I} a_j} + \sum_{i ∈ I} a_i = \sum_{j ∉ I} a_j + \underbrace{b}_{\sum_{i ∈ I} a_i}
+\end{gathered}
+\]</span></p>
+<p>Nun haben wir aber ein kleines Problem, da wir nun immer eine triviale Lösung <span class="math display">\[
+\begin{gathered}
+\underbrace{(S-b)}_{c} + b = \sum_{j ∉ I} a_j + \sum_{i ∈ I} a_i \\
+⇔ \\
+c + b = S
+\end{gathered}
+\]</span> für die PARTITION-Instanz haben. Um zu verhindern, dass <span class="math inline">\(c\)</span> und <span class="math inline">\(b\)</span> auf der selben Seite der Partition landen können, addieren wir beiden Zahlen <span class="math inline">\(S\)</span> hinzu:</p>
+<ul>
+<li><span class="math inline">\(c' := c + S = 2S - b\)</span></li>
+<li><span class="math inline">\(b' := b + S = S + b\)</span></li>
+</ul>
+<p>somit können wir die Reduktionsfunktion wie folgt definieren:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">sos_to_partition</span>(a<span class="op">::</span><span class="dt">Vector{Integer}</span>, b<span class="op">::</span><span class="dt">Integer</span>)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>    S <span class="op">=</span> <span class="fu">sum</span>(a) <span class="co"># S = a_1 + ... + a_n; # lengt(a)+1 Schritte ≤ n+1 Schritte</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    b´ <span class="op">=</span> S <span class="op">+</span> b <span class="co"># 2 Schritte</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>    c´ <span class="op">=</span> <span class="fl">2</span>S <span class="op">-</span> b <span class="co"># n+2 Schritte</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Erstellen der neuen Eingabe für PARTITION</span></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># (a_1, ..., a_n, c´, b´)</span></span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>    partition_input<span class="op">::</span><span class="dt">Vector{Integer} </span><span class="op">=</span> <span class="fu">vcat</span>(a,b´,c´) <span class="co"># 2 Schritte</span></span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> partition_input <span class="co"># 1 Schritt</span></span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>diese Hat eine Laufzeit von <span class="math inline">\(\mathcal{O}(n)\)</span> und ist damit in <span class="math inline">\(\textbf{FP}\)</span>.</p>
+<p>somit gilt: <span class="math inline">\(\text{SOS} ≤_m^p \text{PARTITION}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-128-contents" aria-controls="callout-128" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aufgabe: Knoten vs.&nbsp;Kantenfärbung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-128" class="callout-128-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Das Knotenfärbungsproblem ist definiert als: <span class="math display">\[
+k\text{-FARB} = \{G \mid G \text{ ist ein Graph, der mit } k \text{ Farben färbbar ist }\}
+\]</span></p>
+<p>Das Kantenfärbungsproblem ist definiert als: <span class="math display">\[
+k\text{-KANTENFARB} = \{G \mid G \text{ ist ein Graph, dessen Kanten mit } k \text{ Farben färbbar sind }\}
+\]</span></p>
+<p>Zeigen Sie, dass <span class="math inline">\(k\text{-KANTENFARB} ≤_m^p k\text{-FARB}\)</span> gilt.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-127-contents" aria-controls="callout-127" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-127" class="callout-127-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Idee: Wir verwandeln Kanten in Knoten um, sodass benachbarte Kanten in <span class="math inline">\(G\)</span> zu benachbarten Knoten im neuen Graphen <span class="math inline">\(G'\)</span> werden. Dann ist die Kantenfärbung von <span class="math inline">\(G\)</span> äquivalent zur Knotenfärbung von <span class="math inline">\(G'\)</span>.</p>
+<p><img src="./img/EtoV.jpg" class="img-fluid"></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;f: \underbrace{(E,V)}_{G} ↦ \underbrace{(E', V')}_{G'} \\
+&amp;V' = E \\
+&amp;E' = \{(e_1, e_2) ∈ E × E \mid |e_1 ∩ e_2| = 1\} \\
+\end{aligned}
+\]</span></p>
+<p>Das kann mit folgender Funktion in <span class="math inline">\(\textbf{FP}\)</span> berechnet werden:</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">edge_to_vertex</span>(G<span class="op">::</span><span class="dt">Graph</span>)</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get the vertex type</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>    Vertex<span class="op">::</span><span class="dt">Datatype </span><span class="op">=</span> <span class="fu">typeof</span>(<span class="fu">first</span>(G.V))</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>    E<span class="op">::</span><span class="dt">Set{Set2{Vertex}} </span><span class="op">=</span> G.E <span class="co"># Kanten von G</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>    V<span class="op">::</span><span class="dt">Set{Vertex} </span><span class="op">=</span> G.V <span class="co"># Knoten von G</span></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>    E´ <span class="op">=</span> <span class="fu">Set</span><span class="dt">{Set2{Set2{Vertex}}}</span>() <span class="co"># Kanten von G´</span></span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> e1 <span class="op">∈</span> E <span class="co"># ≤ n-mal</span></span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> e2 <span class="op">∈</span> E <span class="co"># ≤ n-mal</span></span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="fu">length</span>(e1 <span class="op">∩</span> e2) <span class="op">==</span> <span class="fl">1</span> <span class="co"># e1 und e2 teilen genau einen Knoten</span></span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>                <span class="fu">push!</span>(E´, <span class="fu">Set</span>(e1,e2)) <span class="co"># füge die Kante (e1,e2) zu E´ hinzu</span></span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">end</span></span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">Graph</span>(E, E´) <span class="co"># gebe den neuen Graphen G´ zurück</span></span>
+<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Das hat eine Laufzeit von <span class="math inline">\(\mathcal{O}(n^2)\)</span> und ist damit in <span class="math inline">\(\textbf{FP}\)</span>.</p>
+<p>somit gilt: <span class="math inline">\(k\text{-KANTENFARB} ≤_m^p k\text{-FARB}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-130-contents" aria-controls="callout-130" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aufgabe: Hamiltonscher Pfad vs.&nbsp;Hamiltonscher Kreis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-130" class="callout-130-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sie kennen bereits das Hamiltonsche Kreisproblem: <span class="math display">\[
+\text{HK} = \{G \mid G \text{ hat einen Kreis, der durch alle Knoten genau einmal geht }\}
+\]</span></p>
+<p>Das Hamiltonsche Pfadproblem ist definiert als: <span class="math display">\[
+\text{HP} = \{G \mid G \text{ hat einen Pfad, der durch alle Knoten genau einmal geht }\}
+\]</span></p>
+<p>Zeigen Sie, dass <span class="math inline">\(\text{HP} ≤_m^p \text{HK}\)</span> gilt.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-129-contents" aria-controls="callout-129" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-129" class="callout-129-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Wir bemerken das für immer wenn <span class="math inline">\(G\)</span> einen Hamiltonschen Kreis hat, es auch einen Hamiltonschen Pfad gibt. Ergo <span class="math display">\[
+\text{HK} ⊆ \text{HP}
+\]</span> und damit ist das Problem <span class="math inline">\(\text{HK}\)</span> eine echt schwierige Version von <span class="math inline">\(\text{HP}\)</span>.</p>
+<p>Die einzigen Graphen die in <span class="math inline">\(\text{HP} ∖ \text{HK}\)</span> sind die Graphen, bei denen die beiden Endknoten jedes Hamiltonschen Pfades nicht miteinander verbundenen sind.</p>
+<p>Idee: Wir fügen einen Bröcken-Knoten <span class="math inline">\(b\)</span> hinzu, der mit allen Knoten des Graphen verbunden ist. Dann gilt:</p>
+<ul>
+<li>Haben wir zuvor
+<ul>
+<li>einen Hamiltonischen Pfad, so haben wir mit der Hilfe von <span class="math inline">\(b\)</span> auch einen Hamiltonischen Kreis.</li>
+<li>keinen Hamiltonischen Pfad, so haben wir auch mit der Hilfe von <span class="math inline">\(b\)</span> keinen Hamiltonischen Kreis.</li>
+</ul></li>
+</ul>
+<p>Wir setzen das in folgender Funktion um:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">hp_to_hk</span>(G<span class="op">::</span><span class="dt">Graph</span>)</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get the vertex datatype</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>    Vertex<span class="op">::</span><span class="dt">Datatype </span><span class="op">=</span> <span class="fu">typeof</span>(<span class="fu">first</span>(G.V))</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Copy the vertices and edges of G</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>    V´<span class="op">::</span><span class="dt">Vector{Vertex} </span><span class="op">=</span> G.V</span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>    E´<span class="op">::</span><span class="dt">Vector{Set2{Vertex}} </span><span class="op">=</span> G.E</span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># füge einen neuen Knoten b hinzu</span></span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>    b<span class="op">::</span><span class="dt">Vertex </span><span class="op">=</span> <span class="fu">Vertex</span>() <span class="co"># neuer Knoten b</span></span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">push!</span>(V´, b) <span class="co"># füge den neuen Knoten b zu V´ hinzu</span></span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># füge Kanten von b zu allen Knoten in V´ hinzu</span></span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> v <span class="op">∈</span> V´ <span class="co"># ≤ n-mal</span></span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">push!</span>(E´, <span class="fu">Set</span>(b,v)) <span class="co"># füge die Kante (b,v) zu E´ hinzu</span></span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">Graph</span>(V´, E´) <span class="co"># gebe den neuen Graphen G´ zurück</span></span>
+<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Das hat eine Laufzeit von <span class="math inline">\(\mathcal{O}(n)\)</span> und ist damit in <span class="math inline">\(\textbf{FP}\)</span>.</p>
+<p>Somit gilt: <span class="math inline">\(\text{HP} ≤_m^p \text{HK}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -4871,7 +5116,7 @@ s \text{ nach } t\}\]</span></p>
 \]</span></p>
 </section>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-124-contents" aria-controls="callout-124" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-131-contents" aria-controls="callout-131" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4880,7 +5125,7 @@ Note:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-124" class="callout-124-contents callout-collapse collapse">
+<div id="callout-131" class="callout-131-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>DEA und NEA können im TheoreticalComputerSience.jl Paket emuliert werden. Siehe <a href="https://github.com/daniel-schwarzenbach/TheoreticalComputerScience.jl#finite-automata-ea" class="uri">https://github.com/daniel-schwarzenbach/TheoreticalComputerScience.jl#finite-automata-ea</a></p>
 </div>
@@ -4915,49 +5160,64 @@ Note:
 \textbf{DEA} = \textbf{NEA}
 \]</span></p>
 </div>
-<p>Fogender algorithmus konvertiert jeden NEA in einen DEA, der die gleiche Sprache akzeptiert:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">construct_DEA_from_NEA</span>(nea<span class="op">::</span><span class="dt">NEA</span>, Σ<span class="op">::</span><span class="dt">Set{Char}</span>) <span class="op">::</span><span class="dt">DEA</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># data</span></span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    Q <span class="op">=</span> <span class="fu">Queue</span><span class="dt">{Set{State}}</span>()</span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>    D <span class="op">=</span> <span class="fu">Set</span><span class="dt">{Set{State}}</span>()</span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># initialize the starting DEA</span></span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>    starting_states<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> nea.inital_states</span>
-<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>    dea_z0 <span class="op">=</span> <span class="fu">join</span>(starting_states)</span>
-<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>    dea_Zend <span class="op">=</span> nea.accepting_states</span>
-<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>    dea_f<span class="op">::</span><span class="dt">Dict{Tuple{State, Char}, State} </span><span class="op">=</span> <span class="fu">Dict</span>()</span>
-<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># check if the starting state is an accepting state</span></span>
-<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> !<span class="fu">isempty</span>(starting_states <span class="op">∩</span> nea.accepting_states)</span>
-<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">push!</span>(dea_Zend, dea_z0)</span>
-<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># add the starting states to Q and D</span></span>
-<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">enqueue!</span>(Q, starting_states); <span class="fu">push!</span>(D, starting_states)</span>
-<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> !<span class="fu">isempty</span>(Q)</span>
-<span id="cb51-17"><a href="#cb51-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># z_x are the current states</span></span>
-<span id="cb51-18"><a href="#cb51-18" aria-hidden="true" tabindex="-1"></a>        z_x<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> <span class="fu">dequeue!</span>(Q)</span>
-<span id="cb51-19"><a href="#cb51-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> a <span class="op">∈</span> Σ</span>
-<span id="cb51-20"><a href="#cb51-20" aria-hidden="true" tabindex="-1"></a>            <span class="co"># z_ys are the next states</span></span>
-<span id="cb51-21"><a href="#cb51-21" aria-hidden="true" tabindex="-1"></a>            z_ys<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> <span class="fu">Set</span>()</span>
-<span id="cb51-22"><a href="#cb51-22" aria-hidden="true" tabindex="-1"></a>            <span class="co"># accumalate all z_ys so that f(z_x, a) = z_ys</span></span>
-<span id="cb51-23"><a href="#cb51-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> current_state <span class="op">∈</span> z_x</span>
-<span id="cb51-24"><a href="#cb51-24" aria-hidden="true" tabindex="-1"></a>                next_states<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> nea.<span class="fu">f</span>((current_state, a))</span>
-<span id="cb51-25"><a href="#cb51-25" aria-hidden="true" tabindex="-1"></a>                z_ys <span class="op">=</span> z_ys <span class="op">∪</span> next_states</span>
-<span id="cb51-26"><a href="#cb51-26" aria-hidden="true" tabindex="-1"></a>            <span class="cf">end</span></span>
-<span id="cb51-27"><a href="#cb51-27" aria-hidden="true" tabindex="-1"></a>            <span class="co"># add the new explicit sub function to the DEA</span></span>
-<span id="cb51-28"><a href="#cb51-28" aria-hidden="true" tabindex="-1"></a>            dea_f[(<span class="fu">join</span>(z_x),a)] <span class="op">=</span> <span class="fu">join</span>(z_ys)</span>
-<span id="cb51-29"><a href="#cb51-29" aria-hidden="true" tabindex="-1"></a>            <span class="co"># check if z_ys is a new Set of States</span></span>
-<span id="cb51-30"><a href="#cb51-30" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> z_ys <span class="op">∈</span≯ D</span>
-<span id="cb51-31"><a href="#cb51-31" aria-hidden="true" tabindex="-1"></a>                <span class="fu">enqueue!</span>(Q, z_ys)</span>
-<span id="cb51-32"><a href="#cb51-32" aria-hidden="true" tabindex="-1"></a>                <span class="fu">push!</span>(D, z_ys)</span>
-<span id="cb51-33"><a href="#cb51-33" aria-hidden="true" tabindex="-1"></a>                <span class="co"># check if any element in z_ys is in E</span></span>
-<span id="cb51-34"><a href="#cb51-34" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> !<span class="fu">isempty</span>(z_ys <span class="op">∩</span> nea.accepting_states)</span>
-<span id="cb51-35"><a href="#cb51-35" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># add z_ys to the ending States dfa.E</span></span>
-<span id="cb51-36"><a href="#cb51-36" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">push!</span>(dea_Zend, <span class="fu">join</span>(z_ys))</span>
-<span id="cb51-37"><a href="#cb51-37" aria-hidden="true" tabindex="-1"></a>                <span class="cf">end</span></span>
-<span id="cb51-38"><a href="#cb51-38" aria-hidden="true" tabindex="-1"></a>            <span class="cf">end</span></span>
-<span id="cb51-39"><a href="#cb51-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
-<span id="cb51-40"><a href="#cb51-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb51-41"><a href="#cb51-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">DEA</span>(initial_state<span class="op">=</span>dea_z0, accepted_states<span class="op">=</span>dea_Zend, f<span class="op">=</span>dea_f)</span>
-<span id="cb51-42"><a href="#cb51-42" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-132-contents" aria-controls="callout-132" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Beweis:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-132" class="callout-132-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Folgender Algorithmus konvertiert jeden NEA in einen DEA, der die gleiche Sprache akzeptiert:</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">construct_DEA_from_NEA</span>(nea<span class="op">::</span><span class="dt">NEA</span>, Σ<span class="op">::</span><span class="dt">Set{Char}</span>) <span class="op">::</span><span class="dt">DEA</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># data</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>    Q <span class="op">=</span> <span class="fu">Queue</span><span class="dt">{Set{State}}</span>()</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>    D <span class="op">=</span> <span class="fu">Set</span><span class="dt">{Set{State}}</span>()</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># initialize the starting DEA</span></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>    starting_states<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> nea.inital_states</span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>    dea_z0 <span class="op">=</span> <span class="fu">join</span>(starting_states)</span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a>    dea_Zend <span class="op">=</span> nea.accepting_states</span>
+<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a>    dea_f<span class="op">::</span><span class="dt">Dict{Tuple{State, Char}, State} </span><span class="op">=</span> <span class="fu">Dict</span>()</span>
+<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># check if the starting state is an accepting state</span></span>
+<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> !<span class="fu">isempty</span>(starting_states <span class="op">∩</span> nea.accepting_states)</span>
+<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">push!</span>(dea_Zend, dea_z0)</span>
+<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb55-14"><a href="#cb55-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># add the starting states to Q and D</span></span>
+<span id="cb55-15"><a href="#cb55-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">enqueue!</span>(Q, starting_states); <span class="fu">push!</span>(D, starting_states)</span>
+<span id="cb55-16"><a href="#cb55-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> !<span class="fu">isempty</span>(Q)</span>
+<span id="cb55-17"><a href="#cb55-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># z_x are the current states</span></span>
+<span id="cb55-18"><a href="#cb55-18" aria-hidden="true" tabindex="-1"></a>        z_x<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> <span class="fu">dequeue!</span>(Q)</span>
+<span id="cb55-19"><a href="#cb55-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> a <span class="op">∈</span> Σ</span>
+<span id="cb55-20"><a href="#cb55-20" aria-hidden="true" tabindex="-1"></a>            <span class="co"># z_ys are the next states</span></span>
+<span id="cb55-21"><a href="#cb55-21" aria-hidden="true" tabindex="-1"></a>            z_ys<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> <span class="fu">Set</span>()</span>
+<span id="cb55-22"><a href="#cb55-22" aria-hidden="true" tabindex="-1"></a>            <span class="co"># accumalate all z_ys so that f(z_x, a) = z_ys</span></span>
+<span id="cb55-23"><a href="#cb55-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> current_state <span class="op">∈</span> z_x</span>
+<span id="cb55-24"><a href="#cb55-24" aria-hidden="true" tabindex="-1"></a>                next_states<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> nea.<span class="fu">f</span>((current_state, a))</span>
+<span id="cb55-25"><a href="#cb55-25" aria-hidden="true" tabindex="-1"></a>                z_ys <span class="op">=</span> z_ys <span class="op">∪</span> next_states</span>
+<span id="cb55-26"><a href="#cb55-26" aria-hidden="true" tabindex="-1"></a>            <span class="cf">end</span></span>
+<span id="cb55-27"><a href="#cb55-27" aria-hidden="true" tabindex="-1"></a>            <span class="co"># add the new explicit sub function to the DEA</span></span>
+<span id="cb55-28"><a href="#cb55-28" aria-hidden="true" tabindex="-1"></a>            dea_f[(<span class="fu">join</span>(z_x),a)] <span class="op">=</span> <span class="fu">join</span>(z_ys)</span>
+<span id="cb55-29"><a href="#cb55-29" aria-hidden="true" tabindex="-1"></a>            <span class="co"># check if z_ys is a new Set of States</span></span>
+<span id="cb55-30"><a href="#cb55-30" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> z_ys <span class="op">∈</span≯ D</span>
+<span id="cb55-31"><a href="#cb55-31" aria-hidden="true" tabindex="-1"></a>                <span class="fu">enqueue!</span>(Q, z_ys)</span>
+<span id="cb55-32"><a href="#cb55-32" aria-hidden="true" tabindex="-1"></a>                <span class="fu">push!</span>(D, z_ys)</span>
+<span id="cb55-33"><a href="#cb55-33" aria-hidden="true" tabindex="-1"></a>                <span class="co"># check if any element in z_ys is in E</span></span>
+<span id="cb55-34"><a href="#cb55-34" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> !<span class="fu">isempty</span>(z_ys <span class="op">∩</span> nea.accepting_states)</span>
+<span id="cb55-35"><a href="#cb55-35" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># add z_ys to the ending States dfa.E</span></span>
+<span id="cb55-36"><a href="#cb55-36" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">push!</span>(dea_Zend, <span class="fu">join</span>(z_ys))</span>
+<span id="cb55-37"><a href="#cb55-37" aria-hidden="true" tabindex="-1"></a>                <span class="cf">end</span></span>
+<span id="cb55-38"><a href="#cb55-38" aria-hidden="true" tabindex="-1"></a>            <span class="cf">end</span></span>
+<span id="cb55-39"><a href="#cb55-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb55-40"><a href="#cb55-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb55-41"><a href="#cb55-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">DEA</span>(initial_state<span class="op">=</span>dea_z0, accepted_states<span class="op">=</span>dea_Zend, f<span class="op">=</span>dea_f)</span>
+<span id="cb55-42"><a href="#cb55-42" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 <div class="prop">
 <p><strong>Theorem 5.2.4</strong></p>
 <p>Seien <span class="math inline">\(L_1, L_2 ∈ \textbf{DEA}\)</span>, so gilt:</p>
