@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Daniel Schwarzenbach">
-<meta name="dcterms.date" content="2026-06-21">
+<meta name="dcterms.date" content="2026-06-28">
 
 <title>TI-Summary</title>
 <style>
@@ -179,7 +179,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 21, 2026</p>
+      <p class="date">June 28, 2026</p>
     </div>
   </div>
   
@@ -294,6 +294,29 @@ window.Quarto = {
 <li>Die Klasse <span class="math inline">\(\textbf{P}\)</span></li>
 </ul>
 <p><a href="https://create.kahoot.it/share/ti8/e24b58cf-e922-4981-ae41-0ece5cef47f2" class="uri">https://create.kahoot.it/share/ti8/e24b58cf-e922-4981-ae41-0ece5cef47f2</a></p>
+</section>
+<section id="kahoot-nr.9" class="level3">
+<h3 class="anchored" data-anchor-id="kahoot-nr.9">Kahoot Nr.9</h3>
+<ul>
+<li>Nichtdeterministische Maschienen</li>
+<li>Die Klasse <span class="math inline">\(\textbf{NP}\)</span></li>
+</ul>
+<p><a href="https://create.kahoot.it/share/ti9/684df261-8e90-4889-adb2-b387989fbee8" class="uri">https://create.kahoot.it/share/ti9/684df261-8e90-4889-adb2-b387989fbee8</a></p>
+</section>
+<section id="kahoot-nr.10" class="level3">
+<h3 class="anchored" data-anchor-id="kahoot-nr.10">Kahoot Nr.10</h3>
+<ul>
+<li>NP-Vollständigkeit</li>
+<li><span class="math inline">\(≤_m^p\)</span>-Reduktionen</li>
+</ul>
+<p><a href="https://create.kahoot.it/share/ti10/f9abf091-9933-4e79-8c76-77993994ee9a" class="uri">https://create.kahoot.it/share/ti10/f9abf091-9933-4e79-8c76-77993994ee9a</a></p>
+</section>
+<section id="kahoot-nr.11" class="level3">
+<h3 class="anchored" data-anchor-id="kahoot-nr.11">Kahoot Nr.11</h3>
+<ul>
+<li><span class="math inline">\(≤_m^p\)</span>-Reduktionen</li>
+<li>Endliche Automaten</li>
+</ul>
 </section>
 </section>
 </section>
@@ -4485,6 +4508,91 @@ p(n) = a_0 + a_1n + ... + a_rn^r
 <li><span class="math inline">\(\textbf{P}\)</span> ist abgeschlossen unter Komplementbildung, Vereinigung, Durchschnitt.</li>
 </ol>
 </div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-121-contents" aria-controls="callout-121" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aufgabe: sqrt
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-121" class="callout-121-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Finden Sie einen Algorithmus, der die Funktion <code>sqrt(x)</code> in Polynomialzeit berechnet.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-120-contents" aria-controls="callout-120" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-120" class="callout-120-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb47"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">sqrt</span>(x)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">&lt;</span> <span class="fl">2</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> x</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>    a<span class="op">::</span><span class="dt">Vector{Integer} </span><span class="op">=</span> <span class="fu">zeros</span>(x<span class="op">+</span><span class="fl">1</span>)</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="fl">1</span></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>    a[<span class="fl">1</span>] <span class="op">=</span> <span class="fl">1</span></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> a[i] <span class="op">≤</span> x <span class="co"># log(x) mal</span></span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>        a[i<span class="op">+</span><span class="fl">1</span>] <span class="op">=</span> a[i] <span class="op">+</span> a[i]</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>        i <span class="op">+=</span> <span class="fl">1</span></span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Estimation</span></span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>    low <span class="op">=</span> a[<span class="fu">div</span>(i, <span class="fl">2</span>)]</span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a>    high <span class="op">=</span> a[<span class="fu">div</span>(i, <span class="fl">2</span>) <span class="op">+</span> <span class="fl">1</span>]</span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a>    mid <span class="op">=</span> <span class="fu">div</span>(low <span class="op">+</span> high, <span class="fl">2</span>)</span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> mid <span class="op">*</span> mid <span class="op">&gt;</span> x <span class="op">||</span> (mid<span class="op">+</span><span class="fl">1</span>) <span class="op">*</span> (mid<span class="op">+</span><span class="fl">1</span>) <span class="op">≤</span> x <span class="co"># log²x mal</span></span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> mid <span class="op">*</span> mid <span class="op">≤</span> x</span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a>            mid <span class="op">=</span> <span class="fu">div</span>(mid <span class="op">+</span> high, <span class="fl">2</span>)</span>
+<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span></span>
+<span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a>            mid <span class="op">=</span> <span class="fu">div</span>(low <span class="op">+</span> mid, <span class="fl">2</span>)</span>
+<span id="cb47-21"><a href="#cb47-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb47-22"><a href="#cb47-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb47-23"><a href="#cb47-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mid</span>
+<span id="cb47-24"><a href="#cb47-24" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>damit ist die Laufzeit von <code>sqrt(x)</code> in <span class="math inline">\(\mathcal{O}(n^2)\)</span> und damit polynomial.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="datentypen" class="level3">
+<h3 class="anchored" data-anchor-id="datentypen">Datentypen</h3>
+<p>Da wir uns innerhalb der Klasse <span class="math inline">\(\textbf{FUNK}(ℕ)\)</span> befinden, können wir nur Funktionen <span class="math inline">\(f: ℕ^n → ℕ\)</span> berechnen. Höhere Datentypen lassen sich jedoch in Polynomialzeit kodieren:</p>
+<ul>
+<li><code>Integer</code> <span class="math inline">\(≅ ℤ\)</span>: bijektiv über <span class="math inline">\(z(0)=0\)</span>, <span class="math inline">\(z(2n-1)=n\)</span>, <span class="math inline">\(z(2n)=-n\)</span></li>
+<li><code>AbstractFloat</code> <span class="math inline">\(≅ ℚ = ℤ×ℕ_+\)</span>: Kantor-Kodierung von Zähler und Nenner</li>
+<li><code>String</code> <span class="math inline">\(≅ Σ^*\)</span>: <span class="math inline">\(|Σ|\)</span>-adische Kodierung</li>
+<li><code>Bool</code> <span class="math inline">\(≅ \{0,1\}\)</span>: <span class="math inline">\(b(0)=0\)</span>, <span class="math inline">\(b(n)=1\)</span> für <span class="math inline">\(n&gt;0\)</span></li>
+<li>Tupel/Arrays: mehrfache Anwendung der Kantor-Paarungsfunktion</li>
+</ul>
+<p>Als zentrales Hilfsmittel dient die <strong>Kantor-Paarungsfunktion</strong>, eine bijektive Abbildung <span class="math inline">\(ℕ^2 \leftrightarrow ℕ\)</span>, berechenbar in Polynomialzeit:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ℕ → ℕ × ℕ (Dekodierung)</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">cantor_pairing</span>(z)</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># isqrt ist die ganzzahlige Wurzel in Julia</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    w <span class="op">=</span> (<span class="fu">isqrt</span>(<span class="fl">1</span> <span class="op">+</span> <span class="fl">8</span><span class="op">*</span>z) <span class="op">-</span> <span class="fl">1</span>) <span class="op">÷</span> <span class="fl">2</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> w <span class="op">*</span> (w <span class="op">+</span> <span class="fl">1</span>) <span class="op">÷</span> <span class="fl">2</span></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> z <span class="op">-</span> t</span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (w <span class="op">-</span> y, y)</span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ℕ × ℕ → ℕ (Kodierung)</span></span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">cantor_unpairing</span>(i, j)</span>
+<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (i <span class="op">+</span> j) <span class="op">*</span> (i <span class="op">+</span> j <span class="op">+</span> <span class="fl">1</span>) <span class="op">÷</span> <span class="fl">2</span> <span class="op">+</span> j</span>
+<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Zusammengesetzte Typen wie <code>Person</code> (mit Feldern <code>String</code>, <code>Integer</code>, <code>Bool</code>) werden als <span class="math inline">\(ℕ^5\)</span> dargestellt und nach Kantor kodiert. Nach dem Induktionsprinzip gilt:</p>
+<div class="prop">
+<p>Jedes Tupel abzählbarer Mengen und jeder zusammengesetzte Datentyp ist in Polynomialzeit in eine natürliche Zahl kodierbar und wieder dekodierbar.</p>
+</div>
+</section>
 </section>
 <section id="die-klasse-textbfnp" class="level2">
 <h2 class="anchored" data-anchor-id="die-klasse-textbfnp">Die Klasse <span class="math inline">\(\textbf{NP}\)</span></h2>
@@ -4557,32 +4665,32 @@ p(n) = a_0 + a_1n + ... + a_rn^r
 <section id="nichtdeterministische-rams" class="level3">
 <h3 class="anchored" data-anchor-id="nichtdeterministische-rams">Nichtdeterministische RAMs</h3>
 <p>Mehrere Befehle können auf die gleiche Zeilennummer zeigen, z.B.:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode ram code-with-copy"><code class="sourceCode ram"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>0   <span class="kw">IF</span> <span class="dt">R1</span> <span class="fu">=</span> <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">2</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>1   <span class="dt">R2</span> <span class="fu">←</span> <span class="dt">R2</span> <span class="fu">+</span> <span class="dt">R0</span></span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>2   <span class="dt">R1</span> <span class="fu">←</span> <span class="dt">R1</span> <span class="fu">-</span> <span class="bn">1</span></span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="co"># nichtdeterministische Verzweigung</span></span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>3   <span class="kw">STOP</span></span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>3   <span class="kw">GOTO</span> <span class="bn">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode ram code-with-copy"><code class="sourceCode ram"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>0   <span class="kw">IF</span> <span class="dt">R1</span> <span class="fu">=</span> <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">2</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>1   <span class="dt">R2</span> <span class="fu">←</span> <span class="dt">R2</span> <span class="fu">+</span> <span class="dt">R0</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>2   <span class="dt">R1</span> <span class="fu">←</span> <span class="dt">R1</span> <span class="fu">-</span> <span class="bn">1</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="co"># nichtdeterministische Verzweigung</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>3   <span class="kw">STOP</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>3   <span class="kw">GOTO</span> <span class="bn">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="nichtdeterministische-höhere-programmiersprachen" class="level3">
 <h3 class="anchored" data-anchor-id="nichtdeterministische-höhere-programmiersprachen">Nichtdeterministische Höhere Programmiersprachen</h3>
 <p>Wir können in julia ein macro <code>@ndet</code> definieren, das eine nichtdeterministische Verzweigung ermöglicht:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">f</span>(x<span class="op">::</span><span class="dt">Vector{Integer}</span>)</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    l <span class="op">=</span> <span class="fu">length</span>(x)</span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="fl">0</span></span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="op">∈</span> <span class="fl">1</span><span class="op">:</span>l</span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>        <span class="co"># nichtdeterministische Verzweigung mit 3 Threads</span></span>
-<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>        <span class="pp">@ndet</span> <span class="cf">begin</span></span>
-<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>            result <span class="op">+=</span> x[i] <span class="op">|</span></span>
-<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>            result <span class="op">-=</span> x[i] <span class="op">|</span></span>
-<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>            result <span class="op">=</span> result</span>
-<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
-<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> result <span class="op">=</span> <span class="fl">10</span></span>
-<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="cn">true</span></span>
-<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
-<span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="cn">false</span></span>
-<span id="cb48-16"><a href="#cb48-16" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">f</span>(x<span class="op">::</span><span class="dt">Vector{Integer}</span>)</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>    l <span class="op">=</span> <span class="fu">length</span>(x)</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="fl">0</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="op">∈</span> <span class="fl">1</span><span class="op">:</span>l</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>        <span class="co"># nichtdeterministische Verzweigung mit 3 Threads</span></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>        <span class="pp">@ndet</span> <span class="cf">begin</span></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>            result <span class="op">+=</span> x[i] <span class="op">|</span></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>            result <span class="op">-=</span> x[i] <span class="op">|</span></span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>            result <span class="op">=</span> result</span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> result <span class="op">=</span> <span class="fl">10</span></span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="cn">true</span></span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="cn">false</span></span>
+<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="def">
 <p><strong>Definition 11</strong></p>
 <p>Sei <span class="math inline">\(M\)</span> ein nichtdeterministischer Algorithmus.</p>
@@ -4606,7 +4714,7 @@ p(n) = a_0 + a_1n + ... + a_rn^r
 <p><span class="math inline">\(A\)</span> wird von einem nichtdeterministischen Algorithmus in Polynomialzeit akzeptiert.</p>
 </div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-123-contents" aria-controls="callout-123" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-125-contents" aria-controls="callout-125" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4615,7 +4723,7 @@ Aufgabe: Nichtdeterministische Maschinen
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-123" class="callout-123-contents callout-collapse collapse">
+<div id="callout-125" class="callout-125-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Betrachten Sie die folgende Menge:</p>
 <p><span class="math display">\[
@@ -4629,7 +4737,7 @@ I \subseteq \{1, ..., m\} \text{ mit } \sum_{i \in I} a_i = b \}
 <li>Überlegen Sie sich in welcher Klasse <span class="math inline">\((\textbf{P}, \textbf{NP} \text{ oder } \textbf{EXP})\)</span> die Menge <span class="math inline">\(\text{SOS}\)</span> liegt.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-120-contents" aria-controls="callout-120" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-122-contents" aria-controls="callout-122" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4638,7 +4746,7 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-120" class="callout-120-contents callout-collapse collapse">
+<div id="callout-122" class="callout-122-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math display">\[
 (a_1, ..., a_m, b) ∈ \text{SOS} \quad ⇔ \quad ∃I ⊆ \{1, ..., m\}: \sum_{i ∈ I} a_i = b
@@ -4654,7 +4762,7 @@ Lösung:
 <li>Schreiben Sie einen nichtdeterministischen Algorithmus in einer Höheren Programmiersprache, der <span class="math inline">\(\text{SOS}\)</span> in polynomialzeit entscheidet.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-121-contents" aria-controls="callout-121" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-123-contents" aria-controls="callout-123" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4663,26 +4771,26 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-121" class="callout-121-contents callout-collapse collapse">
+<div id="callout-123" class="callout-123-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb49"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">c_SOS</span>(b, a<span class="op">::</span><span class="dt">Vector{Int}</span>)</span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    l <span class="op">=</span> <span class="fu">length</span>(a)</span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">=</span> <span class="fl">0</span></span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="op">∈</span> <span class="fl">1</span><span class="op">:</span>l</span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>        <span class="pp">@ndet</span> <span class="cf">begin</span></span>
-<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>            <span class="co"># wähle a[i] in die Teilmenge</span></span>
-<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>            sum <span class="op">+=</span> a[i] <span class="op">|</span></span>
-<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>            <span class="co"># oder ignoriere a[i]</span></span>
-<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>            sum <span class="op">=</span> sum</span>
-<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
-<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> sum <span class="op">==</span> b</span>
-<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="cn">true</span></span>
-<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elseif</span> sum <span class="op">&gt;</span> b</span>
-<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="cn">false</span></span>
-<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
-<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="cn">false</span></span>
-<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">c_SOS</span>(b, a<span class="op">::</span><span class="dt">Vector{Int}</span>)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>    l <span class="op">=</span> <span class="fu">length</span>(a)</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    sum <span class="op">=</span> <span class="fl">0</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="op">∈</span> <span class="fl">1</span><span class="op">:</span>l</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>        <span class="pp">@ndet</span> <span class="cf">begin</span></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>            <span class="co"># wähle a[i] in die Teilmenge</span></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>            sum <span class="op">+=</span> a[i] <span class="op">|</span></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>            <span class="co"># oder ignoriere a[i]</span></span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>            sum <span class="op">=</span> sum</span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> sum <span class="op">==</span> b</span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="cn">true</span></span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elseif</span> sum <span class="op">&gt;</span> b</span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="cn">false</span></span>
+<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb51-17"><a href="#cb51-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="cn">false</span></span>
+<span id="cb51-18"><a href="#cb51-18" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Da die Schleife <span class="math inline">\(l\)</span>-mal durchlaufen wird und <span class="math inline">\(l ≤ n\)</span>. Die Laufzeit ist damit:</p>
 <p><span class="math display">\[
 t(|b|, |a|) = 5l + 2 ≤ 5n + 2
@@ -4695,7 +4803,7 @@ t(|b|, |a|) = 5l + 2 ≤ 5n + 2
 <li>Schreiben Sie eine nichtdeterministische RAM, die <span class="math inline">\(\text{SOS}\)</span> in polynomialzeit entscheidet. <code>&lt;R0&gt;</code> = b, <code>&lt;R1&gt;</code> = a_1, …, <code>&lt;R_m&gt;</code> = a_m</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-122-contents" aria-controls="callout-122" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-124-contents" aria-controls="callout-124" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4704,30 +4812,30 @@ Lösung:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-122" class="callout-122-contents callout-collapse collapse">
+<div id="callout-124" class="callout-124-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb50"><pre class="sourceCode ram code-with-copy"><code class="sourceCode ram"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>0   R(m<span class="fu">+</span><span class="bn">1</span>) <span class="fu">←</span> <span class="bn">0</span> <span class="co"># summe</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>1   R(m<span class="fu">+</span><span class="bn">2</span>) <span class="fu">←</span> <span class="bn">1</span> <span class="co"># index i</span></span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>2   R(m<span class="fu">+</span><span class="bn">3</span>) <span class="fu">←</span> (m) <span class="co"># l</span></span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>3   R(m<span class="fu">+</span><span class="bn">4</span>) <span class="fu">←</span> <span class="bn">1</span> <span class="co"># für i+1</span></span>
-<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>4   R(m<span class="fu">+</span><span class="bn">5</span>) <span class="fu">←</span> R(m<span class="fu">+</span><span class="bn">2</span>) <span class="fu">-</span> R(m<span class="fu">+</span><span class="bn">3</span>) <span class="co"># i - l</span></span>
-<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>5   <span class="kw">IF</span> R(m<span class="fu">+</span><span class="bn">5</span>) &gt; <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">15</span> <span class="co"># i ∈ 1:l Schlaufe</span></span>
-<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a><span class="co"># nichtdeterministische Auswahl von a[i] aus der Menge A</span></span>
-<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>6   R(m<span class="fu">+</span><span class="bn">1</span>) <span class="fu">←</span> R(m<span class="fu">+</span><span class="bn">1</span>) <span class="fu">+</span> RR(m<span class="fu">+</span><span class="bn">2</span>) <span class="co"># summe = summe + a[i]</span></span>
-<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>6   R(m<span class="fu">+</span><span class="bn">1</span>) <span class="fu">←</span> R(m<span class="fu">+</span><span class="bn">1</span>)</span>
-<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>7   R(m<span class="fu">+</span><span class="bn">5</span>) <span class="fu">←</span> R(m<span class="fu">+</span><span class="bn">1</span>) <span class="fu">-</span> <span class="dt">R0</span> <span class="co"># summe - b</span></span>
-<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>8   R(m<span class="fu">+</span><span class="bn">6</span>) <span class="fu">←</span> <span class="dt">R0</span> <span class="fu">-</span> R(m<span class="fu">+</span><span class="bn">1</span>) <span class="co"># b - summe</span></span>
-<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>9   <span class="kw">IF</span> R(m<span class="fu">+</span><span class="bn">5</span>) &gt; <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">15</span> <span class="co"># summe &gt; b</span></span>
-<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>10  <span class="kw">IF</span> R(m<span class="fu">+</span><span class="bn">6</span>) <span class="fu">=</span> <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">13</span> <span class="co"># summe == b</span></span>
-<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>11  R(m<span class="fu">+</span><span class="bn">2</span>) <span class="fu">←</span> R(m<span class="fu">+</span><span class="bn">2</span>) <span class="fu">+</span> R(m<span class="fu">+</span><span class="bn">4</span>) <span class="co"># i = i + 1</span></span>
-<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a>12  <span class="kw">GOTO</span> <span class="bn">3</span></span>
-<span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Resultat ausgeben</span></span>
-<span id="cb50-19"><a href="#cb50-19" aria-hidden="true" tabindex="-1"></a>13  <span class="dt">R0</span> <span class="fu">←</span> <span class="bn">1</span> <span class="co"># summe = b</span></span>
-<span id="cb50-20"><a href="#cb50-20" aria-hidden="true" tabindex="-1"></a>14  <span class="kw">STOP</span></span>
-<span id="cb50-21"><a href="#cb50-21" aria-hidden="true" tabindex="-1"></a>15  <span class="dt">R0</span> <span class="fu">←</span> <span class="bn">0</span> <span class="co"># summe != b</span></span>
-<span id="cb50-22"><a href="#cb50-22" aria-hidden="true" tabindex="-1"></a>16  <span class="kw">STOP</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode ram code-with-copy"><code class="sourceCode ram"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>0   R(m<span class="fu">+</span><span class="bn">1</span>) <span class="fu">←</span> <span class="bn">0</span> <span class="co"># summe</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>1   R(m<span class="fu">+</span><span class="bn">2</span>) <span class="fu">←</span> <span class="bn">1</span> <span class="co"># index i</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>2   R(m<span class="fu">+</span><span class="bn">3</span>) <span class="fu">←</span> (m) <span class="co"># l</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>3   R(m<span class="fu">+</span><span class="bn">4</span>) <span class="fu">←</span> <span class="bn">1</span> <span class="co"># für i+1</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>4   R(m<span class="fu">+</span><span class="bn">5</span>) <span class="fu">←</span> R(m<span class="fu">+</span><span class="bn">2</span>) <span class="fu">-</span> R(m<span class="fu">+</span><span class="bn">3</span>) <span class="co"># i - l</span></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>5   <span class="kw">IF</span> R(m<span class="fu">+</span><span class="bn">5</span>) &gt; <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">15</span> <span class="co"># i ∈ 1:l Schlaufe</span></span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a><span class="co"># nichtdeterministische Auswahl von a[i] aus der Menge A</span></span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>6   R(m<span class="fu">+</span><span class="bn">1</span>) <span class="fu">←</span> R(m<span class="fu">+</span><span class="bn">1</span>) <span class="fu">+</span> RR(m<span class="fu">+</span><span class="bn">2</span>) <span class="co"># summe = summe + a[i]</span></span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>6   R(m<span class="fu">+</span><span class="bn">1</span>) <span class="fu">←</span> R(m<span class="fu">+</span><span class="bn">1</span>)</span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>7   R(m<span class="fu">+</span><span class="bn">5</span>) <span class="fu">←</span> R(m<span class="fu">+</span><span class="bn">1</span>) <span class="fu">-</span> <span class="dt">R0</span> <span class="co"># summe - b</span></span>
+<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a>8   R(m<span class="fu">+</span><span class="bn">6</span>) <span class="fu">←</span> <span class="dt">R0</span> <span class="fu">-</span> R(m<span class="fu">+</span><span class="bn">1</span>) <span class="co"># b - summe</span></span>
+<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a>9   <span class="kw">IF</span> R(m<span class="fu">+</span><span class="bn">5</span>) &gt; <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">15</span> <span class="co"># summe &gt; b</span></span>
+<span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a>10  <span class="kw">IF</span> R(m<span class="fu">+</span><span class="bn">6</span>) <span class="fu">=</span> <span class="bn">0</span> <span class="kw">GOTO</span> <span class="bn">13</span> <span class="co"># summe == b</span></span>
+<span id="cb52-16"><a href="#cb52-16" aria-hidden="true" tabindex="-1"></a>11  R(m<span class="fu">+</span><span class="bn">2</span>) <span class="fu">←</span> R(m<span class="fu">+</span><span class="bn">2</span>) <span class="fu">+</span> R(m<span class="fu">+</span><span class="bn">4</span>) <span class="co"># i = i + 1</span></span>
+<span id="cb52-17"><a href="#cb52-17" aria-hidden="true" tabindex="-1"></a>12  <span class="kw">GOTO</span> <span class="bn">3</span></span>
+<span id="cb52-18"><a href="#cb52-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Resultat ausgeben</span></span>
+<span id="cb52-19"><a href="#cb52-19" aria-hidden="true" tabindex="-1"></a>13  <span class="dt">R0</span> <span class="fu">←</span> <span class="bn">1</span> <span class="co"># summe = b</span></span>
+<span id="cb52-20"><a href="#cb52-20" aria-hidden="true" tabindex="-1"></a>14  <span class="kw">STOP</span></span>
+<span id="cb52-21"><a href="#cb52-21" aria-hidden="true" tabindex="-1"></a>15  <span class="dt">R0</span> <span class="fu">←</span> <span class="bn">0</span> <span class="co"># summe != b</span></span>
+<span id="cb52-22"><a href="#cb52-22" aria-hidden="true" tabindex="-1"></a>16  <span class="kw">STOP</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -4837,7 +4945,7 @@ T_1, \ldots, T_k \in (\Sigma)^4 \\
 </ul>
 </div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-126-contents" aria-controls="callout-126" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-128-contents" aria-controls="callout-128" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4846,7 +4954,7 @@ Aufgabe: <span class="math inline">\(\text{SOS} ≡_m^p \text{PARTITION}\)</span
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-126" class="callout-126-contents callout-collapse collapse">
+<div id="callout-128" class="callout-128-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math display">\[
 \begin{gathered}
@@ -4867,7 +4975,7 @@ Aufgabe: <span class="math inline">\(\text{SOS} ≡_m^p \text{PARTITION}\)</span
 <li>Zeigen Sie, dass <span class="math inline">\(\text{PARTITION} ≤_m^p \text{SOS}\)</span> gilt.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-124-contents" aria-controls="callout-124" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-126-contents" aria-controls="callout-126" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4876,7 +4984,7 @@ Lösung
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-124" class="callout-124-contents callout-collapse collapse">
+<div id="callout-126" class="callout-126-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Angenomen wir haben einen Löser in NP für SOS. Wir müssen nun unser Problem PARTITION in eine Instanz von SOS umwandeln, sodass die Antwort des SOS-Lösers auch die Antwort für unsere PARTITION-Instanz ist.</p>
 <p>Wir definieren <span class="math inline">\(S := \sum_{k ∈ [n]} a_k\)</span>. Dann gilt:</p>
@@ -4884,14 +4992,14 @@ Lösung
 \sum_{i ∈ I} a_i = \sum_{j ∉ I} a_j = \frac{S}{2} \\
 \]</span></p>
 <p>somit können wir die Reduktionsfunktion wie folgt definieren:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">partition_to_sos</span>(a<span class="op">::</span><span class="dt">Vector{Integer}</span>)</span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>    S <span class="op">=</span> <span class="fu">sum</span>(a) <span class="co"># S = a_1 + ... + a_n; # lengt(a)+1 Schritte ≤ n+1 Schritte</span></span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> S <span class="op">%</span> <span class="fl">2</span> <span class="op">!=</span> <span class="fl">0</span> <span class="co"># S ist ungerade, also gibt es keine Partitionierung</span></span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [<span class="fl">0</span>], <span class="fl">1</span> <span class="co"># triviale Instanz von SOS, die falsch ist</span></span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> S <span class="op">÷</span> <span class="fl">2</span> <span class="co"># n + 1 Schritte</span></span>
-<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a, b <span class="co"># 1 Schritt</span></span>
-<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">partition_to_sos</span>(a<span class="op">::</span><span class="dt">Vector{Integer}</span>)</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>    S <span class="op">=</span> <span class="fu">sum</span>(a) <span class="co"># S = a_1 + ... + a_n; # lengt(a)+1 Schritte ≤ n+1 Schritte</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> S <span class="op">%</span> <span class="fl">2</span> <span class="op">!=</span> <span class="fl">0</span> <span class="co"># S ist ungerade, also gibt es keine Partitionierung</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [<span class="fl">0</span>], <span class="fl">1</span> <span class="co"># triviale Instanz von SOS, die falsch ist</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> S <span class="op">÷</span> <span class="fl">2</span> <span class="co"># n + 1 Schritte</span></span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a, b <span class="co"># 1 Schritt</span></span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Diese hat eine Laufzeit von <span class="math inline">\(\mathcal{O}(n)\)</span> und ist damit in <span class="math inline">\(\textbf{FP}\)</span>.</p>
 <p>somit gilt: <span class="math inline">\(\text{PARTITION} ≤_m^p \text{SOS}\)</span>.</p>
 </div>
@@ -4901,7 +5009,7 @@ Lösung
 <li>Zeigen Sie, dass <span class="math inline">\(\text{SOS} ≤_m^p \text{PARTITION}\)</span> gilt.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-125-contents" aria-controls="callout-125" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-127-contents" aria-controls="callout-127" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4910,7 +5018,7 @@ Lösung
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-125" class="callout-125-contents callout-collapse collapse">
+<div id="callout-127" class="callout-127-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Angenomen wir haben einen Löser in NP für PARTITION. Wir müssen nun unser Problem SOS in eine Instanz von PARTITION umwandeln, sodass die Antwort des PARTITION-Lösers auch die Antwort für unsere SOS-Instanz ist.</p>
 <p>Dazu müssen wir sicher gehen, dass <span class="math inline">\(b\)</span> “erkennbar” bleibt, d.h. dass die Partitionierung genau dann möglich ist, wenn es eine Teilmenge von <span class="math inline">\(a_1, ..., a_n\)</span> gibt, die genau <span class="math inline">\(b\)</span> ergibt. Dazu definieren wir:</p>
@@ -4937,81 +5045,17 @@ c + b = S
 <li><span class="math inline">\(b' := b + S = S + b\)</span></li>
 </ul>
 <p>somit können wir die Reduktionsfunktion wie folgt definieren:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">sos_to_partition</span>(a<span class="op">::</span><span class="dt">Vector{Integer}</span>, b<span class="op">::</span><span class="dt">Integer</span>)</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>    S <span class="op">=</span> <span class="fu">sum</span>(a) <span class="co"># S = a_1 + ... + a_n; # lengt(a)+1 Schritte ≤ n+1 Schritte</span></span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    b´ <span class="op">=</span> S <span class="op">+</span> b <span class="co"># 2 Schritte</span></span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>    c´ <span class="op">=</span> <span class="fl">2</span>S <span class="op">-</span> b <span class="co"># n+2 Schritte</span></span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Erstellen der neuen Eingabe für PARTITION</span></span>
-<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># (a_1, ..., a_n, c´, b´)</span></span>
-<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>    partition_input<span class="op">::</span><span class="dt">Vector{Integer} </span><span class="op">=</span> <span class="fu">vcat</span>(a,b´,c´) <span class="co"># 2 Schritte</span></span>
-<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> partition_input <span class="co"># 1 Schritt</span></span>
-<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">sos_to_partition</span>(a<span class="op">::</span><span class="dt">Vector{Integer}</span>, b<span class="op">::</span><span class="dt">Integer</span>)</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>    S <span class="op">=</span> <span class="fu">sum</span>(a) <span class="co"># S = a_1 + ... + a_n; # lengt(a)+1 Schritte ≤ n+1 Schritte</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>    b´ <span class="op">=</span> S <span class="op">+</span> b <span class="co"># 2 Schritte</span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>    c´ <span class="op">=</span> <span class="fl">2</span>S <span class="op">-</span> b <span class="co"># n+2 Schritte</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Erstellen der neuen Eingabe für PARTITION</span></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># (a_1, ..., a_n, c´, b´)</span></span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>    partition_input<span class="op">::</span><span class="dt">Vector{Integer} </span><span class="op">=</span> <span class="fu">vcat</span>(a,b´,c´) <span class="co"># 2 Schritte</span></span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> partition_input <span class="co"># 1 Schritt</span></span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>diese Hat eine Laufzeit von <span class="math inline">\(\mathcal{O}(n)\)</span> und ist damit in <span class="math inline">\(\textbf{FP}\)</span>.</p>
 <p>somit gilt: <span class="math inline">\(\text{SOS} ≤_m^p \text{PARTITION}\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-128-contents" aria-controls="callout-128" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Aufgabe: Knoten vs.&nbsp;Kantenfärbung
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-128" class="callout-128-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Das Knotenfärbungsproblem ist definiert als: <span class="math display">\[
-k\text{-FARB} = \{G \mid G \text{ ist ein Graph, der mit } k \text{ Farben färbbar ist }\}
-\]</span></p>
-<p>Das Kantenfärbungsproblem ist definiert als: <span class="math display">\[
-k\text{-KANTENFARB} = \{G \mid G \text{ ist ein Graph, dessen Kanten mit } k \text{ Farben färbbar sind }\}
-\]</span></p>
-<p>Zeigen Sie, dass <span class="math inline">\(k\text{-KANTENFARB} ≤_m^p k\text{-FARB}\)</span> gilt.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-127-contents" aria-controls="callout-127" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lösung
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-127" class="callout-127-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Idee: Wir verwandeln Kanten in Knoten um, sodass benachbarte Kanten in <span class="math inline">\(G\)</span> zu benachbarten Knoten im neuen Graphen <span class="math inline">\(G'\)</span> werden. Dann ist die Kantenfärbung von <span class="math inline">\(G\)</span> äquivalent zur Knotenfärbung von <span class="math inline">\(G'\)</span>.</p>
-<p><img src="./img/EtoV.jpg" class="img-fluid"></p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp;f: \underbrace{(E,V)}_{G} ↦ \underbrace{(E', V')}_{G'} \\
-&amp;V' = E \\
-&amp;E' = \{(e_1, e_2) ∈ E × E \mid |e_1 ∩ e_2| = 1\} \\
-\end{aligned}
-\]</span></p>
-<p>Das kann mit folgender Funktion in <span class="math inline">\(\textbf{FP}\)</span> berechnet werden:</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">edge_to_vertex</span>(G<span class="op">::</span><span class="dt">Graph</span>)</span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get the vertex type</span></span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>    Vertex<span class="op">::</span><span class="dt">Datatype </span><span class="op">=</span> <span class="fu">typeof</span>(<span class="fu">first</span>(G.V))</span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>    E<span class="op">::</span><span class="dt">Set{Set2{Vertex}} </span><span class="op">=</span> G.E <span class="co"># Kanten von G</span></span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>    V<span class="op">::</span><span class="dt">Set{Vertex} </span><span class="op">=</span> G.V <span class="co"># Knoten von G</span></span>
-<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>    E´ <span class="op">=</span> <span class="fu">Set</span><span class="dt">{Set2{Set2{Vertex}}}</span>() <span class="co"># Kanten von G´</span></span>
-<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> e1 <span class="op">∈</span> E <span class="co"># ≤ n-mal</span></span>
-<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> e2 <span class="op">∈</span> E <span class="co"># ≤ n-mal</span></span>
-<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="fu">length</span>(e1 <span class="op">∩</span> e2) <span class="op">==</span> <span class="fl">1</span> <span class="co"># e1 und e2 teilen genau einen Knoten</span></span>
-<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>                <span class="fu">push!</span>(E´, <span class="fu">Set</span>(e1,e2)) <span class="co"># füge die Kante (e1,e2) zu E´ hinzu</span></span>
-<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">end</span></span>
-<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
-<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">Graph</span>(E, E´) <span class="co"># gebe den neuen Graphen G´ zurück</span></span>
-<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Das hat eine Laufzeit von <span class="math inline">\(\mathcal{O}(n^2)\)</span> und ist damit in <span class="math inline">\(\textbf{FP}\)</span>.</p>
-<p>somit gilt: <span class="math inline">\(k\text{-KANTENFARB} ≤_m^p k\text{-FARB}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -5024,19 +5068,19 @@ Lösung
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Aufgabe: Hamiltonscher Pfad vs.&nbsp;Hamiltonscher Kreis
+Aufgabe: Knoten vs.&nbsp;Kantenfärbung
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-130" class="callout-130-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sie kennen bereits das Hamiltonsche Kreisproblem: <span class="math display">\[
-\text{HK} = \{G \mid G \text{ hat einen Kreis, der durch alle Knoten genau einmal geht }\}
+<p>Das Knotenfärbungsproblem ist definiert als: <span class="math display">\[
+k\text{-FARB} = \{G \mid G \text{ ist ein Graph, der mit } k \text{ Farben färbbar ist }\}
 \]</span></p>
-<p>Das Hamiltonsche Pfadproblem ist definiert als: <span class="math display">\[
-\text{HP} = \{G \mid G \text{ hat einen Pfad, der durch alle Knoten genau einmal geht }\}
+<p>Das Kantenfärbungsproblem ist definiert als: <span class="math display">\[
+k\text{-KANTENFARB} = \{G \mid G \text{ ist ein Graph, dessen Kanten mit } k \text{ Farben färbbar sind }\}
 \]</span></p>
-<p>Zeigen Sie, dass <span class="math inline">\(\text{HP} ≤_m^p \text{HK}\)</span> gilt.</p>
+<p>Zeigen Sie, dass <span class="math inline">\(k\text{-KANTENFARB} ≤_m^p k\text{-FARB}\)</span> gilt.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-129-contents" aria-controls="callout-129" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -5048,6 +5092,76 @@ Lösung
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-129" class="callout-129-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Idee: Wir verwandeln Kanten in Knoten um, sodass benachbarte Kanten in <span class="math inline">\(G\)</span> zu benachbarten Knoten im neuen Graphen <span class="math inline">\(G'\)</span> werden. Dann ist die Kantenfärbung von <span class="math inline">\(G\)</span> äquivalent zur Knotenfärbung von <span class="math inline">\(G'\)</span>.</p>
+<p><img src="./img/EtoV.jpg" class="img-fluid"></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;f: \underbrace{(E,V)}_{G} ↦ \underbrace{(E', V')}_{G'} \\
+&amp;V' = E \\
+&amp;E' = \{(e_1, e_2) ∈ E × E \mid |e_1 ∩ e_2| = 1\} \\
+\end{aligned}
+\]</span></p>
+<p>Wir nehmen an das die Datenstruktur wie folgt aussieht:</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Graph{Vertex}</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>    V<span class="op">::</span><span class="dt">Set{Vertex} </span><span class="co"># Knoten</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>    E<span class="op">::</span><span class="dt">Set{Set2{Vertex}} </span><span class="co"># Kanten</span></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>wobei <code>Set2{Vertex}</code> ein Set mit genau 2 Elementen ist.</p>
+<p>Das kann mit folgender Funktion in <span class="math inline">\(\textbf{FP}\)</span> berechnet werden:</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">edge_to_vertex</span>(G<span class="op">::</span><span class="dt">Graph</span>)</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get the vertex type</span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>    Vertex<span class="op">::</span><span class="dt">Datatype </span><span class="op">=</span> <span class="fu">typeof</span>(<span class="fu">first</span>(G.V))</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>    E<span class="op">::</span><span class="dt">Set{Set2{Vertex}} </span><span class="op">=</span> G.E <span class="co"># Kanten von G</span></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>    V<span class="op">::</span><span class="dt">Set{Vertex} </span><span class="op">=</span> G.V <span class="co"># Knoten von G</span></span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>    E´ <span class="op">=</span> <span class="fu">Set</span><span class="dt">{Set2{Set2{Vertex}}}</span>() <span class="co"># Kanten von G´</span></span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> e1 <span class="op">∈</span> E <span class="co"># ≤ n-mal</span></span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> e2 <span class="op">∈</span> E <span class="co"># ≤ n-mal</span></span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="fu">length</span>(e1 <span class="op">∩</span> e2) <span class="op">==</span> <span class="fl">1</span> <span class="co"># e1 und e2 teilen genau einen Knoten</span></span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>                <span class="fu">push!</span>(E´, <span class="fu">Set</span>(e1,e2)) <span class="co"># füge die Kante (e1,e2) zu E´ hinzu</span></span>
+<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">end</span></span>
+<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">Graph</span>(E, E´) <span class="co"># gebe den neuen Graphen G´ zurück</span></span>
+<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Das hat eine Laufzeit von <span class="math inline">\(\mathcal{O}(n^2)\)</span> und ist damit in <span class="math inline">\(\textbf{FP}\)</span>.</p>
+<p>somit gilt: <span class="math inline">\(k\text{-KANTENFARB} ≤_m^p k\text{-FARB}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-132-contents" aria-controls="callout-132" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aufgabe: Hamiltonscher Pfad vs.&nbsp;Hamiltonscher Kreis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-132" class="callout-132-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sie kennen bereits das Hamiltonsche Kreisproblem: <span class="math display">\[
+\text{HK} = \{G \mid G \text{ hat einen Kreis, der durch alle Knoten genau einmal geht }\}
+\]</span></p>
+<p>Das Hamiltonsche Pfadproblem ist definiert als: <span class="math display">\[
+\text{HP} = \{G \mid G \text{ hat einen Pfad, der durch alle Knoten genau einmal geht }\}
+\]</span></p>
+<p>Zeigen Sie, dass <span class="math inline">\(\text{HP} ≤_m^p \text{HK}\)</span> gilt.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-131-contents" aria-controls="callout-131" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-131" class="callout-131-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Wir bemerken das für immer wenn <span class="math inline">\(G\)</span> einen Hamiltonschen Kreis hat, es auch einen Hamiltonschen Pfad gibt. Ergo <span class="math display">\[
 \text{HK} ⊆ \text{HP}
@@ -5061,24 +5175,204 @@ Lösung
 <li>keinen Hamiltonischen Pfad, so haben wir auch mit der Hilfe von <span class="math inline">\(b\)</span> keinen Hamiltonischen Kreis.</li>
 </ul></li>
 </ul>
+<p>Wir nehmen an das die Datenstruktur wie folgt aussieht:</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Graph{Vertex}</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>    V<span class="op">::</span><span class="dt">Set{Vertex} </span><span class="co"># Knoten</span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>    E<span class="op">::</span><span class="dt">Set{Set2{Vertex}} </span><span class="co"># Kanten</span></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>wobei <code>Set2{Vertex}</code> ein Set mit genau 2 Elementen ist.</p>
 <p>Wir setzen das in folgender Funktion um:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">hp_to_hk</span>(G<span class="op">::</span><span class="dt">Graph</span>)</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get the vertex datatype</span></span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>    Vertex<span class="op">::</span><span class="dt">Datatype </span><span class="op">=</span> <span class="fu">typeof</span>(<span class="fu">first</span>(G.V))</span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Copy the vertices and edges of G</span></span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>    V´<span class="op">::</span><span class="dt">Vector{Vertex} </span><span class="op">=</span> G.V</span>
-<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>    E´<span class="op">::</span><span class="dt">Vector{Set2{Vertex}} </span><span class="op">=</span> G.E</span>
-<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># füge einen neuen Knoten b hinzu</span></span>
-<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>    b<span class="op">::</span><span class="dt">Vertex </span><span class="op">=</span> <span class="fu">Vertex</span>() <span class="co"># neuer Knoten b</span></span>
-<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">push!</span>(V´, b) <span class="co"># füge den neuen Knoten b zu V´ hinzu</span></span>
-<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># füge Kanten von b zu allen Knoten in V´ hinzu</span></span>
-<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> v <span class="op">∈</span> V´ <span class="co"># ≤ n-mal</span></span>
-<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">push!</span>(E´, <span class="fu">Set</span>(b,v)) <span class="co"># füge die Kante (b,v) zu E´ hinzu</span></span>
-<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">Graph</span>(V´, E´) <span class="co"># gebe den neuen Graphen G´ zurück</span></span>
-<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">hp_to_hk</span>(G<span class="op">::</span><span class="dt">Graph</span>)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get the vertex datatype</span></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>    Vertex<span class="op">::</span><span class="dt">Datatype </span><span class="op">=</span> <span class="fu">typeof</span>(<span class="fu">first</span>(G.V))</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Copy the vertices and edges of G</span></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>    V´<span class="op">::</span><span class="dt">Set{Vertex} </span><span class="op">=</span> G.V</span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>    E´<span class="op">::</span><span class="dt">Set{Set2{Vertex}} </span><span class="op">=</span> G.E</span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># füge einen neuen Knoten b hinzu</span></span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>    b<span class="op">::</span><span class="dt">Vertex </span><span class="op">=</span> <span class="fu">Vertex</span>() <span class="co"># neuer Knoten b</span></span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">push!</span>(V´, b) <span class="co"># füge den neuen Knoten b zu V´ hinzu</span></span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># füge Kanten von b zu allen Knoten in V´ hinzu</span></span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> v <span class="op">∈</span> V´ <span class="co"># ≤ n-mal</span></span>
+<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">push!</span>(E´, <span class="fu">Set</span>(b,v)) <span class="co"># füge die Kante (b,v) zu E´ hinzu</span></span>
+<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">Graph</span>(V´, E´) <span class="co"># gebe den neuen Graphen G´ zurück</span></span>
+<span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Das hat eine Laufzeit von <span class="math inline">\(\mathcal{O}(n)\)</span> und ist damit in <span class="math inline">\(\textbf{FP}\)</span>.</p>
 <p>Somit gilt: <span class="math inline">\(\text{HP} ≤_m^p \text{HK}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-134-contents" aria-controls="callout-134" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aufgabe: 3-Sat vs.&nbsp;“Independent Set”
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-134" class="callout-134-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sie kennen bereits das 3-Sat Problem: <span class="math display">\[
+\begin{gathered}
+3\text{-SAT} = \\
+\{\phi \mid \phi(x_1, ..., x_n) \\
+\text{ ist eine erfüllbare Formel in konjunktiver Normalform mit höchstens} \\
+3 \text{ Literalen pro Klausel }\}
+\end{gathered}
+\]</span></p>
+<p>Das “Independent Set” Problem ist definiert als: <span class="math display">\[
+\text{IS} = \{ (G, k) \mid G \text{ enthält eine unabhängige Menge mit mindestens } k \text{ Knoten} \}
+\]</span></p>
+<p>Wobei eine unabhängige Menge in einem Graphen <span class="math inline">\(G\)</span> eine Teilmenge von Knoten ist, bei der keine zwei Knoten durch eine Kante verbunden sind.</p>
+<p>Zeigen Sie, dass <span class="math inline">\(\text{3-SAT} ≤_m^p \text{IS}\)</span> gilt.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-133-contents" aria-controls="callout-133" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-133" class="callout-133-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Wir sagen wir haben <span class="math inline">\(m\)</span> Klauseln. <span class="math display">\[
+\phi = C_1 ∧ C_2 ∧ ... ∧ C_m
+\]</span></p>
+<p>Wir verwandeln jedes Literal in einen Knoten (auch wenn es die selbe variable mehrmals vorkommt), so dass wir genau <span class="math inline">\(3m\)</span> Knoten haben.</p>
+<p>Wir verbinden alle Knoten,</p>
+<ul>
+<li>die in der selben Klausel vorkommen, miteinander, sodass wir genau <span class="math inline">\(m\)</span> Dreiecke haben.</li>
+<li>die Knoten, die sich gegenseitig negieren, miteinander, sodass wir keine unabhängige Menge haben können, die sowohl <span class="math inline">\(x_i\)</span> als auch <span class="math inline">\(\neg x_i\)</span> enthält.</li>
+</ul>
+<p>zum Beispiel die Formel: <span class="math display">\[
+\phi = \underbrace{(x_1 ∨ ¬x_2 ∨ x_3)}_{C_1} ∧ \underbrace{(¬x_1 ∨ x_2 ∨ x_3)}_{C_2} ∧ \underbrace{(x_2 ∨ ¬x_3 ∨ ¬x_4)}_{C_3}
+\]</span> wird zu folgendem Graphen <span class="math inline">\(G\)</span> transformiert:</p>
+<p><img src="./img/3Sat_to_IS.jpg" class="img-fluid"></p>
+<p>Wenn wir nun <span class="math inline">\(k = m\)</span> wählen, haben wir eine polynomielle Reduktion von 3-SAT auf Independent Set konstruiert, den Das Independent Set wäre dann genau eine Lösung für die 3-SAT Formel.</p>
+<p>Wir gehen davon aus dass die Formel wie folgt aufgebaut ist:</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Formula</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># m × 3 Matrix von Literalen</span></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>    clauses<span class="op">::</span><span class="dt">Matrix{Literal}</span></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Wobei <code>Literal</code> irgendein Datentyp ist, der <code>==</code> und <code>¬</code> nach gesundem Menschenverstand implementiert.</p>
+<p>Wir nehmen an das die Datenstruktur für den Graphen wie folgt aussieht:</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Graph{Vertex}</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>    V<span class="op">::</span><span class="dt">Set{Vertex} </span><span class="co"># Knoten</span></span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>    E<span class="op">::</span><span class="dt">Set{Set2{Vertex}} </span><span class="co"># Kanten</span></span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>wobei <code>Set2{Vertex}</code> ein Set mit genau 2 Elementen ist.</p>
+<p>Die Reduktionsfunktion kann dann wie folgt implementiert:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">sat_to_is</span>(<span class="cn">φ</span><span class="op">::</span><span class="dt">Formula</span>)</span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># φ = (C_1 ∧ C_2 ∧ ... ∧ C_m)</span></span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> <span class="fu">size</span>(<span class="cn">φ</span>.clauses)[<span class="fl">1</span>] <span class="co"># Anzahl der Klauseln</span></span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>    Vetex<span class="op">::</span><span class="dt">Datatype </span><span class="op">=</span> <span class="dt">Tuple</span>{<span class="dt">Int</span>,<span class="dt">Int</span>}</span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>    V´ <span class="op">=</span> <span class="fu">Set</span><span class="dt">{Vetex}</span>() <span class="co"># Knotenmenge von G´</span></span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a>    E´ <span class="op">=</span> <span class="fu">Set</span><span class="dt">{Set2{Vetex}}</span>() <span class="co"># Kantenmenge von G´</span></span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Erstelle Knoten für jedes Literal in jeder Klausel</span></span>
+<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="op">∈</span> <span class="fl">1</span><span class="op">:</span>k <span class="co"># ≤ k-mal</span></span>
+<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="op">∈</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span> <span class="co"># ≤ 3-mal</span></span>
+<span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a>            v <span class="op">=</span> (i,j)</span>
+<span id="cb61-11"><a href="#cb61-11" aria-hidden="true" tabindex="-1"></a>            <span class="fu">push!</span>(V´, v) <span class="co"># füge den Knoten v zu V´ hinzu</span></span>
+<span id="cb61-12"><a href="#cb61-12" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Verbinde alle Knoten in der selben Klausel miteinander</span></span>
+<span id="cb61-13"><a href="#cb61-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> l <span class="op">∈</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span> <span class="co"># ≤ 3-mal</span></span>
+<span id="cb61-14"><a href="#cb61-14" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> l <span class="op">!=</span> j</span>
+<span id="cb61-15"><a href="#cb61-15" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># füge die Kante (v, (i,l)) zu E´ hinzu</span></span>
+<span id="cb61-16"><a href="#cb61-16" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">push!</span>(E´, <span class="fu">Set2</span>(v, (i,l))) </span>
+<span id="cb61-17"><a href="#cb61-17" aria-hidden="true" tabindex="-1"></a>                <span class="cf">end</span></span>
+<span id="cb61-18"><a href="#cb61-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">end</span></span>
+<span id="cb61-19"><a href="#cb61-19" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Verbinde alle Knoten, die sich gegenseitig negieren</span></span>
+<span id="cb61-20"><a href="#cb61-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> l <span class="op">∈</span> <span class="fl">1</span><span class="op">:</span>k <span class="co"># ≤ k-mal</span></span>
+<span id="cb61-21"><a href="#cb61-21" aria-hidden="true" tabindex="-1"></a>                <span class="cf">for</span> m <span class="op">∈</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span> <span class="co"># ≤ 3-mal</span></span>
+<span id="cb61-22"><a href="#cb61-22" aria-hidden="true" tabindex="-1"></a>                    u <span class="op">=</span> (l,m)</span>
+<span id="cb61-23"><a href="#cb61-23" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">if</span> <span class="cn">φ</span>.clauses[i][j] <span class="op">==</span> ¬φ.clauses[l][m]</span>
+<span id="cb61-24"><a href="#cb61-24" aria-hidden="true" tabindex="-1"></a>                        <span class="co"># füge die Kante (v, u) zu E´ hinzu</span></span>
+<span id="cb61-25"><a href="#cb61-25" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">push!</span>(E´, <span class="fu">Set2</span>(v, u))</span>
+<span id="cb61-26"><a href="#cb61-26" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">end</span></span>
+<span id="cb61-27"><a href="#cb61-27" aria-hidden="true" tabindex="-1"></a>                <span class="cf">end</span></span>
+<span id="cb61-28"><a href="#cb61-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb61-29"><a href="#cb61-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb61-30"><a href="#cb61-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">Graph</span>(V´, E´), k <span class="co"># gebe den neuen Graphen G´ und k zurück</span></span>
+<span id="cb61-31"><a href="#cb61-31" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dieser Algorithmus hat eine Laufzeit von <span class="math inline">\(\mathcal{O}(n^2)\)</span> und ist damit in <span class="math inline">\(\textbf{FP}\)</span>.</p>
+<p>Somit gilt: <span class="math inline">\(\text{3-SAT} ≤_m^p \text{IS}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-136-contents" aria-controls="callout-136" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aufgabe: <span class="math inline">\(\text{VC} ≤_m^p \text{FVS}\)</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-136" class="callout-136-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Das Vertex Cover Problem ist definiert als: <span class="math display">\[
+\text{VC} = \{ (G, k) \mid G \text{ enthält eine Knotenüberdeckung mit höchstens } k \text{ Knoten} \}
+\]</span> eine Knotenüberdeckung in einem Graphen <span class="math inline">\(G\)</span> ist eine Teilmenge von Knoten, sodass jede Kante in <span class="math inline">\(G\)</span> mindestens einen Endknoten in der Teilmenge hat.</p>
+<p>Das Feedback Vertex Set Problem ist definiert als: <span class="math display">\[
+\text{FVS} = \{ (G, k) \mid G \text{ enthält eine Feedback-Knotenmenge mit höchstens } k \text{ Knoten} \}
+\]</span> eine Feedback-Knotenmenge in einem Graphen <span class="math inline">\(G\)</span> ist eine Teilmenge von Knoten, sodass das Entfernen dieser Knoten aus <span class="math inline">\(G\)</span> einen azyklischen (kreisfreien) Graphen ergibt.</p>
+<p>Zeigen Sie, dass <span class="math inline">\(\text{VC} ≤_m^p \text{FVS}\)</span> gilt.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-135-contents" aria-controls="callout-135" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-135" class="callout-135-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Geben ist der Input für das Vertex Cover Problem: Ein Graph <span class="math inline">\(G = (V, E)\)</span> und eine Zahl <span class="math inline">\(k\)</span>.</p>
+<p>Bemerke: Haben wir eine Knotenüberdeckung und entfernen diese Knoten aus dem Graphen, so haben wir sicherlich keine Kreise mehr.</p>
+<p>Idee: Wir verwandeln jede Kante in einen Kreis, indem wir einen neuen Knoten für jede Kante hinzufügen. Dann gilt:</p>
+<ul>
+<li>Haben wir zuvor eine Knotenüberdeckung mit höchstens <span class="math inline">\(k\)</span> Knoten, so haben wir auch eine Feedback-Knotenmenge mit höchstens <span class="math inline">\(k\)</span> Knoten.</li>
+<li>Haben wir zuvor keine Knotenüberdeckung mit höchstens <span class="math inline">\(k\)</span> Knoten, so haben wir auch keine Feedback-Knotenmenge mit höchstens <span class="math inline">\(k\)</span> Knoten</li>
+</ul>
+<p><img src="./img/vc_to_fvs.jpg" class="img-fluid"></p>
+<p>Wir nehmen an das die Datenstruktur wie folgt aussieht:</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Graph{Vertex}</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>    V<span class="op">::</span><span class="dt">Set{Vertex} </span><span class="co"># Knoten</span></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>    E<span class="op">::</span><span class="dt">Set{Set2{Vertex}} </span><span class="co"># Kanten</span></span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dann sieht die Reduktionsfunktion wie folgt aus:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">vc_to_fvs</span>(G<span class="op">::</span><span class="dt">Graph</span>, k<span class="op">::</span><span class="dt">Int</span>)</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get the vertex datatype</span></span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>    Vertex<span class="op">::</span><span class="dt">Datatype </span><span class="op">=</span> <span class="fu">typeof</span>(<span class="fu">first</span>(G.V))</span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Copy the vertices and edges of G</span></span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>    V´<span class="op">::</span><span class="dt">Set{Vertex} </span><span class="op">=</span> G.V</span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>    E´<span class="op">::</span><span class="dt">Set{Set2{Vertex}} </span><span class="op">=</span> G.E</span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># füge für jede Kante einen neuen Knoten hinzu</span></span>
+<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="cn">e</span> <span class="op">∈</span> G.E <span class="co"># ≤ n-mal</span></span>
+<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a>        <span class="co"># mache aus den Knoten der Kante e einen neuen Knoten v_e</span></span>
+<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a>        v_e<span class="op">::</span><span class="dt">Vertex </span><span class="op">=</span> <span class="fu">join</span>(<span class="cn">e</span>)</span>
+<span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">push!</span>(V´, v_e) <span class="co"># füge den neuen Knoten v_e zu V´ hinzu</span></span>
+<span id="cb63-12"><a href="#cb63-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># füge Kanten von v_e zu den Endknoten der Kante e hinzu</span></span>
+<span id="cb63-13"><a href="#cb63-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> v <span class="op">∈</span> <span class="cn">e</span> <span class="co"># ≤ 2-mal</span></span>
+<span id="cb63-14"><a href="#cb63-14" aria-hidden="true" tabindex="-1"></a>            <span class="fu">push!</span>(E´, <span class="fu">Set</span>(v_e,v)) <span class="co"># füge die Kante (v_e,v) zu E´ hinzu</span></span>
+<span id="cb63-15"><a href="#cb63-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb63-16"><a href="#cb63-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb63-17"><a href="#cb63-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">Graph</span>(V´, E´), k <span class="co"># gebe den neuen Graphen G´ und k zurück</span></span>
+<span id="cb63-18"><a href="#cb63-18" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dieser Algorithmus hat eine Laufzeit von <span class="math inline">\(\mathcal{O}(n)\)</span> und ist damit in <span class="math inline">\(\textbf{FP}\)</span>.</p>
+<p>Somit gilt: <span class="math inline">\(\text{VC} ≤_m^p \text{FVS}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -5115,8 +5409,54 @@ Lösung
 \textbf{DEA} = \{ L(A) \mid A \text{ ist ein deterministischer endlicher Automat}\}
 \]</span></p>
 </section>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-138-contents" aria-controls="callout-138" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aufgabe: <span class="math inline">\(∪\)</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-138" class="callout-138-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Zeigen sie, dass für <span class="math inline">\(L_1, L_2 ∈ \textbf{DEA}\)</span> gilt <span class="math inline">\(L_1 ∪ L_2 ∈ \textbf{DEA}\)</span>.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-137-contents" aria-controls="callout-137" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-137" class="callout-137-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Seien die <span class="math inline">\(A_1 = (Σ_1, Z_1, f_1, z_{0,1}, Z'_1)\)</span> und <span class="math inline">\(A_2 = (Σ_2, Z_2, f_2, z_{0,2}, Z'_2)\)</span> zwei DEA zu den Sprachen <span class="math inline">\(L_1\)</span> und <span class="math inline">\(L_2\)</span>.</p>
+<p>Wir konstruieren einen DEA <span class="math inline">\(A = (Σ_1 × Σ_2, Z_1 × Z_2, f, (z_{0,1}, z_{0,2}), Z'_1 × Z_2 ∪ Z_1 × Z'_2)\)</span>, wobei die Überführungsfunktion <span class="math inline">\(f\)</span> wie folgt definiert ist: <span class="math display">\[
+f: (Z_1 × Z_2) × (Σ_1 × Σ_2) → Z_1 × Z_2
+\]</span> <span class="math display">\[
+f((z_1, z_2), (a_1, a_2)) = (f_1(z_1, a_1), f_2(z_2, a_2))
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="graphische-darstellung-von-endlichen-automaten" class="level3">
+<h3 class="anchored" data-anchor-id="graphische-darstellung-von-endlichen-automaten">Graphische Darstellung von Endlichen Automaten</h3>
+<ul>
+<li>Zustände werden als Kreise dargestellt wobei der Name des Zustands in den Kreis geschrieben wird.</li>
+<li>Pfeile zeigen die Übergänge zwischen Zuständen an.</li>
+<li>Der Startzustand wird doppelt umkreist.</li>
+<li>Endzustände haben ein Rechteck um sich herum.</li>
+</ul>
+<p><img src="./img/EA4.jpg" class="img-fluid"></p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-131-contents" aria-controls="callout-131" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-139-contents" aria-controls="callout-139" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -5125,12 +5465,13 @@ Note:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-131" class="callout-131-contents callout-collapse collapse">
+<div id="callout-139" class="callout-139-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>DEA und NEA können im TheoreticalComputerSience.jl Paket emuliert werden. Siehe <a href="https://github.com/daniel-schwarzenbach/TheoreticalComputerScience.jl#finite-automata-ea" class="uri">https://github.com/daniel-schwarzenbach/TheoreticalComputerScience.jl#finite-automata-ea</a></p>
 </div>
 </div>
 </div>
+</section>
 <section id="definition-nea" class="level3 def">
 <h3 class="anchored" data-anchor-id="definition-nea">Definition: <strong>NEA</strong></h3>
 <p>Ein <strong>nichtdeterministischer endlicher Automat (NEA)</strong> ist ein 5-Tupel <span class="math inline">\(A = (Σ, Z, f, z_0, Z')\)</span>, bestehend aus:</p>
@@ -5161,7 +5502,7 @@ Note:
 \]</span></p>
 </div>
 <div class="callout callout-style-default callout-important no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-132-contents" aria-controls="callout-132" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-140-contents" aria-controls="callout-140" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -5170,51 +5511,51 @@ Beweis:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-132" class="callout-132-contents callout-collapse collapse">
+<div id="callout-140" class="callout-140-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Folgender Algorithmus konvertiert jeden NEA in einen DEA, der die gleiche Sprache akzeptiert:</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">construct_DEA_from_NEA</span>(nea<span class="op">::</span><span class="dt">NEA</span>, Σ<span class="op">::</span><span class="dt">Set{Char}</span>) <span class="op">::</span><span class="dt">DEA</span></span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># data</span></span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>    Q <span class="op">=</span> <span class="fu">Queue</span><span class="dt">{Set{State}}</span>()</span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>    D <span class="op">=</span> <span class="fu">Set</span><span class="dt">{Set{State}}</span>()</span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># initialize the starting DEA</span></span>
-<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>    starting_states<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> nea.inital_states</span>
-<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>    dea_z0 <span class="op">=</span> <span class="fu">join</span>(starting_states)</span>
-<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a>    dea_Zend <span class="op">=</span> nea.accepting_states</span>
-<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a>    dea_f<span class="op">::</span><span class="dt">Dict{Tuple{State, Char}, State} </span><span class="op">=</span> <span class="fu">Dict</span>()</span>
-<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># check if the starting state is an accepting state</span></span>
-<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> !<span class="fu">isempty</span>(starting_states <span class="op">∩</span> nea.accepting_states)</span>
-<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">push!</span>(dea_Zend, dea_z0)</span>
-<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb55-14"><a href="#cb55-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># add the starting states to Q and D</span></span>
-<span id="cb55-15"><a href="#cb55-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">enqueue!</span>(Q, starting_states); <span class="fu">push!</span>(D, starting_states)</span>
-<span id="cb55-16"><a href="#cb55-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> !<span class="fu">isempty</span>(Q)</span>
-<span id="cb55-17"><a href="#cb55-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># z_x are the current states</span></span>
-<span id="cb55-18"><a href="#cb55-18" aria-hidden="true" tabindex="-1"></a>        z_x<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> <span class="fu">dequeue!</span>(Q)</span>
-<span id="cb55-19"><a href="#cb55-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> a <span class="op">∈</span> Σ</span>
-<span id="cb55-20"><a href="#cb55-20" aria-hidden="true" tabindex="-1"></a>            <span class="co"># z_ys are the next states</span></span>
-<span id="cb55-21"><a href="#cb55-21" aria-hidden="true" tabindex="-1"></a>            z_ys<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> <span class="fu">Set</span>()</span>
-<span id="cb55-22"><a href="#cb55-22" aria-hidden="true" tabindex="-1"></a>            <span class="co"># accumalate all z_ys so that f(z_x, a) = z_ys</span></span>
-<span id="cb55-23"><a href="#cb55-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> current_state <span class="op">∈</span> z_x</span>
-<span id="cb55-24"><a href="#cb55-24" aria-hidden="true" tabindex="-1"></a>                next_states<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> nea.<span class="fu">f</span>((current_state, a))</span>
-<span id="cb55-25"><a href="#cb55-25" aria-hidden="true" tabindex="-1"></a>                z_ys <span class="op">=</span> z_ys <span class="op">∪</span> next_states</span>
-<span id="cb55-26"><a href="#cb55-26" aria-hidden="true" tabindex="-1"></a>            <span class="cf">end</span></span>
-<span id="cb55-27"><a href="#cb55-27" aria-hidden="true" tabindex="-1"></a>            <span class="co"># add the new explicit sub function to the DEA</span></span>
-<span id="cb55-28"><a href="#cb55-28" aria-hidden="true" tabindex="-1"></a>            dea_f[(<span class="fu">join</span>(z_x),a)] <span class="op">=</span> <span class="fu">join</span>(z_ys)</span>
-<span id="cb55-29"><a href="#cb55-29" aria-hidden="true" tabindex="-1"></a>            <span class="co"># check if z_ys is a new Set of States</span></span>
-<span id="cb55-30"><a href="#cb55-30" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> z_ys <span class="op">∈</span≯ D</span>
-<span id="cb55-31"><a href="#cb55-31" aria-hidden="true" tabindex="-1"></a>                <span class="fu">enqueue!</span>(Q, z_ys)</span>
-<span id="cb55-32"><a href="#cb55-32" aria-hidden="true" tabindex="-1"></a>                <span class="fu">push!</span>(D, z_ys)</span>
-<span id="cb55-33"><a href="#cb55-33" aria-hidden="true" tabindex="-1"></a>                <span class="co"># check if any element in z_ys is in E</span></span>
-<span id="cb55-34"><a href="#cb55-34" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> !<span class="fu">isempty</span>(z_ys <span class="op">∩</span> nea.accepting_states)</span>
-<span id="cb55-35"><a href="#cb55-35" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># add z_ys to the ending States dfa.E</span></span>
-<span id="cb55-36"><a href="#cb55-36" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">push!</span>(dea_Zend, <span class="fu">join</span>(z_ys))</span>
-<span id="cb55-37"><a href="#cb55-37" aria-hidden="true" tabindex="-1"></a>                <span class="cf">end</span></span>
-<span id="cb55-38"><a href="#cb55-38" aria-hidden="true" tabindex="-1"></a>            <span class="cf">end</span></span>
-<span id="cb55-39"><a href="#cb55-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
-<span id="cb55-40"><a href="#cb55-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb55-41"><a href="#cb55-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">DEA</span>(initial_state<span class="op">=</span>dea_z0, accepted_states<span class="op">=</span>dea_Zend, f<span class="op">=</span>dea_f)</span>
-<span id="cb55-42"><a href="#cb55-42" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">construct_DEA_from_NEA</span>(nea<span class="op">::</span><span class="dt">NEA</span>, Σ<span class="op">::</span><span class="dt">Set{Char}</span>) <span class="op">::</span><span class="dt">DEA</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># data</span></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>    Q <span class="op">=</span> <span class="fu">Queue</span><span class="dt">{Set{State}}</span>()</span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>    D <span class="op">=</span> <span class="fu">Set</span><span class="dt">{Set{State}}</span>()</span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># initialize the starting DEA</span></span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>    starting_states<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> nea.inital_states</span>
+<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>    dea_z0 <span class="op">=</span> <span class="fu">join</span>(starting_states)</span>
+<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a>    dea_Zend <span class="op">=</span> nea.accepting_states</span>
+<span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a>    dea_f<span class="op">::</span><span class="dt">Dict{Tuple{State, Char}, State} </span><span class="op">=</span> <span class="fu">Dict</span>()</span>
+<span id="cb64-10"><a href="#cb64-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># check if the starting state is an accepting state</span></span>
+<span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> !<span class="fu">isempty</span>(starting_states <span class="op">∩</span> nea.accepting_states)</span>
+<span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">push!</span>(dea_Zend, dea_z0)</span>
+<span id="cb64-13"><a href="#cb64-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb64-14"><a href="#cb64-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># add the starting states to Q and D</span></span>
+<span id="cb64-15"><a href="#cb64-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">enqueue!</span>(Q, starting_states); <span class="fu">push!</span>(D, starting_states)</span>
+<span id="cb64-16"><a href="#cb64-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> !<span class="fu">isempty</span>(Q)</span>
+<span id="cb64-17"><a href="#cb64-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># z_x are the current states</span></span>
+<span id="cb64-18"><a href="#cb64-18" aria-hidden="true" tabindex="-1"></a>        z_x<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> <span class="fu">dequeue!</span>(Q)</span>
+<span id="cb64-19"><a href="#cb64-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> a <span class="op">∈</span> Σ</span>
+<span id="cb64-20"><a href="#cb64-20" aria-hidden="true" tabindex="-1"></a>            <span class="co"># z_ys are the next states</span></span>
+<span id="cb64-21"><a href="#cb64-21" aria-hidden="true" tabindex="-1"></a>            z_ys<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> <span class="fu">Set</span>()</span>
+<span id="cb64-22"><a href="#cb64-22" aria-hidden="true" tabindex="-1"></a>            <span class="co"># accumalate all z_ys so that f(z_x, a) = z_ys</span></span>
+<span id="cb64-23"><a href="#cb64-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> current_state <span class="op">∈</span> z_x</span>
+<span id="cb64-24"><a href="#cb64-24" aria-hidden="true" tabindex="-1"></a>                next_states<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> nea.<span class="fu">f</span>((current_state, a))</span>
+<span id="cb64-25"><a href="#cb64-25" aria-hidden="true" tabindex="-1"></a>                z_ys <span class="op">=</span> z_ys <span class="op">∪</span> next_states</span>
+<span id="cb64-26"><a href="#cb64-26" aria-hidden="true" tabindex="-1"></a>            <span class="cf">end</span></span>
+<span id="cb64-27"><a href="#cb64-27" aria-hidden="true" tabindex="-1"></a>            <span class="co"># add the new explicit sub function to the DEA</span></span>
+<span id="cb64-28"><a href="#cb64-28" aria-hidden="true" tabindex="-1"></a>            dea_f[(<span class="fu">join</span>(z_x),a)] <span class="op">=</span> <span class="fu">join</span>(z_ys)</span>
+<span id="cb64-29"><a href="#cb64-29" aria-hidden="true" tabindex="-1"></a>            <span class="co"># check if z_ys is a new Set of States</span></span>
+<span id="cb64-30"><a href="#cb64-30" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> z_ys <span class="op">∈</span≯ D</span>
+<span id="cb64-31"><a href="#cb64-31" aria-hidden="true" tabindex="-1"></a>                <span class="fu">enqueue!</span>(Q, z_ys)</span>
+<span id="cb64-32"><a href="#cb64-32" aria-hidden="true" tabindex="-1"></a>                <span class="fu">push!</span>(D, z_ys)</span>
+<span id="cb64-33"><a href="#cb64-33" aria-hidden="true" tabindex="-1"></a>                <span class="co"># check if any element in z_ys is in E</span></span>
+<span id="cb64-34"><a href="#cb64-34" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> !<span class="fu">isempty</span>(z_ys <span class="op">∩</span> nea.accepting_states)</span>
+<span id="cb64-35"><a href="#cb64-35" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># add z_ys to the ending States dfa.E</span></span>
+<span id="cb64-36"><a href="#cb64-36" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">push!</span>(dea_Zend, <span class="fu">join</span>(z_ys))</span>
+<span id="cb64-37"><a href="#cb64-37" aria-hidden="true" tabindex="-1"></a>                <span class="cf">end</span></span>
+<span id="cb64-38"><a href="#cb64-38" aria-hidden="true" tabindex="-1"></a>            <span class="cf">end</span></span>
+<span id="cb64-39"><a href="#cb64-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb64-40"><a href="#cb64-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb64-41"><a href="#cb64-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">DEA</span>(initial_state<span class="op">=</span>dea_z0, accepted_states<span class="op">=</span>dea_Zend, f<span class="op">=</span>dea_f)</span>
+<span id="cb64-42"><a href="#cb64-42" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -5239,22 +5580,49 @@ Beweis:
 <li><strong>IA:</strong> <span class="math inline">\(\emptyset,\{a\} \; ∀ a ∈ Σ\)</span> sind regulär</li>
 <li><strong>IS:</strong> Sind <span class="math inline">\(L_1\)</span> und <span class="math inline">\(L_2\)</span> regulär, so sind auch <span class="math inline">\(L_1 ∪ L_2\)</span>, <span class="math inline">\(L_1 ⋅ L_2\)</span> und <span class="math inline">\(L_1^*\)</span> regulär.</li>
 </ul>
-<p>Eine Wortmenge heißt regulär, falls sie eine reguläre Menge über einem geeigneten Alphabet <span class="math inline">\(Σ\)</span> ist.</p>
+<p>bzw. <span class="math inline">\(Γ(Σ ∪ \{ε\})_{∪,⋅,^*}\)</span></p>
+<p>Eine Wortmenge/Sprache <span class="math inline">\(L\)</span> heißt regulär, falls <span class="math inline">\(L = Γ(Σ ∪ \{ε\})_{∪,⋅,^*}\)</span> für ein geeignetes Alphabet <span class="math inline">\(Σ\)</span> gilt.</p>
 <p><span class="math display">\[
 \textbf{REG} = \{L \mid L \text{ ist eine reguläre Menge}\}
 \]</span></p>
 </section>
-<div class="prop">
-<p><strong>Lemma 5.3.2</strong></p>
-<p>Seien <span class="math inline">\(B, C ⊆ Σ^*\)</span>.</p>
-<p>Falls <span class="math inline">\(ε ∉ B\)</span>, so ist <span class="math inline">\(L = B^* ⋅ C\)</span> die einzige Lösung der Gleichung <span class="math inline">\(L = B ⋅ L ∪ C\)</span>.</p>
-</div>
+<section id="regex-nicht-prüfungsrelevant" class="level3">
+<h3 class="anchored" data-anchor-id="regex-nicht-prüfungsrelevant">Regex (nicht Prüfungsrelevant)</h3>
+<p>Statt eines Automaten können wir auch reguläre Ausdrücke verwenden, um Sprachen zu beschreiben. Ein regulärer Ausdruck ist eine Zeichenkette, die ein Muster beschreibt, das von einer Sprache akzeptiert wird.Dafür gibt es verschiedene Operatoren, die in Regex verwendet werden können:</p>
+<ul>
+<li><code>a|bc</code>: Entweder ‘a’ oder ‘bc’.</li>
+<li><code>ab</code>: ‘a’ gefolgt von ‘b’.</li>
+<li><code>a*</code>: Null oder mehr aufeinanderfolgende ’a’s.</li>
+<li><code>(ab)</code>: ‘a’ gefolgt von ‘b’ als eine feste Gruppe.</li>
+</ul>
+<p>Mit den erweiterten Operatoren können wir noch einfacher Muster beschreiben:</p>
+<ul>
+<li><code>a+</code>: Ein oder mehrere aufeinanderfolgende ’a’s.</li>
+<li><code>a?</code>: Null oder ein ‘a’.</li>
+<li><code>a{n}</code>: Genau n aufeinanderfolgende ’a’s.</li>
+<li><code>a{n,}</code>: Mindestens n aufeinanderfolgende ’a’s.</li>
+<li><code>a{n,m}</code>: Mindestens n und höchstens m aufeinanderfolgende ’a’s.</li>
+<li><code>[abc]</code>: Ein einzelnes Zeichen, das entweder ‘a’, ‘b’ oder ‘c’ ist.</li>
+<li><code>[a-z]</code>: Ein einzelnes Zeichen, das ein Kleinbuchstabe von ‘a’ bis ‘z’ ist.</li>
+<li><code>[^abc]</code>: Ein einzelnes Zeichen, das weder ‘a’, ‘b’ noch ‘c’ ist.</li>
+</ul>
+<p>⚠️ Moderne Regex-Implementierungen unterstützen auch erweiterte Funktionen die nicht mehr zu den Regulären Mengen gehören, wie</p>
+<ul>
+<li>Lookahead/Lookbehind mit variablen Langen, z.B. <code>(?=...)</code> und <code>(?&lt;=...)</code></li>
+<li>Referenzen, z.B. <code>\1</code>, <code>\2</code>, etc.</li>
+</ul>
 <div class="prop">
 <p><strong>Theorem 5.3.3</strong></p>
 <p><span class="math display">\[
 \textbf{REG} = \textbf{DEA} = \mathcal{L}_3
 \]</span></p>
 </div>
+<div class="prop">
+<p><strong>Lemma 5.3.2</strong></p>
+<p>Seien <span class="math inline">\(B, C ⊆ Σ^*\)</span>.</p>
+<p>Falls <span class="math inline">\(ε ∉ B\)</span>, so ist <span class="math inline">\(L = B^* ⋅ C\)</span> die einzige Lösung der Gleichung <span class="math inline">\(L = B ⋅ L ∪ C\)</span>.</p>
+</div>
+</section>
 <section id="pumpinglemma-für-reguläre-sprachen" class="level3 prop">
 <h3 class="anchored" data-anchor-id="pumpinglemma-für-reguläre-sprachen">Pumpinglemma für reguläre Sprachen:</h3>
 <p>Für alle <span class="math inline">\(L ∈ \mathcal{L}_3\)</span> gilt:</p>
