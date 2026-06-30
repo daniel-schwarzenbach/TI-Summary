@@ -4564,7 +4564,7 @@ Lösung:
 </div>
 </div>
 </div>
-<section id="datentypen" class="level3">
+<section id="datentypen" class="level3 sek">
 <h3 class="anchored" data-anchor-id="datentypen">Datentypen</h3>
 <p>Da wir uns innerhalb der Klasse <span class="math inline">\(\textbf{FUNK}(ℕ)\)</span> befinden, können wir nur Funktionen <span class="math inline">\(f: ℕ^n → ℕ\)</span> berechnen. Höhere Datentypen lassen sich jedoch in Polynomialzeit kodieren:</p>
 <ul>
@@ -4591,11 +4591,12 @@ Lösung:
 <center>
 <p><img src="./img/cantor_pairing_function.png" class="img-fluid"></p>
 </center>
-<p>Zusammengesetzte Typen wie <code>Person</code> (mit Feldern <code>String</code>, <code>Integer</code>, <code>Bool</code>) werden als <span class="math inline">\(ℕ^5\)</span> dargestellt und nach Kantor kodiert. Nach dem Induktionsprinzip gilt:</p>
+<p>Zusammengesetzte Typen wie <code>Person</code> (mit Feldern <code>String</code>, <code>Integer</code>, <code>Bool</code>) werden als <span class="math inline">\(ℕ^5\)</span> dargestellt und nach Kantor kodiert.</p>
+</section>
+<p>Nach dem Induktionsprinzip gilt:</p>
 <div class="prop">
 <p>Jedes Tupel abzählbarer Mengen und jeder zusammengesetzte Datentyp ist in Polynomialzeit in eine natürliche Zahl kodierbar und wieder dekodierbar.</p>
 </div>
-</section>
 </section>
 <section id="die-klasse-textbfnp" class="level2">
 <h2 class="anchored" data-anchor-id="die-klasse-textbfnp">Die Klasse <span class="math inline">\(\textbf{NP}\)</span></h2>
@@ -5670,7 +5671,7 @@ Lösung:
 </div>
 </div>
 </div>
-<section id="regex-nicht-prüfungsrelevant" class="level3">
+<section id="regex-nicht-prüfungsrelevant" class="level3 sek">
 <h3 class="anchored" data-anchor-id="regex-nicht-prüfungsrelevant">Regex (nicht Prüfungsrelevant)</h3>
 <p>Statt eines Automaten können wir auch reguläre Ausdrücke verwenden, um Sprachen zu beschreiben. Ein regulärer Ausdruck ist eine Zeichenkette, die ein Muster beschreibt, das von einer Sprache akzeptiert wird.Dafür gibt es verschiedene Operatoren, die in Regex verwendet werden können:</p>
 <ul>
@@ -5695,6 +5696,7 @@ Lösung:
 <li>Lookahead/Lookbehind mit variablen Langen, z.B. <code>(?=...)</code> und <code>(?&lt;=...)</code></li>
 <li>Referenzen, z.B. <code>\1</code>, <code>\2</code>, etc.</li>
 </ul>
+</section>
 <div class="prop">
 <p><strong>Lemma 5.3.2</strong></p>
 <p>Seien <span class="math inline">\(B, C ⊆ Σ^*\)</span>.</p>
@@ -5706,7 +5708,6 @@ Lösung:
 \textbf{REG} = \textbf{DEA} = \mathcal{L}_3
 \]</span></p>
 </div>
-</section>
 <section id="pumpinglemma-für-reguläre-sprachen" class="level3 prop">
 <h3 class="anchored" data-anchor-id="pumpinglemma-für-reguläre-sprachen">Pumpinglemma für reguläre Sprachen:</h3>
 <p>Für alle <span class="math inline">\(L ∈ \mathcal{L}_3\)</span> gilt:</p>
