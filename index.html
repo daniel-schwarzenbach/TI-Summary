@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Daniel Schwarzenbach">
-<meta name="dcterms.date" content="2026-06-28">
+<meta name="dcterms.date" content="2026-06-30">
 
 <title>TI-Summary</title>
 <style>
@@ -179,7 +179,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 28, 2026</p>
+      <p class="date">June 30, 2026</p>
     </div>
   </div>
   
@@ -4588,6 +4588,9 @@ Lösung:
 <span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">cantor_unpairing</span>(i, j)</span>
 <span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (i <span class="op">+</span> j) <span class="op">*</span> (i <span class="op">+</span> j <span class="op">+</span> <span class="fl">1</span>) <span class="op">÷</span> <span class="fl">2</span> <span class="op">+</span> j</span>
 <span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<center>
+<p><img src="./img/cantor_pairing_function.png" class="img-fluid"></p>
+</center>
 <p>Zusammengesetzte Typen wie <code>Person</code> (mit Feldern <code>String</code>, <code>Integer</code>, <code>Bool</code>) werden als <span class="math inline">\(ℕ^5\)</span> dargestellt und nach Kantor kodiert. Nach dem Induktionsprinzip gilt:</p>
 <div class="prop">
 <p>Jedes Tupel abzählbarer Mengen und jeder zusammengesetzte Datentyp ist in Polynomialzeit in eine natürliche Zahl kodierbar und wieder dekodierbar.</p>
@@ -5415,13 +5418,16 @@ Lösung
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Aufgabe: <span class="math inline">\(∪\)</span>
+Aufgabe: Vereinigung von DEA-Sprachen
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-138" class="callout-138-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Zeigen sie, dass für <span class="math inline">\(L_1, L_2 ∈ \textbf{DEA}\)</span> gilt <span class="math inline">\(L_1 ∪ L_2 ∈ \textbf{DEA}\)</span>.</p>
+<p>Zeigen sie, dass für <span class="math inline">\(L(A_1), L(A_2) ∈ \textbf{DEA}\)</span> gilt <span class="math inline">\(L(A_1) ∪ L(A_2) ∈ \textbf{DEA}\)</span>.</p>
+<ul>
+<li><em>Hinweis:</em> Verwenden Sie das Kreuzprodukt <span class="math inline">\(×\)</span>.</li>
+</ul>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-137-contents" aria-controls="callout-137" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -5434,7 +5440,7 @@ Lösung:
 </div>
 <div id="callout-137" class="callout-137-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Seien die <span class="math inline">\(A_1 = (Σ_1, Z_1, f_1, z_{0,1}, Z'_1)\)</span> und <span class="math inline">\(A_2 = (Σ_2, Z_2, f_2, z_{0,2}, Z'_2)\)</span> zwei DEA zu den Sprachen <span class="math inline">\(L_1\)</span> und <span class="math inline">\(L_2\)</span>.</p>
+<p>Seien die <span class="math inline">\(A_1 = (Σ_1, Z_1, f_1, z_{0,1}, Z'_1)\)</span> und <span class="math inline">\(A_2 = (Σ_2, Z_2, f_2, z_{0,2}, Z'_2)\)</span> zwei DEA zu den Sprachen <span class="math inline">\(L(A_1)\)</span> und <span class="math inline">\(L(A_2)\)</span>.</p>
 <p>Wir konstruieren einen DEA <span class="math inline">\(A = (Σ_1 × Σ_2, Z_1 × Z_2, f, (z_{0,1}, z_{0,2}), Z'_1 × Z_2 ∪ Z_1 × Z'_2)\)</span>, wobei die Überführungsfunktion <span class="math inline">\(f\)</span> wie folgt definiert ist: <span class="math display">\[
 f: (Z_1 × Z_2) × (Σ_1 × Σ_2) → Z_1 × Z_2
 \]</span> <span class="math display">\[
@@ -5454,7 +5460,9 @@ f((z_1, z_2), (a_1, a_2)) = (f_1(z_1, a_1), f_2(z_2, a_2))
 <li>Der Startzustand wird doppelt umkreist.</li>
 <li>Endzustände haben ein Rechteck um sich herum.</li>
 </ul>
+<center>
 <p><img src="./img/EA4.jpg" class="img-fluid"></p>
+</center>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-139-contents" aria-controls="callout-139" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -5516,8 +5524,8 @@ Beweis:
 <p>Folgender Algorithmus konvertiert jeden NEA in einen DEA, der die gleiche Sprache akzeptiert:</p>
 <div class="sourceCode" id="cb64"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">construct_DEA_from_NEA</span>(nea<span class="op">::</span><span class="dt">NEA</span>, Σ<span class="op">::</span><span class="dt">Set{Char}</span>) <span class="op">::</span><span class="dt">DEA</span></span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># data</span></span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>    Q <span class="op">=</span> <span class="fu">Queue</span><span class="dt">{Set{State}}</span>()</span>
-<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>    D <span class="op">=</span> <span class="fu">Set</span><span class="dt">{Set{State}}</span>()</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>    Q <span class="op">=</span> <span class="fu">Queue</span><span class="dt">{Set{State}}</span>() <span class="co"># Queue of Current States</span></span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>    D <span class="op">=</span> <span class="fu">Set</span><span class="dt">{Set{State}}</span>() <span class="co"># Set of Discovered States</span></span>
 <span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># initialize the starting DEA</span></span>
 <span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>    starting_states<span class="op">::</span><span class="dt">Set{State} </span><span class="op">=</span> nea.inital_states</span>
 <span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>    dea_z0 <span class="op">=</span> <span class="fu">join</span>(starting_states)</span>
@@ -5559,6 +5567,47 @@ Beweis:
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-142-contents" aria-controls="callout-142" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aufgabe: NEA to DEA
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-142" class="callout-142-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+A = (\underbrace{\{a,b\}}_{Σ}, \underbrace{\{z_0, z_1, z_2, z_3\}}_{Z}, f, z_0, \underbrace{\{z_3\}}_{Z'})
+\]</span></p>
+<p>wobei wir für <span class="math inline">\(z0\)</span> einen nichtdeterministischen Übergang haben: <span class="math display">\[
+f(z_0, a) = \{z_0, z_2\}
+\]</span></p>
+<center>
+<p><img src="./img/Q_nea_to_dea.jpg" class="img-fluid" style="width:50.0%"></p>
+</center>
+<p>Verwandeln Sie den NEA in einen equivalenten DEA.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-141-contents" aria-controls="callout-141" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-141" class="callout-141-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><img src="./img/nea_to_dea.jpg" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="prop">
 <p><strong>Theorem 5.2.4</strong></p>
 <p>Seien <span class="math inline">\(L_1, L_2 ∈ \textbf{DEA}\)</span>, so gilt:</p>
@@ -5586,6 +5635,41 @@ Beweis:
 \textbf{REG} = \{L \mid L \text{ ist eine reguläre Menge}\}
 \]</span></p>
 </section>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-144-contents" aria-controls="callout-144" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aufgabe: Reguläre Mengen und Automaten
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-144" class="callout-144-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Gegeben sei folgender reguläre Ausdruck: <span class="math inline">\((aa)^* ∪ a(aa)^*b\)</span></p>
+<p>Geben Sie einen DEA an, der diesen regulären Ausdruck akzeptiert.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-143-contents" aria-controls="callout-143" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-143" class="callout-143-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A = (<span class="math inline">\(\underbrace{\{a,b\}}_{Σ}\)</span>, <span class="math inline">\(\underbrace{\{S, T, INV, END\}}_{Z}, f, \underbrace{S}_{z_0}, \underbrace{\{S,END\}}_{Z'})\)</span></p>
+<p>und die Überführungsfunktion <span class="math inline">\(f\)</span> ist wie folgt definiert:</p>
+<p><img src="./img/GramatikAutomat2.jpg" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <section id="regex-nicht-prüfungsrelevant" class="level3">
 <h3 class="anchored" data-anchor-id="regex-nicht-prüfungsrelevant">Regex (nicht Prüfungsrelevant)</h3>
 <p>Statt eines Automaten können wir auch reguläre Ausdrücke verwenden, um Sprachen zu beschreiben. Ein regulärer Ausdruck ist eine Zeichenkette, die ein Muster beschreibt, das von einer Sprache akzeptiert wird.Dafür gibt es verschiedene Operatoren, die in Regex verwendet werden können:</p>
@@ -5612,15 +5696,15 @@ Beweis:
 <li>Referenzen, z.B. <code>\1</code>, <code>\2</code>, etc.</li>
 </ul>
 <div class="prop">
+<p><strong>Lemma 5.3.2</strong></p>
+<p>Seien <span class="math inline">\(B, C ⊆ Σ^*\)</span>.</p>
+<p>Falls <span class="math inline">\(ε ∉ B\)</span>, so ist <span class="math inline">\(L = B^* ⋅ C\)</span> die einzige Lösung der Gleichung <span class="math inline">\(L = B ⋅ L ∪ C\)</span>.</p>
+</div>
+<div class="prop">
 <p><strong>Theorem 5.3.3</strong></p>
 <p><span class="math display">\[
 \textbf{REG} = \textbf{DEA} = \mathcal{L}_3
 \]</span></p>
-</div>
-<div class="prop">
-<p><strong>Lemma 5.3.2</strong></p>
-<p>Seien <span class="math inline">\(B, C ⊆ Σ^*\)</span>.</p>
-<p>Falls <span class="math inline">\(ε ∉ B\)</span>, so ist <span class="math inline">\(L = B^* ⋅ C\)</span> die einzige Lösung der Gleichung <span class="math inline">\(L = B ⋅ L ∪ C\)</span>.</p>
 </div>
 </section>
 <section id="pumpinglemma-für-reguläre-sprachen" class="level3 prop">
@@ -5725,7 +5809,7 @@ Beweis:
 <section id="definition-grammatikstypen" class="level3 def">
 <h3 class="anchored" data-anchor-id="definition-grammatikstypen">Definition: <strong>Grammatikstypen</strong></h3>
 <p>Sei <span class="math inline">\(G = (Σ, N, S, R)\)</span> eine Grammatik.</p>
-<p>Im folgenden seien <span class="math inline">\(w ∈ (Σ ∪ N)^+, u, u_1, u_2 ∈ (Σ ∪ N)^*\)</span> und <span class="math inline">\(A ∈ N\)</span> beliebig.</p>
+<p>Im folgenden seien <span class="math inline">\(w ∈ (Σ ∪ N)^+, u, u_1, u_2 ∈ (Σ ∪ N)^*\)</span> und <span class="math inline">\(A,B ∈ N\)</span> beliebig.</p>
 <ol start="0" type="1">
 <li><p><span class="math inline">\(G\)</span> ist vom <strong>Typ 0</strong> oder eine <strong>unbeschränkte Grammatik</strong>, falls keine Einschränkung an die Regeln in <span class="math inline">\(R\)</span> gestellt wird.</p></li>
 <li><p><span class="math inline">\(G\)</span> ist vom <strong>Typ 1</strong> oder eine <strong>kontextsensitive Grammatik</strong>, falls für alle <span class="math inline">\((v, w) ∈ R\)</span> gilt: <span class="math inline">\(|v| ≤ |w|\)</span>. Daher sind nur Regeln folgender Form erlaubt:</p>
@@ -5761,6 +5845,149 @@ Beweis:
 <li><span class="math inline">\(\mathcal{L}_1 =\textbf{NLINSPACE} \subseteq \textbf{E}\)</span></li>
 <li><span class="math inline">\(\mathcal{L}_0 =\textbf{RE}\)</span></li>
 </ul>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-147-contents" aria-controls="callout-147" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aufgabe: Simple-Gramatik
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-147" class="callout-147-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Gegeben sei folgende Grammatik: <span class="math display">\[
+G = (\underbrace{\{0,1\}}_{Σ}, \underbrace{\{S, A, B, C\}}_{N}, S, R)
+\]</span> wobei die Regeln <span class="math inline">\(R\)</span> wie folgt definiert sind: <span class="math display">\[
+\begin{aligned}
+S &amp;→ 0S \; | \; 1A \\
+A &amp;→ 0B \; | \; 1A \\
+B &amp;→ 0S \; | \; 1C \\
+C &amp;→ 0C \; | \; 1C \; | \; ε
+\end{aligned}
+\]</span></p>
+<ol type="a">
+<li>Zu welcher Sprachklasse gehört die Sprache <span class="math inline">\(L(G)\)</span>?</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-145-contents" aria-controls="callout-145" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-145" class="callout-145-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Alle Regeln folgen der Form:</p>
+<ul>
+<li><span class="math inline">\(A → aB\)</span></li>
+<li><span class="math inline">\(A → ε\)</span></li>
+</ul>
+<p>mit <span class="math inline">\(A,B ∈ N\)</span> und <span class="math inline">\(a ∈ Σ\)</span>. Daher ist die Grammatik regulär und die Sprache <span class="math inline">\(L(G)\)</span> gehört zur Sprachklasse <span class="math inline">\(\mathcal{L}_3\)</span>.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Geben sie einen Automaten/Maschine an, der die Sprache <span class="math inline">\(L(G)\)</span> akzeptiert.</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-146-contents" aria-controls="callout-146" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-146" class="callout-146-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Wir konstruieren nun von den Gramatikregeln einen DEA:</p>
+<p><img src="./img/GramatikAutomat.jpg" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-150-contents" aria-controls="callout-150" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aufgabe: SUS-Gramatik
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-150" class="callout-150-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Gegeben sei folgende Grammatik: <span class="math display">\[
+G = (\underbrace{\{a,b\}}_{Σ}, \underbrace{\{S, A, T\}}_{N}, S, R)
+\]</span> wobei die Regeln <span class="math inline">\(R\)</span> wie folgt definiert sind: <span class="math display">\[
+\begin{aligned}
+S &amp;→ AT \; | \; ε \\
+T &amp;→ AS \; | \; b \\
+A &amp;→ a
+\end{aligned}
+\]</span></p>
+<ol type="a">
+<li>Zu welcher Sprachklasse gehört die Sprache <span class="math inline">\(L(G)\)</span>?</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-148-contents" aria-controls="callout-148" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-148" class="callout-148-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Da <span class="math inline">\(A → a\)</span> die einzige Regel für <span class="math inline">\(A\)</span> ist, können wir <span class="math inline">\(A\)</span> durch <span class="math inline">\(a\)</span> ersetzen. Dann können wir <span class="math inline">\(R\)</span> neu schreiben als: <span class="math display">\[
+\begin{aligned}
+S &amp;→ aT \; | \; ε \\
+T &amp;→ aS \; | \; b \\
+\end{aligned}
+\]</span></p>
+<p>Nun sind alle Regeln folgen der Form:</p>
+<ul>
+<li><span class="math inline">\(A → aB\)</span></li>
+<li><span class="math inline">\(A → ε\)</span></li>
+</ul>
+<p>mit <span class="math inline">\(A,B ∈ N\)</span> und <span class="math inline">\(a ∈ Σ\)</span>. Daher ist die Grammatik regulär und die Sprache <span class="math inline">\(L(G)\)</span> gehört zur Sprachklasse <span class="math inline">\(\mathcal{L}_3\)</span>.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Geben sie einen Automaten/Maschine an, der die Sprache <span class="math inline">\(L(G)\)</span> akzeptiert.</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-149-contents" aria-controls="callout-149" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-149" class="callout-149-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Wir konstruieren nun von den Gramatikregeln einen DEA:</p>
+<p><img src="./img/GramatikAutomat2.jpg" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
 </section>
